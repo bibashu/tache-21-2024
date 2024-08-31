@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../pages/head') %>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <%- include('../pages/sidebar') %>
+      <!-- End Sidebar -->
+       
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <div class="logo-header" data-background-color="dark">
+              <a href="index.html" class="logo">
+                <img
+                  src="/assets/img/kaiadmin/logo_light.svg"
+                  alt="navbar brand"
+                  class="navbar-brand"
+                  height="20"
+                />
+              </a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                  <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                  <i class="gg-menu-left"></i>
+                </button>
+              </div>
+              <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+              </button>
+            </div>
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Header -->
+          <%- include('../pages/navbar') %>
+          <!-- End Navbar -->
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <div
+              class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
+            >
+              <div>
+                <h3 class="fw-bold mb-3">Formulaire d'ajout</h3>
+                <h6 class="op-7 mb-2">Sous Domaine</h6>
+              </div>
+              <div class="ms-md-auto py-2 py-md-0">
+                <a href="/sousDomaine" class="btn btn-primary btn-round"
+                  >Lister domaine</a
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title">Formulaire Ajout</div>
+                  </div>
+                 
+                  <div class="card-body">
+                    <div class="row">
+                      <form action="/sousDomaine/submitSousDomaine" method="POST" class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="sousdomaine">Sous Domaine</label>
+                          <input
+                          name="sousdomaine"
+                            type="text"
+                            class="form-control"
+                            id="sousdomaine"
+                            required
+                            placeholder="ex: informatique"
+                          />
+                          
+                          
+                        </div>
+                       
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1"
+                            >Domaine</label
+                          >
+                          <select
+                            class="form-select"
+                            id="exampleFormControlSelect1"
+                            name="domaineId"
+                            required
+                          >
+                          <option value="" disabled selected>Choisissez un domaine</option>
+                          <% domaines.forEach(domaine => { %>
+                           
+                            <option value="<%- domaine._id %>"><%- domaine.nom_domaine %></option>
+                          <% }) %>
+                         
+                          </select>
+                          </div>
+                        <div class="form-group">
+                          <label for="description">Description</label>
+                          <textarea class="form-control" name="description" id="description" rows="5">
+                          </textarea>
+                        </div>
+                        
+                        <div class="card-action">
+                          <button class="btn btn-success" type="submit" onclick="showNotification(event)" >Ajouter</button>
+                          <button class="btn btn-danger" type="reset">Annuler</button>
+                        </div>
+                      </form>
+                     
+                       
+
+                     
+                      
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <%- include('../pages/footer') %>
+    </div>
+    <%- include('../pages/js') %>
+  </body>
+</html>
