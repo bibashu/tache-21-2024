@@ -81,59 +81,63 @@ exports.submitSousDomaine = async (req, res) => {
 exports.edit = async (req, res) => {
   try {
     const id = req.params.id; // Récupère l'ID du domaine depuis les paramètres de la requête
-    const domaine = await Domaine.findById(id); // Trouve le domaine spécifique par son ID
+    // Récupérer les détails du sous-domaine spécifique et son domaine associé
+    const sousdomaine = await SousDomaine.findById(id).populate('domaine').exec();
+    const domaines = await Domaine.find({});
+     // Trouve le domaine spécifique par son ID
 
-    if (!domaine) {
-      return res.status(404).send('Domaine non trouvé');
+    if (!sousdomaine) {
+      return res.status(404).send('Sous domaine non trouvé');
     }
 
-    res.render("domaine/edit", { domaine: domaine }); // Rendu de la vue d'édition avec les détails du domaine
+    res.render("sousDomaine/edit", { sousdomaine: sousdomaine, domaines: domaines }); // Rendu de la vue d'édition avec les détails du domaine
   } catch (error) {
     console.error('Erreur lors de la récupération du domaine:', error);
     res.status(500).send('Erreur serveur');
   }
 };
 // action modification
-exports.submitEdit = async (req, res) =>{
+exports.editModule = async (req, res) =>{
   try {
-    console.log('ID:', req.params.id);
-    console.log('Body:', req.body);
+  
     const id = req.params.id;
-    const { nom_domaine, description } = req.body;
+    const { sousdomaine, description, domaineId } = req.body;
+    const domaine = await Domaine.findById(domaineId);
 
-    const updatedDomaine = await Domaine.findByIdAndUpdate(id, {
-      nom_domaine,
-      description
+    const updatedSousDomaine = await SousDomaine.findByIdAndUpdate(id, {
+        sousdomaine,
+        description,
+        domaine: domaineId
     }, { new: true });
 
-    if (!updatedDomaine) {
+    if (!updatedSousDomaine) {
       return res.status(404).send('Domaine non trouvé');
     }
 // 
-    res.redirect('/domaine');
+    res.redirect('/sousDomaine');
   } catch (error) {
     console.error('Erreur lors de la mise à jour du domaine:', error);
     res.status(500).send('Erreur serveur');
   }
 } 
 
-exports.supprimerDomaine = async (req, res) =>{
+exports.supprimerSousDomaine = async (req, res) =>{
   try {
 
 
     const id = req.params.id;
-    await Domaine.findByIdAndDelete(id);
-    res.redirect('/domaine');
+    await SousDomaine.findByIdAndDelete(id);
+    res.redirect('/Sousdomaine');
   } catch (error) {
     console.error('Erreur lors de la suppression du domaine:', error);
     res.status(500).send('Erreur serveur');
   }
 }
 // recupération des données domaine avec json 
-exports.apiDomaine = async (req, res) =>{
+exports.apiSousDomaine = async (req, res) =>{
   try {
-    const domaines = await Domaine.find({});
-    res.status(200).json(domaines);
+    const sousdomaines = await SousDomaine.find({});
+    res.status(200).json(sousdomaines);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -142,18 +146,18 @@ exports.apiDomaine = async (req, res) =>{
 exports.toggleArchive = async (req, res) => {
   try {
     const id = req.params.id;
-    const domaine = await Domaine.findById(id);
+    const sousdomaine = await SousDomaine.findById(id);
 
-    if (!domaine) {
-      return res.status(404).send('Domaine not found');
+    if (!sousdomaine) {
+      return res.status(404).send('sousdomaine not found');
     }
 
     // Toggle the archive status
-    domaine.archive = !domaine.archive;
-    await domaine.save();
+    sousdomaine.archive = !sousdomaine.archive;
+    await sousdomaine.save();
 
     // Redirect back to the previous page or a confirmation page
-    res.redirect(`/domaine?message=${domaine.archive ? 'archived' : 'unarchived'}`);
+    res.redirect(`/sousDomaine?message=${sousdomaine.archive ? 'archived' : 'unarchived'}`);
   } catch (error) {
     console.error('Error toggling archive status:', error);
     res.status(500).send('Server error');

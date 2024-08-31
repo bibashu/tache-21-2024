@@ -46,10 +46,10 @@
             >
               <div>
                 <h3 class="fw-bold mb-3">Formulaire de modification</h3>
-                <h6 class="op-7 mb-2">Domaine</h6>
+                <h6 class="op-7 mb-2">Sous domaine</h6>
               </div>
               <div class="ms-md-auto py-2 py-md-0">
-                <a href="/domaine" class="btn btn-primary btn-round"
+                <a href="/sousdomaine" class="btn btn-primary btn-round"
                   >Lister domaine</a
                 >
               </div>
@@ -62,28 +62,45 @@
                   </div>
                   <div class="card-body">
                     <div class="row">
-                      <form action="/domaine/<%= domaine._id %>/editDomaine?_method=PUT" method="POST" class="col-md-12 col-lg-12">
+                      <form action="/sousDomaine/<%= sousdomaine._id %>/editModule?_method=PUT" method="POST" class="col-md-12 col-lg-12">
                         <div class="form-group">
-                          <label for="nom_domaine">Domaine</label>
+                          <label for="sousdomaine">Domaine</label>
                           <input
-                          name="nom_domaine"
-                          value="<%- domaine.nom_domaine  %>"
+                          name="sousdomaine"
+                          value="<%- sousdomaine.sousdomaine  %>"
                             type="text"
                             class="form-control"
-                            id="nom_domaine"
+                            id="sousdomaine"
                             required
-                            placeholder="ex: informatique"
+                            placeholder="ex: developpement web"
                             
                           />
                           
                           
                         </div>
-                       
-                       
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1">Sélectionnez un Domaine</label>
+                          <select
+                            class="form-select"
+                            id="exampleFormControlSelect1"
+                            name="domaineId"
+                            required
+                          >
+                            <% domaines.forEach(function(domaine) { %>
+                              <option 
+                                value="<%= domaine._id %>" 
+                                <%= sousdomaine.domaine && sousdomaine.domaine._id.toString() === domaine._id.toString() ? 'selected' : '' %>
+                              >
+                                <%= domaine.nom_domaine %>
+                              </option>
+                            <% }); %>
+                          </select>
+                        </div>
+                      
                         <div class="form-group">
                           <label for="description">Description</label>
                           <textarea class="form-control" 
-                          value="<%- domaine.description  %>"
+                          value="<%- sousdomaine.description  %>"
 
                            name="description" id="description"  rows="5">
                           </textarea>

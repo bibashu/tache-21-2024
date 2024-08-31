@@ -8,10 +8,10 @@ router.get("/", sousDomaineController.index);
 router.get("/add", sousDomaineController.add);
 router.post("/submitSousDomaine", sousDomaineController.submitSousDomaine);
 router.get("/:id/edit", sousDomaineController.edit);
-router.put("/:id/editDomaine", sousDomaineController.submitEdit);
-router.get("/api_domaine", sousDomaineController.apiDomaine);
+router.put("/:id/editModule", sousDomaineController.editModule);
+router.get("/api_sousdomaine", sousDomaineController.apiSousDomaine);
 
-router.delete("/:id/supprimer", sousDomaineController.supprimerDomaine);
+router.delete("/:id/supprimer", sousDomaineController.supprimerSousDomaine);
 // route archive
 // In your routes file (e.g., domaineRoute.js)
 router.post('/:id/toggleArchive', sousDomaineController.toggleArchive);

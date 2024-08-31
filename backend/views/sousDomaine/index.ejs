@@ -151,7 +151,7 @@
                           <td>
                             <div class="form-button-action">
                               <a
-                                href="/domaine/<%= sousdomaine._id %>/edit/"
+                                href="/sousDomaine/<%= sousdomaine._id %>/edit/"
                                 data-bs-toggle="tooltip"
                                 title=""
                                 class="btn btn-link btn-primary btn-lg"
@@ -161,7 +161,7 @@
                               </a>
 
                               <form
-                                action="/domaine/<%= sousdomaine._id %>/supprimer?_method=DELETE"
+                                action="/sousDomaine/<%= sousdomaine._id %>/supprimer?_method=DELETE"
                                 method="POST"
                                 style="display: inline"
                                 onsubmit="return confirm('Voulez-vous vraiment supprimer ce domaine ?');"
@@ -174,7 +174,7 @@
                                 </button>
                               </form>
                               <form
-                                action="/domaine/<%= sousdomaine._id %>/toggleArchive"
+                                action="/sousDomaine/<%= sousdomaine._id %>/toggleArchive"
                                 method="POST"
                                 class="d-inline"
                               >
