@@ -113,7 +113,7 @@ exports.editModule = async (req, res) =>{
     if (!updatedSousDomaine) {
       return res.status(404).send('Domaine non trouvé');
     }
-// 
+
     res.redirect('/sousDomaine');
   } catch (error) {
     console.error('Erreur lors de la mise à jour du domaine:', error);

@@ -20,7 +20,7 @@ const coursSchema = new mongoose.Schema(
     },
     sous_domaine: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Sousdomaine",
+      ref: "SousDomaine",
     },
   },
 

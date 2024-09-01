@@ -4,9 +4,10 @@ const app = express();
 const path = require('path');
 
 const methodOverride = require('method-override');
-// Importer la route des domaine
+// Importer les route 
 const domaineRoutes = require('./routes/domaineRoute');
 const sousDomaineRoute = require("./routes/SousDomaineRoute")
+const coursRoute = require("./routes/coursRoute")
 
 
 
@@ -36,6 +37,8 @@ app.get('/', (req, res) => {
 app.use('/domaine', domaineRoutes);
 // Utiliser la route des soudDomaine
 app.use('/sousDomaine', sousDomaineRoute);
+// Utiliser la route des Cours
+app.use('/cours', coursRoute);
 
 
 // pour les domaines

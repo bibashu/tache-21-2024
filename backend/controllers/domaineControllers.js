@@ -1,6 +1,6 @@
-const fs = require("fs");
+
 const Domaine = require("../models/Domaine_Model");
-const path = require("path");
+
 
 exports.index = async (req, res) => {
   try {

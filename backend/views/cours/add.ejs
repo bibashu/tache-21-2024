@@ -28,11 +28,11 @@
             >
               <div>
                 <h3 class="fw-bold mb-3">Formulaire d'ajout</h3>
-                <h6 class="op-7 mb-2">Domaine</h6>
+                <h6 class="op-7 mb-2">Cours</h6>
               </div>
               <div class="ms-md-auto py-2 py-md-0">
-                <a href="/domaine" class="btn btn-primary btn-round"
-                  >Lister domaine</a
+                <a href="/cours" class="btn btn-primary btn-round"
+                  >Lister cours</a
                 >
               </div>
             </div>
@@ -45,27 +45,50 @@
                  
                   <div class="card-body">
                     <div class="row">
-                      <form action="/domaine/submitDomaine" method="POST" class="col-md-12 col-lg-12">
+                      <form action="/cours/submitModule" method="POST" class="col-md-12 col-lg-12">
                         <div class="form-group">
-                          <label for="nom_domaine">Domaine</label>
+                          <label for="cours">cours</label>
                           <input
-                          name="nom_domaine"
+                          name="cours"
                             type="text"
                             class="form-control"
-                            id="nom_domaine"
+                            id="cours"
                             required
-                            placeholder="ex: informatique"
+                            placeholder="ex: HTML/CSS"
                           />
                           
                           
                         </div>
                        
-                       
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1"
+                            >Sous domaine</label
+                          >
+                          <select
+                            class="form-select"
+                            id="exampleFormControlSelect1"
+                            name="sousdomaineId"
+                            required
+                          >
+                          <option value="" disabled selected>Choisissez un sous domaine</option>
+                          <% sousdomaines.forEach(sousdomaine=> { %>
+                           
+                            <option value="<%- sousdomaine._id %>"><%- sousdomaine.sousdomaine %></option>
+                          <% }) %>
+                         
+                          </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="duree">Duree</label>
+                            <input class="form-control" name="duree" id="duree" >
+                            
+                          </div>
                         <div class="form-group">
                           <label for="description">Description</label>
                           <textarea class="form-control" name="description" id="description" rows="5">
                           </textarea>
                         </div>
+                        
                         <div class="card-action">
                           <button class="btn btn-success" type="submit" onclick="showNotification(event)" >Ajouter</button>
                           <button class="btn btn-danger" type="reset">Annuler</button>
