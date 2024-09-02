@@ -31,7 +31,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 app.get('/', (req, res) => {
-  res.render('Layouts');
+  res.render('./authentification/login');
 });
 // Utiliser la route des domaine
 app.use('/domaine', domaineRoutes);

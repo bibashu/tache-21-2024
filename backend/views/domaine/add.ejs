@@ -1,91 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../pages/head') %>
+<%- include('../pages/head') %>
+
   <body>
     <div class="wrapper">
       <!-- Sidebar -->
       <%- include('../pages/sidebar') %>
-      <!-- End Sidebar -->
-       
+        <!-- End Sidebar -->
 
-      <div class="main-panel">
-        <div class="main-header">
-          <div class="main-header-logo">
-            <!-- Logo Header -->
-            <%- include('../pages/logoheader.ejs')%>
 
-            <!-- End Logo Header -->
-          </div>
-          <!-- Navbar Header -->
-          <%- include('../pages/navbar') %>
-          <!-- End Navbar -->
-        </div>
+        <div class="main-panel">
+          <div class="main-header">
+            <div class="main-header-logo">
+              <!-- Logo Header -->
+              <%- include('../pages/logoheader.ejs')%>
 
-        <div class="container">
-          <div class="page-inner">
-            <div
-              class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
-            >
-              <div>
-                <h3 class="fw-bold mb-3">Formulaire d'ajout</h3>
-                <h6 class="op-7 mb-2">Domaine</h6>
-              </div>
-              <div class="ms-md-auto py-2 py-md-0">
-                <a href="/domaine" class="btn btn-primary btn-round"
-                  >Lister domaine</a
-                >
-              </div>
+                <!-- End Logo Header -->
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="card-title">Formulaire Ajout</div>
-                  </div>
-                 
-                  <div class="card-body">
-                    <div class="row">
-                      <form action="/domaine/submitDomaine" method="POST" class="col-md-12 col-lg-12">
-                        <div class="form-group">
-                          <label for="nom_domaine">Domaine</label>
-                          <input
-                          name="nom_domaine"
-                            type="text"
-                            class="form-control"
-                            id="nom_domaine"
-                            required
-                            placeholder="ex: informatique"
-                          />
-                          
-                          
-                        </div>
-                       
-                       
-                        <div class="form-group">
-                          <label for="description">Description</label>
-                          <textarea class="form-control" name="description" id="description" rows="5">
-                          </textarea>
-                        </div>
-                        <div class="card-action">
-                          <button class="btn btn-success" type="submit" onclick="showNotification(event)" >Ajouter</button>
-                          <button class="btn btn-danger" type="reset">Annuler</button>
-                        </div>
-                      </form>
-                     
-                       
+            <!-- Navbar Header -->
+            <%- include('../pages/navbar') %>
+              <!-- End Navbar -->
+          </div>
 
-                     
-                      
-                
+          <div class="container">
+            <div class="page-inner">
+              <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+                <div>
+                  <h3 class="fw-bold mb-3">Formulaire d'ajout</h3>
+                  <h6 class="op-7 mb-2">Domaine</h6>
+                </div>
+                <div class="ms-md-auto py-2 py-md-0">
+                  <a href="/domaine" class="btn btn-primary btn-round">Lister domaine</a>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="card-title">Formulaire Ajout</div>
+                    </div>
 
-      </div>
-      <%- include('../pages/footer') %>
-    </div>
-    <%- include('../pages/js') %>
+                    <div class="card-body">
+                      <div class="row">
+                        <form action="/domaine/submitDomaine" method="POST" class="col-md-12 col-lg-12">
+                          <div class="form-group">
+                            <label for="nom_domaine">Domaine</label>
+                            <input name="nom_domaine" type="text" class="form-control" id="nom_domaine" required
+                              placeholder="ex: informatique" />
+
+
+                          </div>
+
+
+                          <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" name="description" id="description" rows="5">
+                          </textarea>
+                          </div>
+                          <div class="card-action">
+                            <button class="btn btn-success" type="submit"
+                              onclick="showNotification(event)">Ajouter</button>
+                            <button class="btn btn-danger" type="reset">Annuler</button>
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <%- include('../pages/footer') %>
+          </div>
+          <%- include('../pages/js') %>
   </body>
+
 </html>
