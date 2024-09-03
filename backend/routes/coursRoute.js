@@ -9,7 +9,7 @@ router.get("/add", coursController.add);
 router.post("/submitModule", coursController.submitModule);
 router.get("/:id/edit", coursController.edit);
 router.put("/:id/editModule", coursController.editModule);
-// router.get("/api_cours", coursController.apiCours);
+router.get("/api_cours", coursController.apiCours);
 
 router.delete("/:id/supprimer", coursController.supprimerModule);
 // // route archive

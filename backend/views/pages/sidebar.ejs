@@ -40,8 +40,8 @@
             </a>
             <div class="collapse" id="dashboard">
               <ul class="nav nav-collapse">
-                <li>
-                  <a href="../demo1/index.html">
+                <li class="nav-item <%= pages === '/' ? 'active' : '' %>">
+                  <a href="/">
                     <span class="sub-item">Dashboard 1</span>
                   </a>
                 </li>
@@ -57,24 +57,31 @@
          
       
          
-          <li class="nav-item">
+          <li class="nav-item <%= pages === '/domaine' ? 'active' : '' %>">
             <a href="/domaine">
               <i class="fas fa-desktop"></i>
               <p>Domaine</p>
-              
             </a>
           </li>
-          <li class="nav-item">
+          
+          <li class="nav-item <%= pages === '/sousDomaine' ? 'active' : '' %>">
             <a href="/sousDomaine">
               <i class="fas fa-desktop"></i>
               <p>Sous Domaine</p>
               
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= pages === '/cours' ? 'active' : '' %>">
             <a href="/cours">
               <i class="fas fa-book"></i>
               <p>Cours</p>
+              
+            </a>
+          </li>
+          <li class="nav-item <%= pages === '/quizz' ? 'active' : '' %>">
+            <a href="/quizz">
+              <i class="fas fa-question-circle"></i>
+              <p>Quizz</p>
               
             </a>
           </li>

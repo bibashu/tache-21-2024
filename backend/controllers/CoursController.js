@@ -37,6 +37,7 @@ exports.index = async (req, res) => {
       archivedCount,
       unArchivedCount,
       total,
+      pages: "/cours"
     });
   } catch (error) {
     console.error(error);
@@ -49,7 +50,7 @@ exports.index = async (req, res) => {
 exports.add = async (req, res) => {
   const sousdomaines = await SousDomaine.find({});
 
-  res.render("cours/add", { sousdomaines: sousdomaines });
+  res.render("cours/add", { sousdomaines: sousdomaines, pages: "/cours" });
 };
 // Ajouter des données
 exports.submitModule = async (req, res) => {
@@ -96,7 +97,7 @@ exports.edit = async (req, res) => {
       return res.status(404).send("cours non trouvé");
     }
 
-    res.render("cours/edit", { sousdomaines: sousdomaines, cours: cours }); // Rendu de la vue d'édition avec les détails du domaine
+    res.render("cours/edit", { sousdomaines: sousdomaines, cours: cours, pages: "/cours" }); // Rendu de la vue d'édition avec les détails du domaine
   } catch (error) {
     console.error("Erreur lors de la récupération du domaine:", error);
     res.status(500).send("Erreur serveur");
@@ -147,9 +148,9 @@ exports.supprimerModule = async (req, res) => {
   }
 };
 // recupération des données domaine avec json
-exports.apiSousDomaine = async (req, res) => {
+exports.apiCours = async (req, res) => {
   try {
-    const cours = await SousDomaine.find({});
+    const cours = await Cours.find({}).populate("sous_domaine").exec();
     res.status(200).json(cours);
   } catch (error) {
     res.status(500).json({ message: error.message });

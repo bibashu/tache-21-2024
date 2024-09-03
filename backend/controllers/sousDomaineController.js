@@ -44,7 +44,7 @@ exports.add = async (req, res) => {
     const domaines = await Domaine.find({});
     
 
-  res.render("sousDomaine/add", {domaines: domaines});
+  res.render("sousDomaine/add", {domaines: domaines, pages: "/sousDomaine"});
 };
 // Ajouter des données
 exports.submitSousDomaine = async (req, res) => {
@@ -90,7 +90,7 @@ exports.edit = async (req, res) => {
       return res.status(404).send('Sous domaine non trouvé');
     }
 
-    res.render("sousDomaine/edit", { sousdomaine: sousdomaine, domaines: domaines }); // Rendu de la vue d'édition avec les détails du domaine
+    res.render("sousDomaine/edit", { sousdomaine: sousdomaine, domaines: domaines, pages: "/sousDomaine" }); // Rendu de la vue d'édition avec les détails du domaine
   } catch (error) {
     console.error('Erreur lors de la récupération du domaine:', error);
     res.status(500).send('Erreur serveur');

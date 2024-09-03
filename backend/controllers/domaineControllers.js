@@ -29,7 +29,7 @@ exports.index = async (req, res) => {
     });
 
     // Rendre la vue avec les données
-    res.render('domaine/index', { domaines, message, archivedCount, unArchivedCount, totalDomaine });
+    res.render('domaine/index', { domaines, message, archivedCount, unArchivedCount, totalDomaine, pages: '/domaine' });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
@@ -39,7 +39,7 @@ exports.index = async (req, res) => {
 // pages  les ajoues
 
 exports.add = (req, res) => {
-  res.render("domaine/add");
+  res.render("domaine/add", {pages: '/domaine'});
 };
 // Ajouter des données
 exports.submitDomaine = async (req, res) => {
@@ -76,7 +76,7 @@ exports.edit = async (req, res) => {
       return res.status(404).send('Domaine non trouvé');
     }
 
-    res.render("domaine/edit", { domaine: domaine }); // Rendu de la vue d'édition avec les détails du domaine
+    res.render("domaine/edit", { domaine: domaine, pages: '/domaine'}); // Rendu de la vue d'édition avec les détails du domaine
   } catch (error) {
     console.error('Erreur lors de la récupération du domaine:', error);
     res.status(500).send('Erreur serveur');
@@ -85,8 +85,7 @@ exports.edit = async (req, res) => {
 // action modification
 exports.submitEdit = async (req, res) =>{
   try {
-    console.log('ID:', req.params.id);
-    console.log('Body:', req.body);
+   
     const id = req.params.id;
     const { nom_domaine, description } = req.body;
 

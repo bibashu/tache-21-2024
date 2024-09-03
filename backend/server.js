@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 const domaineRoutes = require('./routes/domaineRoute');
 const sousDomaineRoute = require("./routes/SousDomaineRoute")
 const coursRoute = require("./routes/coursRoute")
+const quizzRoute = require("./routes/quizz_Route")
 
 
 
@@ -29,6 +30,10 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 // Route principale
 
+app.use((req, res, next) => {
+  res.locals.pages = req.path; // Définir pages comme le chemin de la requête
+  next();
+});
 
 app.get('/', (req, res) => {
   res.render('Layouts');
@@ -39,6 +44,8 @@ app.use('/domaine', domaineRoutes);
 app.use('/sousDomaine', sousDomaineRoute);
 // Utiliser la route des Cours
 app.use('/cours', coursRoute);
+// Utiliser la route des quizz
+app.use('/quizz', quizzRoute);
 
 
 // pour les domaines
