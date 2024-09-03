@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../pages/head.ejs') %>
+  
 
   <body class="bg-black d-flex justify-content-center align-items-center" style="
       background-image: url('/assets/img/background.png');
       background-position: center;
       background-size: cover;
     ">
-    <div class="d-flex flex-column justify-content-center align-items-center border border-primary rounded-5" style="
+    <div class="d-flex flex-column  border border-primary rounded-4" style="
         /* background: rgba( 177, 170, 245, 0.25 ); */
         background-color: white;
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -16,30 +17,43 @@
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.18);
       ">
-      <img src="/assets/img/e-learning.png" class="img-fluid w-25" alt="" />
-      <div class="col-md-6 text-black">
-        <form action="" method="POST">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+      <div class="text-center">
+        <img src="/assets/img/e-learning.png" class="img-fluid w-25" alt="" />
+        <p class="text-center">Connectez-vous pour accéder à tous les cours et ressources.</p>
+      </div>
+      <div class="px-5 text-black">
+        <% if (typeof error !== 'undefined') { %>
+          <div class="alert alert-danger" role="alert">
+            <%= error %>
+          </div>
+        <% } %>
+          <div class="mb-3 ">
+            <label for="exampleInputEmail1" class="form-label">Adresse email</label>
+            <input type="email" class="form-control" name="email" id="exampleInputEmail1"/>
             <div id="emailHelp" class="form-text">
-              We'll never share your email with anyone else.
+              Votre email ne sera jamais partagé.
             </div>
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" />
+            <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" />
           </div>
           <div class="mb3">
-            <a href=""> <p>Mot de pass oublié ?</p></a>
-           
-          </div>
-          <button 
-            type="submit" 
-            class="btn btn-primary mb-2"
+            <a href="">
+              <p style="color: #FB924F; 
+                ">Mot de pass oublié ?</p>
+            </a>
 
-            >connexion</button>
+          </div>
+          <p class="text-center">Pas encore de compte? <a href="/register">Créer un compte</a></p>
+          <div class=" d-flex justify-content-center align-items-center">
+
+            <button type="submit" class="btn rounded-3 text-white mb-3"
+              style="background-color: #FB924F">connexion</button>
+          </div>
         </form>
+
+
       </div>
     </div>
   </body>

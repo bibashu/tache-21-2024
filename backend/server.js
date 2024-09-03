@@ -8,7 +8,7 @@ const methodOverride = require('method-override');
 const domaineRoutes = require('./routes/domaineRoute');
 const sousDomaineRoute = require("./routes/SousDomaineRoute")
 const coursRoute = require("./routes/coursRoute")
-
+const loginRoute = require('./routes/loginCoachRoute');
 
 
 // Middleware pour parser les requêtes JSON
@@ -28,6 +28,8 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 // Route principale
+
+app.use('/', loginRoute);
 
 
 app.get('/', (req, res) => {
