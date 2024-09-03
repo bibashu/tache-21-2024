@@ -77,7 +77,8 @@ exports.submitModule = async (req, res) => {
     await newCours.save();
 
     // Rediriger vers la liste des sous-domaines ou une page de succès
-    res.redirect("/cours?success=true");
+    const nom= "Cours"
+    res.redirect(`/cours?alert=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error("Erreur lors de l'ajout du cours:", error);
     res.status(500).send("Erreur serveur");
@@ -130,7 +131,9 @@ exports.editModule = async (req, res) => {
     // console.log(cours);
 
     //
-    res.redirect("/cours");
+    
+const nom = "Cours"
+    res.redirect(`/cours?modifier=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error("Erreur lors de la mise à jour du domaine:", error);
     res.status(500).send("Erreur serveur");
@@ -140,8 +143,9 @@ exports.editModule = async (req, res) => {
 exports.supprimerModule = async (req, res) => {
   try {
     const id = req.params.id;
-    await Cours.findByIdAndDelete(id);
-    res.redirect("/cours");
+    const cours = await Cours.findByIdAndDelete(id);
+    const nom = cours.nom_cours
+    res.redirect(`/cours?suppression=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error("Erreur lors de la suppression du domaine:", error);
     res.status(500).send("Erreur serveur");
@@ -168,10 +172,11 @@ exports.toggleArchive = async (req, res) => {
 
     // Toggle the archive status
     cours.archive = !cours.archive;
-    await cours.save();
+    const cour = await cours.save();
+    const nom = cour.nom_cours
 
     // Redirect back to the previous page or a confirmation page
-    res.redirect(`/cours?message=${cours.archive ? "archived" : "unarchived"}`);
+    res.redirect(`/cours?nom=${encodeURIComponent(nom)}&message=${cours.archive ? 'archived' : 'unarchived'}`);
   } catch (error) {
     console.error("Error toggling archive status:", error);
     res.status(500).send("Server error");

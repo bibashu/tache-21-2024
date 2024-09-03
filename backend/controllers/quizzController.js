@@ -89,7 +89,8 @@ exports.submitModule = async (req, res) => {
     await newQuizz.save();
 
     // Rediriger vers la liste des sous-domaines ou une page de succès
-    res.redirect("/quizz?success=true");
+    const nom= "Quizz"
+    res.redirect(`/quizz?alert=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error("Erreur lors de l'ajout du quizz:", error);
     res.status(500).send("Erreur serveur");
@@ -144,8 +145,8 @@ exports.editModule = async (req, res) => {
     }
     // console.log(cours);
 
-    //
-    res.redirect("/quizz");
+    const nom = "Quizz"
+    res.redirect(`/quizz?modifier=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error("Erreur lors de la mise à jour du domaine:", error);
     res.status(500).send("Erreur serveur");
@@ -155,8 +156,9 @@ exports.editModule = async (req, res) => {
 exports.supprimerModule = async (req, res) => {
   try {
     const id = req.params.id;
-    await Quizz.findByIdAndDelete(id);
-    res.redirect("/quizz");
+    const quizz = await Quizz.findByIdAndDelete(id);
+    const nom = quizz.titre
+    res.redirect(`/quizz?suppression=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error("Erreur lors de la suppression du quizz:", error);
     res.status(500).send("Erreur serveur");
@@ -183,10 +185,11 @@ exports.toggleArchive = async (req, res) => {
 
     // Toggle the archive status
     quizz.archive = !quizz.archive;
-    await quizz.save();
-
+   const quizzz = await quizz.save();
+   const nom = quizz.titre
+    
     // Redirect back to the previous page or a confirmation page
-    res.redirect(`/quizz?message=${quizz.archive ? "archived" : "unarchived"}`);
+    res.redirect(`/quizz?nom=${encodeURIComponent(nom)}&message=${quizz.archive ? 'archived' : 'unarchived'}`);
   } catch (error) {
     console.error("Error toggling archive status:", error);
     res.status(500).send("Server error");

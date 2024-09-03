@@ -15,7 +15,6 @@
   }
 </style>
 
-
 <body>
   <div class="wrapper">
     <!-- Sidebar -->
@@ -55,7 +54,9 @@
                   <h1><%= archivedCount %></h1>
                   <h5 class="op-8">Total archivé</h5>
                   <div class="pull-right">
-                    <h3 class="fw-bold op-8"><%- archivedCount %> / <%- total %></h3>
+                    <h3 class="fw-bold op-8">
+                      <%- archivedCount %> / <%- total %>
+                    </h3>
                   </div>
                 </div>
               </div>
@@ -120,7 +121,7 @@
                           <th>Cours</th>
                           <th>Date de creation</th>
                           <th>Date de mise à jour</th>
-                       
+
                           <th style="width: 10%">Action</th>
                         </tr>
                       </thead>
@@ -129,7 +130,10 @@
                         <% quizzs.forEach(quizz => { %>
                         <tr>
                           <td><%= quizz.titre %></td>
-                          <td><%= quizz.cours.nom_cours %></td>
+                          <td>
+                            <%= quizz.cours && quizz.cours.nom_cours?
+                            quizz.cours.nom_cours : 'null' %>
+                          </td>
                           <td><%= quizz.formattedCreatedAt %></td>
                           <td><%= quizz.formattedUpdatedAt %></td>
                           <td>
@@ -188,5 +192,4 @@
     </div>
   </div>
   <%- include('../pages/js') %>
-
 </body>

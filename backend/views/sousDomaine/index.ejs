@@ -126,7 +126,10 @@
                         <% sousDomaines.forEach(sousdomaine => { %>
                         <tr>
                           <td><%= sousdomaine.sousdomaine %></td>
-                          <td><%= sousdomaine.domaine.nom_domaine %></td>
+                          <td>
+                            <%= sousdomaine.domaine && sousdomaine.domaine.nom_domaine ? sousdomaine.domaine.nom_domaine : 'null' %>
+                          </td>
+                          
                           <td><%= sousdomaine.formattedCreatedAt %></td>
                           <td><%= sousdomaine.formattedUpdatedAt %></td>
                           <td>
