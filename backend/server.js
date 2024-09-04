@@ -9,7 +9,7 @@ const domaineRoutes = require('./routes/domaineRoute');
 const sousDomaineRoute = require("./routes/SousDomaineRoute")
 const coursRoute = require("./routes/coursRoute")
 const quizzRoute = require("./routes/quizz_Route")
-
+const projectRoute = require('./routes/projectRoute')
 
 
 // Middleware pour parser les requêtes JSON
@@ -46,6 +46,9 @@ app.use('/sousDomaine', sousDomaineRoute);
 app.use('/cours', coursRoute);
 // Utiliser la route des quizz
 app.use('/quizz', quizzRoute);
+// Utiliser la route des quizz
+app.use('/project', projectRoute);
+
 
 
 // pour les domaines
