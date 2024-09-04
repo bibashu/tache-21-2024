@@ -27,25 +27,26 @@
             <%= error %>
           </div>
         <% } %>
+        <form action="/authentification/login" method="POST">
+
           <div class="mb-3 ">
-            <label for="exampleInputEmail1" class="form-label">Adresse email</label>
-            <input type="email" class="form-control" name="email" id="exampleInputEmail1"/>
+            <label for="email" class="form-label">Adresse email</label>
+            <input type="email" class="form-control" name="email" id="email" required/>
             <div id="emailHelp" class="form-text">
               Votre email ne sera jamais partagé.
             </div>
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1" />
+            <label for="password" class="form-label">Mot de passe</label>
+            <input type="password" name="password" class="form-control" id="password" required />
           </div>
           <div class="mb3">
-            <a href="">
-              <p style="color: #FB924F; 
-                ">Mot de pass oublié ?</p>
+            <a href="/authentification/forgot-password">
+              <p style="color: #FB924F;">Mot de passe oublié ?</p>
             </a>
-
           </div>
-          <p class="text-center">Pas encore de compte? <a href="/register">Créer un compte</a></p>
+          
+          <p class="text-center">Pas encore de compte? <a href="/authentification/register">Créer un compte</a></p>
           <div class=" d-flex justify-content-center align-items-center">
 
             <button type="submit" class="btn rounded-3 text-white mb-3"
