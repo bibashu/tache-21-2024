@@ -13,6 +13,8 @@ const coursRoute = require("./routes/coursRoute")
 const loginRoute = require('./routes/loginCoachRoute');
 const registerRoute = require('./routes/registerRoute');
 const forgotPasswordRoute = require('./routes/forgotPasswordRoute');
+const quizzRoute = require("./routes/quizz_Route")
+const projectRoute = require('./routes/projectRoute')
 
 
 // Middleware pour parser les requêtes JSON
@@ -31,8 +33,13 @@ app.use(express.static('public'));
 // Configurer le moteur de templates EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+// Route principale
 
- // Route principale
+app.use((req, res, next) => {
+  res.locals.pages = req.path; // Définir pages comme le chemin de la requête
+  next();
+});
+
 app.get('/', (req, res) => {
   res.render('./authentification/register');
 });
@@ -56,6 +63,11 @@ app.use('/sousDomaine', sousDomaineRoute);
 
 // Utiliser la route des Cours
 app.use('/cours', coursRoute);
+// Utiliser la route des quizz
+app.use('/quizz', quizzRoute);
+// Utiliser la route des quizz
+app.use('/project', projectRoute);
+
 
 
 

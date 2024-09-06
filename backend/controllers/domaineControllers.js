@@ -29,7 +29,7 @@ exports.index = async (req, res) => {
     });
 
     // Rendre la vue avec les données
-    res.render('domaine/index', { domaines, message, archivedCount, unArchivedCount, totalDomaine });
+    res.render('domaine/index', { domaines, message, archivedCount, unArchivedCount, totalDomaine, pages: '/domaine' });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
@@ -39,7 +39,7 @@ exports.index = async (req, res) => {
 // pages  les ajoues
 
 exports.add = (req, res) => {
-  res.render("domaine/add");
+  res.render("domaine/add", {pages: '/domaine'});
 };
 // Ajouter des données
 exports.submitDomaine = async (req, res) => {
@@ -57,7 +57,8 @@ exports.submitDomaine = async (req, res) => {
     await newDomaine.save();
 
     // Rediriger vers la liste des domaines ou une page de succès
-    res.redirect('/domaine?success=true');
+    const nom= "Domaine"
+    res.redirect(`/domaine?alert=success&nom=${encodeURIComponent(nom)}`);
 } catch (error) {
     console.error('Erreur lors de l\'ajout du domaine:', error);
     res.status(500).send('Erreur serveur');
@@ -76,7 +77,7 @@ exports.edit = async (req, res) => {
       return res.status(404).send('Domaine non trouvé');
     }
 
-    res.render("domaine/edit", { domaine: domaine }); // Rendu de la vue d'édition avec les détails du domaine
+    res.render("domaine/edit", { domaine: domaine, pages: '/domaine'}); // Rendu de la vue d'édition avec les détails du domaine
   } catch (error) {
     console.error('Erreur lors de la récupération du domaine:', error);
     res.status(500).send('Erreur serveur');
@@ -85,8 +86,7 @@ exports.edit = async (req, res) => {
 // action modification
 exports.submitEdit = async (req, res) =>{
   try {
-    console.log('ID:', req.params.id);
-    console.log('Body:', req.body);
+   
     const id = req.params.id;
     const { nom_domaine, description } = req.body;
 
@@ -99,7 +99,8 @@ exports.submitEdit = async (req, res) =>{
       return res.status(404).send('Domaine non trouvé');
     }
 // 
-    res.redirect('/domaine');
+const nom = "Domaine"
+    res.redirect(`/domaine?modifier=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error('Erreur lors de la mise à jour du domaine:', error);
     res.status(500).send('Erreur serveur');
@@ -111,8 +112,9 @@ exports.supprimerDomaine = async (req, res) =>{
 
 
     const id = req.params.id;
-    await Domaine.findByIdAndDelete(id);
-    res.redirect('/domaine');
+   const domaine = await Domaine.findByIdAndDelete(id);
+    const nom = domaine.nom_domaine
+    res.redirect(`/domaine?suppression=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error('Erreur lors de la suppression du domaine:', error);
     res.status(500).send('Erreur serveur');
@@ -139,10 +141,10 @@ exports.toggleArchive = async (req, res) => {
 
     // Toggle the archive status
     domaine.archive = !domaine.archive;
-    await domaine.save();
-
+    const domainepické = await domaine.save();
+    const nom = domainepické.nom_domaine
     // Redirect back to the previous page or a confirmation page
-    res.redirect(`/domaine?message=${domaine.archive ? 'archived' : 'unarchived'}`);
+    res.redirect(`/domaine?nom=${encodeURIComponent(nom)}&message=${domaine.archive ? 'archived' : 'unarchived'}`);
   } catch (error) {
     console.error('Error toggling archive status:', error);
     res.status(500).send('Server error');

@@ -44,7 +44,7 @@ exports.add = async (req, res) => {
     const domaines = await Domaine.find({});
     
 
-  res.render("sousDomaine/add", {domaines: domaines});
+  res.render("sousDomaine/add", {domaines: domaines, pages: "/sousDomaine"});
 };
 // Ajouter des données
 exports.submitSousDomaine = async (req, res) => {
@@ -67,9 +67,10 @@ exports.submitSousDomaine = async (req, res) => {
   
       // Sauvegarder le sous-domaine dans la base de données
       await newSousDomaine.save();
-  
+      
+      const nom= "Sous Domaine"
       // Rediriger vers la liste des sous-domaines ou une page de succès
-      res.redirect('/sousDomaine?success=true');
+      res.redirect(`/sousDomaine?alert=success&nom=${encodeURIComponent(nom)}`);
     } catch (error) {
       console.error('Erreur lors de l\'ajout du sous-domaine:', error);
       res.status(500).send('Erreur serveur');
@@ -90,7 +91,7 @@ exports.edit = async (req, res) => {
       return res.status(404).send('Sous domaine non trouvé');
     }
 
-    res.render("sousDomaine/edit", { sousdomaine: sousdomaine, domaines: domaines }); // Rendu de la vue d'édition avec les détails du domaine
+    res.render("sousDomaine/edit", { sousdomaine: sousdomaine, domaines: domaines, pages: "/sousDomaine" }); // Rendu de la vue d'édition avec les détails du domaine
   } catch (error) {
     console.error('Erreur lors de la récupération du domaine:', error);
     res.status(500).send('Erreur serveur');
@@ -113,8 +114,8 @@ exports.editModule = async (req, res) =>{
     if (!updatedSousDomaine) {
       return res.status(404).send('Domaine non trouvé');
     }
-
-    res.redirect('/sousDomaine');
+    const nom = "Sous domaine"
+    res.redirect(`/sousDomaine?modifier=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error('Erreur lors de la mise à jour du domaine:', error);
     res.status(500).send('Erreur serveur');
@@ -126,8 +127,9 @@ exports.supprimerSousDomaine = async (req, res) =>{
 
 
     const id = req.params.id;
-    await SousDomaine.findByIdAndDelete(id);
-    res.redirect('/Sousdomaine');
+    const Sousdomaine = await SousDomaine.findByIdAndDelete(id);
+    const nom = Sousdomaine.sousdomaine
+    res.redirect(`/sousDomaine?suppression=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error('Erreur lors de la suppression du domaine:', error);
     res.status(500).send('Erreur serveur');
@@ -155,9 +157,9 @@ exports.toggleArchive = async (req, res) => {
     // Toggle the archive status
     sousdomaine.archive = !sousdomaine.archive;
     await sousdomaine.save();
+   const nom = sousdomaine.sousdomaine;
+res.redirect(`/sousDomaine?nom=${encodeURIComponent(nom)}&message=${sousdomaine.archive ? 'archived' : 'unarchived'}`);
 
-    // Redirect back to the previous page or a confirmation page
-    res.redirect(`/sousDomaine?message=${sousdomaine.archive ? 'archived' : 'unarchived'}`);
   } catch (error) {
     console.error('Error toggling archive status:', error);
     res.status(500).send('Server error');

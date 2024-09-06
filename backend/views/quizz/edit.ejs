@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../pages/head') %>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <%- include('../pages/sidebar') %>
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <%- include('../pages/logoheader.ejs')%>
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Header -->
+          <%- include('../pages/navbar') %>
+          <!-- End Navbar -->
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+              <div>
+                <h3 class="fw-bold mb-3">Formulaire de modification</h3>
+                <h6 class="op-7 mb-2">Quizz</h6>
+              </div>
+              <div class="ms-md-auto py-2 py-md-0">
+                <a href="/quizz" class="btn btn-primary btn-round">Lister des quizz</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title">Modification</div>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <form action="/quizz/<%= quizz._id %>/editModule?_method=PUT" method="POST" class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="titre">Titre</label>
+                          <input name="titre" type="text" value="<%- quizz.titre %>" class="form-control" id="titre" required placeholder="ex: Quizz javascript"/>
+                        </div>
+                      
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1">Sélectionnez un Domaine</label>
+                          <select class="form-select" id="exampleFormControlSelect1" name="coursId" required>
+                            <% cours.forEach(function(cours) { %>
+                              <option value="<%= cours._id %>" <%= quizz.cours && quizz.cours._id.toString() === cours._id.toString() ? 'selected' : '' %>>
+                                <%= cours.nom_cours %>
+                              </option>
+                            <% }); %>
+                          </select>
+                        </div>
+                      
+                        <div id="questions">
+                          <% quizz.questions.forEach((question, index) => { %>
+                            <div class="question" id="question_<%= index %>">
+                              <h4>Question <%= index + 1 %></h4>
+                              <div class="form-group">
+                                <label for="questionText_<%= index %>">Texte de la Question</label>
+                                <input type="text" name="questions[<%= index %>][questionText]" id="questionText_<%= index %>" value="<%= question.questionText %>" class="form-control" required>
+                              </div>
+                      
+                              <div class="form-group">
+                                <label>Options de Réponse</label>
+                                <% question.options.forEach((option, optIndex) => { %>
+                                  <div class="form-group">
+                                    <input type="text" name="questions[<%= index %>][options][<%= optIndex %>][optionText]" value="<%= option.optionText %>" class="form-control" required>
+                                    <input type="radio" name="questions[<%= index %>][correctAnswer]" value="<%= option.optionText %>" <%= question.correctAnswer === option.optionText ? 'checked' : '' %> required> Correcte
+                                  </div>
+                                  <% }) %>
+                                </div>
+                                
+                                
+                            </div>
+                          <% }) %>
+                        </div>
+                      
+                      <div class="form-group">
+                          <button type="button" id="addQuestionButton" class="btn btn-secondary ">Ajouter une question</button>
+                          <button type="button" class="btn btn-warning" id="cancelButton">Annuler</button>
+                      </div>
+                        <div class="form-group">
+                          <label for="description">Description</label>
+                          <textarea class="form-control" name="description" id="description" rows="5"><%= quizz.description %></textarea>
+                        </div>
+                      
+                        <div class="card-action">
+                          <button class="btn btn-success" type="submit">Modifier</button>
+                          <button class="btn btn-danger" type="reset">Annuler</button>
+                        </div>
+                      </form>
+                      
+                    
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- include('../pages/footer') %>
+    </div>
+    <%- include('../pages/js') %>
+  </body>
+</html>

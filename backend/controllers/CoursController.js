@@ -37,6 +37,7 @@ exports.index = async (req, res) => {
       archivedCount,
       unArchivedCount,
       total,
+      pages: "/cours"
     });
   } catch (error) {
     console.error(error);
@@ -49,7 +50,7 @@ exports.index = async (req, res) => {
 exports.add = async (req, res) => {
   const sousdomaines = await SousDomaine.find({});
 
-  res.render("cours/add", { sousdomaines: sousdomaines });
+  res.render("cours/add", { sousdomaines: sousdomaines, pages: "/cours" });
 };
 // Ajouter des données
 exports.submitModule = async (req, res) => {
@@ -76,7 +77,8 @@ exports.submitModule = async (req, res) => {
     await newCours.save();
 
     // Rediriger vers la liste des sous-domaines ou une page de succès
-    res.redirect("/cours?success=true");
+    const nom= "Cours"
+    res.redirect(`/cours?alert=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error("Erreur lors de l'ajout du cours:", error);
     res.status(500).send("Erreur serveur");
@@ -96,7 +98,7 @@ exports.edit = async (req, res) => {
       return res.status(404).send("cours non trouvé");
     }
 
-    res.render("cours/edit", { sousdomaines: sousdomaines, cours: cours }); // Rendu de la vue d'édition avec les détails du domaine
+    res.render("cours/edit", { sousdomaines: sousdomaines, cours: cours, pages: "/cours" }); // Rendu de la vue d'édition avec les détails du domaine
   } catch (error) {
     console.error("Erreur lors de la récupération du domaine:", error);
     res.status(500).send("Erreur serveur");
@@ -129,7 +131,9 @@ exports.editModule = async (req, res) => {
     // console.log(cours);
 
     //
-    res.redirect("/cours");
+    
+const nom = "Cours"
+    res.redirect(`/cours?modifier=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error("Erreur lors de la mise à jour du domaine:", error);
     res.status(500).send("Erreur serveur");
@@ -139,17 +143,18 @@ exports.editModule = async (req, res) => {
 exports.supprimerModule = async (req, res) => {
   try {
     const id = req.params.id;
-    await Cours.findByIdAndDelete(id);
-    res.redirect("/cours");
+    const cours = await Cours.findByIdAndDelete(id);
+    const nom = cours.nom_cours
+    res.redirect(`/cours?suppression=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error("Erreur lors de la suppression du domaine:", error);
     res.status(500).send("Erreur serveur");
   }
 };
 // recupération des données domaine avec json
-exports.apiSousDomaine = async (req, res) => {
+exports.apiCours = async (req, res) => {
   try {
-    const cours = await SousDomaine.find({});
+    const cours = await Cours.find({}).populate("sous_domaine").exec();
     res.status(200).json(cours);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -167,10 +172,11 @@ exports.toggleArchive = async (req, res) => {
 
     // Toggle the archive status
     cours.archive = !cours.archive;
-    await cours.save();
+    const cour = await cours.save();
+    const nom = cour.nom_cours
 
     // Redirect back to the previous page or a confirmation page
-    res.redirect(`/cours?message=${cours.archive ? "archived" : "unarchived"}`);
+    res.redirect(`/cours?nom=${encodeURIComponent(nom)}&message=${cours.archive ? 'archived' : 'unarchived'}`);
   } catch (error) {
     console.error("Error toggling archive status:", error);
     res.status(500).send("Server error");

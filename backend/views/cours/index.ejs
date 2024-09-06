@@ -127,7 +127,7 @@
                         <% cours.forEach(cour => { %>
                         <tr>
                           <td><%= cour.nom_cours %></td>
-                          <td><%= cour.sous_domaine.sousdomaine %></td>
+                         <td> <%= cour.sous_domaine ? cour.sous_domaine.sousdomaine : 'null' %></td>
                           <td><%= cour.duree %></td>
                           <td><%= cour.formattedCreatedAt %></td>
                           <td><%= cour.formattedUpdatedAt %></td>

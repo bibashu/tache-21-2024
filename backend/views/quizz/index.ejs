@@ -14,6 +14,7 @@
     animation: fadeOut 5s ease-out forwards; /* Adjust time (5s) as needed */
   }
 </style>
+
 <body>
   <div class="wrapper">
     <!-- Sidebar -->
@@ -39,10 +40,10 @@
             <div class="col-md-4">
               <div class="card card-secondary">
                 <div class="card-body skew-shadow">
-                  <h1><%= totalDomaine %></h1>
-                  <h5 class="op-8">Total des sous domaine</h5>
+                  <h1><%= total %></h1>
+                  <h5 class="op-8">Total cours</h5>
                   <div class="pull-right">
-                    <h3 class="fw-bold op-8"><%- totalDomaine %> / <%- totalDomaine %></h3>
+                    <h3 class="fw-bold op-8"><%- total %> / <%- total %></h3>
                   </div>
                 </div>
               </div>
@@ -53,7 +54,9 @@
                   <h1><%= archivedCount %></h1>
                   <h5 class="op-8">Total archivé</h5>
                   <div class="pull-right">
-                    <h3 class="fw-bold op-8"><%- archivedCount %> / <%- totalDomaine %></h3>
+                    <h3 class="fw-bold op-8">
+                      <%- archivedCount %> / <%- total %>
+                    </h3>
                   </div>
                 </div>
               </div>
@@ -65,7 +68,7 @@
                   <h5 class="op-8">Total non-archivé</h5>
                   <div class="pull-right">
                     <h3 class="fw-bold op-8">
-                      <%= unArchivedCount %> / <%= totalDomaine %>
+                      <%= unArchivedCount %> / <%= total %>
                     </h3>
                   </div>
                 </div>
@@ -79,13 +82,13 @@
               <div class="card">
                 <div class="card-header">
                   <div class="d-flex align-items-center">
-                    <h4 class="card-title">Liste des sous domaine</h4>
+                    <h4 class="card-title">Liste des quizz</h4>
                     <a
-                      href="/sousDomaine/add"
+                      href="/quizz/add"
                       class="btn btn-primary btn-round ms-auto"
                     >
                       <i class="fa fa-plus"></i>
-                      Ajouter sous domaine
+                      Ajouter des quizz
                     </a>
                   </div>
                 </div>
@@ -94,8 +97,8 @@
                   class="alert alert-success alert-dismissible fade show alert-auto-hide"
                   role="alert"
                 >
-                  <% if (message === 'archived') { %> sous doamine archivé avec
-                  success! <% } else if (message === 'unarchived') { %> sous domaine
+                  <% if (message === 'archived') { %> cours archivé avec
+                  success! <% } else if (message === 'unarchived') { %> cours
                   dé!sarchiver avec succes! <% } %>
                   <button
                     type="button"
@@ -114,28 +117,29 @@
                     >
                       <thead>
                         <tr>
-                          <th>Sous domaine</th>
-                          <th>Domaine</th>
+                          <th>Titre</th>
+                          <th>Cours</th>
                           <th>Date de creation</th>
-                          <th>Derniere mise à jour</th>
+                          <th>Date de mise à jour</th>
+
                           <th style="width: 10%">Action</th>
                         </tr>
                       </thead>
 
                       <tbody>
-                        <% sousDomaines.forEach(sousdomaine => { %>
+                        <% quizzs.forEach(quizz => { %>
                         <tr>
-                          <td><%= sousdomaine.sousdomaine %></td>
+                          <td><%= quizz.titre %></td>
                           <td>
-                            <%= sousdomaine.domaine && sousdomaine.domaine.nom_domaine ? sousdomaine.domaine.nom_domaine : 'null' %>
+                            <%= quizz.cours && quizz.cours.nom_cours?
+                            quizz.cours.nom_cours : 'null' %>
                           </td>
-                          
-                          <td><%= sousdomaine.formattedCreatedAt %></td>
-                          <td><%= sousdomaine.formattedUpdatedAt %></td>
+                          <td><%= quizz.formattedCreatedAt %></td>
+                          <td><%= quizz.formattedUpdatedAt %></td>
                           <td>
                             <div class="form-button-action">
                               <a
-                                href="/sousDomaine/<%= sousdomaine._id %>/edit/"
+                                href="/quizz/<%= quizz._id %>/edit/"
                                 data-bs-toggle="tooltip"
                                 title=""
                                 class="btn btn-link btn-primary btn-lg"
@@ -145,7 +149,7 @@
                               </a>
 
                               <form
-                                action="/sousDomaine/<%= sousdomaine._id %>/supprimer?_method=DELETE"
+                                action="/quizz/<%= quizz._id %>/supprimer?_method=DELETE"
                                 method="POST"
                                 style="display: inline"
                                 onsubmit="return confirm('Voulez-vous vraiment supprimer ce domaine ?');"
@@ -158,17 +162,17 @@
                                 </button>
                               </form>
                               <form
-                                action="/sousDomaine/<%= sousdomaine._id %>/toggleArchive"
+                                action="/quizz/<%= quizz._id %>/toggleArchive"
                                 method="POST"
                                 class="d-inline"
                               >
                                 <button
                                   type="submit"
-                                  class="btn btn-link <%= sousdomaine.archive ? ' btn-success' : 'btn-warning' %> btn-lg"
-                                  title="<%= sousdomaine.archive ? 'Click to Unarchive' : 'Click to Archive' %>"
+                                  class="btn btn-link <%= quizz.archive ? ' btn-success' : 'btn-warning' %> btn-lg"
+                                  title="<%= quizz.archive ? 'Click to Unarchive' : 'Click to Archive' %>"
                                 >
                                   <i
-                                    class="fas <%= sousdomaine.archive ? 'fa-thumbs-up' : 'fa-thumbs-down' %>"
+                                    class="fas <%= quizz.archive ? 'fa-thumbs-up' : 'fa-thumbs-down' %>"
                                   ></i>
                                 </button>
                               </form>
@@ -188,5 +192,4 @@
     </div>
   </div>
   <%- include('../pages/js') %>
-
 </body>
