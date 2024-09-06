@@ -18,6 +18,16 @@
       <p class="text-center">Créez un compte pour accéder à la plateforme.</p>
     </div>
     <div class="px-5 text-black">
+      <% if (typeof error !== 'undefined') { %>
+        <div class="alert alert-danger" role="alert">
+          <%= error %>
+        </div>
+      <% } %>
+      <% if (typeof message !== 'undefined') { %>
+        <div class="alert alert-success" role="alert">
+          <%= message %>
+        </div>
+      <% } %>
       <form action="/authentification/register" method="POST">
         <div class="mb-3">
           <label for="username" class="form-label">Nom d'utilisateur</label>

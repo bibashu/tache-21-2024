@@ -22,19 +22,13 @@
         <p class="text-center">Connectez-vous pour accéder à tous les cours et ressources.</p>
       </div>
       <div class="px-5 text-black">
-        <% if (typeof error !== 'undefined') { %>
-          <div class="alert alert-danger" role="alert">
-            <%= error %>
-          </div>
-        <% } %>
-        <form action="/authentification/login" method="POST">
-
+        <div id="error-message" class="alert alert-danger d-none" role="alert"></div> <!-- Div pour afficher les erreurs -->
+        
+        <form id="loginForm">
           <div class="mb-3 ">
             <label for="email" class="form-label">Adresse email</label>
-            <input type="email" class="form-control" name="email" id="email"  required/>
-            <div id="emailHelp" class="form-text">
-              Votre email ne sera jamais partagé.
-            </div>
+            <input type="email" class="form-control" name="email" id="email" required />
+            <div id="emailHelp" class="form-text">Votre email ne sera jamais partagé.</div>
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Mot de passe</label>
@@ -47,16 +41,50 @@
           </div>
           
           <p class="text-center">Pas encore de compte? <a href="/authentification/register">Créer un compte</a></p>
-          <div class=" d-flex justify-content-center align-items-center">
-
-            <button type="submit" class="btn rounded-3 text-white mb-3"
-              style="background-color: #FB924F">connexion</button>
+          <div class="d-flex justify-content-center align-items-center">
+            <button type="submit" class="btn rounded-3 text-white mb-3" style="background-color: #FB924F">connexion</button>
           </div>
         </form>
-
-
       </div>
     </div>
-  </body>
 
+    <!-- Script de gestion de la connexion sans cookie avec affichage des erreurs -->
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', async function (e) {
+          e.preventDefault();
+          
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+          const errorMessage = document.getElementById('error-message'); // Sélectionner la div d'erreur
+
+          try {
+              const response = await fetch('/authentification/login', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ email, password })
+              });
+
+              const data = await response.json();
+              
+              if (data.token) {
+                  // Si connexion réussie, stocker le token et rediriger
+                  localStorage.setItem('token', data.token);
+                  window.location.href = '/domaine';
+              } else {
+                  // Afficher l'erreur en haut du formulaire
+                  errorMessage.textContent = data.error;
+                  errorMessage.classList.remove('d-none');
+              }
+          } catch (error) {
+              // En cas d'erreur serveur, afficher un message d'erreur général
+              errorMessage.textContent = 'Erreur du serveur, veuillez réessayer plus tard.';
+              errorMessage.classList.remove('d-none');
+              console.error('Erreur:', error);
+          }
+      });
+    </script>
+
+  </body>
 </html>

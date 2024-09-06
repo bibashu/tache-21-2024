@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
+require('dotenv').config();
 
 
 // Importer les routes

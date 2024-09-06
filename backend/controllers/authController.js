@@ -2,34 +2,38 @@ const LoginCoach = require('../models/LoginCoach');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
-const crypto = require('crypto');
 
 // Clé secrète avec crypto
-const jwtSecret = crypto.randomBytes(32).toString('hex');
+const jwtSecret = process.env.JWT_SECRET;
 
 // une fonction du login
+
 exports.loginCoach = async (req, res) => {
     const { email, password } = req.body;
     if (!email || !password) {
-        return res.status(400).render('authentification/login', { error: 'Tous les champs sont obligatoires' });
+        return res.status(400).json({ error: 'Tous les champs sont obligatoires' });
     }
     try {
         const coach = await LoginCoach.findOne({ email });
         if (!coach) {
-            return res.status(400).render('authentification/login', { error: 'Email ou mot de passe incorrect' });
+            return res.status(400).json({ error: 'Email ou mot de passe incorrect' });
         }
+
         const isMatch = await bcrypt.compare(password, coach.password);
         if (!isMatch) {
-            return res.status(400).render('authentification/login', { error: 'Email ou mot de passe incorrect' });
+            return res.status(400).json({ error: 'Email ou mot de passe incorrect' });
         }
+
         const token = jwt.sign({ id: coach._id }, jwtSecret, { expiresIn: '1h' });
-        res.cookie('token', token, { httpOnly: true });
-        res.redirect('/domaine');
+
+        // Renvoie le token pour stockage dans localStorage
+        return res.status(200).json({ token });
     } catch (err) {
         console.error(err);
-        res.status(500).render('authentification/login', { error: 'Erreur du serveur, veuillez réessayer plus tard.' });
+        res.status(500).json({ error: 'Erreur du serveur, veuillez réessayer plus tard.' });
     }
 };
+
 
 
 // une fonction du register
@@ -53,6 +57,7 @@ exports.registerCoach = async (req, res) => {
     }
 };
 
+
 // Configurer Nodemailer pour Gmail
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -61,7 +66,6 @@ const transporter = nodemailer.createTransport({
         pass: 'vfysdhgqfyubezef'  // Mot de passe d'application généré par google
     }
 });
-
 
 
 // Fonction de d'envoi de mail du mot de passe oublié
@@ -81,14 +85,14 @@ exports.forgotPassword = async (req, res) => {
 
         // Configurer l'email
         const mailOptions = {
-            name:'E-Learning',
+            name: 'E-Learning',
             from: 'no-reply@e-learning.com',
             to: email,
             subject: 'Réinitialisation de mot de passe',
             text: `Vous avez demandé une réinitialisation de mot de passe. Cliquez sur le lien suivant pour réinitialiser votre mot de passe : ${resetURL}`
         };
         console.log(mailOptions);
-        
+
         // Envoyer l'email via Gmail
         await transporter.sendMail(mailOptions);
 
@@ -114,40 +118,39 @@ exports.resetPassword = async (req, res) => {
     }
 }
 
-// Page de réinitialisation du mot de passe
-
-
 // mis en place du nouveau password
 exports.postResetPassword = async (req, res) => {
     const { token } = req.params;
     const { password, confirmPassword } = req.body;
 
-    // Vérifier que les mots de passe correspondent
     if (password !== confirmPassword) {
         return res.status(400).render('authentification/resetPassword', { error: 'Les mots de passe ne correspondent pas.', token });
     }
 
     try {
-        // Vérifier la validité du token
         const decoded = jwt.verify(token, jwtSecret);
 
-        // Rechercher le coach par ID
         const coach = await LoginCoach.findById(decoded.id);
         if (!coach) {
             return res.status(400).render('authentification/resetPassword', { error: 'Utilisateur non trouvé.', token });
         }
 
-        // Hasher le nouveau mot de passe
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        // Mettre à jour le mot de passe dans la base de données
         coach.password = hashedPassword;
         await coach.save();
 
-        res.redirect('/authentification/login');  // Rediriger vers la page de connexion après succès
+        // Générer un nouveau token
+        const newToken = jwt.sign({ id: coach._id }, jwtSecret, { expiresIn: '1h' });
+        
+        // Au lieu de définir un cookie, on renvoie le token pour le stocker dans localStorage côté client
+        return res.status(200).json({ token: newToken, message: 'Mot de passe réinitialisé avec succès.' });
+
     } catch (err) {
         console.error(err);
         res.status(500).render('authentification/resetPassword', { error: 'Erreur du serveur, veuillez réessayer plus tard.', token });
     }
 };
+
+
