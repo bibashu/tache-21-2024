@@ -74,8 +74,7 @@ exports.submitModule = async (req, res) => {
     });
 
     // Sauvegarder le sous-domaine dans la base de données
-    await newProject.save();
-
+  
     // Rediriger vers la liste des sous-domaines ou une page de succès
     const nom= "Project"
     res.redirect(`/project?alert=success&nom=${encodeURIComponent(nom)}`);
