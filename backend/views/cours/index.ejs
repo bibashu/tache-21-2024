@@ -39,10 +39,10 @@
             <div class="col-md-4">
               <div class="card card-secondary">
                 <div class="card-body skew-shadow">
-                  <h1><%= total %></h1>
+                  <h1><%= totalModule %></h1>
                   <h5 class="op-8">Total cours</h5>
                   <div class="pull-right">
-                    <h3 class="fw-bold op-8"><%- total %> / <%- total %></h3>
+                    <h3 class="fw-bold op-8"><%- totalModule %> / <%- totalModule %></h3>
                   </div>
                 </div>
               </div>
@@ -53,7 +53,7 @@
                   <h1><%= archivedCount %></h1>
                   <h5 class="op-8">Total archivé</h5>
                   <div class="pull-right">
-                    <h3 class="fw-bold op-8"><%- archivedCount %> / <%- total %></h3>
+                    <h3 class="fw-bold op-8"><%- archivedCount %> / <%- totalModule %></h3>
                   </div>
                 </div>
               </div>
@@ -65,7 +65,7 @@
                   <h5 class="op-8">Total non-archivé</h5>
                   <div class="pull-right">
                     <h3 class="fw-bold op-8">
-                      <%= unArchivedCount %> / <%= total %>
+                      <%= unArchivedCount %> / <%= totalModule %>
                     </h3>
                   </div>
                 </div>
@@ -109,7 +109,7 @@
                 <div class="card-body">
                   <div class="table-responsive">
                     <table
-                      id="add-row"
+                      id="example"
                       class="display table table-striped table-hover"
                     >
                       <thead>

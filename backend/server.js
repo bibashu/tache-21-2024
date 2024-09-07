@@ -4,7 +4,28 @@ const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
 require('dotenv').config();
+const http = require('http');
+const socketIo = require('socket.io');
+const socket = require('./socket');
 
+// Créer une instance de serveur HTTP et l'attacher à l'application Express
+const server = http.createServer(app);
+// Attacher Socket.IO au serveur HTTP
+
+// Initialisez Socket.IO
+const io = socket.init(server);
+
+io.on('connection', (socket) => {
+  console.log('Un utilisateur est connecté');
+  socket.on('disconnect', () => {
+      console.log('Utilisateur déconnecté');
+  });
+});
+
+const globalDataMiddleware = require('./middleware/middleware_livraisons');
+
+// Utiliser le middleware globalDataMiddleware
+app.use(globalDataMiddleware);
 
 // Importer les routes
 const domaineRoutes = require('./routes/domaineRoute');
@@ -15,6 +36,8 @@ const registerRoute = require('./routes/registerRoute');
 const forgotPasswordRoute = require('./routes/forgotPasswordRoute');
 const quizzRoute = require("./routes/quizz_Route")
 const projectRoute = require('./routes/projectRoute')
+const livraisonRoute = require('./routes/livraisonRoute')
+const dashboard = require('./routes/dashboard')
 
 
 // Middleware pour parser les requêtes JSON
@@ -54,6 +77,8 @@ app.use('/authentification', registerRoute);
 
  // la route de mot de passe oublié
 app.use('/authentification', forgotPasswordRoute);
+// Utiliser la route des dashboard
+app.use('/dash', dashboard);
 
 // Utiliser la route des domaine
 app.use('/domaine', domaineRoutes);
@@ -67,7 +92,8 @@ app.use('/cours', coursRoute);
 app.use('/quizz', quizzRoute);
 // Utiliser la route des quizz
 app.use('/project', projectRoute);
-
+// Utiliser la route des quizz
+app.use('/livraison', livraisonRoute);
 
 
 

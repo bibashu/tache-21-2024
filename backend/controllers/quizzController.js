@@ -13,7 +13,7 @@ exports.index = async (req, res) => {
     const unArchivedCount = quizzs.filter(
       (quizz) => quizz.archive === false
     ).length;
-    const total = quizzs.length;
+    const totalModule = quizzs.length;
     // Formater les dates
     quizzs.forEach((quizz) => {
       const dateUpdated = new Date(quizz.updatedAt);
@@ -38,9 +38,8 @@ exports.index = async (req, res) => {
       message,
       archivedCount,
       unArchivedCount,
-      total,
-      pages: "/quizz"
-      
+      totalModule,
+      pages: "/quizz",
     });
   } catch (error) {
     console.error(error);
@@ -52,7 +51,7 @@ exports.index = async (req, res) => {
 
 exports.add = async (req, res) => {
   const cours = await Cours.find({});
-  
+
   res.render("quizz/add", { cours: cours, pages: "/quizz" });
 };
 // Ajouter des données
@@ -61,18 +60,18 @@ exports.submitModule = async (req, res) => {
     // Extraction des données du corps de la requête
     const { titre, questions, description, coursId } = req.body;
     // Transformer les options et les questions en format attendu
-    const formattedQuestions = questions.map(question => ({
+    const formattedQuestions = questions.map((question) => ({
       questionText: question.questionText,
-      options: question.options.map(option => ({
+      options: question.options.map((option) => ({
         optionText: option.optionText,
-        isCorrect: option.isCorrect
+        isCorrect: option.isCorrect,
       })),
-      correctAnswer: question.correctAnswer
+      correctAnswer: question.correctAnswer,
     }));
-  
+
     //   console.log(req.body.questions[0].options);    // Vérifier si le domaine existe
     const cours = await Cours.findById(coursId);
-    
+
     if (!cours) {
       return res.status(404).send("quizz non trouvé");
     }
@@ -89,7 +88,7 @@ exports.submitModule = async (req, res) => {
     await newQuizz.save();
 
     // Rediriger vers la liste des sous-domaines ou une page de succès
-    const nom= "Quizz"
+    const nom = "Quizz";
     res.redirect(`/quizz?alert=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error("Erreur lors de l'ajout du quizz:", error);
@@ -100,9 +99,9 @@ exports.submitModule = async (req, res) => {
 // Edit domaine
 exports.edit = async (req, res) => {
   try {
-    const id = req.params.id; 
+    const id = req.params.id;
     // Récupère l'ID du domaine depuis les paramètres de la requête
-   
+
     const quizz = await Quizz.findById(id).populate("cours").exec();
     const cours = await Cours.find({});
     // Trouve le domaine spécifique par son ID
@@ -111,7 +110,7 @@ exports.edit = async (req, res) => {
       return res.status(404).send("quizz non trouvé");
     }
 
-    res.render("quizz/edit", { quizz: quizz, cours: cours, pages: "/cours" }); 
+    res.render("quizz/edit", { quizz: quizz, cours: cours, pages: "/cours" });
     // Rendu de la vue d'édition avec les détails du domaine
   } catch (error) {
     console.error("Erreur lors de la récupération du quizz:", error);
@@ -145,7 +144,7 @@ exports.editModule = async (req, res) => {
     }
     // console.log(cours);
 
-    const nom = "Quizz"
+    const nom = "Quizz";
     res.redirect(`/quizz?modifier=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error("Erreur lors de la mise à jour du domaine:", error);
@@ -157,7 +156,7 @@ exports.supprimerModule = async (req, res) => {
   try {
     const id = req.params.id;
     const quizz = await Quizz.findByIdAndDelete(id);
-    const nom = quizz.titre
+    const nom = quizz.titre;
     res.redirect(`/quizz?suppression=success&nom=${encodeURIComponent(nom)}`);
   } catch (error) {
     console.error("Erreur lors de la suppression du quizz:", error);
@@ -185,11 +184,15 @@ exports.toggleArchive = async (req, res) => {
 
     // Toggle the archive status
     quizz.archive = !quizz.archive;
-   const quizzz = await quizz.save();
-   const nom = quizz.titre
-    
+    const quizzz = await quizz.save();
+    const nom = quizz.titre;
+
     // Redirect back to the previous page or a confirmation page
-    res.redirect(`/quizz?nom=${encodeURIComponent(nom)}&message=${quizz.archive ? 'archived' : 'unarchived'}`);
+    res.redirect(
+      `/quizz?nom=${encodeURIComponent(nom)}&message=${
+        quizz.archive ? "archived" : "unarchived"
+      }`
+    );
   } catch (error) {
     console.error("Error toggling archive status:", error);
     res.status(500).send("Server error");
@@ -199,7 +202,7 @@ exports.toggleArchive = async (req, res) => {
 exports.submitAttempt = async (req, res) => {
   try {
     const { quizzId, answers } = req.body;
-    
+
     // Trouver le quiz
     const quizz = await Quizz.findById(quizzId);
     if (!quizz) {
@@ -229,7 +232,11 @@ exports.submitAttempt = async (req, res) => {
     // });
     // await attempt.save();
 
-    res.json({ score, totalQuestions: quizz.questions.length, nombreTentatives: quizz.nombreTentatives });
+    res.json({
+      score,
+      totalQuestions: quizz.questions.length,
+      nombreTentatives: quizz.nombreTentatives,
+    });
   } catch (error) {
     console.error("Erreur lors de la soumission de la tentative:", error);
     res.status(500).send("Erreur serveur");

@@ -9,7 +9,7 @@ exports.index = async (req, res) => {
     const message = req.query.message || '';
     const archivedCount = domaines.filter(domaine => domaine.archive === true).length;
     const unArchivedCount = domaines.filter(domaine => domaine.archive === false).length;
-    const totalDomaine = domaines.length
+    const totalModule = domaines.length
     // Formater les dates
     domaines.forEach((domaine) => {
       const dateUpdated = new Date(domaine.updatedAt);
@@ -29,7 +29,7 @@ exports.index = async (req, res) => {
     });
 
     // Rendre la vue avec les données
-    res.render('domaine/index', { domaines, message, archivedCount, unArchivedCount, totalDomaine, pages: '/domaine' });
+    res.render('domaine/index', { domaines, message, archivedCount, unArchivedCount, totalModule, pages: '/domaine' });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");

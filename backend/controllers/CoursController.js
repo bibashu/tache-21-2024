@@ -11,7 +11,7 @@ exports.index = async (req, res) => {
     const unArchivedCount = cours.filter(
       (cour) => cour.archive === false
     ).length;
-    const total = cours.length;
+    const totalModule = cours.length;
     // Formater les dates
     cours.forEach((cour) => {
       const dateUpdated = new Date(cour.updatedAt);
@@ -36,7 +36,7 @@ exports.index = async (req, res) => {
       message,
       archivedCount,
       unArchivedCount,
-      total,
+      totalModule,
       pages: "/cours"
     });
   } catch (error) {

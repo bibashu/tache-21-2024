@@ -11,7 +11,7 @@ exports.index = async (req, res) => {
     const unArchivedCount = projects.filter(
       (project) => project.archive === false
     ).length;
-    const total = projects.length;
+    const totalModule = projects.length;
     // Formater les dates
     projects.forEach((project) => {
       const dateUpdated = new Date(project.updatedAt);
@@ -36,7 +36,7 @@ exports.index = async (req, res) => {
       message,
       archivedCount,
       unArchivedCount,
-      total,
+      totalModule,
       pages: "/project"
     });
   } catch (error) {

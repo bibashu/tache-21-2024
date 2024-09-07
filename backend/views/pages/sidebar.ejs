@@ -2,7 +2,7 @@
     <div class="sidebar-logo">
       <!-- Logo Header -->
       <div class="logo-header" data-background-color="dark">
-        <a href="/" class="logo">
+        <a href="/dash" class="logo">
           <img
             src="/assets/img/E-Learning.png"
             alt="navbar brand"
@@ -27,27 +27,20 @@
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
       <div class="sidebar-content">
         <ul class="nav nav-secondary">
-          <li class="nav-item ">
-            <a
-              data-bs-toggle="collapse"
-              href="#dashboard"
-              class="collapsed"
-              aria-expanded="false"
-            >
-              <i class="fas fa-home"></i>
-              <p>Dashboard</p>
-              <span class="caret"></span>
-            </a>
-            <div class="collapse" id="dashboard">
-              <ul class="nav nav-collapse">
-                <li class="nav-item <%= pages === '/' ? 'active' : '' %>">
-                  <a href="/">
-                    <span class="sub-item">Dashboard 1</span>
+        
+            
+         
+                <li class="nav-item <%= pages === '/dash' ? 'active' : '' %> mt-5">
+                  <a href="/dash">
+              <i class="fa fa-home"></i>
+
+                    <span class="sub-item">Dashboard</span>
+
                   </a>
                 </li>
-              </ul>
-            </div>
-          </li>
+             
+           
+         
           <li class="nav-section">
             <span class="sidebar-mini-icon">
               <i class="fa fa-ellipsis-h"></i>
@@ -89,6 +82,13 @@
             <a href="/project">
               <i class="fas fa-folder-open"></i>
               <p>Projects</p>
+              
+            </a>
+          </li>
+          <li class="nav-item <%= pages === '/livraison' ? 'active' : '' %>">
+            <a href="/livraison">
+              <i class="fas fa-folder-open"></i>
+              <p>Livraison</p>
               
             </a>
           </li>
