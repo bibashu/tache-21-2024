@@ -1,0 +1,84 @@
+<%- include('../pages/head.ejs') %>
+<style>
+  /* Add a fade-out animation for the alert */
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .alert-auto-hide {
+    animation: fadeOut 5s ease-out forwards; /* Adjust time (5s) as needed */
+  }
+</style>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <%- include('../pages/sidebar') %>
+    <!-- End Sidebar -->
+
+    <div class="main-panel">
+      <div class="main-header">
+        <div class="main-header-logo">
+          <!-- Logo Header -->
+          <%- include('../pages/logoheader.ejs')%>
+
+          <!-- End Logo Header -->
+        </div>
+        <!-- Navbar Header -->
+        <%- include('../pages/navbar') %>
+        <!-- End Navbar -->
+      </div>
+
+      <div class="container">
+        <div class="page-inner">
+          
+          <div
+            class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
+          >
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <div class="d-flex align-items-center">
+                    <h4 class="card-title">Detail du livraison</h4>
+                    <a
+                      href="/livraison"
+                      class="btn btn-primary btn-round ms-auto"
+                    >
+                     
+                      Lister les livraisons
+                    </a>
+                  </div>
+                </div>
+               
+
+                <div class="card-body">
+                <div class="d-flex justify-content-between shadow-sm">
+                        <div>
+                            <h5>Project: <span class="fw-semibold"><%- livraison.project_id.titre %> </span></h3>
+                                <h5>Lien du livraison: <%- livraison.delivery_link %></h5> 
+                                <h5>les images: <span class="fw-semibold"> <%- livraison.screenshots  %> </span></h3>
+                        </div>
+                        <div>
+                            <h5>Date creation:<% livraison.formattedCreatedAt  %></h5>   
+                            <h5>Date de mis à jour:<% livraison.updatedAt  %></h5>   
+    
+                        </div>             
+                </div>
+                    <!-- <h5>Description:</h5>
+                        <div class="border border-2 rounded-5 p-5 shadow-lg"> <%- livraison.description %> </div> -->
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('../pages/js') %>
+
+</body>

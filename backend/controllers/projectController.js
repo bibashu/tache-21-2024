@@ -11,7 +11,7 @@ exports.index = async (req, res) => {
     const unArchivedCount = projects.filter(
       (project) => project.archive === false
     ).length;
-    const total = projects.length;
+    const totalModule = projects.length;
     // Formater les dates
     projects.forEach((project) => {
       const dateUpdated = new Date(project.updatedAt);
@@ -36,7 +36,7 @@ exports.index = async (req, res) => {
       message,
       archivedCount,
       unArchivedCount,
-      total,
+      totalModule,
       pages: "/project"
     });
   } catch (error) {
@@ -74,8 +74,7 @@ exports.submitModule = async (req, res) => {
     });
 
     // Sauvegarder le sous-domaine dans la base de données
-    await newProject.save();
-
+  
     // Rediriger vers la liste des sous-domaines ou une page de succès
     const nom= "Project"
     res.redirect(`/project?alert=success&nom=${encodeURIComponent(nom)}`);

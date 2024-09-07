@@ -1,0 +1,127 @@
+<%- include('../pages/head.ejs') %>
+<style>
+  /* Add a fade-out animation for the alert */
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .alert-auto-hide {
+    animation: fadeOut 5s ease-out forwards; /* Adjust time (5s) as needed */
+  }
+</style>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <%- include('../pages/sidebar') %>
+    <!-- End Sidebar -->
+
+    <div class="main-panel">
+      <div class="main-header">
+        <div class="main-header-logo">
+          <!-- Logo Header -->
+          <%- include('../pages/logoheader.ejs')%>
+
+          <!-- End Logo Header -->
+        </div>
+        <!-- Navbar Header -->
+        <%- include('../pages/navbar') %>
+        <!-- End Navbar -->
+      </div>
+
+      <div class="container">
+        <div class="page-inner">
+          <div
+            class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
+          >
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <!-- <div class="d-flex align-items-center">
+                    <h4 class="card-title">Liste des livraisons</h4>
+                    <a
+                      href="/livraison/add"
+                      class="btn btn-primary btn-round ms-auto"
+                    >
+                      <i class="fa fa-plus"></i>
+                      Ajouter des livraisons
+                    </a>
+                  </div> -->
+                </div>
+
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table
+                     id="example"
+                      class="display table table-striped table-hover"
+                    >
+                      <thead>
+                        <tr>
+                          <th>livraison</th>
+                          <th>User</th>
+
+                          <th>Date de livraion</th>
+                          <th style="width: 10%">Action</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <% livraison.forEach(livraison => { %>
+                        <tr>
+                          <td><%= livraison.project_id.titre %></td>
+                          <td>metter ici le user</td>
+
+                          <td><%= livraison.formattedUpdatedAt %></td>
+
+                          <td>
+                            <div class="form-button-action">
+                              <form action="/livraison/<%- livraison._id %>/voir"
+                                method="get" >
+                                  <button
+                                    class="text-primary me-2 rounded-5 border-1 border-primary px-2 py-2"
+                                  >
+                                    Voir
+                                  </button>
+                              </form>
+                              <form
+                                action="/livraison/<%- livraison._id %>/accept"
+                                method="post"
+                              >
+                                <button
+                                  class="text-success rounded-5 border-1 border-success py-2 px-2 me-2"
+                                >
+                                  Accepter
+                                </button>
+                              </form>
+                            <form action="/livraison/<%- livraison._id %>/rejet" method="post"
+                               >
+                                <button
+                                  class="text-danger rounded-5 border-1 border-danger px-2 py-2"
+                                >
+                                  Rejeter
+                                </button>
+                            </form>
+                           
+                          
+                            </div>
+                          </td>
+                        </tr>
+                        <% }) %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('../pages/js') %>
+</body>
