@@ -15,7 +15,7 @@ const registerRoute = require('./routes/registerRoute');
 const forgotPasswordRoute = require('./routes/forgotPasswordRoute');
 const quizzRoute = require("./routes/quizz_Route")
 const projectRoute = require('./routes/projectRoute')
-
+const profilRoute = require('./routes/profilRoute');
 
 // Middleware pour parser les requêtes JSON
 app.use(express.json());
@@ -67,6 +67,8 @@ app.use('/cours', coursRoute);
 app.use('/quizz', quizzRoute);
 // Utiliser la route des quizz
 app.use('/project', projectRoute);
+//la route du profil
+app.use('/authentification', profilRoute); 
 
 
 

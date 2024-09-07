@@ -1,4 +1,5 @@
 const LoginCoach = require('../models/LoginCoach');
+const RegisterCoach = require('../models/RegisterCoach'); 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
@@ -14,7 +15,7 @@ exports.loginCoach = async (req, res) => {
         return res.status(400).json({ error: 'Tous les champs sont obligatoires' });
     }
     try {
-        const coach = await LoginCoach.findOne({ email });
+        const coach = await RegisterCoach.findOne({ email });
         if (!coach) {
             return res.status(400).json({ error: 'Email ou mot de passe incorrect' });
         }
@@ -26,8 +27,13 @@ exports.loginCoach = async (req, res) => {
 
         const token = jwt.sign({ id: coach._id }, jwtSecret, { expiresIn: '1h' });
 
+
         // Renvoie le token pour stockage dans localStorage
-        return res.status(200).json({ token });
+        return res.status(200).json({
+            token,
+            username: coach.username,
+            email: coach.email
+        });
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Erreur du serveur, veuillez réessayer plus tard.' });
@@ -35,28 +41,40 @@ exports.loginCoach = async (req, res) => {
 };
 
 
-
 // une fonction du register
 exports.registerCoach = async (req, res) => {
     const { username, email, password } = req.body;
     try {
-        let coach = await LoginCoach.findOne({ email });
+        let coach = await RegisterCoach.findOne({ email });
         if (coach) {
             return res.status(400).render('authentification/register', { error: 'Cet email est déjà utilisé.' });
         }
-        coach = await LoginCoach.findOne({ username });
+        coach = await RegisterCoach.findOne({ username });
         if (coach) {
             return res.status(400).render('authentification/register', { error: 'Ce nom d\'utilisateur est déjà utilisé.' });
         }
-        coach = new LoginCoach({ username, email, password });
+        coach = new RegisterCoach({ username, email, password }); // Utiliser RegisterCoach pour la création
         await coach.save();
-        res.redirect('/domaine');
+
+        // enregistrer le coach inscrit dans le login coach en meme temps
+        let coachLogin= new LoginCoach({ email, password})
+        await coachLogin.save();
+
+        // Générer un JWT après l'inscription
+         const token = jwt.sign({ id: coach._id }, jwtSecret, { expiresIn: '1h' });
+
+        // Renvoie le token et les infos pour stockage dans localStorage côté client
+        return res.status(200).json({
+            token,
+            username: coach.username,
+            email: coach.email
+        });
+       
     } catch (err) {
         console.error(err);
         res.status(500).render('authentification/register', { error: 'Erreur du serveur, veuillez réessayer plus tard.' });
     }
 };
-
 
 // Configurer Nodemailer pour Gmail
 const transporter = nodemailer.createTransport({
@@ -153,4 +171,22 @@ exports.postResetPassword = async (req, res) => {
     }
 };
 
+// Vérifier le token
+exports.verifyToken = (req, res, next) => {
+    const token = req.headers['authorization']?.split(' ')[1];
+    console.log('Token reçu:', token); // Debugging
+
+    if (!token) {
+        return res.status(401).json({ error: 'Token manquant, veuillez vous connecter.' });
+    }
+
+    jwt.verify(token, jwtSecret, (err, decoded) => {
+        if (err) {
+            return res.status(401).json({ error: 'Token invalide.' });
+        }
+
+        req.user = decoded; // Stocker les informations de l'utilisateur dans req.user
+        next();
+    });
+};
 

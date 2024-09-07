@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../pages/head.ejs') %>
-  
+
 
   <body class="bg-black d-flex justify-content-center align-items-center" style="
       background-image: url('/assets/img/background.png');
@@ -22,69 +22,92 @@
         <p class="text-center">Connectez-vous pour accéder à tous les cours et ressources.</p>
       </div>
       <div class="px-5 text-black">
-        <div id="error-message" class="alert alert-danger d-none" role="alert"></div> <!-- Div pour afficher les erreurs -->
-        
+        <div id="error-message" class="alert alert-danger d-none" role="alert"></div>
+        <!-- Div pour afficher les erreurs -->
+
         <form id="loginForm">
           <div class="mb-3 ">
             <label for="email" class="form-label">Adresse email</label>
             <input type="email" class="form-control" name="email" id="email" required />
             <div id="emailHelp" class="form-text">Votre email ne sera jamais partagé.</div>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 position-relative">
             <label for="password" class="form-label">Mot de passe</label>
-            <input type="password" name="password" class="form-control" id="password" autocomplete="current-password" required />
+            <input type="password" name="password" class="form-control" id="password" autocomplete="current-password"
+              required />
+            <i class="far fa-eye position-absolute" id="togglePassword"
+              style="cursor: pointer; right: 10px; top: 40px;"></i>
+
           </div>
           <div class="mb3">
             <a href="/authentification/forgotPassword">
               <p style="color: #FB924F;">Mot de passe oublié ?</p>
             </a>
           </div>
-          
-          <p class="text-center">Pas encore de compte? <a href="/authentification/register">Créer un compte</a></p>
+
           <div class="d-flex justify-content-center align-items-center">
-            <button type="submit" class="btn rounded-3 text-white mb-3" style="background-color: #FB924F">connexion</button>
+            <button type="submit" class="btn rounded-3 text-white mb-3"
+              style="background-color: #FB924F">connexion</button>
           </div>
+          <p class="text-center">Pas encore de compte? <a href="/authentification/register">Créer un compte</a></p>
         </form>
       </div>
     </div>
 
     <!-- Script de gestion de la connexion sans cookie avec affichage des erreurs -->
     <script>
+      // Gestion du toggle pour afficher/masquer le mot de passe
+      const togglePassword = document.querySelector('#togglePassword');
+      const passwordField = document.querySelector('#password');
+
+      togglePassword.addEventListener('click', function () {
+        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordField.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+      });
+
+      // Gestion du formulaire de connexion
       document.getElementById('loginForm').addEventListener('submit', async function (e) {
-          e.preventDefault();
-          
-          const email = document.getElementById('email').value;
-          const password = document.getElementById('password').value;
-          const errorMessage = document.getElementById('error-message'); // Sélectionner la div d'erreur
+        e.preventDefault();
 
-          try {
-              const response = await fetch('/authentification/login', {
-                  method: 'POST',
-                  headers: {
-                      'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify({ email, password })
-              });
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('error-message'); // Sélectionner la div d'erreur
 
-              const data = await response.json();
-              
-              if (data.token) {
-                  // Si connexion réussie, stocker le token et rediriger
-                  localStorage.setItem('token', data.token);
-                  window.location.href = '/domaine';
-              } else {
-                  // Afficher l'erreur en haut du formulaire
-                  errorMessage.textContent = data.error;
-                  errorMessage.classList.remove('d-none');
-              }
-          } catch (error) {
-              // En cas d'erreur serveur, afficher un message d'erreur général
-              errorMessage.textContent = 'Erreur du serveur, veuillez réessayer plus tard.';
-              errorMessage.classList.remove('d-none');
-              console.error('Erreur:', error);
+        try {
+          const response = await fetch('/authentification/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+          });
+
+          const data = await response.json();
+
+          if (data.token) {
+            // Stocke le token et les informations utilisateur dans le localStorage
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('user', JSON.stringify({
+              username: data.username, // Nom d'utilisateur
+              email: data.email // Email
+            }));
+
+            window.location.href = '/domaine';
+          } else {
+            // Afficher l'erreur en haut du formulaire
+            errorMessage.textContent = data.error;
+            errorMessage.classList.remove('d-none');
           }
+        } catch (error) {
+          // En cas d'erreur serveur, afficher un message d'erreur général
+          errorMessage.textContent = 'Erreur du serveur, veuillez réessayer plus tard.';
+          errorMessage.classList.remove('d-none');
+          console.error('Erreur:', error);
+        }
       });
     </script>
 
   </body>
+
 </html>

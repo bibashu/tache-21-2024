@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../pages/head.ejs') %>
+
+<body class="bg-black d-flex justify-content-center align-items-center" style="
+    background-image: url('/assets/img/background.png');
+    background-position: center;
+    background-size: cover;
+">
+    <div class="d-flex flex-column border border-primary rounded-4" style="
+        background-color: white;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    ">
+        <div class="text-center">
+            <img src="/assets/img/e-learning.png" class="img-fluid w-25" alt="" />
+            <p class="text-center">Bienvenue sur votre profil.</p>
+        </div>
+        <div class="px-5 text-black">
+            <h4>Nom d'utilisateur: <%= username %></h4>
+            <p>Email: <%= email %></p>
+            <!-- Ajoute ici d'autres informations si nécessaire -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          fetch('/profil', {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.error) {
+              alert(data.error);
+            } else {
+              // Afficher les informations du profil
+              document.getElementById('username-big').textContent = data.username;
+              document.getElementById('email').textContent = data.email;
+            }
+          })
+          .catch(err => console.error('Erreur:', err));
+        });
+      </script>
+</body>
+</html>
