@@ -40,7 +40,7 @@
                 </li>
              
            
-         
+             
           <li class="nav-section">
             <span class="sidebar-mini-icon">
               <i class="fa fa-ellipsis-h"></i>
@@ -48,7 +48,12 @@
             <h4 class="text-section">Modules</h4>
           </li>
          
-      
+          <li class="nav-item <%= pages === '/apprenant' ? 'active' : '' %>">
+            <a href="/apprenant">
+              <i class="fas fa-user"></i>
+              <p>Apprenants</p>
+            </a>
+          </li>
          
           <li class="nav-item <%= pages === '/domaine' ? 'active' : '' %>">
             <a href="/domaine">
@@ -87,8 +92,8 @@
           </li>
           <li class="nav-item <%= pages === '/livraison' ? 'active' : '' %>">
             <a href="/livraison">
-              <i class="fas fa-folder-open"></i>
-              <p>Livraison</p>
+              <i class="fas fa-paper-plane"></i>
+              <p>Livraisons</p>
               
             </a>
           </li>

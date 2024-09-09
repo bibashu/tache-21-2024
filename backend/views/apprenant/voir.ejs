@@ -1,0 +1,90 @@
+<%- include('../pages/head.ejs') %>
+<style>
+  /* Add a fade-out animation for the alert */
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .alert-auto-hide {
+    animation: fadeOut 5s ease-out forwards; /* Adjust time (5s) as needed */
+  }
+</style>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <%- include('../pages/sidebar') %>
+    <!-- End Sidebar -->
+
+    <div class="main-panel">
+      <div class="main-header">
+        <div class="main-header-logo">
+          <!-- Logo Header -->
+          <%- include('../pages/logoheader.ejs')%>
+
+          <!-- End Logo Header -->
+        </div>
+        <!-- Navbar Header -->
+        <%- include('../pages/navbar') %>
+        <!-- End Navbar -->
+      </div>
+
+      <div class="container">
+        <div class="page-inner">
+          
+          <div
+            class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
+          >
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <div class="d-flex align-items-center">
+                    <h4 class="card-title">Detail du apprenant</h4>
+                    <a
+                      href="/apprenant"
+                      class="btn btn-primary btn-round ms-auto"
+                    >
+                     
+                      Lister les apprenants
+                    </a>
+                  </div>
+                </div>
+               
+
+                <div class="card-body">
+                <div class="d-flex justify-content-between shadow-sm">
+                        <div>
+                            <h5>Nom de l'apprenant: <span class="fw-semibold"><%- apprenant.nom %> </span></h3>
+                                <h5>Prenom de l'apprenanr: <%- apprenant.prenom %></h5> 
+                                <h5>Email de l'apprenanr: <%- apprenant.email %></h5> 
+                                <h5>EstArchivé: <span class="fw-semibold"> <%- apprenant.archive ? 'Oui' : 'Non' %> </span></h3>
+                        </div>
+                        <div>
+                            <h5>Date creation:<% apprenant.createdAt  %></h5>   
+                            <h5>Date de mis à jour:<% apprenant.updatedAt  %></h5>   
+    
+                        </div>             
+                </div>
+                    <h5>Cours:</h5>
+                        <div class="border border-2 rounded-5 p-5 shadow-lg"> <h5>les cours assignés</h5>
+                          <ul>
+                            <% apprenant.cours.forEach(cour => { %>
+                              <li><%- cour.nom_cours %></li>
+                            <% }) %>
+                          </ul> </div>
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('../pages/js') %>
+
+</body>
