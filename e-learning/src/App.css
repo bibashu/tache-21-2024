@@ -2,37 +2,340 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-orange {
+  color: #fe753f;
+}
+.monimage {
+  width: 700px;
+  height: 500px;
+}
+.form {
+  height: 750px;
+}
+input {
+  width: 500px;
+  height: 50px;
+}
+.txt {
+  position: relative;
+  left: -120px;
+}
+.btn-login {
+  width: 500px;
+  height: 50px;
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.icon {
+  font-size: 30px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.txte {
+  color: #fff;
+}
+.forms {
+  height: 920px;
+}
+.divider {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  margin: 15px 0;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.line {
+  flex: 1;
+  height: 2px;
+  background-color: #ccc;
+  max-width: 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.separator {
+  padding: 0 9px;
+  font-weight: bold;
 }
+
+.visibilite {
+  position: absolute;
+  left: 515px;
+  top: 5px;
+  bottom: 0px;
+  right: 0px;
+  width: 40px;
+  border: none;
+}
+.visibilite i {
+  background-color: none;
+  border: none;
+}
+.classes {
+  position: relative;
+  left: 57px;
+  top: -3px;
+  height: 46px;
+}
+.classe {
+  position: relative;
+  left: 57px;
+  top: 13px;
+  height: 46px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+.App {
+  text-align: center;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  font-size: 1.25rem;
+}
+
+/*  NAVBAR */
+.nav-link {
+  font-weight: 500;
+  position: relative;
+}
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background-color: #0d6efd;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: #0d6efd;
+}
+.nav-link:hover::before,
+.nav-link.active::before {
+  width: 100%;
+  visibility: visible;
+  color: #0d6efd;
+}
+.Login-button:hover {
+  background-color: #fe753f;
+  color: #fff;
+}
+
+/*  NAVBAR END */
+/* section-users*/
+
+/* Section-avatar */
+.ONLINE-COURSE{
+  background-color: #f4f7fc;
+}
+.avatar-container{
+  width: 50px;
+  height:50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avatar{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar-1 {
+  background-color: #FEE7F0;
+}
+.avatar-2{
+  background-color: #DBD8F3;
+}
+.avatar-3{
+  background-color: #DAF3F0;
+}
+
+.section-notif .bi:hover{
+  color: #FFF!important;
+}
+.section-notif .bi{
+  font-size: 16px;
+}
+.section-notif .bi-person-circle{
+  font-size: 40px;
+}
+.settings .oranger{
+  color: #fe753f;
+}
+.section-skills a{
+  background-color: #fff;
+  height: 50px;
+  width: 50px;
+  color: #333;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 16px;
+  padding-top: 13px;
+  text-decoration: none;
+}
+.section-skills .section-join{
+  background-color: #000;
+  justify-content: space-between;
+  max-width: 200px;
+  border-radius: 50px;
+  color: #FFF;
+}
+.section-skills a:hover{
+  background-color: #0d6efd;
+  color: #FFF;
+}
+.section-skills a:hover .bi{
+  color: #FFF;
+}
+.section-skills a .bi{
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+}
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFF;
+  border-radius: 10px;
+}
+.section-module .section-icons{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+}
+.section-carousel .bi{
+   font-size: 16px;
+}
+.section-carousel button{
+   background-color: #FFF;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   color: #333;
+   justify-content: center;
+}
+.section-carousel button:hover{
+  background-color: #0d6efd;
+  color: #FFF;
+}
+.section-carousel button:hover .bi{
+  color: #FFF;
+}
+.Front-End{
+  width: 180px;
+  border-radius: 50px;
+
+}
+.Front-End .bi{
+   font-size: 16px;
+}
+.porcenta{
+  position: relative;
+  width: 100%;
+  height: 10px;
+  border-radius: 50px;
+  background-color: lightblue;
+}
+.porcenta-un .bar-progress{
+  position: absolute;
+  background-color: #0d6efd;
+  border-radius: 50px;
+  height: 10px;
+  width: 90%;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;  
+  color: #fff;
+}
+
+.porcenta-deux .bar-progress{
+  position: absolute;
+  border-radius: 50px;
+  height: 10px;
+  width: 76%;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: #0d6efd;
+  color: #fff;
+}
+.porcenta-trois .bar-progress{
+  position: absolute;
+  border-radius: 50px;
+  height: 10px;
+  width: 50%;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: #0d6efd;
+  color: #fff;
+}
+/*description*/
+.description {
+   background-color: #FFF;
+   border-top-left-radius: 30px;
+   border-top-right-radius: 30px;
+   padding: 10px 5px;
+}
+.description-1 img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FFE436;
+    padding: 5px;
+}
+.description-1{
+  font-size: 12px;
+}
+.description-1 .ux-design{
+      justify-content: center;
+      background-color: lightblue;
+      border-radius: 50px;
+      height: 30px;
+      max-width: 160px;
+      
+      
+}
+.description-1 .ux-design span, .description-1 .ux-design .bi{
+    color: #0d6efd;
+}
+/* LES STATISTIQUES */
+.statis .cover-amina{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding-top: 16px;
+  padding-left: 18px;
+  background-color: #FFF;
+  border: 1px solid #bbb;
+  border-right: 3px solid #0d6efd;
+  border-top: 3px solid #0d6efd;
+}
+.amina{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: lightblue;
+}
+.statis .bi{
+  color:  red;
+  font-size: 15px;
+}
+.statis p{
+  color: #bbb;
+  font-size: 11px;
+}
+/*section-users end*/
