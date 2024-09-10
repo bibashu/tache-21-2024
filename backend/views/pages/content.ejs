@@ -19,91 +19,144 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-6 col-md-3">
-          <div class="card card-stats card-round">
+        <div class="col-12 col-sm-6 col-md-6 col-xl-3">
+          <div class="card">
             <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-icon">
-                  <div
-                    class="icon-big text-center icon-primary bubble-shadow-small"
-                  >
-                    <i class="fas fa-users"></i>
-                  </div>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5><b>Total Coach</b></h5>
+                  <p class="text-muted">Tous les coachs</p>
                 </div>
-                <div class="col col-stats ms-3 ms-sm-0">
-                  <div class="numbers">
-                    <p class="card-category">Visitors</p>
-                    <h4 class="card-title">1,294</h4>
-                  </div>
-                </div>
+                <h3 class="text-success fw-bold"><%- totalCoach %></h3>
+              </div>
+              <div class="progress progress-sm">
+                <div
+                  class="progress-bar bg-success "
+                  role="progressbar"
+                  aria-valuenow=<%- totalPourcentage %>
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: <%= totalPourcentage %>%;"
+                ></div>
+              </div>
+              <div class="d-flex justify-content-between mt-2">
+                <p class="text-muted mb-0">Pourcentage</p>
+                <p class="text-muted mb-0"><%- totalPourcentage %> %</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card card-stats card-round">
+        <div class="col-12 col-sm-6 col-md-6 col-xl-3">
+          <div class="card">
             <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-icon">
-                  <div
-                    class="icon-big text-center icon-info bubble-shadow-small"
-                  >
-                    <i class="fas fa-user-check"></i>
-                  </div>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5><b>Total Apprenants</b></h5>
+                  <p class="text-muted">Tous les apprenant</p>
                 </div>
-                <div class="col col-stats ms-3 ms-sm-0">
-                  <div class="numbers">
-                    <p class="card-category">Subscribers</p>
-                    <h4 class="card-title">1303</h4>
-                  </div>
-                </div>
+                <h3 class="text-danger fw-bold"><%- totalApprenant %></h3>
+              </div>
+              <div class="progress progress-sm">
+                <div
+                  class="progress-bar bg-danger "
+                  role="progressbar"
+                  aria-valuenow=<%- totalPourcentageApprenant %>
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: <%= totalPourcentageApprenant %>%;"
+                ></div>
+              </div>
+              <div class="d-flex justify-content-between mt-2">
+                <p class="text-muted mb-0">Pourcentage</p>
+                <p class="text-muted mb-0"><%- totalPourcentageApprenant %>%</p>
               </div>
             </div>
+            
           </div>
+          
         </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card card-stats card-round">
+        <div class="col-12 col-sm-6 col-md-6 col-xl-3">
+          <div class="card">
             <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-icon">
-                  <div
-                    class="icon-big text-center icon-success bubble-shadow-small"
-                  >
-                    <i class="fas fa-luggage-cart"></i>
-                  </div>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5><b>Total Apprenants</b></h5>
+                  <p class="text-muted">Fresh Order Amount</p>
                 </div>
-                <div class="col col-stats ms-3 ms-sm-0">
-                  <div class="numbers">
-                    <p class="card-category">Sales</p>
-                    <h4 class="card-title">$ 1,345</h4>
-                  </div>
-                </div>
+                <h3 class="text-danger fw-bold"><%- totalApprenant %></h3>
+              </div>
+              <div class="progress progress-sm">
+                <div
+                  class="progress-bar bg-danger "
+                  role="progressbar"
+                  aria-valuenow=<%- totalPourcentageApprenant %>
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: <%= totalPourcentageApprenant %>%;"
+                ></div>
+              </div>
+              <div class="d-flex justify-content-between mt-2">
+                <p class="text-muted mb-0">Pourcentage</p>
+                <p class="text-muted mb-0"><%- totalPourcentageApprenant %>%</p>
               </div>
             </div>
+            
           </div>
+          
         </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card card-stats card-round">
+        <div class="col-12 col-sm-6 col-md-6 col-xl-3">
+          <div class="card">
             <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-icon">
-                  <div
-                    class="icon-big text-center icon-secondary bubble-shadow-small"
-                  >
-                    <i class="far fa-check-circle"></i>
-                  </div>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5><b>Total Apprenants</b></h5>
+                  <p class="text-muted">Fresh Order Amount</p>
                 </div>
-                <div class="col col-stats ms-3 ms-sm-0">
-                  <div class="numbers">
-                    <p class="card-category">Order</p>
-                    <h4 class="card-title">576</h4>
-                  </div>
-                </div>
+                <h3 class="text-danger fw-bold"><%- totalApprenant %></h3>
+              </div>
+              <div class="progress progress-sm">
+                <div
+                  class="progress-bar bg-danger "
+                  role="progressbar"
+                  aria-valuenow=<%- totalPourcentageApprenant %>
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="width: <%= totalPourcentageApprenant %>%;"
+                ></div>
+              </div>
+              <div class="d-flex justify-content-between mt-2">
+                <p class="text-muted mb-0">Pourcentage</p>
+                <p class="text-muted mb-0"><%- totalPourcentageApprenant %>%</p>
               </div>
             </div>
+            
           </div>
+          
         </div>
+
       </div>
     
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+  console.log('Token dans localStorage:', localStorage.getItem('token'));
+
+  axios.get('/dash', {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}` // Assure-toi que le token est bien formé
+    }
+  })
+  .then(response => {
+    console.log('Réponse du serveur:', response.data);
+  })
+  .catch(error => {
+    console.log('Erreur:', error.response ? error.response.data : error.message);
+    if (error.response && error.response.status === 401) {
+      window.location.href = '/login'; // Rediriger vers la page de connexion si le token est invalide
+    }
+  });
+  
+
+</script>

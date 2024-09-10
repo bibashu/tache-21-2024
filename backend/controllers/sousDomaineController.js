@@ -31,7 +31,7 @@ exports.index = async (req, res) => {
     });
 
     // Rendre la vue avec les données
-    res.render('sousDomaine/index', { sousDomaines, message, archivedCount, unArchivedCount, totalDomaine });
+    res.render('sousDomaine/index', { sousDomaines, message, archivedCount, unArchivedCount, totalDomaine, pages: '/sousDomaine' });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");

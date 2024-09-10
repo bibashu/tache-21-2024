@@ -6,6 +6,8 @@ const globalDataMiddleware = async (req, res, next) => {
         const livraisons = await Livraison.find({}).populate("project_id").exec();
         res.locals.livraisons = livraisons;
         res.locals.total = livraisons.length;
+
+
         next();
     } catch (error) {
         next(error); // Passer les erreurs au gestionnaire d'erreurs

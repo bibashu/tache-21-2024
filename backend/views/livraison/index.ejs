@@ -42,16 +42,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <!-- <div class="d-flex align-items-center">
-                    <h4 class="card-title">Liste des livraisons</h4>
-                    <a
-                      href="/livraison/add"
-                      class="btn btn-primary btn-round ms-auto"
-                    >
-                      <i class="fa fa-plus"></i>
-                      Ajouter des livraisons
-                    </a>
-                  </div> -->
+               
                 </div>
 
                 <div class="card-body">
@@ -88,9 +79,16 @@
                                     Voir
                                   </button>
                               </form>
+                              <% if (livraison.status === 'accepted') { %>
+                                <span class="text-success mt-2 ms-3 fw-bold">Accepté</span>
+                              <% } else if (livraison.status === 'rejected') { %>
+                                <span class="text-danger mt-2 ms-3 fw-bold">Rejeté</span>
+                              <% } else { %>
                               <form
                                 action="/livraison/<%- livraison._id %>/accept"
                                 method="post"
+                                class="accept-form"
+                                
                               >
                                 <button
                                   class="text-success rounded-5 border-1 border-success py-2 px-2 me-2"
@@ -98,7 +96,7 @@
                                   Accepter
                                 </button>
                               </form>
-                            <form action="/livraison/<%- livraison._id %>/rejet" method="post"
+                            <form action="/livraison/<%- livraison._id %>/rejet" method="post" class="reject-form"
                                >
                                 <button
                                   class="text-danger rounded-5 border-1 border-danger px-2 py-2"
@@ -106,8 +104,8 @@
                                   Rejeter
                                 </button>
                             </form>
-                           
-                          
+                            <% } %>
+                            <span class="status-message" style="display:none;"></span>
                             </div>
                           </td>
                         </tr>
