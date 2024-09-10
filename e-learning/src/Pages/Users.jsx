@@ -17,23 +17,23 @@ const Users = ({ username }) => {
     const Navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
 
-    const handleSearchChange = (e) => {
-        setSearchTerm(e.target.value);
-    };
+    // const handleSearchChange = (e) => {
+    //     setSearchTerm(e.target.value);
+    // };
 
-    const handleSendMessage = () => {
-        alert("Message envoyé !");
-    };
+    // const handleSendMessage = () => {
+    //     alert("Message envoyé !");
+    // };
 
-    const handleAlert = () => {
-        alert("Alerte !");
-    };
+    // const handleAlert = () => {
+    //     alert("Alerte !");
+    // };
 
     return (  
         <div className="container-fluid">
             <div className="row section-users">
 
-                {/<!-- PARTIE TROIS--/}
+                {/* {/<!-- PARTIE TROIS--/} */}
                 <div className="col-lg-3 col-sm-12">
                     <div className="row">
                         <div className="text-start mb-5">
@@ -106,7 +106,7 @@ const Users = ({ username }) => {
                         
                     </div>
                 </div>
-                {/<!-- PARTIE DEUX--/}
+                {/* {/<!-- PARTIE DEUX--/} */}
                 <div className="col-lg-9 col-sm-12 ONLINE-COURSE">
                     
                     <div className="row">
@@ -116,18 +116,22 @@ const Users = ({ username }) => {
                                     type="text"
                                     className="form-control rounded-pill me-2"
                                     placeholder="Rechercher..."
-                                    value={searchTerm}
-                                    onChange={handleSearchChange}
+                                    // value={searchTerm}
+                                    // onChange={handleSearchChange}
                                 />
-                                <button className="btn btn-outline-success text-success rounded-pill" onClick={handleSendMessage}>
+                                <button className="btn btn-outline-success text-success rounded-pill" 
+                                // onClick={handleSendMessage}
+                                >
                                 <i class="bi bi-envelope-fill text-success"></i>
                                 </button>
-                                <button className="btn btn-outline-danger text-danger rounded-pill ms-2" onClick={handleAlert}>
+                                <button className="btn btn-outline-danger text-danger rounded-pill ms-2" 
+                                // onClick={handleAlert}
+                                >
                                 <i class="bi bi-bell-fill text-danger"></i>
                                 </button>
                                 <span className="navbar-text ms-3">
                                 <i class="bi bi-person-circle rounded-pill"></i>
-                                    {username}
+                                    {/* {username} */}
                                 </span>
                             </div>
                         </nav>
@@ -193,7 +197,7 @@ const Users = ({ username }) => {
                                     </div>
                                 </div>
                             </div>
-                            {/<!-- SETION CAROUSEL  -->/}
+                            {/* {/<!-- SETION CAROUSEL  -->/} */}
                             <div className="section-carousel mb-3">
                             <div className="row align-items-center mb-2">
                                 <div className="col-lg-6">
@@ -208,7 +212,7 @@ const Users = ({ username }) => {
                                     </div>                        
                                 </div>
                             </div>
-                            {/<!-- SECTION CAROUSEL  -->/}
+                            {/* {/<!-- SECTION CAROUSEL  -->/} */}
                             <div className="row bg-white p-3 rounded">
                                 <div className='col-lg-4'>
                                     <div class="col-item position-relative">
@@ -286,7 +290,7 @@ const Users = ({ username }) => {
                             </div>
 
                             </div>
-                            {/<!-- DESCRIPTION      -->/}
+                            {/* {/<!-- DESCRIPTION      -->/} */}
                             <div className="section-lesson py-3">
                                 <div className="row">
                                     <div className="col-lg-6">
@@ -301,7 +305,7 @@ const Users = ({ username }) => {
                                     </div>
                                 </div>
 
-                                {/<!-- DESCRIPTION      -->/}
+                                {/* {/<!-- DESCRIPTION      -->/} */}
                                 <div className="section-description ">
                                     <div className='row description mb-1'>
                                         <div className="col-lg-3">
@@ -345,7 +349,7 @@ const Users = ({ username }) => {
                             </div>
 
                         </div>
-                        {/<!-- PARTIE TROIS--/}
+                        {/* {/<!-- PARTIE TROIS--/} */}
                         {/* LES STATISTIQUE */}
                         <div className="col-lg-3 col-sm-12 bg-white p-2 rounded">
                             <div className="section-statistique">
