@@ -2,9 +2,8 @@ import { useState } from "react";
 import formulaire from "../assets/formulaire.jpeg";
 import { useNavigate } from "react-router-dom";
 import Button from "../Components/Button";
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../Firebase.js';
-// import "bootstrap-icons/font/bootstrap-icons.css";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Firebase.js";
 
 const Form = () => {
   const Navigate = useNavigate();
@@ -16,7 +15,7 @@ const Form = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -25,18 +24,17 @@ const Form = () => {
       console.error("Erreur de connexion : ", error);
     }
   };
-  
 
   return (
     <div className="container-fluid">
       <div className="row">
         <div className="col-lg-6 bg-primary form">
           <img className="mt-5 formulaire" src={formulaire} />
-          <div className="text-center fw-bold txte">
+          <div className="text-center fw-bold txte py-5">
             <div className="txte"> Help You Switch Careers </div>
             <div className="txte">to Become a Programmer </div>
           </div>
-          <div className="text-center txte py-4">
+          <div className="text-center txte1 ">
             <div className="txte"> Additional classes that you can learn </div>
             <div className="txte">anywhere and anytime! </div>
           </div>
@@ -61,30 +59,38 @@ const Form = () => {
               />
             </div>
             <div className="text-center position-relative py-3">
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  className="rounded input me-md-2 btn-lg px-4"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)} required
-                  placeholder="Password"
-                />
-                <div className="input-group-append visibilite" onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }}>
-                  <span className="input-group-text classe">
-                    <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'}`} />
-                  </span>
-                </div>
+              <input
+                type={showPassword ? "text" : "password"}
+                className="rounded input me-md-2 btn-lg px-4"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="Password"
+              />
+              <div
+                className="input-group-append visibilite"
+                onClick={togglePasswordVisibility}
+                style={{ cursor: "pointer" }}
+              >
+                <span className="input-group-text classe">
+                  <i
+                    className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}
+                  />
+                </span>
               </div>
+            </div>
             <div className="text-end txt">
               <a href="#" className="text-decoration-none">
                 {" "}
                 Forgot PassWord?
               </a>
             </div>
-            <div className="text-center py-4 ">
-              <Button type="submit"
+            <div className="text-center Btn ">
+              <Button
+                type="submit"
                 className="btn-login btn-primary btn-lg rounded me-md-2 btn-lg px-4 "
-                onClick={() => Navigate("/login")}
+                onClick={() => Navigate("/Users")}
               >
                 Login{" "}
               </Button>

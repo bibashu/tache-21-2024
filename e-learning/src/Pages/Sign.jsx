@@ -1,15 +1,13 @@
- import { useState } from "react";
+import { useState } from "react";
 import formulaire from "../assets/formulaire.jpeg";
 import { useNavigate } from "react-router-dom";
 import Button from "../Components/Button";
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../Firebase.js';
-// import "bootstrap-icons/font/bootstrap-icons.css";
-
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Firebase.js";
 
 const Sign = () => {
   const Navigate = useNavigate();
-    // const [name, setName] = useState("");
+  // const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(true);
@@ -18,13 +16,13 @@ const Sign = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       alert("Inscription réussie !");
     } catch (error) {
-      console.log(error)
+      console.log(error);
       console.error("Erreur d'inscription : ", error);
     }
   };
@@ -36,11 +34,11 @@ const Sign = () => {
       <div className="row">
         <div className="col-lg-6 bg-primary forms">
           <img className="mt-5 formulaire" src={formulaire} />
-          <div className="text-center fw-bold ">
+          <div className="text-center fw-bold py-5 ">
             <div className="txte"> Help You Switch Careers </div>
             <div className="txte">to Become a Programmer </div>
           </div>
-          <div className="text-center  py-4">
+          <div className="text-center txte1">
             <div className="txte"> Additional classes that you can learn </div>
             <div className="txte">anywhere and anytime! </div>
           </div>
@@ -54,7 +52,6 @@ const Sign = () => {
             <p>Create your account.</p>
           </div>
           <form onSubmit={handleSubmit}>
-         
             <div className="text-center py-3">
               <input
                 className="rounded me-md-2 btn-lg px-4"
@@ -66,27 +63,37 @@ const Sign = () => {
               />
             </div>
             <div className="text-center position-relative">
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  className="rounded input me-md-2 btn-lg px-4"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)} required
-                  placeholder="Password"
-                />
-                <div className="input-group-append visibilite" onClick={togglePasswordVisibility} style={{ cursor: 'pointer' }}>
-                  <span className="input-group-text classes">
-                    <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'}`} />
-                  </span>
-                </div>
+              <input
+                type={showPassword ? "text" : "password"}
+                className="rounded input me-md-2 btn-lg px-4"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="Password"
+              />
+              <div
+                className="input-group-append Visibilite"
+                onClick={togglePasswordVisibility}
+                style={{ cursor: "pointer" }}
+              >
+                <span className="input-group-text classes">
+                  <i
+                    className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}
+                  />
+                </span>
               </div>
-            <div className="text-center py-5 ">
-              <Button type="submit"
-              className="btn-login btn-primary btn-lg rounded me-md-2 btn-lg px-4 ">
+            </div>
+            <div className="text-center py-2">
+              <Button
+                type="submit"
+                className="btn-login btn-primary btn-lg rounded me-md-2 btn-lg px-4 "
+                onClick={() => Navigate("/Users")}
+              >
                 Sign in{" "}
               </Button>
             </div>
-            <div className="text-center">
+            <div className="text-center py-3">
               <p>
                 I have an account!{" "}
                 <a

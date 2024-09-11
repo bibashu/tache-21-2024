@@ -10,7 +10,13 @@
   height: 500px;
 }
 .form {
-  height: 750px;
+  height: 800px;
+}
+.formulaire{
+  position: relative;
+  border-radius: 25px;
+  left: 50px;
+
 }
 input {
   width: 500px;
@@ -19,6 +25,11 @@ input {
 .txt {
   position: relative;
   left: -120px;
+  top: -50px;
+}
+.Btn {
+  position: relative;
+  top: -20px;
 }
 .btn-login {
   width: 500px;
@@ -33,6 +44,10 @@ input {
 }
 .txte {
   color: #fff;
+}
+.txte1{
+  position: relative;
+  top: -30px;
 }
 .forms {
   height: 920px;
@@ -57,9 +72,19 @@ input {
 }
 
 .visibilite {
-  position: absolute;
-  left: 515px;
-  top: 5px;
+  position: relative;
+  left: 555px;
+  top: -61px;
+  bottom: 0px;
+  right: 0px;
+  width: 40px;
+  border: none;
+}
+
+.Visibilite {
+  position: relative;
+  left: 555px;
+  top: -45px;
   bottom: 0px;
   right: 0px;
   width: 40px;
@@ -337,5 +362,8 @@ body {
 .statis p{
   color: #bbb;
   font-size: 11px;
+}
+.border {
+  border-radius: 25px;
 }
 /*section-users end*/
