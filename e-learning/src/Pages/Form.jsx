@@ -2,32 +2,64 @@ import { useState } from "react";
 import photoLogin from "../assets/imgs/login_images.jpg";
 import { useNavigate } from "react-router-dom";
 import Button from "../Components/Button";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../Firebase.js";
+
+
 import Input from "../Components/input/Input.jsx";
 import "./style.css";
 import logo from "../assets/imgs/E-Learning.png";
+import axios from "axios";
+import Swal from "sweetalert2";
 // import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Form = () => {
   const Navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(true);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+  const [message, setMessage] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      alert("Connexion réussie !");
+      const response = await axios.post('http://localhost:5000/apprenant/login', {email, password})
+      const { token, user } = response.data;
+
+      // Stocker le token dans localStorage
+      localStorage.setItem('authToken', token);
+        // Utiliser les données utilisateur
+    console.log('Nom:', user.nom);
+    console.log('Prénom:', user.prenom);
+      Swal.fire({
+        title: "Connexion reussi!",
+        text: `Bienvenue ${user.prenom}  ${user.nom} `,
+        icon: "success"
+      });
+
+      window.location.href = "./Users"
     } catch (error) {
-      console.error("Erreur de connexion : ", error);
+      if (error.response && error.response.data && error.response.data.message) {
+        // setError(error.response.data.message);
+        // setMessage(null);
+        Swal.fire({
+          icon: "error",
+          title: "Connexion échoué",
+          text: "Mot de passe ou email invalide",
+          
+        });
+      window.location.href = "./login"
+
+    } else {
+        setError('Une erreur s\'est produite. Veuillez réessayer.');
+        Swal.fire({
+          icon: "error",
+          title: "Connexion échoué",
+          text: "Reeasayer plus tard",
+          
+        })
     }
-  };
+    }
+    
+  }
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 p-0 p-md-5 contain">
@@ -36,10 +68,10 @@ const Form = () => {
           <div className="col-md-6 col-12 col-lg-6 d-flex p-0 justify-content-center  rounded-5 ">
             <img className="img-fluid rounded-start-5" src={photoLogin} />
           </div>
-          <div className="col-md-6 col-12 col-lg-6 d-flex p-0 flex-column align-items-center">
+          <div className="col-md-6 bg-white rounded-end-5 col-12 col-lg-6 d-flex p-0 flex-column align-items-center">
               <img src={logo} className="logo  img-fluid " alt="" />
               <h6 className="pb-1 fw-bold connect ">CONNECTEZ-VOUS</h6>
-              <form action="" className=" w-100  d-flex flex-column gap-2 p-5">
+              <form action="" className=" w-100  d-flex flex-column gap-2 p-5" onSubmit={handleSubmit}>
               <div className="flex-column">
                 <label>Email </label>
               </div>
@@ -55,9 +87,11 @@ const Form = () => {
                   </g>
                 </svg>
                 <input
-                  placeholder="Enter your Email"
+                  placeholder="Entrer votre Email"
                   className="input"
                   type="text"
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="flex-column">
@@ -77,12 +111,15 @@ const Form = () => {
                   placeholder="Password"
                   className="input"
                   type="password"
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
+
                 />
               </div>
               <div className="flex-row">
                 <span className="span text-danger">Forgot password?</span>
               </div>
-              <button className="button-submit">Connexion</button>
+              <button className="button-submit" type="submit">Connexion</button>
               </form>
            
           </div>
