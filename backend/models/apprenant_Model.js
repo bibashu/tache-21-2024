@@ -38,5 +38,6 @@ const apprenantSchema = new mongoose.Schema(
   }
 );
 
+
 const Apprenant = mongoose.model("Apprenant", apprenantSchema);
 module.exports = Apprenant;

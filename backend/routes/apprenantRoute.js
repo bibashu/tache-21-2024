@@ -12,6 +12,7 @@ router.put("/:id/editModule", apprenantController.editModule);
 router.get("/api_apprenant", apprenantController.apiapprenant);
 router.delete("/:id/supprimer", apprenantController.supprimerModule);
 router.get("/:id/voir", apprenantController.voirModule);
+router.post("/login", apprenantController.login);
 // // route archive
 // // In your routes file (e.g., domaineRoute.js)
 router.post('/:id/toggleArchive', apprenantController.toggleArchive);
