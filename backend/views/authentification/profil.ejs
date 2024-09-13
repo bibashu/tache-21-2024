@@ -1,105 +1,224 @@
 <!DOCTYPE html>
 <html lang="fr">
+<%- include('../pages/head.ejs') %>
 
-
-  
-  <%- include('../pages/head.ejs') %>
   <body>
-  <%- include('../pages/navbar.ejs') %>
-  <div class="container-fluid mt-5">
+    <%- include('../pages/navbar.ejs') %>
+      <div class="container-fluid mt-5">
 
-    <!-- Sidebar -->
-    <%- include('../pages/sidebar.ejs') %>
-    <!-- End Sidebar -->
-    
-    <div class="card shadow-sm" style="max-width: 600px; margin: 0 auto; padding: 20px;">
-      <div class="text-center">
-        <!-- Image de profil de l'utilisateur -->
-        <img id="profile-picture" src="/assets/img/profile.jpg" class="rounded-circle mb-3" alt="Profile Image"
-          style="width: 150px; height: 150px; object-fit: cover;" />
-        <p class="fw-bold">Bienvenue sur votre profil.</p>
-      </div>
-  
-      <!-- Formulaire pour télécharger une nouvelle image -->
-      <form id="profile-picture-form" enctype="multipart/form-data" class="mt-2">
-        <label for="profilePictureInput" class="form-label">Télécharger une photo de profil</label>
-        <input type="file" id="profilePictureInput" name="profilePicture" accept="image/*" class="form-control mb-3">
-        <button type="submit" class="btn rounded-3 text-white mb-3"
-        style="background-color: #FB924F">Mettre à jour la photo</button>
-      </form>
-  
-      <div class="px-5 text-black">
-        <h4>Nom d'utilisateur: <span id="username-big">Chargement...</span></h4>
-        <p>Email: <span id="email">Chargement...</span></p>
-      </div>
-    
-  </div>
+        <!-- Sidebar -->
+        <%- include('../pages/sidebar.ejs') %>
+          <!-- End Sidebar -->
 
+          <div class="card shadow-sm" style="max-width: 600px; margin: 0 auto; padding: 20px;">
+            <div class="text-center">
+              <!-- Image de profil de l'utilisateur -->
+              <div style="position: relative; display: inline-block;">
+                <img id="profile-picture" src="/assets/img/profile.jpg" class="rounded-circle mb-3" alt="Profile Image"
+                  style="width: 150px; height: 150px; object-fit: cover;" />
+                <!-- Icône pour modifier la photo -->
+                <span id="edit-icon" style="position: absolute; bottom: 0; right: 0; cursor: pointer;">
+                  <i class="fas fa-edit" style="font-size: 1.5rem; color: #FB924F;"></i>
+                </span>
+              </div>
+              <p class="fw-bold">Bienvenue sur votre profil.</p>
+            </div>
 
+            <div class="px-5 text-black">
+              <p>Nom d'utilisateur: <span id="big" class="fw-bold  fs-4 text-decoration-underline"></span></p>
+              <p>Email: <span id="mail" class="fw-bold  fs-4 text-decoration-underline"></span></p>
+            </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // console.log('Script exécuté'); // Vérification du chargement du script
+            <!-- Formulaire pour télécharger une nouvelle image -->
+            <form id="profile-picture-form" enctype="multipart/form-data" class="mt-2" method="POST"
+              style="display: none;">
+              <label for="profilePictureInput" class="form-label">Télécharger une photo de profil</label>
+              <input type="file" id="profilePictureInput" name="profilePicture" accept="image/*"
+                class="form-control mb-3">
+              <button type="submit" class="btn rounded-3 text-white mb-3"
+                style="background-color: #FB924F">Modifier</button>
+            </form>
 
-      const token = localStorage.getItem('token');
-      // console.log('Token récupéré:', token); // Vérification du token
+            <!-- Boutons pour modifier les informations personnelles -->
+            <div class="text-center mt-4">
+              <button id="edit-info-button" class="btn text-white" style="background-color: #FB924F">Modifier mes
+                informations</button>
+            </div>
+            <!-- Formulaire caché pour modifier les informations personnelles -->
+            <form id="edit-info-form" style="display: none;" class="mt-4">
+              <div class="mb-3">
+                <label for="edit-username" class="form-label">Nom d'utilisateur</label>
+                <input type="text" id="edit-username" class="form-control" value="">
+              </div>
+              <div class="mb-3">
+                <label for="edit-email" class="form-label">Email</label>
+                <input type="email" id="edit-email" class="form-control" value="">
+              </div>
+              <button type="submit" class="btn btn-success">Enregistrer les modifications</button>
+            </form>
 
-      if (!token) {
-        alert('Token manquant. Veuillez vous connecter.');
-        window.location.href = '/authentification/login';
-        return;
-      }
+            <div class="text-center mt-4">
+              <!-- Bouton de déconnexion -->
+              <button id="logout-button" class="btn btn-danger">Déconnexion</button>
+            </div>
 
-      fetch('/api/profil', { // Utiliser la route API correcte
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        }
-      })
-        .then(response => {
-          if (response.status === 401) {
-            // Rediriger vers la page de login si non autorisé
-            window.location.href = '/authentification/login';
-            return;
-          }
-          return response.json();
-        })
-        .then(data => {
-          if (data.error) {
-            alert(data.error);
-          } else {
-            document.getElementById('username-big').textContent = data.username;
-            document.getElementById('email').textContent = data.email;
-          }
-        })
-        .catch(err => console.error('Erreur dans la requête fetch:', err));
-    });
+          </div>
 
 
-    // Écouteur pour le formulaire de téléchargement de la photo de profil
-    document.getElementById('profile-picture-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const formData = new FormData();
-      const fileInput = document.getElementById('profilePictureInput');
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              // Sélectionner l'icône et le formulaire
+              const editIcon = document.getElementById('edit-icon');
+              const profileForm = document.getElementById('profile-picture-form');
 
-      if (fileInput.files.length > 0) {
-        formData.append('profilePicture', fileInput.files[0]);
-      }
+              // Ajouter un événement au clic sur l'icône
+              editIcon.addEventListener('click', () => {
+                // Toggle pour afficher/masquer le formulaire
+                if (profileForm.style.display === 'none') {
+                  profileForm.style.display = 'block';
+                } else {
+                  profileForm.style.display = 'none';
+                }
+              });
 
-      fetch('/upload-profile-picture', {
-        method: 'POST',
-        body: formData
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.filePath) {
-            document.getElementById('profile-picture').src = data.filePath;
-          }
-        })
-        .catch(error => console.error('Erreur:', error));
-    });
-  </script>
-</body>
+              //afficher/masquer le formulaire pour la modification
+              const editInfoButton = document.getElementById('edit-info-button');
+              const editInfoForm = document.getElementById('edit-info-form');
+
+              // Afficher/Cacher le formulaire de modification
+              editInfoButton.addEventListener('click', () => {
+                editInfoForm.style.display = (editInfoForm.style.display === 'none') ? 'block' : 'none';
+              });
+
+              // Récupérer le token stocké dans le local storage
+              const token = localStorage.getItem('token');
+
+              if (!token) {
+                alert('Token manquant. Veuillez vous connecter.');
+                window.location.href = '/authentification/login';
+                return;
+              }
+              // Sélectionner le bouton de déconnexion
+              const logoutButton = document.getElementById('logout-button');
+
+              // Ajouter un événement au clic sur le bouton de déconnexion
+              logoutButton.addEventListener('click', () => {
+                // Supprimer le token JWT du localStorage
+                localStorage.removeItem('token');
+
+                // Rediriger l'utilisateur vers la page de connexion
+                window.location.href = '/authentification/login';
+              });
+
+              fetch('http://localhost:5000/api/profile', {
+                method: 'GET',
+                headers: {
+                  'Authorization': `Bearer ${token}`,
+                  'Content-Type': 'application/json'
+                }
+              })
+                .then(response => {
+                  if (!response.ok) {
+                    if (response.status === 401) {
+                      alert('Session expirée, veuillez vous reconnecter.');
+                      window.location.href = '/authentification/login';
+                    } else {
+                      throw new Error(`Erreur : ${response.status}`);
+                    }
+                  }
+                  return response.json();
+                })
+                .then(data => {
+                  console.log('Données reçues:', data);
+                  document.getElementById('big').innerText = data.username;
+                  document.getElementById('mail').textContent = data.email;
+
+                  // Utiliser une image par défaut si l'URL de l'image de profil est manquante
+                  const profileImageUrl = data.profileImageUrl || '/public/assets/img/profile.jpg';
+                  document.getElementById('profile-picture').src = profileImageUrl;
+                })
+                .catch(err => console.error('Erreur dans la requête fetch:', err));
+            });
+
+            // Écouteur pour le formulaire de téléchargement de la photo de profil
+            document.getElementById('profile-picture-form').addEventListener('submit', function (e) {
+              e.preventDefault();
+              // Récupérer le token à partir du local storage
+              const token = localStorage.getItem('token');
+
+              // Vérifier si le token est présent
+              if (!token) {
+                alert('Token manquant. Veuillez vous connecter.');
+                window.location.href = '/authentification/login';
+                return;
+              }
+              const formData = new FormData();
+              const fileInput = document.getElementById('profilePictureInput');
+
+              if (fileInput.files.length > 0) {
+                formData.append('profilePicture', fileInput.files[0]);
+              } else {
+                alert('Aucun fichier sélectionné');
+                return;
+              }
+
+              fetch('/upload-profile-picture', {
+                method: 'POST',
+                headers: {
+                  'Authorization': `Bearer ${token}`
+                },
+                body: formData
+              })
+                .then(response => response.json())
+                .then(data => {
+                  if (data.filePath) {
+                    // Stocke le chemin de l'image dans localStorage
+                    localStorage.setItem('profileImageUrl', data.filePath);
+                    document.getElementById('profile-picture').src = data.filePath;
+                    document.getElementById('profile-picture-nav').src = data.filePath;
+                    document.getElementById('profile-picture-large').src = data.filePath;
+                  }
+                })
+                .catch(error => console.error('Erreur:', error));
+            });
+
+            //ecouter le formulaire de modification 
+            document.getElementById('edit-info-form').addEventListener('submit', function (e) {
+              e.preventDefault();
+
+              const token = localStorage.getItem('token');
+              const username = document.getElementById('edit-username').value;
+              const email = document.getElementById('edit-email').value;
+
+              fetch('http://localhost:5000/api/profile/update', {
+                method: 'PUT', // ou 'PATCH' selon ton API
+                headers: {
+                  'Authorization': `Bearer ${token}`,
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, email })
+              })
+                .then(response => {
+                  if (!response.ok) {
+                    throw new Error('Erreur lors de la mise à jour des informations.');
+                  }
+                  return response.json();
+                })
+                .then(data => {
+                  alert('Informations mises à jour avec succès');
+                  // Mettre à jour les informations sur la page
+                  document.getElementById('big').textContent = data.username;
+                  document.getElementById('mail').textContent = data.email;
+                  // Cacher le formulaire après soumission
+                  document.getElementById('edit-info-form').style.display = 'none';
+                })
+                .catch(error => {
+                  console.error('Erreur lors de la mise à jour des informations:', error);
+                });
+            });
+
+
+          </script>
+  </body>
 
 </html>
