@@ -12,6 +12,11 @@ const socket = require('./socket');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
 const fs = require('fs');
+const router = express.Router();
+const jwtSecret = process.env.JWT_SECRET
+const jwt = require('jsonwebtoken');
+// imprter le mode d'inscription du 
+const RegisterCoach = require('./models/RegisterCoach'); 
 
 
 app.use(cookieParser());
@@ -39,6 +44,7 @@ app.use(cors({
 
 // Utiliser le middleware globalDataMiddleware
 app.use(globalDataMiddleware);
+
 
 
 
@@ -72,6 +78,14 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+//middleware pour injecter des pages
+app.use((req, res, next) => {
+  res.locals.pages = req.path;
+  next();
+});
+
+
+
 // Route principale
 app.get('/', (req, res) => {
   res.render('./authentification/register');
@@ -99,13 +113,41 @@ app.use('/livraison', livraisonRoute);
 // Monter les routes API sous /api
 app.use('/api/profil', authMiddleware.verifyToken, profilRoute);
 
-// Ajouter une route de vue pour le profil
-app.get('/profile', (req, res) => {
-  res.render('authentification/profil'); // Rendre la vue 'profil.ejs'
+
+// Route API qui renvoie les données utilisateur en JSON
+app.get('/api/profile', async (req, res) => {
+  try {
+    const token = req.headers.authorization.split(' ')[1];
+    const decoded = jwt.verify(token, jwtSecret);
+    const coachId = decoded.id;
+
+    const coach = await RegisterCoach.findById(coachId);
+    if (!coach) {
+      return res.status(404).json({ message: 'Utilisateur non trouvé' });
+    }
+
+    // Renvoie les informations de l'utilisateur, y compris l'URL de l'image de profil
+    res.json({
+      username: coach.username || 'Invité',
+      email: coach.email || 'inconnu',
+      profileImageUrl: coach.profileImageUrl || '/assets/img/profile.jpg'
+    });
+  } catch (err) {
+    console.error('Erreur lors de la récupération du profil:', err);
+    res.status(500).json({ message: 'Erreur serveur' });
+  }
 });
 
+
+
+// Route pour rendre la vue HTML
+app.get('/profile', (req, res) => {
+  res.render('authentification/profil', { pages: '/profil' });
+});
+
+
 // Création du dossier 'uploads' s'il n'existe pas
-const uploadDir = path.join(__dirname, 'public/uploads');
+const uploadDir = path.join(__dirname, 'public/uploads/');
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true });
 }
@@ -115,9 +157,8 @@ const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, uploadDir); // Dossier de destination des fichiers uploadés
   },
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-    cb(null, uniqueSuffix + path.extname(file.originalname)); // Nom unique pour éviter les conflits
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname)); // Générer un nom unique pour chaque fichier
   }
 });
 
@@ -136,13 +177,51 @@ const upload = multer({
   }
 });
 
-// Route pour télécharger une image de profil
-app.post('/upload-profile-picture', upload.single('profilePicture'), (req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ message: 'Aucun fichier sélectionné.' });
+
+
+// Route pour uploader et mettre à jour l'image de profil
+app.post('/upload-profile-picture', upload.single('profilePicture'), async (req, res) => {
+  try {
+    // Vérifier la présence du fichier
+    if (!req.file) {
+      return res.status(400).json({ message: 'Aucun fichier téléchargé' });
+    }
+
+    // Vérifier la présence du header Authorization
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      return res.status(401).json({ message: 'Authorization token manquant ou invalide' });
+    }
+
+    // Extraire le token en supprimant "Bearer "
+    const token = authHeader.split(' ')[1];
+
+    // Décoder le token JWT pour obtenir l'ID de l'utilisateur
+    const decoded = jwt.verify(token, jwtSecret); 
+    const coachId = decoded.id;
+
+    // Mise à jour de l'image de profil dans la base de données
+    const updatedCoach = await RegisterCoach.findByIdAndUpdate(
+      coachId,
+      { profileImageUrl: `/uploads/${req.file.filename}` },
+      { new: true }
+    );
+
+    if (!updatedCoach) {
+      return res.status(404).json({ message: 'Utilisateur non trouvé' });
+    }
+
+    // Retourner le chemin de l'image mise à jour
+    res.json({ filePath: `/uploads/${req.file.filename}` });
+
+  } catch (error) {
+    console.error('Erreur lors de la mise à jour de l\'image:', error);
+    res.status(500).json({ message: 'Erreur serveur' });
   }
-  res.json({ message: 'Image téléchargée avec succès', filePath: `/uploads/${req.file.filename}` });
 });
+
+// Assure-toi que le dossier "public/uploads" est accessible statiquement
+app.use('/uploads', express.static('public/uploads'));
 
 // Gestion des erreurs liées à multer
 app.use((err, req, res, next) => {
@@ -156,6 +235,36 @@ app.use((err, req, res, next) => {
   next();
 });
 
+// Middleware pour vérifier le token JWT
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+
+  if (token == null) return res.sendStatus(401); // Si aucun token n'est fourni
+
+  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+    if (err) return res.sendStatus(403); // Si le token n'est pas valide
+    req.user = user;
+    next(); // Passer à la prochaine fonction
+  });
+}
+
+//modifier mes informations 
+app.put('/api/profile/update', authenticateToken, (req, res) => {
+  const { username, email } = req.body;
+
+  // Utiliser ton modèle RegisterCoach pour mettre à jour les informations
+  RegisterCoach.findByIdAndUpdate(req.user.id, { username, email }, { new: true })
+    .then(user => {
+      if (!user) {
+        return res.status(404).json({ message: 'Utilisateur non trouvé' });
+      }
+      res.json({ username: user.username, email: user.email });
+    })
+    .catch(err => {
+      res.status(500).json({ message: 'Erreur lors de la mise à jour des informations' });
+    });
+});
 
 
 

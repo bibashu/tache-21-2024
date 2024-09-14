@@ -17,6 +17,10 @@ const registerCoachSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    profileImageUrl: { 
+      type: String, 
+      default: '/assets/img/profile.jpg' }  // Champ pour l'URL de l'image
+
   },
   {
     timestamps: true,

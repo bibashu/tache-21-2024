@@ -1,10 +1,14 @@
+import Navbar from 'Components/navbar/Navbar'
+import Sidebar from 'Components/sidebar/Sidebar'
 import React from 'react'
 
-const Layout = () => {
+const Layout = ({children}) => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Navbar />
+      <Sidebar />
+      {children}
+    </>
   )
 }
 
