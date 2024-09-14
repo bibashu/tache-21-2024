@@ -86,8 +86,9 @@
           const data = await res.json();
 
           if (res.status === 200) {
-            // Stocker les informations dans le localStorage
             // Stocke le token et les informations utilisateur dans le localStorage
+
+            // Stocker les informations dans le localStorage
             localStorage.setItem('token', data.token);
             localStorage.setItem('user', JSON.stringify({
               username: data.username, // Nom d'utilisateur

@@ -10,6 +10,9 @@ const http = require('http');
 const socketIo = require('socket.io');
 const socket = require('./socket');
 const cookieParser = require('cookie-parser');
+const multer = require('multer');
+const fs = require('fs');
+
 
 app.use(cookieParser());
 // Créer une instance de serveur HTTP et l'attacher à l'application Express
@@ -37,7 +40,10 @@ app.use(cors({
 // Utiliser le middleware globalDataMiddleware
 app.use(globalDataMiddleware);
 
+
+
 // Importer les routes
+const authMiddleware = require('./middleware/authMiddleware');
 const domaineRoutes = require('./routes/domaineRoute');
 const sousDomaineRoute = require("./routes/SousDomaineRoute");
 const coursRoute = require("./routes/coursRoute");
@@ -48,7 +54,7 @@ const quizzRoute = require("./routes/quizz_Route");
 const projectRoute = require('./routes/projectRoute');
 const livraisonRoute = require('./routes/livraisonRoute');
 const dashboard = require('./routes/dashboard');
-const profilRoute = require('./routes/profilRoute');
+const profilRoute= require('./routes/profilRoute')
 const apprenantRoute = require('./routes/apprenantRoute');
 
 // Middleware pour parser les requêtes JSON
@@ -86,7 +92,73 @@ app.use('/sousDomaine', sousDomaineRoute);
 app.use('/cours', coursRoute);
 app.use('/quizz', quizzRoute);
 app.use('/project', projectRoute);
+
+// Utiliser la route des livraisons
 app.use('/livraison', livraisonRoute);
+
+// Monter les routes API sous /api
+app.use('/api/profil', authMiddleware.verifyToken, profilRoute);
+
+// Ajouter une route de vue pour le profil
+app.get('/profile', (req, res) => {
+  res.render('authentification/profil'); // Rendre la vue 'profil.ejs'
+});
+
+// Création du dossier 'uploads' s'il n'existe pas
+const uploadDir = path.join(__dirname, 'public/uploads');
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+}
+
+// Configuration de multer
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, uploadDir); // Dossier de destination des fichiers uploadés
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    cb(null, uniqueSuffix + path.extname(file.originalname)); // Nom unique pour éviter les conflits
+  }
+});
+
+const upload = multer({
+  storage: storage,
+  limits: { fileSize: 5 * 1024 * 1024 }, // Limite de taille : 5MB
+  fileFilter: (req, file, cb) => {
+    const fileTypes = /jpeg|jpg|png/;
+    const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = fileTypes.test(file.mimetype);
+    if (extname && mimetype) {
+      return cb(null, true);
+    } else {
+      cb(new Error('Le format du fichier est invalide. Seuls les fichiers JPG, JPEG et PNG sont acceptés.'));
+    }
+  }
+});
+
+// Route pour télécharger une image de profil
+app.post('/upload-profile-picture', upload.single('profilePicture'), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ message: 'Aucun fichier sélectionné.' });
+  }
+  res.json({ message: 'Image téléchargée avec succès', filePath: `/uploads/${req.file.filename}` });
+});
+
+// Gestion des erreurs liées à multer
+app.use((err, req, res, next) => {
+  if (err instanceof multer.MulterError) {
+    // Gérer les erreurs de multer
+    return res.status(400).json({ message: `Erreur Multer: ${err.message}` });
+  } else if (err) {
+    // Gérer les autres erreurs
+    return res.status(400).json({ message: err.message });
+  }
+  next();
+});
+
+
+
+
 app.use('/apprenant', apprenantRoute);
 
 // Connexion à MongoDB et démarrage du serveur

@@ -1,48 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
-<%- include('../pages/head.ejs') %>
+<html lang="fr">
 
-<body class="bg-black d-flex justify-content-center align-items-center" style="
-    background-image: url('/assets/img/background.png');
-    background-position: center;
-    background-size: cover;
-">
-    <div class="d-flex flex-column border border-primary rounded-4" style="
-        background-color: white;
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-    ">
-        <div class="text-center">
-            <img src="/assets/img/e-learning.png" class="img-fluid w-25" alt="" />
-            <p class="text-center">Bienvenue sur votre profil.</p>
-        </div>
-        <div class="px-5 text-black">
-            <h4>Nom d'utilisateur: <%= username %></h4>
-            <p>Email: <%= email %></p>
-            <!-- Ajoute ici d'autres informations si nécessaire -->
-        </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          fetch('/profil', {
-            method: 'GET',
-            headers: {
-              'Authorization': `Bearer ${localStorage.getItem('token')}`
-            }
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.error) {
-              alert(data.error);
-            } else {
-              // Afficher les informations du profil
-              document.getElementById('username-big').textContent = data.username;
-              document.getElementById('email').textContent = data.email;
-            }
-          })
-          .catch(err => console.error('Erreur:', err));
-        });
-      </script>
+
+  
+  <%- include('../pages/head.ejs') %>
+  <body>
+  <%- include('../pages/navbar.ejs') %>
+  <div class="container-fluid mt-5">
+
+    <!-- Sidebar -->
+    <%- include('../pages/sidebar.ejs') %>
+    <!-- End Sidebar -->
+    
+    <div class="card shadow-sm" style="max-width: 600px; margin: 0 auto; padding: 20px;">
+      <div class="text-center">
+        <!-- Image de profil de l'utilisateur -->
+        <img id="profile-picture" src="/assets/img/profile.jpg" class="rounded-circle mb-3" alt="Profile Image"
+          style="width: 150px; height: 150px; object-fit: cover;" />
+        <p class="fw-bold">Bienvenue sur votre profil.</p>
+      </div>
+  
+      <!-- Formulaire pour télécharger une nouvelle image -->
+      <form id="profile-picture-form" enctype="multipart/form-data" class="mt-2">
+        <label for="profilePictureInput" class="form-label">Télécharger une photo de profil</label>
+        <input type="file" id="profilePictureInput" name="profilePicture" accept="image/*" class="form-control mb-3">
+        <button type="submit" class="btn rounded-3 text-white mb-3"
+        style="background-color: #FB924F">Mettre à jour la photo</button>
+      </form>
+  
+      <div class="px-5 text-black">
+        <h4>Nom d'utilisateur: <span id="username-big">Chargement...</span></h4>
+        <p>Email: <span id="email">Chargement...</span></p>
+      </div>
+    
+  </div>
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // console.log('Script exécuté'); // Vérification du chargement du script
+
+      const token = localStorage.getItem('token');
+      // console.log('Token récupéré:', token); // Vérification du token
+
+      if (!token) {
+        alert('Token manquant. Veuillez vous connecter.');
+        window.location.href = '/authentification/login';
+        return;
+      }
+
+      fetch('/api/profil', { // Utiliser la route API correcte
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => {
+          if (response.status === 401) {
+            // Rediriger vers la page de login si non autorisé
+            window.location.href = '/authentification/login';
+            return;
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (data.error) {
+            alert(data.error);
+          } else {
+            document.getElementById('username-big').textContent = data.username;
+            document.getElementById('email').textContent = data.email;
+          }
+        })
+        .catch(err => console.error('Erreur dans la requête fetch:', err));
+    });
+
+
+    // Écouteur pour le formulaire de téléchargement de la photo de profil
+    document.getElementById('profile-picture-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData();
+      const fileInput = document.getElementById('profilePictureInput');
+
+      if (fileInput.files.length > 0) {
+        formData.append('profilePicture', fileInput.files[0]);
+      }
+
+      fetch('/upload-profile-picture', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.filePath) {
+            document.getElementById('profile-picture').src = data.filePath;
+          }
+        })
+        .catch(error => console.error('Erreur:', error));
+    });
+  </script>
 </body>
+
 </html>

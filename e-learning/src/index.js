@@ -7,6 +7,7 @@ import Form from './Pages/Form';
 
 import Users from './Pages/Users';
 import Home from './Pages/Home';
+import Dashboard from 'Pages/dashboard/Dashboard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,8 @@ root.render(
         </Route>
        
         <Route path='/Users' element={ <Users />}> 
+        </Route>
+        <Route path='/dashboard' element={ <Dashboard />}> 
         </Route>
      
 
