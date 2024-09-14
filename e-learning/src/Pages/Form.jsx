@@ -21,14 +21,14 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/apprenant/login', {email, password})
+      const response = await axios.post('http://localhost:5000/apprenant/login', { email, password })
       const { token, user } = response.data;
 
       // Stocker le token dans localStorage
       localStorage.setItem('authToken', token);
-        // Utiliser les données utilisateur
-    console.log('Nom:', user.nom);
-    console.log('Prénom:', user.prenom);
+      // Utiliser les données utilisateur
+      console.log('Nom:', user.nom);
+      console.log('Prénom:', user.prenom);
       Swal.fire({
         title: "Connexion reussi!",
         text: `Bienvenue ${user.prenom}  ${user.nom} `,
@@ -44,21 +44,21 @@ const Form = () => {
           icon: "error",
           title: "Connexion échoué",
           text: "Mot de passe ou email invalide",
-          
-        });
-      window.location.href = "./login"
 
-    } else {
+        });
+        window.location.href = "./login"
+
+      } else {
         setError('Une erreur s\'est produite. Veuillez réessayer.');
         Swal.fire({
           icon: "error",
           title: "Connexion échoué",
           text: "Reeasayer plus tard",
-          
+
         })
+      }
     }
-    }
-    
+
   }
 
   return (
@@ -69,9 +69,9 @@ const Form = () => {
             <img className="img-fluid rounded-start-5" src={photoLogin} />
           </div>
           <div className="col-md-6 bg-white rounded-end-5 col-12 col-lg-6 d-flex p-0 flex-column align-items-center">
-              <img src={logo} className="logo  img-fluid " alt="" />
-              <h6 className="pb-1 fw-bold connect ">CONNECTEZ-VOUS</h6>
-              <form action="" className=" w-100  d-flex flex-column gap-2 p-5" onSubmit={handleSubmit}>
+            <img src={logo} className="logo  img-fluid " alt="" />
+            <h6 className="pb-1 fw-bold connect ">CONNECTEZ-VOUS</h6>
+            <form action="" className=" w-100  d-flex flex-column gap-2 p-5" onSubmit={handleSubmit}>
               <div className="flex-column">
                 <label>Email </label>
               </div>
@@ -98,7 +98,7 @@ const Form = () => {
                 <label>Password </label>
               </div>
               <div className="inputForm">
-              <svg
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   viewBox="-64 0 512 512"
@@ -120,8 +120,8 @@ const Form = () => {
                 <span className="span text-danger">Forgot password?</span>
               </div>
               <button className="button-submit" type="submit">Connexion</button>
-              </form>
-           
+            </form>
+
           </div>
         </div>
       </div>
