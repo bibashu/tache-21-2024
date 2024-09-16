@@ -12,6 +12,7 @@ import coursethree from "../assets/imgs/coursethree.png";
 import specialone from "../assets/imgs/specialone.png";
 import specialtwo from "../assets/imgs/specialtwo.png";
 import specialthree from "../assets/imgs/specialthree.png";
+import aboutillustration from "../assets/imgs/aboutillustration.png";
 
 const Accueil = () => {
   const Navigate = useNavigate();
@@ -282,7 +283,25 @@ const Accueil = () => {
                     </div>
                 </div>
            </div>
+           {/*   --INFORMATION SUR NOUS --   */}
+           {/*<div className="section-3">
+                <div className="container-fluide bg-image py-5">
+                    <div className="container py-5">
+                        <div className="row py-5">
+                            <div className="col-lg-12 col-sm-12">
+                                <div className="text-start">
+                                    <h1 className="display-6 fw-bold">Connaître toutes les <br/>informations À propos de nous</h1>
+                                    <p className="text-start">Elearning est une entreprise de confiance qui se consacre à la création de percées dans le domaine de l'informatique. Depuis sa création, Elearning a connu un succès multiforme en 6 longues années. Contribuer à la construction du monde numérique. L'une des principales sociétés informatiques au monde joue un rôle important dans l'élimination du problème du chômage depuis 2016.</p>
+                                    <button className="btn button-buy btn-sm"><h5>Parcourir Cours</h5></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>*/}
+           
            {/*   --FOOTER--   */}
+
            <footer className="footer py-5">
                 <div className="container">
                 <div class="row align-items-center g-5 mb-5">

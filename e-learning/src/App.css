@@ -81,6 +81,19 @@ body {
 .section-2 .shadow-box{
   box-shadow: 0px 0.5px 6px #000;
 }
+/*SECTION-3*/
+.section-3 .button-buy{
+  background:  linear-gradient(to right,#fbad4d,#EC7732);
+  color: #FFF;
+  max-width: 180px;
+  padding-top: 10px;
+}
+.section-3 .bg-image{
+  background-image: url(assets/imgs/aboutillustration.png);
+  background-repeat: no-repeat;
+  background-position:  right;
+}
+
 /* FOOTER */
 .footer{
   background-color: #4A1C01;
