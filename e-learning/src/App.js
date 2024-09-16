@@ -1,6 +1,6 @@
-
+import './App.css';
 import Navbar from './Navbar';
-import Home from './Pages/Home';
+import Accueil from './Pages/Accueil';
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
    
         <div className="App">
         <Navbar />
-          <Home />
+          <Accueil />
              
         </div>
      

@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+* {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+  }
+.App {
+    text-align: center;
+  }
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    font-size: 1.25rem;
+}
+/* SECTION-1 */
+.section-1 .bouton-1{
+  background: linear-gradient(to right,#FCA338,#EC7732);
+  color: #FFF;
+}
+.section-1 .bouton-1:hover{
+    background-color:  #EC7732;
+    color: #FFF;
+    border: 1px solid #EC7732;
+}
+.section-1 .bouton-2:hover{
+    color: #EC7732;
+    border: 1px solid #EC7732;
+}
+.form{
+  position: relative;
+}
+.section-1 form #search{
+   background: linear-gradient(to right,#FCA338,#EC7732);
+   width: 90px;
+   position: absolute;
+   top: -10px;
+   right: 18px;
+   height: 60px;
+   color: #FFF;
+}
+.section-1 .text{
+  font: 30px!important;
+}
+.boutou-search{
+  display: flex;
+  align-items: center;
+}
+.section-1 form input{
+  width: 480px;
+  height: 60px;
+  border: none;
+  padding: 0px 15px;
+  outline: none;
+  border-radius: 5px;
+}
+/* SECTION-2 */
+.section-2 .carousel-item .button-buy{
+  background:  linear-gradient(to right,#fbad4d,#EC7732);
+  color: #FFF;
+  max-width: 150px;
+  float: right;
+  padding-top: 10px;
+}
+.section-2 .carousel-item p, .section-2 .carousel-item .bi{
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  font-style: normal;
+  color: #000;
+}
+.section-2 .carousel-item .bi{
+  font-size: 18px;
+  color: #000;
+}
+.section-2 .hover-text:hover{
+  color: #EC7732!important;
+}
+.section-2 .shadow-box{
+  box-shadow: 0px 0.5px 6px #000;
+}
+/* FOOTER */
+.footer{
+  background-color: #4A1C01;
+}
+.footer .col-lg-3 a{
+  color: #FFF;
+}
+.footer .col-lg-3 p{
+  color: #FFF;
+}
+.footer .col-lg-3 h2{
+  color: #FFF;
+}
+.footer .logo{
+  width: 100px;
+  height: 40px;
+}
+.footer .col-lg-3 span{
+  color: #EC7732;
+}
