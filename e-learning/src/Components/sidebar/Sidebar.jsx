@@ -15,7 +15,7 @@ const Sidebar = () => {
       <hr className="text-secondary" />
       <ul className="nav nav-pills flex-column">
         <li className="nav-item text-black fs-4 my-1">
-          <a href="#" className="nav-link text-black fs-5 " aria-current="page">
+          <a href="/dashboard" className="nav-link text-black fs-5 " aria-current="page">
             <GearFill className="" />
             <span className="ms-2">Dashboard</span>
           </a>
@@ -33,7 +33,7 @@ const Sidebar = () => {
           </a>
         </li>
         <li className="nav-item text-black fs-4 my-1">
-          <a href="#" className="nav-link text-black fs-5 " aria-current="page">
+          <a href="/livraison" className="nav-link text-black fs-5 " aria-current="page">
             <GearFill className="" />
             <span className="ms-2">Livraison</span>
           </a>
