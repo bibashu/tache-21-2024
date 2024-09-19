@@ -91,9 +91,110 @@ body {
 .section-3 .bg-image{
   background-image: url(assets/imgs/aboutillustration.png);
   background-repeat: no-repeat;
-  background-position:  right;
+  background-position:  center right;
+  background-size: 40%;
+  width: unset;
 }
-
+/*   --SECTION-5 --   */
+.section-5 .bg{
+  background:  linear-gradient(to right,#fbad4d,#EC7732);
+  width: 100px;
+}
+.section-5 .button-buy{
+    width: 100%;
+}
+.section-5 .button-buy:hover{
+  background-color: #EC7732;
+  color: #fff;
+  border: none;
+}
+.section-5 .shadow-box .btn1:hover{
+  color: #EC7732;
+  border: 1px solid #bbb;
+  background-color: #FFF;
+}
+.section-5 .shadow-box{
+  border-radius: 5px;
+  box-shadow: 0px 0.5px 6px #000;
+}
+.section-5 .all-semin .button-buy{
+  max-width: 220px;
+}
+/* SECTION-6*/
+.section-6 .shadow-box{
+  box-shadow: 0px 0.5px 6px #000;
+}
+.section-6 .button-buy{
+   color: #fff!important;
+}
+.section-6 h5{
+  color: #000;
+}
+.section-6 img{
+  background-color: #fae6da;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  padding: 10px ;
+}
+/* SECTION-7*/
+.section-7 .container-fluid{
+  background-color: #4A1C01;
+}
+.section-7 h1{
+  color: #fff
+}
+.section-7 p{
+  color: #fff
+}
+/* SECTION-8*/
+.section-8  h1{
+  color: #000;
+}
+.section-8 .shadow-box{
+  box-shadow: 0px 0.5px 6px #000;
+}
+.bi{
+  color: #bbb;
+}
+.fa-star{
+  color: #fbad4d;
+  font-size: 20px;
+  
+}
+.fa-sharp{
+   font-size: 30px;
+   color: #bbb;
+ }
+/*SECTION-9*/
+.section-9  h1{
+  color: #000;
+}
+h1{
+  color: #000;
+}
+.button-buy{
+  background:  linear-gradient(to right,#fbad4d,#EC7732);
+  color: #FFF;
+  max-width: 190px;
+  padding-top: 10px;
+  border: none;
+}
+.section-9 .button-buy{
+  background:  linear-gradient(to right,#fbad4d,#EC7732);
+  color: #FFF;
+  max-width: 180px;
+  padding-top: 10px;
+  border: none;
+}
+.section-9 input{
+   outline: none;
+   border: 1px solid #ccc;
+   width: 550px;
+}
+.section-9 .button-buy:hover{
+  background-color: #EC7732;
+}
 /* FOOTER */
 .footer{
   background-color: #4A1C01;
