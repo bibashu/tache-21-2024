@@ -1,53 +1,97 @@
 import React from "react";
 // import "bootstrap/dist/css/bootstrap.css";
-import  {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "./Components/Button";
-import elearning from "./assets/elearning.png";
+import elearning from "./assets/imgs/learning.png";
+
+import './App.css';
 
 const Navbar = () => {
-
   const Navigate = useNavigate();
 
   return (
-    <nav className="navbar navbar-expand-lg bg-white small shadow">
-      <div className="container">
-        <a className="navbar-brand" href="#"> 
-        <img className="elearning img-fluid" src={elearning} />
-        </a>
-        <button
-          className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarText">
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0 ">
-            <li className="nav-item mx-lg-3">
-              <a className="nav-link active"aria-current="page"href="#" >Home</a>
-            </li>
-            <li className="nav-item mx-lg-3">
-               <a className="nav-link" href="#">Classes</a>
-            </li>
-            <li className="nav-item mx-lg-3">
-              <a className="nav-link" href="#">Plans</a>
-            </li>
-            <li className="nav-item mx-lg-3">
-              <a className="nav-link" href="#">About-us</a>
-            </li>
-          </ul>
-
-          <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+    <div className="container-fluid fixed-top shadow-lg  ">
+      <div className="container-fluid px-0  " >
+        <nav className="navbar navbar-light bg-white navbar-expand-xl mx-5 Nav">
+          <a className="navbar-brand" href="index.html">
+          <img className="elearning img-fluid" src={elearning} />
+          </a>
+          <button
+            className="navbar-toggler py-2 px-3"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span className="fa fa-bars text-primary"></span>
+          </button>
+          <div className="collapse navbar-collapse bg-white" id="navbarCollapse">
+            <div className="navbar-nav mx-auto">
+              <a className="nav-item nav-link active" href="index.html">
+                Accueil
+              </a>
+              <div className="nav-item dropdown mx-3">
+                <a
+                  href="#index.html"
+                  className="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                >
+                  Cours
+                </a>
+                <div className="dropdown-menu m-0 bg-secondary rounded-0">
+                  <a className="nav-item nav-link" href="cart.html">
+                    Cours
+                  </a>
+                  <a className="nav-item nav-link" href="checkout.html">
+                    Details Cours
+                  </a>
+                </div>
+              </div>
+              <div className="nav-item dropdown mx-3">
+                <a
+                  href="#index.html"
+                  className="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                >
+                  Instructeur
+                </a>
+                <div className="dropdown-menu m-0 bg-secondary rounded-0">
+                  <a className="nav-item nav-link" href="cart.html">
+                    Instructeur
+                  </a>
+                  <a className="nav-item nav-link" href="checkout.html">
+                    Details Instructeur
+                  </a>
+                </div>
+              </div>
+              <a className="nav-item nav-link mx-3" href=""  onClick={() => Navigate("/Apropos")}>
+                 À propos
+              </a>
+              <a className="nav-item nav-link " href="" onClick={() => Navigate("/Faq.jsx")}>
+                 FAQ
+              </a>
+              <a className="nav-item nav-link " href="" onClick={() => Navigate("/Contact.jsx")}>
+                 Contact
+              </a>
+            </div>
+         
+       
+               <div className="d-grid gap-2 d-md-flex justify-content-md-end">
             <Button
-              className="btn Login-button border-primary rounded-pill me-2 btn-lg px-4"
-              onClick={() => Navigate("/login")}
-            >
-              Login{" "}
-            </Button>
-            <Button className="btn btn-primary btn-lg rounded-pill px-4" onClick={() => Navigate("/Sign")}>
-            Sign in{" "}</Button>
+              className="btn Login-button border-orange me-2 btn-lg px-4"
+             onClick={() => Navigate("/login")}
+           >
+            Connexion{" "}
+           </Button>
+            </div>
           </div>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </div>
+
+
+
+
+
   );
 };
 
