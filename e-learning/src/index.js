@@ -4,8 +4,9 @@ import './index.css';
 import App from './App';
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from './Pages/Form';
-import Sign from './Pages/Sign';
+
 import Users from './Pages/Users';
+import Home from './Pages/Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,10 +18,10 @@ root.render(
 
         <Route path='/login' element={ <Form />}> 
         </Route>
-        <Route path='/sign' element={ <Sign />}> 
-        </Route>
+       
         <Route path='/Users' element={ <Users />}> 
         </Route>
+     
 
       </Routes>
 

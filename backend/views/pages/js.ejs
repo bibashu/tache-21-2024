@@ -280,3 +280,40 @@
       });
   });
 </script>
+<script>
+  document.querySelectorAll('.accept-form, .reject-form').forEach(form => {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      
+      const formData = new FormData(this);
+      const action = this.getAttribute('action');
+      const parent = this.closest('.form-button-action');
+
+      fetch(action, {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => {
+        if (response.ok) {
+          // Cacher les boutons
+          const buttons = parent.querySelectorAll('button');
+          buttons.forEach(button => button.style.display = 'none');
+
+          // Afficher le message de statut
+          const statusMessage = parent.querySelector('.status-message');
+          if (action.includes('accept')) {
+            statusMessage.textContent = 'Accepté';
+          } else if (action.includes('rejet')) {
+            statusMessage.textContent = 'Rejeté';
+          }
+          statusMessage.style.display = 'inline';
+        } else {
+          console.error('Erreur lors de la mise à jour');
+        }
+      })
+      .catch(error => {
+        console.error('Erreur réseau:', error);
+      });
+    });
+  });
+</script>

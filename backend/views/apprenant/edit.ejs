@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../pages/head') %>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <%- include('../pages/sidebar') %>
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <%- include('../pages/logoheader.ejs')%>
+
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Header -->
+          <%- include('../pages/navbar') %>
+          <!-- End Navbar -->
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <div
+              class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
+            >
+              <div>
+                <h3 class="fw-bold mb-3">Formulaire de modification</h3>
+                <h6 class="op-7 mb-2">Sous projets</h6>
+              </div>
+              <div class="ms-md-auto py-2 py-md-0">
+                <a href="/apprenant" class="btn btn-primary btn-round"
+                  >Lister apprenants</a
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title">Modification</div>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                     
+                      <form id="edit-form" action="/apprenant/<%= apprenant._id %>/editModule?_method=PUT" method="POST" class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                          <label for="nom">Nom</label>
+                          <input
+                            name="nom"
+                            type="text"
+                            class="form-control"
+                            id="nom"
+                            value="<%= apprenant.nom %>"
+                            required
+                            placeholder="ex: Projet de validation"
+                          />
+                        </div>
+                      
+                        <div class="form-group">
+                          <label for="prenom">Prenom</label>
+                          <input
+                            name="prenom"
+                            type="text"
+                            class="form-control"
+                            id="prenom"
+                            value="<%= apprenant.prenom %>" 
+                            required
+                            placeholder="ex: Projet de validation"
+                          />
+                        </div>
+                      
+                        <div class="form-group">
+                          <label for="email">Email</label>
+                          <input
+                            name="email"
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            value="<%= apprenant.email %>" 
+                            required
+                            placeholder="ex: exemple@domaine.com"
+                          />
+                        </div>
+                      
+                        <div class="form-group">
+                          <label for="password">Mot de passe par défaut</label>
+                          <input
+                            name="password"
+                            type="password"
+                            class="form-control"
+                            
+                           
+                       
+                            id="password"
+                            placeholder="Laissez vide pour ne pas modifier"
+                          />
+                        </div>
+                      
+                        <div class="form-group">
+                          <label for="cours">Choisissez des cours :</label>
+                          <div id="cours">
+                            <% cours.forEach(cour => { %>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="cours_<%- cour._id %>"
+                                name="coursIds"
+                                value="<%- cour._id %>"
+                                <% 
+                                  // Vérifiez si l'ID du cours est dans le tableau des IDs de l'apprenant
+                                  if (apprenantCoursIds.includes(cour._id.toString())) {
+                                %> checked <% } %>
+                              />
+                              <label class="form-check-label" for="cours_<%- cour._id %>">
+                                <%- cour.nom_cours %>
+                              </label>
+                            </div>
+                            <% }) %>
+                          </div>
+                        </div>
+                        
+                        
+                      
+                        <div class="card-action">
+                          <button class="btn btn-success" type="submit">Modifier</button>
+                          <button class="btn btn-danger" type="reset">Annuler</button>
+                        </div>
+                      </form>
+                      
+                     
+                       
+
+                     
+                      
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <%- include('../pages/footer') %>
+    </div>
+    <%- include('../pages/js') %>
+  </body>
+</html>
