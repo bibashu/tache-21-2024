@@ -73,7 +73,9 @@ exports.submitModule = async (req, res) => {
       cours: cours._id, // Référence au cours
     });
 
-    // Sauvegarder le sous-domaine dans la base de données
+     // Sauvegarder le projet dans la base de données
+     await newProject.save();
+    
   
     // Rediriger vers la liste des sous-domaines ou une page de succès
     const nom= "Project"

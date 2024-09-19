@@ -1,9 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import  {useNavigate} from "react-router-dom";
-// import "bootstrap/dist/css/bootstrap.css";
-// import "bootstrap-icons/font/bootstrap-icons.css";
-import elearning from "../assets/elearning.png";
 import avatar1 from "../assets/avatar1.jpeg";
 import avatar2 from "../assets/avatar2.jpeg";
 import avatar3 from "../assets/avatar3.jpeg";
@@ -17,18 +14,6 @@ const Users = ({ username }) => {
     const Navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
 
-    // const handleSearchChange = (e) => {
-    //     setSearchTerm(e.target.value);
-    // };
-
-    // const handleSendMessage = () => {
-    //     alert("Message envoyé !");
-    // };
-
-    // const handleAlert = () => {
-    //     alert("Alerte !");
-    // };
-
     return (  
         <div className="container-fluid">
             <div className="row section-users">
@@ -37,7 +22,7 @@ const Users = ({ username }) => {
                 <div className="col-lg-3 col-sm-12">
                     <div className="row">
                         <div className="text-start mb-5">
-                            <img className="elearning img-fluid" src={elearning} />
+                            
                         </div>
                     </div>
                     <div className="row ps-3 mb-3 ">

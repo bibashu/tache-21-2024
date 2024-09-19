@@ -6,7 +6,7 @@ import Button from "../Components/Button";
 
 import Input from "../Components/input/Input.jsx";
 import "./style.css";
-import logo from "../assets/imgs/E-Learning.png";
+// import logo from "../assets/imgs/E-Learning.png";
 import axios from "axios";
 import Swal from "sweetalert2";
 // import "bootstrap-icons/font/bootstrap-icons.css";
@@ -69,7 +69,7 @@ const Form = () => {
             <img className="img-fluid rounded-start-5" src={photoLogin} />
           </div>
           <div className="col-md-6 bg-white rounded-end-5 col-12 col-lg-6 d-flex p-0 flex-column align-items-center">
-            <img src={logo} className="logo  img-fluid " alt="" />
+            {/* <img src={logo} className="logo  img-fluid " alt="" /> */}
             <h6 className="pb-1 fw-bold connect ">CONNECTEZ-VOUS</h6>
             <form action="" className=" w-100  d-flex flex-column gap-2 p-5" onSubmit={handleSubmit}>
               <div className="flex-column">

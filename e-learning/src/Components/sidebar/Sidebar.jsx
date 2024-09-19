@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/imgs/file.png";
+// import logo from "../../assets/imgs/file.png";
 import { GearFill, HouseFill } from "react-bootstrap-icons";
 import s from "./style.module.css";
 
@@ -12,7 +12,7 @@ const Sidebar = () => {
           href="#"
           className="text-decoration-none d-flex align-items-center justify-content-center text-black ms-3 mt-2"
         >
-          <img src={logo} className="w-50" alt="Logo" />
+          {/* <img src={logo} className="w-50" alt="Logo" /> */}
           {/* <span className="ms-1 fs-4">Brand</span> */}
         </a>
         <hr className="text-secondary" />

@@ -1,9 +1,19 @@
+import { Bell, Envelope, Search } from 'react-bootstrap-icons';
 import s from './style.module.css'
 
 const Navbar = () => {
   return (
-    <div className='bg-danger position-fixed w-100 d-flex justify-content-center p-3' style={{ top: 0 }}>
-      je suis un navbar, Aby vas me réparer
+    <div className={`${s.nav} bg-danger position-fixed w-100 d-flex justify-content-around p-3 `} style={{ top: 0 }}>
+      <div>
+        <form action="">
+          <input type="text" />
+          <Search />
+        </form>
+      </div>
+      <div>
+        <Bell />
+        <Envelope />
+      </div>
     </div>
   );
 };
