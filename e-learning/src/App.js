@@ -1,14 +1,21 @@
+
 import Sidebar from "Components/sidebar/Sidebar";
 import Navbar from "./Navbar";
-import Home from "./Pages/Home";
+import Accueil from "Pages/Accueil";
+// import Home from "./Pages/Home";
+
+
 
 function App() {
   return (
-    <div className="App">
-      {/* <Sidebar /> */}
+   
+        <div className="App">
+        <Navbar />
+          <Accueil />
+             
+        </div>
+     
 
-      <Home />
-    </div>
   );
 }
 

@@ -1,15 +1,17 @@
- import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from './Pages/Form';
-
-
 import Users from './Pages/Users';
-import Home from './Pages/Home';
+
+// import Home from './Pages/Home';
 import Dashboard from 'Pages/dashboard/Dashboard';
-import Livraison from 'Pages/dashboard/Livraisons';
+import Livraison from 'Pages/dashboard/Livraison';
+
+// import Accueil from './Pages/Accueil';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,10 +28,9 @@ root.render(
         </Route>
         <Route path='/dashboard' element={ <Dashboard />}> 
         </Route>
-
-        <Route path='livraison' element={ <Livraison />}> 
+        <Route path='/livraison' element={ <Livraison />}> 
         </Route>
-
+     
 
       </Routes>
 
