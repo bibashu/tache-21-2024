@@ -12,7 +12,7 @@ const Apropos = () => {
   return (
     <div className="container-fluid fixed-top shadow-lg  ">
       <div className="container-fluid px-0  " >
-        <nav className="navbar navbar-light bg-white navbar-expand-xl mx-5 Nav">
+        {/* <nav className="navbar navbar-light bg-white navbar-expand-xl mx-5 Nav">
           <a className="navbar-brand" href="index.html">
           <img className="elearning img-fluid" src={elearning} />
           </a>
@@ -82,7 +82,7 @@ const Apropos = () => {
            </Button>
             </div>
           </div>
-        </nav>
+        </nav> */}
 
       </div>
    

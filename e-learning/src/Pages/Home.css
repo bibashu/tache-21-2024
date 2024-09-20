@@ -273,3 +273,46 @@ width: 340px;
 width: 340px;
   border-radius: 25px;
 }
+.Feactures1{
+  background-color: white;
+  height: 200px;
+width: 295px;
+  border-radius: 25px;
+  border: 0.3px solid gainsboro;
+}
+.SCT{
+  background-color: #FDF2E9;
+  height: 700px;
+}
+
+.SCT1 {
+  position: relative;
+  top: 100px;
+}
+.testimonials{
+  height: 300px;
+  width: 400px;
+  background-color: white;
+  border-radius: 25px;
+}
+.rating i{
+  color: #FFD500;
+}
+.jin{
+  border-radius: 50px;
+  height: 65px;
+  width: 70px;
+}
+.Slider{
+  font-size: 50px;
+  position: relative;
+  left: 20px;
+}
+.Slider1{
+  position: relative;
+  left: 140px;
+}
+.Slider2{
+  position: relative;
+  left: 200px;
+}

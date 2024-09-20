@@ -33,6 +33,12 @@ import uiux from "../assets/imgs/ui-ux.png";
 import developpement from "../assets/imgs/web-development.png";
 import appp from "../assets/imgs/app-development.png";
 import marketing from "../assets/imgs/digital-marketing.png";
+import virtual1 from "../assets/imgs/virtual1.png";
+import language1 from "../assets/imgs/language1.png";
+import onlinesupport1 from "../assets/imgs/online-support1.png";
+import support1 from "../assets/imgs/support1.png";
+import jiniya from "../assets/imgs/jiniya.png";
+import jakaria from "../assets/imgs/jakaria.png";
 
 const Home = () => {
   const Navigate = useNavigate();
@@ -784,17 +790,20 @@ const Home = () => {
         </div>
       </div>
 
-       {/* --SLIDES-- */}
+      {/* --SLIDES-- */}
       <div className="section-2 py-5 p-0">
-        <div className="container-fluid bg-white ">
-          <div className="container text-center">
+        <div className="container-fluid  SCT">
+          <div className="container text-center SCT1">
             <div class="row ustify-content-center  mb-3">
               <div class="col-lg-12 p-0">
-                <h1 className="display-4 fw-bold mb-2">Cours populaires</h1>
+                <h1 className="display-4 fw-bold mb-2">
+                  Nous avons des services spéciaux <br />
+                  dont vous serez satisfait
+                </h1>
                 <p class="mb-4">
-                  Notre liste de cours est organisée en fonction des compétences
-                  les plus <br />
-                  demandées actuellement dans le pays et à l'extérieur du pays.
+                  Notre liste de cours est organisée avec les compétences
+                  actuellement disponibles <br />
+                  les plus demandés dans le pays et à l'extérieur du pays.
                 </p>
               </div>
             </div>
@@ -807,320 +816,145 @@ const Home = () => {
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <div className="row">
-                      <div className="col-lg-6">
-                        <img
-                          src={courseone}
-                          class="d-block w-100 img-fluid rounded"
-                          alt=""
-                        />
-                        <div className="row px-3 pt-3">
-                          <div className="col-lg-6">
-                            <p className="text-start">
-                              <i class="bi bi-eye-fill"></i> 3.5k Views
-                            </p>
-                          </div>
-                          <div className="col-lg-6">
-                            <p className="text-end">
-                              <i class="fa-solid fa-clock"></i> 7H 20Min
-                            </p>
-                          </div>
+                      <div className="col-lg-3 Feactures1 mx-3">
+                        <div className="process">
+                          <img className="virtual1 img-fluid" src={virtual1} />
                         </div>
-                        <div className="row px-3 align-items-center">
-                          <div className="col-lg-6">
-                            <h2 className="text-start"> Graphic Design</h2>
-                            <p className="text-start">Master course</p>
-                          </div>
-                          <div className="col-lg-6">
-                            <p className="text-end">
-                              <i class="bi bi-star-fill text-warning me-2"></i>
-                              4.2
-                            </p>
-                          </div>
-                        </div>
-                        <div className="row px-3 align-items-center">
-                          <div className="col-lg-6">
-                            <h3 className="text-start">
-                              $15.000{" "}
-                              <span className="text-secondary"> $22.00</span>
-                            </h3>
-                          </div>
-                          <div className="col-lg-6">
-                            <button
-                              className="btn btn-sm button-buy"
-                              type="button"
-                            >
-                              <h5>Buy Now</h5>
-                            </button>
-                          </div>
-                        </div>
+                        <h5 className="py-3">Virtual Internship</h5>
+                        <p>Après avoir terminé le cours, vous obtiendrez un</p>
                       </div>
-                      <div className="col-lg-6">
-                        <img
-                          src={coursetwo}
-                          class="d-block w-100 img-fluid rounded"
-                          alt=""
-                        />
-                        <div className="row px-3 pt-3">
-                          <div className="col-lg-6">
-                            <p className="text-start">
-                              <i class="bi bi-eye-fill"></i> 3.5k Views
-                            </p>
-                          </div>
-                          <div className="col-lg-6">
-                            <p className="text-end">
-                              <i class="fa-solid fa-clock"></i> 7H 20Min
-                            </p>
-                          </div>
+
+                      <div className="col-lg-3 Feactures1 mx-3">
+                        <div className="process">
+                          <img
+                            className="language1 img-fluid"
+                            src={language1}
+                          />
                         </div>
-                        <div className="row px-3 align-items-center">
-                          <div className="col-lg-6">
-                            <h2 className="text-start">UI/UX Design</h2>
-                            <p className="text-start">Creative course</p>
-                          </div>
-                          <div className="col-lg-6">
-                            <p className="text-end">
-                              <i class="bi bi-star-fill text-warning me-2"></i>
-                              4.2
-                            </p>
-                          </div>
+                        <h5 className="py-3">Langue Anglaise</h5>
+                        <p>
+                          En plus d'enseigner l'anglais de base, nous insistons
+                          sur...
+                        </p>
+                      </div>
+
+                      <div className="col-lg-3 Feactures1 mx-3">
+                        <div className="process">
+                          <img
+                            className="onlinesupport1 img-fluid"
+                            src={onlinesupport1}
+                          />
                         </div>
-                        <div className="row px-3 align-items-center">
-                          <div className="col-lg-6">
-                            <h3 className="text-start">
-                              $15.000{" "}
-                              <span className="text-secondary"> $22.00</span>
-                            </h3>
-                          </div>
-                          <div className="col-lg-6">
-                            <button
-                              className="btn btn-sm button-buy"
-                              type="button"
-                            >
-                              <h5>Buy Now</h5>
-                            </button>
-                          </div>
+                        <h5 className="py-3">
+                          Assistance en ligne 24h/24 et 7j/7
+                        </h5>
+                        <p>Notre organisation institut informatique créatif</p>
+                      </div>
+
+                      <div className="col-lg-3 Feactures1 mx-3">
+                        <div className="process">
+                          <img className="support1 img-fluid" src={support1} />
                         </div>
+                        <h5 className="py-3">Assistance à vie</h5>
+                        <p>Même si la formation est terminée, la relation...</p>
                       </div>
                     </div>
                   </div>
+
                   <div class="carousel-item">
                     <div className="row">
-                      <div className="col-lg-6">
-                        <img
-                          src={coursetwo}
-                          class="d-block w-100 img-fluid rounded"
-                          alt=""
-                        />
-                        <div className="row px-3 pt-3">
-                          <div className="col-lg-6">
-                            <p className="text-start">
-                              <i class="bi bi-eye-fill"></i> 3.5k Views
-                            </p>
-                          </div>
-                          <div className="col-lg-6">
-                            <p className="text-end">
-                              <i class="fa-solid fa-clock"></i> 7H 20Min
-                            </p>
-                          </div>
+                      <div className="col-lg-3 Feactures1 mx-3">
+                        <div className="process">
+                          <img className="virtual1 img-fluid" src={virtual1} />
                         </div>
-                        <div className="row px-3 align-items-center">
-                          <div className="col-lg-6">
-                            <h2 className="text-start">UI/UX Design</h2>
-                            <p className="text-start">Creative course</p>
-                          </div>
-                          <div className="col-lg-6">
-                            <p className="text-end">
-                              <i class="bi bi-star-fill text-warning me-2"></i>
-                              4.2
-                            </p>
-                          </div>
-                        </div>
-                        <div className="row px-3 align-items-center">
-                          <div className="col-lg-6">
-                            <h3 className="text-start">
-                              $15.000{" "}
-                              <span className="text-secondary"> $22.00</span>
-                            </h3>
-                          </div>
-                          <div className="col-lg-6">
-                            <button
-                              className="btn btn-sm button-buy"
-                              type="button"
-                            >
-                              <h5>Buy Now</h5>
-                            </button>
-                          </div>
-                        </div>
+                        <h5 className="py-3">Virtual Internship</h5>
+                        <p>Après avoir terminé le cours, vous obtiendrez un</p>
                       </div>
-                      <div className="col-lg-6">
-                        <img
-                          src={coursethree}
-                          class="d-block w-100 img-fluid rounded"
-                          alt=""
-                        />
-                        <div className="row px-3 pt-3">
-                          <div className="col-lg-6">
-                            <p className="text-start">
-                              <i class="bi bi-eye-fill"></i> 3.5k Views
-                            </p>
-                          </div>
-                          <div className="col-lg-6">
-                            <p className="text-end">
-                              <i class="fa-solid fa-clock"></i> 7H 20Min
-                            </p>
-                          </div>
+
+                      <div className="col-lg-3 Feactures1 mx-3">
+                        <div className="process">
+                          <img
+                            className="language1 img-fluid"
+                            src={language1}
+                          />
                         </div>
-                        <div className="row px-3 align-items-center">
-                          <div className="col-lg-6">
-                            <h2 className="text-start">Web Design</h2>
-                            <p className="text-start">Web Programming</p>
-                          </div>
-                          <div className="col-lg-6">
-                            <p className="text-end">
-                              <i class="bi bi-star-fill text-warning me-2"></i>
-                              4.2
-                            </p>
-                          </div>
+                        <h5 className="py-3">Langue Anglaise</h5>
+                        <p>
+                          En plus d'enseigner l'anglais de base, nous insistons
+                          sur...
+                        </p>
+                      </div>
+
+                      <div className="col-lg-3 Feactures1 mx-3">
+                        <div className="process">
+                          <img
+                            className="onlinesupport1 img-fluid"
+                            src={onlinesupport1}
+                          />
                         </div>
-                        <div className="row px-3 align-items-center">
-                          <div className="col-lg-6">
-                            <h3 className="text-start">
-                              $15.000{" "}
-                              <span className="text-secondary"> $22.00</span>
-                            </h3>
-                          </div>
-                          <div className="col-lg-6">
-                            <button
-                              className="btn btn-sm button-buy"
-                              type="button"
-                            >
-                              <h5>Buy Now</h5>
-                            </button>
-                          </div>
+                        <h5 className="py-3">
+                          Assistance en ligne 24h/24 et 7j/7
+                        </h5>
+                        <p>Notre organisation institut informatique créatif</p>
+                      </div>
+
+                      <div className="col-lg-3 Feactures1 mx-3">
+                        <div className="process">
+                          <img className="support1 img-fluid" src={support1} />
                         </div>
+                        <h5 className="py-3">Assistance à vie</h5>
+                        <p>Même si la formation est terminée, la relation...</p>
                       </div>
                     </div>
                   </div>
+
                   <div class="carousel-item">
                     <div className="row">
-                      <div className="col-lg-6">
-                        <img
-                          src={coursethree}
-                          class="d-block w-100 img-fluid rounded"
-                          alt=""
-                        />
-                        <div className="row px-3 pt-3">
-                          <div className="col-lg-6">
-                            <p className="text-start">
-                              <i class="bi bi-eye-fill"></i> 3.5k Views
-                            </p>
-                          </div>
-                          <div className="col-lg-6">
-                            <p className="text-end">
-                              <i class="fa-solid fa-clock"></i> 7H 20Min
-                            </p>
-                          </div>
+                      <div className="col-lg-3 Feactures1 mx-3">
+                        <div className="process">
+                          <img className="virtual1 img-fluid" src={virtual1} />
                         </div>
-                        <div className="row px-3 align-items-center">
-                          <div className="col-lg-6">
-                            <h2 className="text-start">Web Design</h2>
-                            <p className="text-start">Web Programming</p>
-                          </div>
-                          <div className="col-lg-6">
-                            <p className="text-end">
-                              <i class="bi bi-star-fill text-warning me-2"></i>
-                              4.2
-                            </p>
-                          </div>
-                        </div>
-                        <div className="row px-3 align-items-center">
-                          <div className="col-lg-6">
-                            <h3 className="text-start">
-                              $15.000{" "}
-                              <span className="text-secondary"> $22.00</span>
-                            </h3>
-                          </div>
-                          <div className="col-lg-6">
-                            <button
-                              className="btn btn-sm button-buy"
-                              type="button"
-                            >
-                              <h5>Buy Now</h5>
-                            </button>
-                          </div>
-                        </div>
+                        <h5 className="py-3">Virtual Internship</h5>
+                        <p>Après avoir terminé le cours, vous obtiendrez un</p>
                       </div>
-                      <div className="col-lg-6">
-                        <img
-                          src={courseone}
-                          class="d-block w-100 img-fluid rounded"
-                          alt=""
-                        />
-                        <div className="row px-3 pt-3">
-                          <div className="col-lg-6">
-                            <p className="text-start">
-                              <i class="bi bi-eye-fill"></i> 3.5k Views
-                            </p>
-                          </div>
-                          <div className="col-lg-6">
-                            <p className="text-end">
-                              <i class="fa-solid fa-clock"></i> 7H 20Min
-                            </p>
-                          </div>
+
+                      <div className="col-lg-3 Feactures1 mx-3">
+                        <div className="process">
+                          <img
+                            className="language1 img-fluid"
+                            src={language1}
+                          />
                         </div>
-                        <div className="row px-3 align-items-center">
-                          <div className="col-lg-6">
-                            <h2 className="text-start"> Graphic Design</h2>
-                            <p className="text-start">Master course</p>
-                          </div>
-                          <div className="col-lg-6">
-                            <p className="text-end">
-                              <i class="bi bi-star-fill text-warning me-2"></i>
-                              4.2
-                            </p>
-                          </div>
+                        <h5 className="py-3">Langue Anglaise</h5>
+                        <p>
+                          En plus d'enseigner l'anglais de base, nous insistons
+                          sur...
+                        </p>
+                      </div>
+
+                      <div className="col-lg-3 Feactures1 mx-3">
+                        <div className="process">
+                          <img
+                            className="onlinesupport1 img-fluid"
+                            src={onlinesupport1}
+                          />
                         </div>
-                        <div className="row px-3 align-items-center">
-                          <div className="col-lg-6">
-                            <h3 className="text-start">
-                              $15.000{" "}
-                              <span className="text-secondary"> $22.00</span>
-                            </h3>
-                          </div>
-                          <div className="col-lg-6">
-                            <button className="btn btn-sm button-buy">
-                              <h5>Buy Now</h5>
-                            </button>
-                          </div>
+                        <h5 className="py-3">
+                          Assistance en ligne 24h/24 et 7j/7
+                        </h5>
+                        <p>Notre organisation institut informatique créatif</p>
+                      </div>
+
+                      <div className="col-lg-3 Feactures1 mx-3">
+                        <div className="process">
+                          <img className="support1 img-fluid" src={support1} />
                         </div>
+                        <h5 className="py-3">Assistance à vie</h5>
+                        <p>Même si la formation est terminée, la relation...</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <button
-                  class="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#carouselExampleControls"
-                  data-bs-slide="prev"
-                >
-                  <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button
-                  class="carousel-control-next"
-                  type="button"
-                  data-bs-target="#carouselExampleControls"
-                  data-bs-slide="next"
-                >
-                  <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
               </div>
             </div>
           </div>
@@ -1756,13 +1590,169 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                 
+
+                  <div className="carousel-item">
+                    <div className="row">
+                      <div className="col-lg-4">
+                        <div className="shadow-box rounded">
+                          <img
+                            src={specialOne}
+                            className="d-block w-100 img-fluid rounded"
+                            alt=""
+                          />
+                          <div className="row px-3 pt-3">
+                            <div className="col-lg-6">
+                              <p className="text-start">
+                                <i className="bi bi-eye-fill"></i> 9.5k Views
+                              </p>
+                            </div>
+                            <div className="col-lg-6">
+                              <p className="text-end">
+                                <i className="fa-solid fa-clock"></i> 9 H 27Min
+                              </p>
+                            </div>
+                          </div>
+                          <div className="row px-3 align-items-center">
+                            <div className="col-lg-6">
+                              <h2 className="text-start">
+                                {" "}
+                                Learning Holy Quran
+                              </h2>
+                              <p className="text-start">With Arabic Language</p>
+                            </div>
+                            <div className="col-lg-6">
+                              <p className="text-end">
+                                <i className="bi bi-star-fill text-warning me-2"></i>
+                                4.5
+                              </p>
+                            </div>
+                          </div>
+                          <div className="row px-3 align-items-center">
+                            <div className="col-lg-6">
+                              <h3 className="text-start">
+                                $55.000{" "}
+                                <span className="text-secondary"> $60.00</span>
+                              </h3>
+                            </div>
+                            <div className="col-lg-6">
+                              <button
+                                className="btn btn-sm button-buy"
+                                type="button"
+                              >
+                                <h5>Buy Now</h5>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-lg-4">
+                        <div className="shadow-box rounded">
+                          <img
+                            src={specialTwo}
+                            className="d-block w-100 img-fluid rounded"
+                            alt=""
+                          />
+                          <div className="row px-3 pt-3">
+                            <div className="col-lg-6">
+                              <p className="text-start">
+                                <i className="bi bi-eye-fill"></i> 2.5k Views
+                              </p>
+                            </div>
+                            <div className="col-lg-6">
+                              <p className="text-end">
+                                <i className="fa-solid fa-clock"></i> 6H 07Min
+                              </p>
+                            </div>
+                          </div>
+                          <div className="row px-3 align-items-center">
+                            <div className="col-lg-6">
+                              <h2 className="text-start"> Spoken English</h2>
+                              <p className="text-start">
+                                International English
+                              </p>
+                            </div>
+                            <div className="col-lg-6">
+                              <p className="text-end">
+                                <i className="bi bi-star-fill text-warning me-2"></i>
+                                4.7
+                              </p>
+                            </div>
+                          </div>
+                          <div className="row px-3 align-items-center">
+                            <div className="col-lg-6">
+                              <h3 className="text-start">
+                                $25.000{" "}
+                                <span className="text-secondary"> $30.00</span>
+                              </h3>
+                            </div>
+                            <div className="col-lg-6">
+                              <button
+                                className="btn btn-sm button-buy"
+                                type="button"
+                              >
+                                <h5>Buy Now</h5>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-lg-4">
+                        <div className="shadow-box rounded">
+                          <img
+                            src={specialThree}
+                            class="d-block w-100 img-fluid rounded"
+                            alt=""
+                          />
+                          <div className="row px-3 pt-3">
+                            <div className="col-lg-6">
+                              <p className="text-start">
+                                <i className="bi bi-eye-fill"></i> 4.5k Views
+                              </p>
+                            </div>
+                            <div className="col-lg-6">
+                              <p className="text-end">
+                                <i className="fa-solid fa-clock"></i> 9H 27Min
+                              </p>
+                            </div>
+                          </div>
+                          <div className="row px-3 align-items-center">
+                            <div className="col-lg-6">
+                              <h2 className="text-start">Learning Japanese</h2>
+                              <p className="text-start">Web Programming</p>
+                            </div>
+                            <div className="col-lg-6">
+                              <p className="text-end">
+                                <i className="bi bi-star-fill text-warning me-2"></i>
+                                4.2
+                              </p>
+                            </div>
+                          </div>
+                          <div className="row px-3 align-items-center">
+                            <div className="col-lg-6">
+                              <h3 className="text-start">
+                                $22.000{" "}
+                                <span className="text-secondary"> $30.00</span>
+                              </h3>
+                            </div>
+                            <div className="col-lg-6">
+                              <button
+                                className="btn btn-sm button-buy"
+                                type="button"
+                              >
+                                <h5>Buy Now</h5>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div> 
+      </div>
 
       <section className="counter-section">
         <div className="container">
@@ -1806,6 +1796,354 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* --SLIDES-- */}
+      <div className="section-2  p-0">
+        <div className="container-fluid  SCT">
+          <div className="container text-center SCT1">
+            <div class="row ustify-content-center  mb-3">
+              <div class="col-lg-12 p-0">
+                <h1 className="display-4 fw-bold mb-2">
+                  Voyons ce que notre <br />
+                  disent les étudiants ?
+                </h1>
+                <p class="mb-4">
+                  Amenez votre carrière à des sommets uniques dans ce marché du
+                  travail compétitif. Tout le <br />
+                  les catégories dont vous avez besoin sont ici.
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div
+                id="carouselExampleControls"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div className="row">
+                      <div className="col-lg-4 testimonials ">
+                        <div className="py-3">
+                          <div className="testimonials-slider text-start">
+                            <i class="bi bi-quote Slider"></i>
+                          </div>
+                          <div className="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                          <p className="py-2">
+                            J'ai suivi des cours sur quelques plateformes
+                            d'apprentissage qui se concentraient trop sur des
+                            sujets pertinents sujets et détournés de
+                            l'essentiel, mais les cours d'Elearning
+                          </p>
+                          <div className="testimonials__slider-item__content-author d-flex  mx-2 py-4">
+                            <img
+                              className="jiniya img-fluid jin"
+                              src={jiniya}
+                            />
+                            <div className="testimonials__slider mx-2 ">
+                              <p>Jiniya Rahman</p>
+                              <p className="designation">Font End Developer</p>
+                              <div className="testimonials-slider text-end">
+                                <i class="bi bi-quote Slider1"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-lg-4 testimonials mx-3">
+                        <div className="py-3">
+                          <div className="testimonials-slider text-start">
+                            <i class="bi bi-quote Slider"></i>
+                          </div>
+                          <div className="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                          <p className="py-2">
+                            Je ne connaissais pas grand chose en freelance.
+                            Familiarisez-vous avec la conception et les projets
+                            en prenant Cours Elearning Freelancing avec Adobe
+                            Illustrator. À la fin
+                          </p>
+                          <div className="testimonials__slider-item__content-author d-flex  mx-2 py-4">
+                            <img
+                              className="jakaria img-fluid jin"
+                              src={jakaria}
+                            />
+                            <div className="testimonials__slider mx-2 ">
+                              <p>Mr Jakariya Hossen</p>
+                              <p className="designation">Graphic Designer</p>
+                              <div className="testimonials-slider text-end">
+                                <i class="bi bi-quote Slider1"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-lg-4 testimonials ">
+                        <div className="py-3">
+                          <div className="testimonials-slider text-start">
+                            <i class="bi bi-quote Slider"></i>
+                          </div>
+                          <div className="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                          <p className="py-4">
+                            Nous trouvons généralement divers tutoriels en ligne
+                            en anglais. Mais maintenant, sur la plateforme
+                            Elearning, je peux apprenez facilement des cours
+                            standards internationaux. Et à la fin du cours,
+                          </p>
+                          <div className="testimonials__slider-item__content-author d-flex  mx-2">
+                            <img
+                              className="jiniya img-fluid jin"
+                              src={jiniya}
+                            />
+                            <div className="testimonials__slider mx-2">
+                              <p>Huye Alvira</p>
+                              <p className="designation">Student</p>
+                              <div className="testimonials-slider text-end">
+                                <i class="bi bi-quote Slider2"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div className="row">
+                      <div className="col-lg-4 testimonials ">
+                        <div className="py-3">
+                          <div className="testimonials-slider text-start">
+                            <i class="bi bi-quote Slider"></i>
+                          </div>
+                          <div className="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                          <p className="py-2">
+                            J'ai suivi des cours sur quelques plateformes
+                            d'apprentissage qui se concentraient trop sur des
+                            sujets pertinents sujets et détournés de
+                            l'essentiel, mais les cours d'Elearning
+                          </p>
+                          <div className="testimonials__slider-item__content-author d-flex  mx-2 py-4">
+                            <img
+                              className="jiniya img-fluid jin"
+                              src={jiniya}
+                            />
+                            <div className="testimonials__slider mx-2 ">
+                              <p>Jiniya Rahman</p>
+                              <p className="designation">Font End Developer</p>
+                              <div className="testimonials-slider text-end">
+                                <i class="bi bi-quote Slider1"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-lg-4 testimonials mx-3">
+                        <div className="py-3">
+                          <div className="testimonials-slider text-start">
+                            <i class="bi bi-quote Slider"></i>
+                          </div>
+                          <div className="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                          <p className="py-2">
+                            Je ne connaissais pas grand chose en freelance.
+                            Familiarisez-vous avec la conception et les projets
+                            en prenant Cours Elearning Freelancing avec Adobe
+                            Illustrator. À la fin
+                          </p>
+                          <div className="testimonials__slider-item__content-author d-flex  mx-2 py-4">
+                            <img
+                              className="jakaria img-fluid jin"
+                              src={jakaria}
+                            />
+                            <div className="testimonials__slider mx-2 ">
+                              <p>Mr Jakariya Hossen</p>
+                              <p className="designation">Graphic Designer</p>
+                              <div className="testimonials-slider text-end">
+                                <i class="bi bi-quote Slider1"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-lg-4 testimonials">
+                        <div className="py-3">
+                          <div className="testimonials-slider text-start">
+                            <i class="bi bi-quote Slider"></i>
+                          </div>
+                          <div className="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                          <p className="py-4">
+                            Nous trouvons généralement divers tutoriels en ligne
+                            en anglais. Mais maintenant, sur la plateforme
+                            Elearning, je peux apprenez facilement des cours
+                            standards internationaux. Et à la fin du cours,
+                          </p>
+                          <div className="testimonials__slider-item__content-author d-flex  mx-2">
+                            <img
+                              className="jiniya img-fluid jin"
+                              src={jiniya}
+                            />
+                            <div className="testimonials__slider mx-2">
+                              <p>Huye Alvira</p>
+                              <p className="designation">Student</p>
+                              <div className="testimonials-slider text-end">
+                                <i class="bi bi-quote Slider2"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div className="row">
+                      <div className="col-lg-4 testimonials">
+                        <div className="py-3">
+                          <div className="testimonials-slider text-start">
+                            <i class="bi bi-quote Slider"></i>
+                          </div>
+                          <div className="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                          <p className="py-2">
+                            J'ai suivi des cours sur quelques plateformes
+                            d'apprentissage qui se concentraient trop sur des
+                            sujets pertinents sujets et détournés de
+                            l'essentiel, mais les cours d'Elearning
+                          </p>
+                          <div className="testimonials__slider-item__content-author d-flex  mx-2 py-4">
+                            <img
+                              className="jiniya img-fluid jin"
+                              src={jiniya}
+                            />
+                            <div className="testimonials__slider mx-2 ">
+                              <p>Jiniya Rahman</p>
+                              <p className="designation">Font End Developer</p>
+                              <div className="testimonials-slider text-end">
+                                <i class="bi bi-quote Slider1"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-lg-4 testimonials mx-3">
+                        <div className="py-3">
+                          <div className="testimonials-slider text-start">
+                            <i class="bi bi-quote Slider"></i>
+                          </div>
+                          <div className="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                          <p className="py-2">
+                            Je ne connaissais pas grand chose en freelance.
+                            Familiarisez-vous avec la conception et les projets
+                            en prenant Cours Elearning Freelancing avec Adobe
+                            Illustrator. À la fin
+                          </p>
+                          <div className="testimonials__slider-item__content-author d-flex  mx-2 py-4">
+                            <img
+                              className="jakaria img-fluid jin"
+                              src={jakaria}
+                            />
+                            <div className="testimonials__slider mx-2 ">
+                              <p>Mr Jakariya Hossen</p>
+                              <p className="designation">Graphic Designer</p>
+                              <div className="testimonials-slider text-end">
+                                <i class="bi bi-quote Slider1"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-lg-4 testimonials ">
+                        <div className="py-3">
+                          <div className="testimonials-slider text-start">
+                            <i class="bi bi-quote Slider"></i>
+                          </div>
+                          <div className="rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                          </div>
+                          <p className="py-4">
+                            Nous trouvons généralement divers tutoriels en ligne
+                            en anglais. Mais maintenant, sur la plateforme
+                            Elearning, je peux apprenez facilement des cours
+                            standards internationaux. Et à la fin du cours,
+                          </p>
+                          <div className="testimonials__slider-item__content-author d-flex  mx-2">
+                            <img
+                              className="jiniya img-fluid jin"
+                              src={jiniya}
+                            />
+                            <div className="testimonials__slider mx-2">
+                              <p>Huye Alvira</p>
+                              <p className="designation">Student</p>
+                              <div className="testimonials-slider text-end">
+                                <i class="bi bi-quote Slider2"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section className="newsletter section bg-img">
         <div className="container">
