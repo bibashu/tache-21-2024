@@ -26,7 +26,7 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse bg-white" id="navbarCollapse">
             <div className="navbar-nav mx-auto">
-              <a className="nav-item nav-link active" href="index.html">
+              <a className="nav-item nav-link active" href="">
                 Accueil
               </a>
               <div className="nav-item dropdown mx-3">
