@@ -1,5 +1,5 @@
 import React from "react";
-// import "bootstrap/dist/css/bootstrap.css";
+import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import Button from "./Components/Button";
 import elearning from "./assets/imgs/learning.png";
@@ -26,7 +26,7 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse bg-white" id="navbarCollapse">
             <div className="navbar-nav mx-auto">
-              <a className="nav-item nav-link active" href="">
+              <a className="nav-item nav-link active" href="index.html">
                 Accueil
               </a>
               <div className="nav-item dropdown mx-3">
@@ -66,10 +66,10 @@ const Navbar = () => {
               <a className="nav-item nav-link mx-3" href=""  onClick={() => Navigate("/Apropos")}>
                  À propos
               </a>
-              <a className="nav-item nav-link " href="" onClick={() => Navigate("/Faq.jsx")}>
+              <a className="nav-item nav-link " href="" onClick={() => Navigate("/Faq")}>
                  FAQ
               </a>
-              <a className="nav-item nav-link " href="" onClick={() => Navigate("/Contact.jsx")}>
+              <a className="nav-item nav-link " href="" onClick={() => Navigate("/Contact")}>
                  Contact
               </a>
             </div>

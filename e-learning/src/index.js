@@ -6,6 +6,8 @@ import {BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from './Pages/Form';
 import Home from './Pages/Home';
  import Apropos from './Pages/Apropos';
+ import Faq from './Pages/Faq';
+ import Contact from './Pages/Contact';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,9 +22,12 @@ root.render(
 
        <Route path='/Apropos' element={ <Apropos />}> 
         </Route> 
+     
+        <Route path='/Faq' element={ <Faq />}> 
+        </Route> 
 
-     
-     
+        <Route path='/Contact' element={ <Contact />}> 
+        </Route> 
 
       </Routes>
 

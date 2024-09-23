@@ -1,0 +1,60 @@
+.Banner {
+    position: relative;
+    background-color: #FEFAF3;
+    height: 350px;
+}
+.BANNER{
+    position: relative;
+    top: 190px;
+}
+
+.about-thumb {
+    background-color: white;
+    position: relative;
+    top: 330px;
+}
+.milestone {
+    position: relative;
+    top: 350px;
+    background-color: #FEFAF3;
+    height: 450px;
+}
+.milestone__thumb{
+    position: relative;
+    top: -350px;
+}
+
+.Counter{
+ position: relative;
+ top: 350px;
+ height: 400px;
+ background-color: #4A1C01;
+}
+.Footer{
+    position: relative;
+    top: 400px;
+    background-color: #4A1C01;
+    color: white;
+}
+.Newsletter{
+    position: relative;
+    top: 450px;
+}
+
+.Sct{
+    position: relative;
+    top: 350px;
+    background-color: #FEFAF3;
+    height: 700px;
+}
+
+.faq{
+    position: relative;
+    top: 600px;
+    background-color: white;
+}
+.BannerI {
+    position: relative;
+    background-color: #FEFAF3;
+    height: 400px;
+}
