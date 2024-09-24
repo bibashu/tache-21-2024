@@ -4,47 +4,25 @@ import s from "./style.module.css";
 
 const Dashboard = () => {
   return (
-    <div>
-     <Layout />
-     <div className={`col-9 ${s.cardSection}`}>
-     <div class="card" >
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-<div class="card" >
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-<div class="card" >
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-<div class="card" >
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-     </div>
+ <Layout>
+      <div class="container">
+      <div class="page-inner">
+        <div
+          class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4 mt-5 mr-5"
+        >
+        
+  
+          <div>
+            <h3 class="fw-bold mb-3 fs-1">Dashboard</h3>
+           
+          </div>
+        
+        </div>
+        
+      
+      </div>
     </div>
+ </Layout>
   );
 };
 
