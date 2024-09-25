@@ -26,7 +26,8 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse bg-white" id="navbarCollapse">
             <div className="navbar-nav mx-auto">
-              <a className="nav-item nav-link active" href="index.html">
+              <a className="nav-item nav-link active" href=""
+              onClick={() => Navigate("/")}>
                 Accueil
               </a>
               <div className="nav-item dropdown mx-3">
@@ -38,10 +39,10 @@ const Navbar = () => {
                   Cours
                 </a>
                 <div className="dropdown-menu m-0 bg-secondary rounded-0">
-                  <a className="nav-item nav-link" href="cart.html">
+                  <a className="nav-item nav-link" href="">
                     Cours
                   </a>
-                  <a className="nav-item nav-link" href="checkout.html">
+                  <a className="nav-item nav-link" href="">
                     Details Cours
                   </a>
                 </div>
@@ -55,10 +56,10 @@ const Navbar = () => {
                   Instructeur
                 </a>
                 <div className="dropdown-menu m-0 bg-secondary rounded-0">
-                  <a className="nav-item nav-link" href="cart.html">
+                  <a className="nav-item nav-link" href="">
                     Instructeur
                   </a>
-                  <a className="nav-item nav-link" href="checkout.html">
+                  <a className="nav-item nav-link" href="">
                     Details Instructeur
                   </a>
                 </div>

@@ -41,7 +41,8 @@ const Faq = () => {
               id="navbarCollapse"
             >
               <div className="navbar-nav mx-auto">
-                <a className="nav-item nav-link active" href="index.html">
+                <a className="nav-item nav-link active" href=""
+                   onClick={() => Navigate("/")}>
                   Accueil
                 </a>
                 <div className="nav-item dropdown mx-3">
@@ -154,11 +155,12 @@ const Faq = () => {
           <div className="row justify-content-center">
             <div className="col-lg-7">
               <div className="section__header">
-                <h2 className="section__title">Frequently asked question</h2>
+                <h4 className="section__title">Question fréquemment posée</h4>
                 <p className="section__sub-title py-4">
-                  In this age of 'everything is possible', why are you calling
-                  yourself 'impossible'? Develop your skills at home now - from
-                  the best experts!
+                
+                   À l'ère de « tout est possible », pourquoi appelez-vous ?
+                  vous-même « impossible » ? Développez vos compétences à la maison dès maintenant - à partir de
+                  les meilleurs experts !
                 </p>
               </div>
             </div>
@@ -167,7 +169,7 @@ const Faq = () => {
             <div className="col-lg-6">
               <div className="faq__content col-margin">
                 <div className="accordion" id="accordionExample">
-                  <div className="accordion-item">
+                  <div className="accordion-item py-3">
                     <h5 className="accordion-header" id="headingOne">
                       <button
                         className="accordion-button collapsed"
@@ -177,7 +179,7 @@ const Faq = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        What should be included on a E-learning website?
+                       Que doit inclure un site Web d'apprentissage en ligne ?
                       </button>
                     </h5>
                     <div
@@ -190,14 +192,14 @@ const Faq = () => {
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          If you forget your RQA login details please go to the
-                          RQA website and click on 'My Account', My Details then
-                          change password.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="accordion-item">
+                  <div className="accordion-item py-3">
                     <h5 className="accordion-header" id="headingTwo">
                       <button
                         className="accordion-button collapsed"
@@ -207,7 +209,7 @@ const Faq = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        How do I purchase a course?
+                       Comment acheter un cours ?
                       </button>
                     </h5>
                     <div
@@ -220,14 +222,14 @@ const Faq = () => {
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          If you forget your RQA login details please go to the
-                          RQA website and click on 'My Account', My Details then
-                          change password.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="accordion-item">
+                  <div className="accordion-item py-3">
                     <h5 className="accordion-header" id="headingThree">
                       <button
                         className="accordion-button"
@@ -237,7 +239,7 @@ const Faq = () => {
                         aria-expanded="true"
                         aria-controls="collapseThree"
                       >
-                        Do I have to pay VAT?
+                       Dois-je payer la TVA ?
                       </button>
                     </h5>
                     <div
@@ -250,14 +252,14 @@ const Faq = () => {
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          If you forget your RQA login details please go to the
-                          RQA website and click on 'My Account', My Details then
-                          change password.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="accordion-item">
+                  <div className="accordion-item py-3">
                     <h5 className="accordion-header" id="headingFour">
                       <button
                         className="accordion-button collapsed"
@@ -267,7 +269,7 @@ const Faq = () => {
                         aria-expanded="false"
                         aria-controls="collapseFour"
                       >
-                        How do I access the courses I have paid for?
+                       Comment accéder aux cours que j'ai payés ?
                       </button>
                     </h5>
                     <div
@@ -279,9 +281,9 @@ const Faq = () => {
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          If you forget your RQA login details please go to the
-                          RQA website and click on 'My Account', My Details then
-                          change password.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
                         </p>
                       </div>
                     </div>
@@ -292,7 +294,7 @@ const Faq = () => {
             <div className="col-lg-6">
               <div className="faq__content col-margin">
                 <div className="accordion" id="accordionExampleTwo">
-                  <div className="accordion-item">
+                  <div className="accordion-item py-3">
                     <h5 className="accordion-header" id="headingTwoOne">
                       <button
                         className="accordion-button"
@@ -302,7 +304,8 @@ const Faq = () => {
                         aria-expanded="true"
                         aria-controls="collapseTwoOne"
                       >
-                        What should be included on a E-learning website?
+                      Que doit inclure un site Web d'apprentissage en ligne ?
+
                       </button>
                     </h5>
                     <div
@@ -314,14 +317,14 @@ const Faq = () => {
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          If you forget your RQA login details please go to the
-                          RQA website and click on 'My Account', My Details then
-                          change password.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="accordion-item">
+                  <div className="accordion-item py-3">
                     <h5 className="accordion-header" id="headingTwoTwo">
                       <button
                         className="accordion-button collapsed"
@@ -331,7 +334,7 @@ const Faq = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwoTwo"
                       >
-                        How do I purchase a course?
+                        Comment acheter un cours ?
                       </button>
                     </h5>
                     <div
@@ -343,14 +346,14 @@ const Faq = () => {
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          If you forget your RQA login details please go to the
-                          RQA website and click on 'My Account', My Details then
-                          change password.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="accordion-item">
+                  <div className="accordion-item py-3">
                     <h5 className="accordion-header" id="headingTwoThree">
                       <button
                         className="accordion-button collapsed"
@@ -360,7 +363,7 @@ const Faq = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwoThree"
                       >
-                        Do I have to pay VAT?
+                       Dois-je payer la TVA ?
                       </button>
                     </h5>
                     <div
@@ -372,14 +375,14 @@ const Faq = () => {
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          If you forget your RQA login details please go to the
-                          RQA website and click on 'My Account', My Details then
-                          change password.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="accordion-item ">
+                  <div className="accordion-item py-3">
                     <h5 className="accordion-header" id="headingTwoFour">
                       <button
                         className="accordion-button collapsed"
@@ -389,7 +392,7 @@ const Faq = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwoFour"
                       >
-                        How do I access the courses I have paid for?
+                      Comment accéder aux cours que j'ai payés ?
                       </button>
                     </h5>
                     <div
@@ -401,9 +404,9 @@ const Faq = () => {
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          If you forget your RQA login details please go to the
-                          RQA website and click on 'My Account', My Details then
-                          change password.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
                         </p>
                       </div>
                     </div>

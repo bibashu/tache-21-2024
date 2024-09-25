@@ -5,6 +5,7 @@ import App from './App';
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from './Pages/Form';
 import Home from './Pages/Home';
+
  import Apropos from './Pages/Apropos';
  import Faq from './Pages/Faq';
  import Contact from './Pages/Contact';
@@ -28,6 +29,10 @@ root.render(
 
         <Route path='/Contact' element={ <Contact />}> 
         </Route> 
+        <Route path='/' element={ <Home />}> 
+        </Route> 
+
+      
 
       </Routes>
 
