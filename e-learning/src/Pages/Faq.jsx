@@ -132,7 +132,7 @@ const Faq = () => {
                         <a
                           href=""
                           className="text-decoration-none"
-                          onClick={() => Navigate("/Home")}
+                          onClick={() => Navigate("/")}
                         >
                           Accueil
                         </a>
