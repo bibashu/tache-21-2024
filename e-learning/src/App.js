@@ -2,6 +2,7 @@
 import Sidebar from "Components/sidebar/Sidebar";
 import Navbar from "./Navbar";
 import Accueil from "Pages/Accueil";
+import Faq from "Pages/Faq"
 // import Home from "./Pages/Home";
 
 
@@ -11,8 +12,8 @@ function App() {
    
         <div className="App">
         <Navbar />
-          <Accueil />
-             
+        <Accueil />
+
         </div>
      
 

@@ -1,9 +1,7 @@
 import { useState } from "react";
 import photoLogin from "../assets/imgs/login_images.jpg";
-import { useNavigate } from "react-router-dom";
 import Button from "../Components/Button";
-
-
+import { useNavigate } from "react-router-dom";
 import Input from "../Components/input/Input.jsx";
 import "./style.css";
 // import logo from "../assets/imgs/E-Learning.png";
@@ -13,6 +11,7 @@ import Swal from "sweetalert2";
 
 const Form = () => {
   const Navigate = useNavigate();
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState(null);

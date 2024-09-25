@@ -1,16 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './accueil.css';
+import Navbar from "./Navbar";
 import App from './App';
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from './Pages/Form';
-import Users from './Pages/Users';
-
+// import Users from "./Pages/Users";
 // import Home from './Pages/Home';
 import Dashboard from 'Pages/dashboard/Dashboard';
 import Livraison from 'Pages/dashboard/Livraison';
 
-// import Accueil from './Pages/Accueil';
+import Accueil from 'Pages/Accueil';
+import Faq from "Pages/Faq";
+import CoursDetails from 'Pages/Cours-details';
+import Instructeurs from 'Pages/Instructeurs';
+import InstDetails from 'Pages/Inst-details';
+import Contact from "Pages/Contact";
+import Cours from "Pages/Cours";
+import Apropos from 'Pages/Apropos';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,12 +31,32 @@ root.render(
 
         <Route path='/login' element={ <Form />}> 
         </Route>
+       {/* <Route path='/Users' element={ <Users />}> 
+        </Route>*/}
        
-        <Route path='/Users' element={ <Users />}> 
-        </Route>
         <Route path='/dashboard' element={ <Dashboard />}> 
         </Route>
         <Route path='/livraison' element={ <Livraison />}> 
+        </Route>
+
+        <Route path='/faq' element={ <Faq />} > 
+        </Route>
+
+        <Route path='/cours' element={ <Cours/>} > 
+        </Route>
+
+        <Route path='/cours-details' element={ <CoursDetails/>} > 
+        </Route>
+        <Route path='/inst-details' element={ <InstDetails/>} > 
+        </Route>
+
+        <Route path='/instructeurs' element={ <Instructeurs/>} > 
+        </Route>
+
+        <Route path='/contact' element={ <Contact/>} > 
+        </Route>
+
+        <Route path='/apropos' element={ <Apropos/>} > 
         </Route>
      
 
