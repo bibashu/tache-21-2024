@@ -36,7 +36,7 @@ const Sidebar = ({ currentPage }) => {
         <div className="sidebar-content">
           <ul className="nav nav-secondary">
             <li className={`nav-item ${currentPage === '/dash' ? 'active' : ''} mt-5`}>
-              <Link to="/dash">
+              <Link to="/Dashboard">
                 <i className="fa fa-home"></i>
                 <span className="sub-item">Dashboard</span>
               </Link>
@@ -53,7 +53,7 @@ const Sidebar = ({ currentPage }) => {
              
               { path: '/cours', label: 'Cours', icon: 'fas fa-book' },
               { path: '/quizz', label: 'Quizzes', icon: 'fas fa-question-circle' },
-              { path: '/project', label: 'Projects', icon: 'fas fa-folder-open' },
+              { path: '/projet', label: 'Projects', icon: 'fas fa-folder-open' },
               { path: '/livraison', label: 'Livraisons', icon: 'fas fa-paper-plane' }
             ].map((item) => (
               <li key={item.path} className={`nav-item ${currentPage === item.path ? 'active' : ''}`}>

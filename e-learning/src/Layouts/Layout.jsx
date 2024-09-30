@@ -4,20 +4,21 @@ import React from 'react'
 import './Layout.css'; // CSS pour structurer la mise en page
 import Logo from 'Components/Logo';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, userData }) => {
+ 
   return (
     <div className="wrapper">
     <Sidebar />
   
-      <div className="main-panel">
+      <div className="main-panel ">
         <div className="main-header">
           <div className="main-header-logo">
          <Logo />
           </div>
-        <Navbar />
+        <Navbar userDatas={userData} />
         </div>
-      </div>
         {children}
+      </div>
   
     
     </div>

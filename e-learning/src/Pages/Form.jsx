@@ -26,16 +26,17 @@ const Form = () => {
 
       // Stocker le token dans localStorage
       localStorage.setItem('authToken', token);
-      // Utiliser les données utilisateur
-      console.log('Nom:', user.nom);
-      console.log('Prénom:', user.prenom);
+      localStorage.setItem('user', JSON.stringify(user)); // ou user.id selon votre base de données
+    
+    
+      console.log('user :>> ', user.cours);
       Swal.fire({
         title: "Connexion reussi!",
         text: `Bienvenue ${user.prenom}  ${user.nom} `,
         icon: "success"
       });
 
-      window.location.href = "./Users"
+      window.location.href = "./Dashboard"
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
         // setError(error.response.data.message);
