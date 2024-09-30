@@ -48,7 +48,7 @@ const Home = () => {
         <div className="section-1 py-5">
           <div className="container py-5">
             <div className="row py-5">
-              <div className="col-lg-6 col-sm-12">
+              <div className="col-lg-6 col-sm-12 col-md-12">
                 <div className="text-start">
                   <h1 className="display-4 fw-bold ">
                     Apprenez une nouvelle compétence chaque jour, à tout moment
@@ -78,12 +78,12 @@ const Home = () => {
                   <Button
                     className="btn bouton-1 text-white btn-lg rounded px-3 me-2 "
                     type="button"
-                    onClick={() => Navigate("/users")}
+                    onClick={() => Navigate("/login")}
                   >
                     Commencer l'essai
                   </Button>
                   <Button
-                    onClick={() => Navigate("/users")}
+                    onClick={() => Navigate("/login")}
                     className="btn bouton-2 rounde me-md-1 btn-lg px-3 "
                     type="button"
                   >
@@ -92,19 +92,21 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="col-lg-6 col-sm-12">
+              <div className="col-lg-6 col-sm-12 col-md-12">
                 <img className="mt-5 hero img-fluid" src={hero} />
               </div>
             </div>
           </div>
         </div>
       </div>
+
+
       {/* --SLIDES-- */}
       <div className="section-2 py-5 p-0">
         <div className="container-fluid bg-white ">
           <div className="container text-center">
             <div className="row ustify-content-center  mb-3">
-              <div className="col-lg-12 p-0">
+              <div className="col-lg-12 col-sm-12 col-md-12 p-0">
                 <h1 className="display-4 fw-bold mb-2">Cours populaires</h1>
                 <p className="mb-4">
                   Notre liste de cours est organisée en fonction des compétences
@@ -122,7 +124,7 @@ const Home = () => {
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <div className="row">
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-sm-12  col-md-6">
                         <div className="shadow-box rounded">
                           <img
                             src={courseone}
@@ -130,23 +132,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-sm-12 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 3.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6  col-sm-12 col-md-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 7H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start"> Graphic Design</h2>
                               <p className="text-start">Master course</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -154,24 +156,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $15.000{" "}
                                 <span className="text-secondary"> $22.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={coursetwo}
@@ -179,23 +182,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 2.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 6H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start"> UI/UX Design</h2>
                               <p className="text-start">Creative Course</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -203,24 +206,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $25.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4 ">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box hg rounded">
                           <img
                             src={coursethree}
@@ -228,23 +232,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 4.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 9H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center py-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start">Web Design</h2>
                               <p className="text-start">Web Programming</p>
                             </div>
-                            <div className="col-lg-6 ">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -252,18 +256,19 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $22.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6 ">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
@@ -274,7 +279,7 @@ const Home = () => {
 
                   <div className="carousel-item">
                     <div className="row">
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={courseone}
@@ -282,23 +287,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 3.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 7H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start"> Graphic Design</h2>
                               <p className="text-start">Master course</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -306,24 +311,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $15.000{" "}
                                 <span className="text-secondary"> $22.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={coursetwo}
@@ -331,23 +337,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 2.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 6H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start"> UI/UX Design</h2>
                               <p className="text-start">Creative Course</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -355,24 +361,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $25.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box hg rounded">
                           <img
                             src={coursethree}
@@ -380,23 +387,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 4.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 9H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center py-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start">Web Design</h2>
                               <p className="text-start">Web Programming</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -404,18 +411,19 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $22.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
@@ -426,7 +434,7 @@ const Home = () => {
 
                   <div className="carousel-item">
                     <div className="row">
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={courseone}
@@ -434,23 +442,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 3.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 7H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start"> Graphic Design</h2>
                               <p className="text-start">Master course</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -458,24 +466,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $15.000{" "}
                                 <span className="text-secondary"> $22.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={coursetwo}
@@ -483,23 +492,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 2.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 6H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start"> UI/UX Design</h2>
                               <p className="text-start">Creative Course</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -507,24 +516,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $25.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box hg rounded">
                           <img
                             src={coursethree}
@@ -532,23 +542,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 4.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 9H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center py-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start">Web Design</h2>
                               <p className="text-start">Web Programming</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -556,18 +566,19 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $22.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
@@ -595,7 +606,7 @@ const Home = () => {
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <div className="row">
-                      <div className="col-lg-3 feactures">
+                      <div className="col-lg-3 col-md-6 col-sm-12 feactures">
                         <div className="process">
                           <img className="robotics img-fluid" src={robotics} />
                         </div>
@@ -606,7 +617,7 @@ const Home = () => {
                         </p>
                       </div>
 
-                      <div className="col-lg-3 feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 feactures1 mx-3">
                         <div className="process">
                           <img className="graphics img-fluid" src={graphics} />
                         </div>
@@ -617,7 +628,7 @@ const Home = () => {
                         </p>
                       </div>
 
-                      <div className="col-lg-3 feactures mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 feactures mx-3">
                         <div className="process">
                           <img className="uiux img-fluid" src={uiux} />
                         </div>
@@ -628,7 +639,7 @@ const Home = () => {
                         </p>
                       </div>
 
-                      <div className="col-lg-3 feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 feactures1 mx-3">
                         <div className="process">
                           <img
                             className="developpement img-fluid"
@@ -646,7 +657,7 @@ const Home = () => {
 
                   <div class="carousel-item">
                     <div className="row">
-                      <div className="col-lg-3 feactures mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 feactures mx-3">
                         <div className="process">
                           <img className="appp img-fluid" src={appp} />
                         </div>
@@ -657,7 +668,7 @@ const Home = () => {
                         </p>
                       </div>
 
-                      <div className="col-lg-3 feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 feactures1 mx-3">
                         <div className="process">
                           <img
                             className="marketing img-fluid"
@@ -671,7 +682,7 @@ const Home = () => {
                         </p>
                       </div>
 
-                      <div className="col-lg-3 feactures">
+                      <div className="col-lg-3 col-md-6 col-sm-12 feactures">
                         <div className="process">
                           <img className="robotics img-fluid" src={robotics} />
                         </div>
@@ -682,7 +693,7 @@ const Home = () => {
                         </p>
                       </div>
 
-                      <div className="col-lg-3 feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 feactures1 mx-3">
                         <div className="process">
                           <img className="graphics img-fluid" src={graphics} />
                         </div>
@@ -697,7 +708,7 @@ const Home = () => {
 
                   <div class="carousel-item">
                     <div className="row">
-                      <div className="col-lg-3 feactures mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 feactures mx-3">
                         <div className="process">
                           <img className="uiux img-fluid" src={uiux} />
                         </div>
@@ -708,7 +719,7 @@ const Home = () => {
                         </p>
                       </div>
 
-                      <div className="col-lg-3 feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 feactures1 mx-3">
                         <div className="process">
                           <img
                             className="developpement img-fluid"
@@ -722,7 +733,7 @@ const Home = () => {
                         </p>
                       </div>
 
-                      <div className="col-lg-3 feactures mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 feactures mx-3">
                         <div className="process">
                           <img className="appp img-fluid" src={appp} />
                         </div>
@@ -733,7 +744,7 @@ const Home = () => {
                         </p>
                       </div>
 
-                      <div className="col-lg-3 feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 feactures1 mx-3">
                         <div className="process">
                           <img
                             className="marketing img-fluid"
@@ -757,7 +768,7 @@ const Home = () => {
 
       <div className="container py-5">
         <div className="row align-items-center">
-          <div className="col-lg-8 col-xxl-6 text-start">
+          <div className="col-lg-8 col-xxl-6 col-md-12 col-sm-12 text-start">
             <div className="about__content">
               <img className="thumb img-fluid" src={thumb} />
               <div className="py-2">
@@ -777,14 +788,14 @@ const Home = () => {
                 <Button
                   className="BTN text-white btn-lg rounded px-3 me-2 "
                   type="button"
-                  onClick={() => Navigate("")}
+                  onClick={() => Navigate("/login")}
                 >
                   Cours sur navigateur
                 </Button>
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-xxl-6 ">
+          <div className="col-lg-4 col-xxl-6 col-md-6 col-sm-12">
             <img className="about img-fluid" src={about} />
           </div>
         </div>
@@ -795,7 +806,7 @@ const Home = () => {
         <div className="container-fluid  SCT">
           <div className="container text-center SCT1">
             <div class="row ustify-content-center  mb-3">
-              <div class="col-lg-12 p-0">
+              <div class="col-lg-12 col-md-12 col-sm-12 p-0">
                 <h1 className="display-4 fw-bold mb-2">
                   Nous avons des services spéciaux <br />
                   dont vous serez satisfait
@@ -816,7 +827,7 @@ const Home = () => {
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <div className="row">
-                      <div className="col-lg-3 Feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 Feactures1 mx-3">
                         <div className="process">
                           <img className="virtual1 img-fluid" src={virtual1} />
                         </div>
@@ -824,7 +835,7 @@ const Home = () => {
                         <p>Après avoir terminé le cours, vous obtiendrez un</p>
                       </div>
 
-                      <div className="col-lg-3 Feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 Feactures1 mx-3">
                         <div className="process">
                           <img
                             className="language1 img-fluid"
@@ -838,7 +849,7 @@ const Home = () => {
                         </p>
                       </div>
 
-                      <div className="col-lg-3 Feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 Feactures1 mx-3">
                         <div className="process">
                           <img
                             className="onlinesupport1 img-fluid"
@@ -851,7 +862,7 @@ const Home = () => {
                         <p>Notre organisation institut informatique créatif</p>
                       </div>
 
-                      <div className="col-lg-3 Feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 Feactures1 mx-3">
                         <div className="process">
                           <img className="support1 img-fluid" src={support1} />
                         </div>
@@ -863,7 +874,7 @@ const Home = () => {
 
                   <div class="carousel-item">
                     <div className="row">
-                      <div className="col-lg-3 Feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 Feactures1 mx-3">
                         <div className="process">
                           <img className="virtual1 img-fluid" src={virtual1} />
                         </div>
@@ -871,7 +882,7 @@ const Home = () => {
                         <p>Après avoir terminé le cours, vous obtiendrez un</p>
                       </div>
 
-                      <div className="col-lg-3 Feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 Feactures1 mx-3">
                         <div className="process">
                           <img
                             className="language1 img-fluid"
@@ -885,7 +896,7 @@ const Home = () => {
                         </p>
                       </div>
 
-                      <div className="col-lg-3 Feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 Feactures1 mx-3">
                         <div className="process">
                           <img
                             className="onlinesupport1 img-fluid"
@@ -898,7 +909,7 @@ const Home = () => {
                         <p>Notre organisation institut informatique créatif</p>
                       </div>
 
-                      <div className="col-lg-3 Feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 Feactures1 mx-3">
                         <div className="process">
                           <img className="support1 img-fluid" src={support1} />
                         </div>
@@ -910,7 +921,7 @@ const Home = () => {
 
                   <div class="carousel-item">
                     <div className="row">
-                      <div className="col-lg-3 Feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 Feactures1 mx-3">
                         <div className="process">
                           <img className="virtual1 img-fluid" src={virtual1} />
                         </div>
@@ -918,7 +929,7 @@ const Home = () => {
                         <p>Après avoir terminé le cours, vous obtiendrez un</p>
                       </div>
 
-                      <div className="col-lg-3 Feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 Feactures1 mx-3">
                         <div className="process">
                           <img
                             className="language1 img-fluid"
@@ -932,7 +943,7 @@ const Home = () => {
                         </p>
                       </div>
 
-                      <div className="col-lg-3 Feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 Feactures1 mx-3">
                         <div className="process">
                           <img
                             className="onlinesupport1 img-fluid"
@@ -945,7 +956,7 @@ const Home = () => {
                         <p>Notre organisation institut informatique créatif</p>
                       </div>
 
-                      <div className="col-lg-3 Feactures1 mx-3">
+                      <div className="col-lg-3 col-md-6 col-sm-12 Feactures1 mx-3">
                         <div className="process">
                           <img className="support1 img-fluid" src={support1} />
                         </div>
@@ -989,7 +1000,7 @@ const Home = () => {
                   <Button
                     className="Btn text-black btn-lg rounded px-3 me-2 "
                     type="button"
-                    onClick={() => Navigate("")}
+                    onClick={() => Navigate("/login")}
                   >
                     Rejoignez-nous
                   </Button>
@@ -1006,7 +1017,7 @@ const Home = () => {
                   <Button
                     className="Btn text-black btn-lg rounded px-3 me-2 "
                     type="button"
-                    onClick={() => Navigate("")}
+                    onClick={() => Navigate("/login")}
                   >
                     Rejoignez-nous
                   </Button>
@@ -1016,14 +1027,14 @@ const Home = () => {
                 <Button
                   className="BTN text-white btn-lg rounded px-3 me-2"
                   type="button"
-                  onClick={() => Navigate("")}
+                  onClick={() => Navigate("/login")}
                 >
                   Tous les séminaires
                 </Button>
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-xl-5">
+          <div className="col-lg-4 col-xl-5 col-sm-12">
             <div className="seminar">
               <img className="seminar img-fluid " src={seminar} />
             </div>
@@ -1034,7 +1045,7 @@ const Home = () => {
       <div className="section">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-5 col-xl-6 text-start">
+            <div className="col-lg-5 col-xl-6 col-sm-12 text-start">
               <div className="process__content ">
                 <h2 className="section__title">
                   Processus d'initiation au cours
@@ -1050,14 +1061,14 @@ const Home = () => {
                   <Button
                     className="BTN text-white btn-lg rounded px-3 me-2"
                     type="button"
-                    onClick={() => Navigate("")}
+                    onClick={() => Navigate("/login")}
                   >
                     Cours sur navigateur
                   </Button>
                 </div>
               </div>
             </div>
-            <div className="col-lg-7 col-xl-6">
+            <div className="col-lg-7 col-xl-6 col-sm-12">
               <div className="row">
                 <div className="col-lg-6 col-sm-12 text-center context ">
                   <div className="process">
@@ -1114,7 +1125,7 @@ const Home = () => {
         <div className="container-fluid bg-white ">
           <div className="container text-center">
             <div className="row ustify-content-center  mb-3">
-              <div className="col-lg-12 p-0">
+              <div className="col-lg-12 col-md-12 col-sm-12 p-0">
                 <h1 className="display-4 fw-bold mb-2">Cours Spécial</h1>
                 <p className="mb-4">
                   Notre liste de cours est organisée en fonction des compétences
@@ -1132,7 +1143,7 @@ const Home = () => {
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <div className="row">
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-12 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={course1}
@@ -1140,23 +1151,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 3.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 7H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start"> Graphic Design</h2>
                               <p className="text-start">Master course</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -1164,24 +1175,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $15.000{" "}
                                 <span className="text-secondary"> $22.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={course2}
@@ -1189,23 +1201,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 2.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 6H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start"> UI/UX Design</h2>
                               <p className="text-start">Creative Course</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -1213,24 +1225,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $25.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box hg rounded">
                           <img
                             src={course3}
@@ -1238,23 +1251,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 4.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 9H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center py-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start">Web Design</h2>
                               <p className="text-start">Web Programming</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -1262,18 +1275,19 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $22.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
@@ -1284,7 +1298,7 @@ const Home = () => {
 
                   <div className="carousel-item">
                     <div className="row">
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={specialOne}
@@ -1292,26 +1306,26 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 9.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 9 H 27Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start">
                                 {" "}
                                 Learning Holy Quran
                               </h2>
                               <p className="text-start">With Arabic Language</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.5
@@ -1319,24 +1333,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $55.000{" "}
                                 <span className="text-secondary"> $60.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={specialTwo}
@@ -1344,25 +1359,25 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 2.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 6H 07Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start"> Spoken English</h2>
                               <p className="text-start">
                                 International English
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.7
@@ -1370,24 +1385,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $25.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={specialThree}
@@ -1395,23 +1411,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 4.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 9H 27Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start">Learning Japanese</h2>
                               <p className="text-start">Web Programming</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -1419,18 +1435,19 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $22.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
@@ -1441,7 +1458,7 @@ const Home = () => {
 
                   <div className="carousel-item">
                     <div className="row">
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={course1}
@@ -1449,23 +1466,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 3.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 7H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start"> Graphic Design</h2>
                               <p className="text-start">Master course</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -1473,24 +1490,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $15.000{" "}
                                 <span className="text-secondary"> $22.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={course2}
@@ -1498,23 +1516,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 2.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 6H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start"> UI/UX Design</h2>
                               <p className="text-start">Creative Course</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -1522,24 +1540,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $25.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box hg rounded">
                           <img
                             src={course3}
@@ -1547,23 +1566,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 4.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 9H 20Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center py-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start">Web Design</h2>
                               <p className="text-start">Web Programming</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -1571,18 +1590,19 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $22.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
@@ -1593,7 +1613,7 @@ const Home = () => {
 
                   <div className="carousel-item">
                     <div className="row">
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={specialOne}
@@ -1601,26 +1621,26 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 9.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 9 H 27Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start">
                                 {" "}
                                 Learning Holy Quran
                               </h2>
                               <p className="text-start">With Arabic Language</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.5
@@ -1628,24 +1648,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $55.000{" "}
                                 <span className="text-secondary"> $60.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={specialTwo}
@@ -1653,25 +1674,25 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 2.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 6H 07Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start"> Spoken English</h2>
                               <p className="text-start">
                                 International English
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.7
@@ -1679,24 +1700,25 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $25.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-4">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <div className="shadow-box rounded">
                           <img
                             src={specialThree}
@@ -1704,23 +1726,23 @@ const Home = () => {
                             alt=""
                           />
                           <div className="row px-3 pt-3">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-start">
                                 <i className="bi bi-eye-fill"></i> 4.5k Views
                               </p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="fa-solid fa-clock"></i> 9H 27Min
                               </p>
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h2 className="text-start">Learning Japanese</h2>
                               <p className="text-start">Web Programming</p>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <p className="text-end">
                                 <i className="bi bi-star-fill text-warning me-2"></i>
                                 4.2
@@ -1728,18 +1750,19 @@ const Home = () => {
                             </div>
                           </div>
                           <div className="row px-3 align-items-center">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <h3 className="text-start">
                                 $22.000{" "}
                                 <span className="text-secondary"> $30.00</span>
                               </h3>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-6 col-md-12 col-sm-12">
                               <button
                                 className="btn btn-sm button-buy"
                                 type="button"
+                                onClick={() => Navigate("/login")}
                               >
-                                <h5>Buy Now</h5>
+                                <h5>Acheter maintenant</h5>
                               </button>
                             </div>
                           </div>
@@ -1747,6 +1770,8 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
+
+
                 </div>
               </div>
             </div>
@@ -1757,7 +1782,7 @@ const Home = () => {
       <section className="counter-section">
         <div className="container">
           <div className="row align-items-start py-5 iCon">
-            <div className="col-sm-6 col-lg-3">
+            <div className="col-sm-6 col-lg-3 col-sm-12">
               <div className="counter__single  text-center">
                 <img className="mentor img-fluid" src={mentor} />
                 <h2 className="section__title text-white">
@@ -1766,7 +1791,7 @@ const Home = () => {
                 <p className="text-white PG">Nos mentor</p>
               </div>
             </div>
-            <div className="col-sm-6 col-lg-3">
+            <div className="col-sm-6 col-lg-3 col-sm-12">
               <div className="counter__single  text-center">
                 <img className="students img-fluid" src={students} />
                 <h2 className="section__title text-white">
@@ -1775,7 +1800,7 @@ const Home = () => {
                 <p className="text-white PG">Nos étudiants</p>
               </div>
             </div>
-            <div className="col-sm-6 col-lg-3">
+            <div className="col-sm-6 col-lg-3 col-sm-12">
               <div className="counter__single  text-center">
                 <img className="Course img-fluid" src={Course} />
                 <h2 className="section__title text-white">
@@ -1784,7 +1809,7 @@ const Home = () => {
                 <p className="text-white PG">Nos cours</p>
               </div>
             </div>
-            <div className="col-sm-6 col-lg-3">
+            <div className="col-sm-6 col-lg-3 col-sm-12">
               <div className="counter__single  text-center">
                 <img className="award img-fluid" src={award} />
                 <h2 className="section__title text-white">
@@ -1802,7 +1827,7 @@ const Home = () => {
         <div className="container-fluid  SCT">
           <div className="container text-center SCT1">
             <div class="row ustify-content-center  mb-3">
-              <div class="col-lg-12 p-0">
+              <div class="col-lg-12 col-md-12 col-sm-12 p-0">
                 <h1 className="display-4 fw-bold mb-2">
                   Voyons ce que notre <br />
                   disent les étudiants ?
@@ -1823,7 +1848,7 @@ const Home = () => {
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <div className="row">
-                      <div className="col-lg-4 testimonials ">
+                      <div className="col-lg-4 col-md-4 col-sm-4 testimonials ">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -1857,7 +1882,7 @@ const Home = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 testimonials mx-3">
+                      <div className="col-lg-4 col-md-4 col-sm-4 testimonials mx-3">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -1891,7 +1916,7 @@ const Home = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 testimonials ">
+                      <div className="col-lg-4 col-md-4 col-sm-4 testimonials ">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -1929,7 +1954,7 @@ const Home = () => {
 
                   <div class="carousel-item">
                     <div className="row">
-                      <div className="col-lg-4 testimonials ">
+                      <div className="col-lg-4 col-md-4 col-sm-4 testimonials ">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -1963,7 +1988,7 @@ const Home = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 testimonials mx-3">
+                      <div className="col-lg-4 col-md-4 col-sm-4 testimonials mx-3">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -1997,7 +2022,7 @@ const Home = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 testimonials">
+                      <div className="col-lg-4 col-md-4 col-sm-4 testimonials">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -2035,7 +2060,7 @@ const Home = () => {
 
                   <div class="carousel-item">
                     <div className="row">
-                      <div className="col-lg-4 testimonials">
+                      <div className="col-lg-4 col-md-4 col-sm-4 testimonials">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -2069,7 +2094,7 @@ const Home = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 testimonials mx-3">
+                      <div className="col-lg-4 col-md-4 col-sm-4 testimonials mx-3">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -2103,7 +2128,7 @@ const Home = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 testimonials ">
+                      <div className="col-lg-4 col-md-4 col-sm-4 testimonials ">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -2148,7 +2173,7 @@ const Home = () => {
       <section className="newsletter section bg-img">
         <div className="container">
           <div className="row justify-content-center CTN">
-            <div className="col-lg-10 col-xxl-8">
+            <div className="col-lg-10 col-xxl-8 col-sm-12 col-md 12">
               <div className="newsletter__content">
                 <div className="section__header text-center">
                   <h2 class="section__title">
@@ -2182,7 +2207,7 @@ const Home = () => {
       <footer className="footer py-5">
         <div className="container">
           <div className="row align-items-center g-5 mb-5">
-            <div className="col-lg-3 col-sm-3">
+            <div className="col-lg-3 col-md-6 col-sm-12">
               <div className="footer-item text-start">
                 <img
                   src={learning}
@@ -2212,7 +2237,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-3 mb-5">
+            <div className="col-lg-3 col-md-6 col-sm-12 mb-5">
               <div className="d-flex flex-column text-start footer-item mb-5">
                 <h2 className="mb-4">Bureau</h2>
                 <a className="btn-link text-decoration-none mb-2" href="">
@@ -2238,7 +2263,7 @@ const Home = () => {
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-3 mb-5">
+            <div className="col-lg-3 col-md-6 col-sm-12 mb-5">
               <div className="d-flex flex-column text-start footer-item mb-5">
                 <h2 className="mb-4">Liens Rapides</h2>
                 <a className="btn-link text-decoration-none mb-2" href="">
@@ -2261,7 +2286,7 @@ const Home = () => {
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-3 mb-5">
+            <div className="col-lg-3 col-md-6 col-sm-12 mb-5">
               <div className="footer-item mb-5">
                 <h2 className="mb-4"> Cours Récents</h2>
                 <div className="d-flex mb-3 align-items-center">
@@ -2305,27 +2330,16 @@ const Home = () => {
             </div>
           </div>
           <div className="row justify-content-between">
-            <div className="col-lg-6">
-              <p className="text-black">
+            <div className="col-lg-10 col-md-12 col-sm-12">
+              <p className="text-black text-end">
                 Copyright<i className="bi bi-c-circle text-black"></i>
-                <a href="#index.html" className="text-decoration-under-line">
+                <a href="" className="text-decoration-none"  onClick={() => Navigate("/")}>
                   2024 Elearning
                 </a>
                 , All right reserved.
               </p>
             </div>
-            <div className="col-lg-6">
-              <p className="text-black">
-                Designed By{" "}
-                <a href="#" className="text-decoration-under-line">
-                  HTML Codex
-                </a>{" "}
-                Distributed By{" "}
-                <a href="" className="text-decoration-under-line">
-                  ThemeWagon
-                </a>
-              </p>
-            </div>
+            
           </div>
         </div>
       </footer>

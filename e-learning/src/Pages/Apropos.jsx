@@ -121,12 +121,12 @@ const Apropos = () => {
         <section class=" ">
           <div class="container ">
             <div class="row align-items-center ">
-              <div class="col-lg-6">
+              <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="banner__content">
                   <h2 class="section-title"> À propos</h2>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="banner__breadcrumb d-flex justify-content-start justify-content-lg-end">
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -154,7 +154,7 @@ const Apropos = () => {
 
       <div className="container about-thumb">
         <div className="row align-items-center">
-          <div className="col-lg-8 col-xxl-6 text-start">
+          <div className="col-lg-8 col-xxl-6 col-md-12 col-sm-12 text-start">
             <div className="about__content">
               <img className="thumb img-fluid" src={thumb} />
               <div className="py-2">
@@ -181,24 +181,24 @@ const Apropos = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-xxl-6 ">
+          <div className="col-lg-4 col-xxl-6 col-md-6 col-sm-12">
             <img className="about img-fluid" src={about} />
           </div>
         </div>
       </div>
 
-      <section class="container-fluid milestone ">
-        <div class="container">
+      <section class="container-fluid  ">
+        <div class="container-fluid milestone">
           <div class="row align-items-center row-margin">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-12 col-sm-12">
               <div class="milestone__thumb  text-start text-lg-center">
-                <img className="milestone img-fluid" src={milestone} />
+                <img className="milestone img-fluid IMGE" src={milestone} />
               </div>
             </div>
-            <div class="col-lg-6">
-              <div class="milestone__content section__content col-margin">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <div class="milestone__content col-margin">
                 <img className="mile img-fluid" src={mile} />
-                <h2 className="py-3">Notre étape</h2>
+                <h2 className="py-4 ">Notre étape</h2>
                 <p>
                   Elearning a dispensé une formation informatique à plus de 99
                   000 personnes en plus de fournir une formation informatique de
@@ -221,7 +221,7 @@ const Apropos = () => {
       <section className="container-fluid Counter">
         <div className="container">
           <div className="row align-items-start py-5 iCon">
-            <div className="col-sm-6 col-lg-3">
+            <div className="col-sm-12 col-lg-3 col-md-6">
               <div className="counter__single  text-center">
                 <img className="mentor img-fluid" src={mentor} />
                 <h2 className="section__title text-white">
@@ -230,7 +230,7 @@ const Apropos = () => {
                 <p className="text-white PG">Nos mentor</p>
               </div>
             </div>
-            <div className="col-sm-6 col-lg-3">
+            <div className="col-sm-12 col-lg-3 col-md-6">
               <div className="counter__single  text-center">
                 <img className="students img-fluid" src={students} />
                 <h2 className="section__title text-white">
@@ -239,7 +239,7 @@ const Apropos = () => {
                 <p className="text-white PG">Nos étudiants</p>
               </div>
             </div>
-            <div className="col-sm-6 col-lg-3">
+            <div className="col-sm-12 col-lg-3 col-md-6">
               <div className="counter__single  text-center">
                 <img className="Course img-fluid" src={Course} />
                 <h2 className="section__title text-white">
@@ -248,7 +248,7 @@ const Apropos = () => {
                 <p className="text-white PG">Nos cours</p>
               </div>
             </div>
-            <div className="col-sm-6 col-lg-3">
+            <div className="col-sm-12 col-lg-3 col-md-6">
               <div className="counter__single  text-center">
                 <img className="award img-fluid" src={award} />
                 <h2 className="section__title text-white">
@@ -265,7 +265,7 @@ const Apropos = () => {
         <div className="container-fluid  Sct">
           <div className="container text-center SCT1">
             <div class="row ustify-content-center  mb-3">
-              <div class="col-lg-12 p-0">
+              <div class="col-lg-12 col-md-12 col-sm-12 p-0">
                 <h1 className="display-4 fw-bold mb-2">
                   Voyons ce que notre <br />
                   disent les étudiants ?
@@ -287,7 +287,7 @@ const Apropos = () => {
                   <div class="carousel-item active">
                     <div className="row">
 
-                      <div className="col-lg-4 testimonials ">
+                      <div className="col-lg-4 col-md-4 col-sm-12 testimonials ">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -321,7 +321,7 @@ const Apropos = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 testimonials mx-3">
+                      <div className="col-lg-4 col-md-4 col-sm-12 testimonials mx-3">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -355,7 +355,7 @@ const Apropos = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 testimonials ">
+                      <div className="col-lg-4 col-md-4 col-sm-12 testimonials ">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -394,7 +394,7 @@ const Apropos = () => {
 
                   <div class="carousel-item">
                     <div className="row">
-                      <div className="col-lg-4 testimonials ">
+                      <div className="col-lg-4 col-md-4 col-sm-12 testimonials ">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -428,7 +428,7 @@ const Apropos = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 testimonials mx-3">
+                      <div className="col-lg-4 col-md-4 col-sm-12 testimonials mx-3">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -462,7 +462,7 @@ const Apropos = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 testimonials">
+                      <div className="col-lg-4 col-md-4 col-sm-12 testimonials">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -500,7 +500,7 @@ const Apropos = () => {
 
                   <div class="carousel-item">
                     <div className="row">
-                      <div className="col-lg-4 testimonials">
+                      <div className="col-lg-4 col-md-4 col-sm-12 testimonials">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -534,7 +534,7 @@ const Apropos = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 testimonials mx-3">
+                      <div className="col-lg-4 col-md-4 col-sm-12 testimonials mx-3">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -568,7 +568,7 @@ const Apropos = () => {
                         </div>
                       </div>
 
-                      <div className="col-lg-4 testimonials ">
+                      <div className="col-lg-4 col-md-4 col-sm-12 testimonials ">
                         <div className="py-3">
                           <div className="testimonials-slider text-start">
                             <i class="bi bi-quote Slider"></i>
@@ -601,14 +601,14 @@ const Apropos = () => {
                           </div>
                         </div>
                       </div>
-                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                      {/* <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                               <span class="visually-hidden">Previous</span>
                             </button>
                             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                               <span class="carousel-control-next-icon" aria-hidden="true"></span>
                               <span class="visually-hidden">Next</span>
-                            </button>
+                            </button> */}
                     </div>
                   </div>
                 </div>
@@ -626,7 +626,7 @@ const Apropos = () => {
       <section className="Newsletter section bg-img">
         <div className="container">
           <div className="row justify-content-center CTN">
-            <div className="col-lg-10 col-xxl-8">
+            <div className="col-lg-10 col-xxl-8 col-md-12 col-sm-12">
               <div className="newsletter__content">
                 <div className="section__header text-center">
                   <h2 class="section__title">
@@ -660,7 +660,7 @@ const Apropos = () => {
       <footer className="Footer py-5">
         <div className="container">
           <div className="row align-items-center g-5 mb-5">
-            <div className="col-lg-3 col-sm-3">
+            <div className="col-lg-3 col-sm-12 col-md-6">
               <div className="footer-item text-start">
                 <img
                   src={learning}
@@ -690,7 +690,7 @@ const Apropos = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-3 mb-5 ">
+            <div className="col-lg-3 col-sm-12 col-md-6 mb-5 ">
               <div className="d-flex flex-column text-start footer-item mb-5 text-white">
                 <h2 className="mb-4">Bureau</h2>
                 <a
@@ -734,7 +734,7 @@ const Apropos = () => {
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-3 mb-5">
+            <div className="col-lg-3 col-sm-12 col-md-6 mb-5">
               <div className="d-flex flex-column text-start footer-item mb-5 text-white">
                 <h2 className="mb-4">Liens Rapides</h2>
                 <a
@@ -775,7 +775,7 @@ const Apropos = () => {
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-3 mb-5">
+            <div className="col-lg-3 col-sm-12 col-md-6 mb-5">
               <div className="footer-item mb-5">
                 <h2 className="mb-4 text-white"> Cours Récents</h2>
                 <div className="d-flex mb-3 align-items-center">
@@ -819,27 +819,16 @@ const Apropos = () => {
             </div>
           </div>
           <div className="row justify-content-between">
-            <div className="col-lg-6">
-              <p className="text-black">
+          <div className="col-lg-10 col-md-12 col-sm-12">
+              <p className="text-black text-end">
                 Copyright<i className="bi bi-c-circle text-black"></i>
-                <a href="#index.html" className="text-decoration-under-line">
+                <a href="#index.html" className="text-decoration-none"  onClick={() => Navigate("/")}>
                   2024 Elearning
                 </a>
                 , All right reserved.
               </p>
             </div>
-            <div className="col-lg-6">
-              <p className="text-black">
-                Designed By{" "}
-                <a href="#" className="text-decoration-under-line">
-                  HTML Codex
-                </a>{" "}
-                Distributed By{" "}
-                <a href="" className="text-decoration-under-line">
-                  ThemeWagon
-                </a>
-              </p>
-            </div>
+           
           </div>
         </div>
       </footer>

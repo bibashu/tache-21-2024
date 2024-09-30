@@ -119,12 +119,12 @@ const Faq = () => {
         <section className=" ">
           <div className="container ">
             <div className="row align-items-center ">
-              <div className="col-lg-6">
+              <div className="col-lg-6 col-md-12 col-sm-12">
                 <div className="banner__content">
                   <h2 className="section-title">FAQ</h2>
                 </div>
               </div>
-              <div className="col-lg-6">
+              <div className="col-lg-6 col-md-12 col-sm-12">
                 <div className="banner__breadcrumb d-flex justify-content-start justify-content-lg-end">
                   <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
@@ -153,7 +153,7 @@ const Faq = () => {
       <section className="faq section">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-7">
+            <div className="col-lg-7 col-md-12 col-sm-12">
               <div className="section__header">
                 <h4 className="section__title">Question fréquemment posée</h4>
                 <p className="section__sub-title py-4">
@@ -166,7 +166,7 @@ const Faq = () => {
             </div>
           </div>
           <div className="row row-margin">
-            <div className="col-lg-6">
+            <div className="col-lg-6 col-md-12 col-sm-12">
               <div className="faq__content col-margin">
                 <div className="accordion" id="accordionExample">
                   <div className="accordion-item py-3">
@@ -291,7 +291,7 @@ const Faq = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6 col-md-12 col-sm-12">
               <div className="faq__content col-margin">
                 <div className="accordion" id="accordionExampleTwo">
                   <div className="accordion-item py-3">
@@ -421,7 +421,7 @@ const Faq = () => {
       <section className="Newsletter section bg-img">
         <div className="container">
           <div className="row justify-content-center CTN">
-            <div className="col-lg-10 col-xxl-8">
+            <div className="col-lg-10 col-xxl-8 col-md-12 col-sm-12">
               <div className="newsletter__content">
                 <div className="section__header text-center">
                   <h2 class="section__title">
@@ -455,7 +455,7 @@ const Faq = () => {
       <footer className="Footer py-5">
         <div className="container">
           <div className="row align-items-center g-5 mb-5">
-            <div className="col-lg-3 col-sm-3">
+            <div className="col-lg-3 col-sm-12 col-md-6">
               <div className="footer-item text-start">
                 <img
                   src={learning}
@@ -485,7 +485,7 @@ const Faq = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-3 mb-5 ">
+            <div className="col-lg-3 col-sm-12 col-md-6 mb-5 ">
               <div className="d-flex flex-column text-start footer-item mb-5 text-white">
                 <h2 className="mb-4">Bureau</h2>
                 <a
@@ -529,7 +529,7 @@ const Faq = () => {
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-3 mb-5">
+            <div className="col-lg-3 col-sm-12 col-md-6 mb-5">
               <div className="d-flex flex-column text-start footer-item mb-5 text-white">
                 <h2 className="mb-4">Liens Rapides</h2>
                 <a
@@ -570,7 +570,7 @@ const Faq = () => {
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-3 mb-5">
+            <div className="col-lg-3 col-sm-12 col-md-6 mb-5">
               <div className="footer-item mb-5">
                 <h2 className="mb-4 text-white"> Cours Récents</h2>
                 <div className="d-flex mb-3 align-items-center">
@@ -614,27 +614,16 @@ const Faq = () => {
             </div>
           </div>
           <div className="row justify-content-between">
-            <div className="col-lg-6">
-              <p className="text-black">
+            <div className="col-lg-10 col-md-12 col-sm-12">
+              <p className="text-black text-end">
                 Copyright<i className="bi bi-c-circle text-black"></i>
-                <a href="#index.html" className="text-decoration-under-line">
+                <a href="#index.html" className="text-decoration-none"  onClick={() => Navigate("/")}>
                   2024 Elearning
                 </a>
                 , All right reserved.
               </p>
             </div>
-            <div className="col-lg-6">
-              <p className="text-black">
-                Designed By{" "}
-                <a href="#" className="text-decoration-under-line">
-                  HTML Codex
-                </a>{" "}
-                Distributed By{" "}
-                <a href="" className="text-decoration-under-line">
-                  ThemeWagon
-                </a>
-              </p>
-            </div>
+          
           </div>
         </div>
       </footer>

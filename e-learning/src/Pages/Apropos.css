@@ -15,35 +15,42 @@
 }
 .milestone {
     position: relative;
-    top: 350px;
+    top: 400px;
     background-color: #FEFAF3;
-    height: 450px;
+    height: 770px;
 }
-.milestone__thumb{
+
+.IMGE{
+   width: 400px;
+   height: 400px;
+   position: relative;
+   top: 150px;
+}
+.milestone__content{
     position: relative;
-    top: -350px;
+    top: 150px;
 }
 
 .Counter{
  position: relative;
- top: 350px;
+ top: 410px;
  height: 600px;
  background-color: #4A1C01;
 }
 .Footer{
     position: relative;
-    top: 650px;
+    top: 800px;
     background-color: #4A1C01;
     color: white;
 }
 .Newsletter{
     position: relative;
-    top: 650px;
+    top: 600px;
 }
 
 .Sct{
     position: relative;
-    top: 350px;
+    top: 420px;
     background-color: #FEFAF3;
     height: 700px;
 }
@@ -122,3 +129,74 @@
     position: relative;
     top: 120px;
 }
+
+@media (max-width: 992px) {
+    .banner__content {
+      text-align: center; 
+    }
+  
+    .banner__breadcrumb {
+      justify-content: center; 
+    }
+  }
+  
+  /* Pour les écrans jusqu'à 576px (mobiles) */
+  @media (max-width: 576px) {
+    .BANNER {
+      padding: 1rem 0; 
+    }
+  
+    .banner__content {
+      font-size: 1.5rem; 
+    }
+  
+    .breadcrumb {
+      font-size: 0.9rem; 
+    }
+
+    .about-thumb {
+      padding: 1rem 0; 
+    }
+  
+    .about__content h1 {
+      font-size: 1.5rem; 
+    }
+  
+    .para {
+      font-size: 0.9rem; 
+    }
+  
+    .milestone__content h2 {
+      font-size: 1.5rem; 
+    }
+  
+    .milestone__content p {
+      font-size: 0.9rem; 
+    }
+  
+    .BTN {
+      width: 100%;
+      margin-top: 1rem; 
+    }
+
+    .Counter {
+      padding: 1rem 0; 
+    }
+  
+    .section__title {
+      font-size: 1.5rem; 
+    }
+  
+    .counter__single {
+      margin-bottom: 1rem; 
+    }
+  
+    .counter-number {
+      font-size: 2.5rem;
+    }
+  
+    .PG {
+      font-size: 0.9rem; 
+    }
+  }
+  
