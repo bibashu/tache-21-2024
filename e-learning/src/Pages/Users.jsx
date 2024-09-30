@@ -7,7 +7,16 @@ const Users = () => {
 
     return ( 
         <div>
+{/*
+                        <Nav style="--bs-breadcrumb-divider: '>' " aria-label="breadcrumb" >
+                                <ol class="breadcrumb d-flex justify-content-between">
+                                    <li class="breadcrumb-item"><a href="/accueil">Accueil</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                </ol>
+                            <Nav/>
 
+
+                        */}
         </div>
      );
 }

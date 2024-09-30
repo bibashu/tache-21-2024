@@ -2,6 +2,7 @@ import React from "react";
 import  {useNavigate} from "react-router-dom";
 import Button from "./Components/Button";
 import learning from "./assets/imgs/learning.png";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -20,35 +21,38 @@ const Navbar = () => {
                   <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                       <li class="nav-item">
-                        <a class="nav-link mx-lg-3 active" aria-current="page" href="" onClick={() => Navigate("/Accueil.jsx")}>Accueil</a>
+                        <Link class="nav-link mx-lg-3 active" aria-current="page" to="/">Accueil</Link>
                       </li>
                       <div class="nav-item dropdown mx-lg-3">
-                            <a href="#index.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Cous</a>
+                            <Link to="accueil" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Cous</Link>
                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a class="nav-item nav-link" href="/cours" >Cours</a>
-                                <a class="nav-item nav-link" href="/cours-details">Cours details</a>
+                                <Link class="nav-item nav-link" to="/cours" >Cours</Link>
+                                <Link class="nav-item nav-link" to="/cours-details">Cours details</Link>
                             </div>
                        </div>
                        <div class="nav-item dropdown mx-lg-3">
-                            <a href="#index.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Instructeurs</a>
+                            <Link href="accueil" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Instructeurs</Link>
                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a class="nav-item nav-link" href="/instructeurs">Instructeurs</a>
-                                <a class="nav-item nav-link" href="/inst-details">Instructeurs details</a>
+                                <Link class="nav-item nav-link" to="/instructeurs">Instructeurs</Link>
+                                <Link class="nav-item nav-link" to="/inst-details">Instructeurs details</Link>
                           </div>
                       </div>
                       <li class="nav-item">
-                        <a class="nav-link mx-lg-3" href="/apropos" >A propos</a>
+                        <Link class="nav-link mx-lg-3" to="/apropos" >A propos</Link>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link mx-lg-3" href="/faq">FAQ</a>
+                        <Link class="nav-link mx-lg-3" to="/faq">FAQ</Link>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link mx-lg-3" href="/contact">Contact</a>
+                        <Link class="nav-link mx-lg-3" to="/contact">Contact</Link>
                       </li>
                       
                     </ul>
                     <div class="m-3 me-3">
-                      <Button class="btn login-button border btn-sm rounded bg-white me-4" type="button" onClick={() => Navigate("/contact")}>Connexion</Button>
+                      <Button class="btn login-button border btn-sm rounded bg-white me-4"
+                       type="button" onClick={() => Navigate("/contact")}>
+                        Connexion
+                        </Button>
                     </div>
                   </div>
               </div>
