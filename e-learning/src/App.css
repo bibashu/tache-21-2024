@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 * {
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
@@ -214,4 +216,38 @@ h1{
 }
 .footer .col-lg-3 span{
   color: #EC7732;
+}
+/* custom-slick.css */
+
+/* Style des flèches */
+.slick-prev,
+.slick-next {
+  font-size: 30px;
+  color: #FF5733;
+  z-index: 1;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: #900C3F;
+}
+
+/* Style des points */
+.slick-dots li button:before {
+  font-size: 16px;
+  color: #333;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #FF5733;
+}
+
+/* Style des diapositives */
+.slick-slide {
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+.slick-slide img {
+  border-radius: 10px;
 }
