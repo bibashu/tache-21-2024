@@ -6,7 +6,7 @@ import Button from "../Components/Button";
 
 import Input from "../Components/input/Input.jsx";
 import "./style.css";
-// import logo from "../assets/imgs/E-Learning.png";
+import logo from "../assets/imgs/learning.png";
 import axios from "axios";
 import Swal from "sweetalert2";
 // import "bootstrap-icons/font/bootstrap-icons.css";
@@ -119,12 +119,13 @@ const Form = () => {
               <div className="flex-row">
                 <span className="span text-danger">Forgot password?</span>
               </div>
-              <button className="button-submit" type="submit">Connexion</button>
-            </form>
-
+              <button className="button-submit" type="submit"
+             onClick={() => Navigate("/Users")}>Connexion</button>
+              </form>
+           
           </div>
         </div>
-      </div>
+      </div> 
     </div>
   );
 };

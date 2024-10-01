@@ -4,13 +4,12 @@ import './index.css';
 import App from './App';
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from './Pages/Form';
-import Users from './Pages/Users';
-
-// import Home from './Pages/Home';
 import Dashboard from 'Pages/dashboard/Dashboard';
 import Livraison from 'Pages/dashboard/Livraison';
-
-// import Accueil from './Pages/Accueil';
+import Home from './Pages/Home';
+ import Apropos from './Pages/Apropos';
+ import Faq from './Pages/Faq';
+ import Contact from './Pages/Contact';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,15 +21,24 @@ root.render(
         </Route>
 
         <Route path='/login' element={ <Form />}> 
-        </Route>
-       
-        <Route path='/Users' element={ <Users />}> 
-        </Route>
+        </Route> 
+
+       <Route path='/Apropos' element={ <Apropos />}> 
+        </Route> 
+     
+        <Route path='/Faq' element={ <Faq />}> 
+        </Route> 
+
+        <Route path='/Contact' element={ <Contact />}> 
+        </Route> 
+        <Route path='/' element={ <Home />}> 
+        </Route> 
         <Route path='/dashboard' element={ <Dashboard />}> 
         </Route>
         <Route path='/livraison' element={ <Livraison />}> 
         </Route>
-     
+
+      
 
       </Routes>
 
