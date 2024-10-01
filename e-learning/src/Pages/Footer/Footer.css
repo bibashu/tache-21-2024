@@ -1,0 +1,33 @@
+.footer {
+  background-color: #4a1c01;
+}
+.footer .col-lg-3 a {
+  color: #fff;
+}
+.footer .col-lg-3 p {
+  color: #fff;
+}
+.footer .col-lg-3 h2 {
+  color: #fff;
+}
+.footer .logo {
+  width: 150px;
+  height: 80px;
+  position: relative;
+  top: -30px;
+}
+.footer .col-lg-3 span {
+  color: #ec7732;
+}
+.TXT {
+  position: relative;
+  top: -30px;
+}
+.ICON {
+  position: relative;
+  top: -20px;
+}
+.IMG {
+  width: 100px;
+  height: 60px;
+}
