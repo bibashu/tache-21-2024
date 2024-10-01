@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import './accueil.css';
-import './contact.css';
-import Navbar from "./Navbar";
+//import './index.css';
+import './Pages/Accueil/accueil.css';
+import './Navbar/navbar.css';
+import Navbar from "./Navbar/Navbar";
 import App from './App';
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from './Pages/Form';
@@ -12,14 +12,14 @@ import Form from './Pages/Form';
 import Dashboard from 'Pages/dashboard/Dashboard';
 import Livraison from 'Pages/dashboard/Livraison';
 
-import Accueil from 'Pages/Accueil';
-import Faq from "Pages/Faq";
-import CoursDetails from 'Pages/Cours-details';
-import Instructeurs from 'Pages/Instructeurs';
-import InstDetails from 'Pages/Inst-details';
-import Contact from "Pages/Contact";
-import Cours from "Pages/Cours";
-import Apropos from 'Pages/Apropos';
+import Accueil from './Pages/Accueil/Accueil';
+import Faq from "Pages/Faq/Faq";
+import CoursDetails from './Pages/Cours-details/Cours-details';
+import Instructeurs from './Pages/Instructeurs/Instructeurs';
+import InstDetails from './Pages/Instructeurs-details/Inst-details';
+import Contact from "./Pages/Contacts/Contact";
+import Cours from "./Pages/Cours/Cours";
+import Apropos from './Pages/Apropos/Apropos';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
