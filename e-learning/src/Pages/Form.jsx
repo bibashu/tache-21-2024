@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 // import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Form = () => {
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState(null);
@@ -20,33 +20,35 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Form submitted');
+
     try {
       const response = await axios.post('http://localhost:5000/apprenant/login', { email, password })
       const { token, user } = response.data;
 
       // Stocker le token dans localStorage
       localStorage.setItem('authToken', token);
-      // Utiliser les données utilisateur
-      console.log('Nom:', user.nom);
-      console.log('Prénom:', user.prenom);
+      localStorage.setItem('user', JSON.stringify(user)); // ou user.id selon votre base de données
+    
+    
+      console.log('user :>> ', user.cours);
       Swal.fire({
         title: "Connexion reussi!",
         text: `Bienvenue ${user.prenom}  ${user.nom} `,
         icon: "success"
       });
 
-      window.location.href = "./Users"
+      window.location.href = "./Dashboard"
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
-        // setError(error.response.data.message);
-        // setMessage(null);
+        
         Swal.fire({
           icon: "error",
           title: "Connexion échoué",
           text: "Mot de passe ou email invalide",
 
         });
-        window.location.href = "./login"
+        navigate("/dashboard");
 
       } else {
         setError('Une erreur s\'est produite. Veuillez réessayer.');
@@ -92,6 +94,7 @@ const Form = () => {
                   type="text"
                   required
                   onChange={(e) => setEmail(e.target.value)}
+                  autoComplete="true"
                 />
               </div>
               <div className="flex-column">
@@ -113,14 +116,13 @@ const Form = () => {
                   type="password"
                   required
                   onChange={(e) => setPassword(e.target.value)}
-
+                  autoComplete="true"
                 />
               </div>
               <div className="flex-row">
                 <span className="span text-danger">Forgot password?</span>
               </div>
-              <button className="button-submit" type="submit"
-             onClick={() => Navigate("/Users")}>Connexion</button>
+              <button className="button-submit" type="submit">Connexion</button>
               </form>
            
           </div>
