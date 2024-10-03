@@ -16,9 +16,9 @@ const Layout = ({ children, userData }) => {
          <Logo />
           </div>
         <Navbar userDatas={userData} />
-        {/* {children} */}
-        </div>
         {children}
+        </div>
+        {/* {children} */}
       </div>
   
     

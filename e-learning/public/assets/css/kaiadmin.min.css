@@ -791,7 +791,7 @@ body {
    width: 265px;
    display: block;
    z-index: 1002;
-   color: #fff;
+   color: #fff !important;
    font-weight: 200;
    background: #fff;
    -webkit-box-shadow: 4px 4px 10px rgba(69, 65, 78, .06);
@@ -1024,7 +1024,8 @@ body {
    margin-bottom: 0;
    margin-right: 5px;
    white-space: nowrap;
-   font-weight: 600
+   font-weight: 600;
+   color: #8d9498;
 }
 
 .sidebar .nav>.nav-item a .caret,
@@ -2088,7 +2089,8 @@ body[data-background-color=dark] .border-top {
 }
 
 .btn-toggle {
-   color: #fff !important
+   background-color:rgb(252, 144, 73) !important;
+   /* color: #fff !important  */
 }
 
 .logo-header .btn-toggle,
