@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-//import './index.css';
+import './Pages/Contacts/contact.css';
 import './Pages/Accueil/accueil.css';
 import './Navbar/navbar.css';
+import './Pages/Footer/footer.css';
 import Navbar from "./Navbar/Navbar";
 import App from './App';
 import {BrowserRouter, Routes, Route } from "react-router-dom";

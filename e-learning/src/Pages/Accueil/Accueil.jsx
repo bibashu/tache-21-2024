@@ -47,25 +47,25 @@ const Accueil = () => {
   return (
     <Layout>
         {/* --SECTION-1-- */}
-        <div className="container-fluid bg-light py-5">
+        <div className="container-fluid bg-light  py-5">
             <section className="hero overflow-hidden section-1 bg-img py-5">
-                <div className="container">
+                <div className="container pt-5">
                     <div className="row align-items-center row-margin">
                         <div className="col-lg-8 col-sm-12 col-xl-6">
                             <div className="hero-content col-margin">
-                                <h1 className="hero-title text-start">Apprenez une nouvelle <span className="text-bg">compétence</span> <br/> chaque jour, à tout moment et n’importe où.</h1>
+                                <h1 className="hero-title text-start">Apprenez une nouvelle <span className="text-bg">compétence</span> chaque jour, à tout moment et n’importe où.</h1>
                                 <p className="primary-text text-start">Plus de <span className="fw-bold">1000+</span> cours couvrant tous les domaines technologiques pour vous permettre d'
                                 apprendre et d'explorer de nouvelles opportunités. Apprenez auprès
                                 d'experts du secteur et décrochez l'emploi de vos rêves.</p>
                                 <form action="#" method="post">
                                     <div className="hero-search">
                                         <input type="search" name="hero_search" id="heroSearch" placeholder="Rechercher votre cours" />
-                                        <button type="submit" className="cmn-button"><i className="fa-solid fa-magnifying-glass text-white"></i></button>
+                                        <button type="submit" className="cmn-button" onClick={() => Navigate("/login")}><i className="fa-solid fa-magnifying-glass text-white"></i></button>
                                     </div>
                                 </form>
                                 <div className="hero-cta">
-                                    <a href="/" className="cmn-button text-decoration-none">Parcourir le cours</a>
-                                    <a href="/" className="cmn-button cmn-button--secondary text-decoration-none">Join Free Seminer</a>
+                                    <a href="" className="cmn-button text-decoration-none" onClick={() => Navigate("/login")}>Parcourir le cours</a>
+                                    <a href="" className="cmn-button cmn-button--secondary text-decoration-none" onClick={() => Navigate("/login")}>Join Free Seminer</a>
                                 </div>
                             </div>
                         </div>
@@ -78,9 +78,152 @@ const Accueil = () => {
                 </div>
             </section>
         </div>
+        {/* --SECTION-1 END-- */}
+
+        {/* --SECTION-DISPLAY-NONE START-- */}
+        <div className="section-display-none-lg py-5">
+            <div className="container">
+                <div className="row">
+                    <div class="col-lg-6">
+                        <div class="section-header">
+                            <h2 class="section-title">Cours populaires</h2>
+                            <p class="section-sub-title">Notre liste de cours est organisée en fonction des compétences les plus demandées actuellement dans le pays et à l'extérieur du pays. </p>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                                <div class="carousel-item  p-3 active">
+                                    <div className="row row-margin">
+                                        <div className="col-md-6 col-lg-6 col-sm-12 col-xxl-4">
+                                            <div className="course-single col-margin">
+                                                <div className="course-single-thumb">
+                                                    <img src={courseone} alt="Image" className="rounded w-100"/>
+                                                    <span className="tag"><i className="fa-solid fa-video"></i>25+ VIDEOS</span>
+                                                </div>
+                                                <div className="course-single-content p-3">
+                                                    <div className="course-single-content-meta">
+                                                        <a href="#" className="text-decoration-none"><i className="fa-solid fa-eye"></i>3.5k Views</a>
+                                                        <span><i className="fa-solid fa-clock"></i>7 hr 27 min</span>
+                                                    </div>
+                                                    <div className="course-single-content-title d-flex align-items-center">
+                                                        <h5>Graphic Design</h5>
+                                                        <span><i className="fa-solid fa-star"></i>4.5</span>
+                                                    </div>
+                                                    <p className="text-start">Master Course</p>
+                                                    <div className="course-single-content-cta">
+                                                        <h5>$15.00 <span  className='text-decoration-line-through'>$20.00</span></h5>
+                                                        <a href="/cours" className="cmn-button text-decoration-none">Buy Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="carousel-item  p-3 ">
+                                    <div className="row row-margin">
+                                       <div className="col-md-6 col-lg-6 col-sm-12  col-xxl-4">
+                                            <div className="course-single col-margin">
+                                                <div className="course-single-thumb">
+                                                    <img src={coursetwo} alt="Image" className="rounded w-100" />
+                                                    <span className="tag"><i className="fa-solid fa-video"></i>22+ VIDEOS</span>
+                                                </div>
+                                                <div className="course-single-content p-3">
+                                                    <div className="course-single-content-meta">
+                                                        <a href="#"  className="text-decoration-none"><i className="fa-solid fa-eye"></i>2.5k Views</a>
+                                                        <span><i className="fa-solid fa-clock"></i>6 hr 07 min</span>
+                                                    </div>
+                                                    <div className="course-single-content-title">
+                                                        <h5>UI/UX Design</h5>
+                                                        <span><i className="fa-solid fa-star"></i>4.7</span>
+                                                    </div>
+                                                    <p className="text-start">Creative Course</p>
+                                                    <div className="course-single-content-cta">
+                                                        <h5>$25.00 <span  className='text-decoration-line-through'>$30.00</span></h5>
+                                                        <a href="/cours" className="cmn-button text-decoration-none">Buy Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="carousel-item  p-3 ">
+                                    <div className="row  row-margin">
+                                        <div className="col-md-6 col-lg-6 col-sm-12 col-xxl-4">
+                                            <div className="course-single col-margin">
+                                                <div className="course-single-thumb">
+                                                    <img src={coursethree} alt="Image" className="rounded w-100" />
+                                                    <span className="tag"><i className="fa-solid fa-video"></i>32+ VIDEOS</span>
+                                                </div>
+                                                <div className="course-single-content p-3">
+                                                    <div className="course-single-content-meta">
+                                                        <a href="#"  className="text-decoration-none"><i className="fa-solid fa-eye"></i>4.5k Views</a>
+                                                        <span><i className="fa-solid fa-clock"></i>9 hr 27 min</span>
+                                                    </div>
+                                                    <div className="course-single-content-title">
+                                                        <h5>Web Design</h5>
+                                                        <span><i className="fa-solid fa-star"></i>4.2</span>
+                                                    </div>
+                                                    <p className="text-start">Web Programming</p>
+                                                    <div className="course-single-content-cta">
+                                                        <h5>$22.00 <span  className='text-decoration-line-through'>$30.00</span></h5>
+                                                        <a href="/cours" className="cmn-button text-decoration-none">Buy Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item  p-3 ">
+                                    <div className="row row-margin">
+                                        <div className="col-md-6 col-lg-6 col-sm-12 col-xxl-4">
+                                            <div className="course-single col-margin">
+                                                <div className="course-single-thumb">
+                                                    <img src={courseone} alt="Image" className="rounded w-100"/>
+                                                    <span className="tag"><i className="fa-solid fa-video"></i>25+ VIDEOS</span>
+                                                </div>
+                                                <div className="course-single-content p-3">
+                                                    <div className="course-single-content-meta">
+                                                        <a href="#" className="text-decoration-none"><i className="fa-solid fa-eye"></i>3.5k Views</a>
+                                                        <span><i className="fa-solid fa-clock"></i>7 hr 27 min</span>
+                                                    </div>
+                                                    <div className="course-single-content-title">
+                                                        <h5>Graphic Design</h5>
+                                                        <span><i className="fa-solid fa-star"></i>4.5</span>
+                                                    </div>
+                                                    <p className="text-start">Master Course</p>
+                                                    <div className="course-single-content-cta">
+                                                        <h5>$15.00 <span  className='text-decoration-line-through'>$20.00</span></h5>
+                                                        <a href="/cours" className="cmn-button text-decoration-none">Buy Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        {/* --SECTION-1-DISPLAY-NONE END-- */}
+
 
         {/* --SECTION-COURS-START-- */}
-        <div className="section-2 py-5 p-0">
+        <div className="section-2 py-5 p-0 section-display-none">
             <div className="container-fluid bg-white ">
                 <div className="container text-center">
                     <div class="row justify-content-center">
@@ -112,7 +255,7 @@ const Accueil = () => {
                                                         <span><i className="fa-solid fa-star"></i>4.5</span>
                                                     </div>
                                                     <p className="text-start">Master Course</p>
-                                                    <div className="course-single-content-cta">
+                                                    <div className="course-single-content-cta d-flex justify-content-between">
                                                         <h5>$15.00 <span  className='text-decoration-line-through'>$20.00</span></h5>
                                                         <a href="/cours" className="cmn-button text-decoration-none">Buy Now</a>
                                                     </div>
@@ -332,15 +475,15 @@ const Accueil = () => {
         {/* --SECTION-COURS-END-- */}
 
         {/* --FEATURES-START-- */}
-        <div className="lg-carrousel section-3">
+        <div className="lg-carrousel section-display-none">
             <div className="container-fluid">
                 <div className="row">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item  p-3 active">
+                            <div class="carousel-item p-3 active">
                                 <div className="row">
-                                    <div className="col-lg-3">
-                                        <div className="features-slider-single slick-slide slick-cloned">
+                                    <div className="col-lg-3 col-sm-3">
+                                        <div className="features-slider-single slick-slide">
                                             <div class="features-slider-single-content bg-one">
                                                 <div class="features-slider-thumb">
                                                     <img src={robotics} alt="Icon" />
@@ -350,8 +493,8 @@ const Accueil = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-3">
-                                         <div className="features-slider-single slick-slide slick-active">
+                                    <div className="col-lg-3  col-sm-3">
+                                         <div className="features-slider-single slick-slide">
                                             <div class="features-slider-single-content bg-two">
                                                 <div class="features-slider-thumb">
                                                     <img src={graphics} alt="Icon" />
@@ -361,8 +504,8 @@ const Accueil = () => {
                                             </div>
                                          </div>
                                     </div>
-                                    <div className="col-lg-3">
-                                        <div class="features-slider-single slick-slide slick-cloned">
+                                    <div className="col-lg-3 col-sm-3">
+                                        <div class="features-slider-single slick-slide">
                                             <div class="features-slider-single-content bg-one">
                                                 <div class="features-slider-thumb">
                                                     <img src={webdevelopment} alt="Icon" />
@@ -372,8 +515,8 @@ const Accueil = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-3">
-                                       <div className="features-slider-single slick-slide slick-active">
+                                    <div className="col-lg-3 col-sm-3">
+                                       <div className="features-slider-single slick-slide">
                                         <div class="features-slider-single-content bg-two">
                                                 <div class="features-slider-thumb">
                                                     <img src={appdevelopment} alt="Icon" />
@@ -386,10 +529,10 @@ const Accueil = () => {
                                 </div>
                             </div>
 
-                            <div class="carousel-item  p-3">
+                            <div class="carousel-item p-3">
                                 <div className="row">
-                                    <div className="col-lg-3">
-                                        <div class="features-slider-single slick-slide slick-active">
+                                    <div className="col-lg-3 col-sm-3">
+                                        <div class="features-slider-single slick-slide">
                                             <div class="features-slider-single-content bg-two">
                                                 <div class="features-slider-thumb">
                                                     <img src={uiux} alt="Icon" />
@@ -399,8 +542,8 @@ const Accueil = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-3">
-                                        <div class="features-slider-single slick-slide slick-active">
+                                    <div className="col-lg-3 col-sm-3">
+                                        <div class="features-slider-single slick-slide">
                                             <div class="features-slider-single-content bg-one">
                                                 <div class="features-slider-thumb">
                                                     <img src={appdevelopment} alt="Icon" />
@@ -410,7 +553,7 @@ const Accueil = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-3">
+                                    <div className="col-lg-3 col-sm-3">
                                        <div class="features-slider-single slick-slide">
                                             <div class="features-slider-single-content bg-two">
                                                 <div class="features-slider-thumb">
@@ -421,8 +564,8 @@ const Accueil = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-3">
-                                         <div className="features-slider-single slick-slide slick-active">
+                                    <div className="col-lg-3 col-sm-3">
+                                         <div className="features-slider-single slick-slide">
                                             <div class="features-slider-single-content bg-one">
                                                 <div class="features-slider-thumb">
                                                     <img src={robotics} alt="Icon" />
@@ -435,32 +578,32 @@ const Accueil = () => {
                                 </div>
                             </div>
 
-                            <div class="carousel-item  p-3">
+                            <div class="carousel-item p-3">
                                 <div className="row">
-                                    <div className="col-lg-3">
-                                        <div className="features-slider-single slick-slide slick-cloned">
+                                    <div className="col-lg-3 col-sm-3">
+                                        <div className="features-slider-single slick-slide">
                                             <div class="features-slider-single-content bg-two">
                                                 <div class="features-slider-thumb">
                                                     <img src={robotics} alt="Icon" />
                                                 </div>
                                                 <h5>Robotics Automation</h5>
-                                                <p>Course material for each subject is designed by experts</p>
+                                                <p>Le matériel de cours pour chaque sujet est conçu par des experts</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-3">
-                                         <div className="features-slider-single slick-slide slick-active">
+                                    <div className="col-lg-3 col-sm-3">
+                                         <div className="features-slider-single slick-slide">
                                             <div class="features-slider-single-content bg-one">
                                                 <div class="features-slider-thumb">
                                                     <img src={graphics} alt="Icon" />
                                                 </div>
                                                 <h5>Graphic Design</h5>
-                                                <p>Course material for each subject is designed by experts</p>
+                                                <p>Le matériel de cours pour chaque sujet est conçu par des experts p</p>
                                             </div>
                                          </div>
                                     </div>
-                                    <div className="col-lg-3">
-                                        <div class="features-slider-single slick-slide slick-cloned">
+                                    <div className="col-lg-3 col-sm-3">
+                                        <div class="features-slider-single slick-slide">
                                             <div class="features-slider-single-content bg-two">
                                                 <div class="features-slider-thumb">
                                                     <img src={webdevelopment} alt="Icon" />
@@ -470,8 +613,8 @@ const Accueil = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-3">
-                                       <div className="features-slider-single slick-slide slick-active">
+                                    <div className="col-lg-3 col-sm-3">
+                                       <div className="features-slider-single slick-slide">
                                         <div class="features-slider-single-content bg-one">
                                                 <div class="features-slider-thumb">
                                                     <img src={appdevelopment} alt="Icon" />
@@ -522,7 +665,7 @@ const Accueil = () => {
         {/* --APROPOS DE NOUS END -- */}
        
         {/* --SECTION -SERVICES-- */}
-        <div className="lg-carrousel">
+        <div className="lg-carrousel section-display-none">
             <div className="container-fluid  section-4 py-5">
                 <div className="container">
                     <div class="row justify-content-center">
@@ -691,7 +834,7 @@ const Accueil = () => {
                             <h4 className="text-start">Séminaires gratuits à venir</h4>
                             <div className="seminar-content-single">
                                 <div className="row">
-                                    <div className="col-lg-6 col-sm-6">
+                                    <div className="col-lg-6 col-sm-6 mb-3">
                                         <div className="seminar-content-single-item justify-content-start text-start">
                                             <div className="seminar-date text-start">
                                                 <h5 className="text-white">19 <br/> juillet, 22</h5>
@@ -701,19 +844,19 @@ const Accueil = () => {
                                             <a href="/contact" className="cmn-button cmn-button--secondary text-decoration-none" onClick={() => Navigate("/users")}>Rejoignez-nous</a>
                                         </div>
                                     </div>
-                                    <div className="col-lg-6 col-sm-6">
+                                    <div className="col-lg-6 col-sm-6 mb-3">
                                         <div className="seminar-content-single-item justify-content-start text-start">
                                             <div className="seminar-date text-start">
                                                 <h5 className="text-white">19 <br/> juillet, 22</h5>
                                             </div>
                                             <h5 className="text-start">Montage vidéo</h5>
                                             <p className="text-start">En ligne, heure : 20h00</p>
-                                            <a href="/contact" className="cmn-button cmn-button--secondary text-decoration-none" onClick={() => Navigate("/users")}>Rejoignez-nous</a>
+                                            <a href="/contact" className="cmn-button cmn-button--secondary text-decoration-none" onClick={() => Navigate("/login")}>Rejoignez-nous</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="/contact" className="cmn-button text-decoration-none" onClick={() => Navigate("/users")}>Tous les séminaires</a>
+                            <a href="/contact" className="cmn-button text-decoration-none" onClick={() => Navigate("/login")}>Tous les séminaires</a>
                         </div>
                     </div>
                     <div className="col-lg-4 col-xl-5 offset-xl-1 order-first order-lg-last">
@@ -775,9 +918,123 @@ const Accueil = () => {
             </div>
        </section>
     {/* SECTION-PROCES-END */}
+
+     {/* --SECTION-SPECIAL-COURS-START display-noneeeee -- */} 
+        <div className="section-display-none-lg">
+            <div className="container-fluid py-5">
+                <div className="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-11 col-xl-8">
+                            <div class="section-header justify-content-center">
+                                <h2 class="section-title text-center mb-3">Cours Spécial</h2>
+                                <p class="section-sub-title tex-center mb-3">Notre liste de cours est organisée en fonction des compétences les plus demandées actuellement dans le pays et à l'extérieur du pays. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item  p-3 active">
+                                    <div className="row">
+                                        <div className="col-sm-12">
+                                        <div className="course-single col-margin">
+                                                <div className="course-single-thumb">
+                                                    <img src={special1} alt="Image" className="rounded w-100" />
+                                                    <span className="tag"><i className="fa-solid fa-video"></i>25+ VIDEOS</span>
+                                                </div>
+                                                <div className="course-single-content p-3">
+                                                    <div className="course-single-content-meta">
+                                                        <a href="#" className="text-decoration-none"><i className="fa-solid fa-eye text-decoration-none"></i>9.5k Views</a>
+                                                        <span><i className="fa-solid fa-clock"></i>9 hr 27 min</span>
+                                                    </div>
+                                                    <div className="course-single-content-title">
+                                                        <h5>Learning Holy Quran</h5>
+                                                        <span><i className="fa-solid fa-star"></i>4.5</span>
+                                                    </div>
+                                                    <p className="text-start">With Arabic Language</p>
+                                                    <div className="course-single-content-cta">
+                                                        <h5>$55.00 <span  className='text-decoration-line-through'>$60.00</span></h5>
+                                                        <a href="/cours" className="cmn-button  text-decoration-none">Buy Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item  p-3 ">
+                                    <div className="row">
+                                        <div className="col-sm-12">
+                                        <div className="course-single col-margin">
+                                                <div className="course-single-thumb">
+                                                    <img src={special2} alt="Image" className="rounded w-100" />
+                                                    <span className="tag"><i className="fa-solid fa-video"></i>22+ VIDEOS</span>
+                                                </div>
+                                                <div className="course-single-content p-3">
+                                                    <div className="course-single-content-meta">
+                                                        <a href="#" className="text-decoration-none"><i className="fa-solid fa-eye text-decoration-none"></i>2.5k Views</a>
+                                                        <span><i className="fa-solid fa-clock"></i>6 hr 07 min</span>
+                                                    </div>
+                                                    <div className="course-single-content-title">
+                                                        <h5>Spoken English</h5>
+                                                        <span><i className="fa-solid fa-star"></i>4.7</span>
+                                                    </div>
+                                                    <p className="text-start">International English</p>
+                                                    <div className="course-single-content-cta">
+                                                        <h5>$25.00 <span className='text-decoration-line-through'>$30.00</span></h5>
+                                                        <a href="/cours" className="cmn-button  text-decoration-none">Buy Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item  p-3 ">
+                                    <div className="row">
+                                        <div className="col-sm-12">
+                                        <div className="course-single col-margin">
+                                                <div className="course-single-thumb">
+                                                    <img src={special3} alt="Image" className=" rounded w-100" />
+                                                    <span className="tag"><i className="fa-solid fa-video"></i>32+ VIDEOS</span>
+                                                </div>
+                                                <div className="course-single-content p-3">
+                                                    <div className="course-single-content-meta">
+                                                        <a href="#" className="text-decoration-none"><i className="fa-solid fa-eye text-decoration-none"></i>4.5k Views</a>
+                                                        <span><i className="fa-solid fa-clock"></i>9 hr 27 min</span>
+                                                    </div>
+                                                    <div className="course-single-content-title">
+                                                        <h5>Learning Japanese</h5>
+                                                        <span><i className="fa-solid fa-star"></i>4.2</span>
+                                                    </div>
+                                                    <p className="text-start">Learning Language</p>
+                                                    <div className="course-single-content-cta">
+                                                        <h5>$22.00 <span   className='text-decoration-line-through'>$30.00</span></h5>
+                                                        <a href="/cours" className="cmn-button text-decoration-none">Buy Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     {/* --SECTION-SPECIAL-COURS-END display-noneeeee -- */} 
        
         {/* --SECTION-SPECIAL-COURS-START -- */}  
-        <div className="section-2">
+        <div className="section-2 section-display-none">
             <div className="container-fluid py-5">
                 <div className="container py-5">
                     <div class="row justify-content-center">
@@ -1032,28 +1289,28 @@ const Accueil = () => {
         <section class="counter section py-5">
             <div class="container py-5">
                 <div class="row row-margin align-items-start">
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-6 col-md-6 col-lg-3">
                         <div class="counter-single col-margin text-center">
                             <img src={mentor} alt="Icon" />
                             <h2 class="section-title"><span class="counter-number">555</span>+</h2>
                             <p>Our Mentor</p>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-6 col-md-6 col-lg-3">
                         <div class="counter-single col-margin text-center">
                             <img src={students} alt="Icon" />
                             <h2 class="section-title"><span class="counter-number">99</span>k+</h2>
                             <p>All Students</p>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-6 col-md-6 col-lg-3">
                         <div class="counter-single col-margin text-center">
                             <img src={course} alt="Icon" />
                             <h2 class="section-title"><span class="counter-number">250</span>+</h2>
                             <p>All Course</p>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-6 col-md-6 col-lg-3">
                         <div class="counter-single col-margin text-center">
                             <img src={award} alt="Icon" />
                             <h2 class="section-title"><span class="counter-number">66</span>+</h2>
@@ -1064,7 +1321,7 @@ const Accueil = () => {
             </div>
         </section>
         {/* SECTION-TESTIMONIAL  */}
-    <section class="section testimonials section-5 bg-img py-5">
+    <section class="section testimonials section-display-none bg-img py-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-11 col-sm-12 col-xl-8">

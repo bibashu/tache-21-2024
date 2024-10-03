@@ -31,7 +31,7 @@ const CoursDetails = () => {
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="banner-breadcrumb d-flex justify-content-start justify-content-lg-end">
+                        <div class="banner-breadcrumb d-flex justify-content-sm-end  justify-content-lg-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><Link to="/" className='text-decoration-none'>Accueil</Link></li>
@@ -328,10 +328,6 @@ const CoursDetails = () => {
                 </div>
             </div>
        </section>
-
-        {/* --FOOTER--  */}
-
-    
 
         </Layout>
      );

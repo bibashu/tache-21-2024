@@ -28,9 +28,50 @@
 .row-margin .col-margin {
     margin-bottom: 30px;
 }
-@media only screen and (max-width: 991px) {
+@media only screen and(max-width: 768px){
+    .contact .contact-content-group{
+        display: block!important;
+        width: 100%!important;
+    }
+}
+@media only screen and(max-width: 425px){
+    
+    .contact-content-group{
+        display: block!important;
+        width: 100%!important;
+        margin: 0px 10px;
+    }
+    .contact-content-group-item h5{
+        font-size: normal;
+    }
+    .contact-newsletter .cmn-button {
+        border-radius: 5px;
+    }
+    .contact-newsletter input{
+        border-radius: 5px 5px 5px 5px!important; 
+    }
+}
+@media only screen and(max-width: 991px){
     .contact .contact-map iframe {
-        max-height: 400px;
+        height: 800px!important;
+        max-width: 200px!important;
+        margin-right: 30px;
+    }
+    .contact .contact-content-group .contact-content-group-item{
+        width: 400px;
+        height: 500px;
+        padding: 0px;
+    }
+    .contact .row-margin{
+        align-items: center!important;
+    }
+    p, th, td, li, input, textarea, select, label, blockquote, span {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .contact-form .nice-select {
+        height: 60px;
+        line-height: 60px;
     }
 }
 .contact-content h4 {
@@ -133,16 +174,6 @@ p, th, td, li, input, textarea, select, label, blockquote, span {
     .contact .contact-form .group {
         flex-direction: column;
         gap: 0px;
-    }
-}
-@media only screen and (max-width: 991px) {
-    p, th, td, li, input, textarea, select, label, blockquote, span {
-        font-size: 16px;
-        line-height: 28px;
-    }
-    .contact-form .nice-select {
-        height: 60px;
-        line-height: 60px;
     }
 }
 .contact-form .nice-select .list {

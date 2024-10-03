@@ -21,6 +21,39 @@
     border: none;
     font-size: 1.25rem;
   }
+@media screen and(min-width:768px){
+
+}
+
+@media only screen and(max-width: 991px){
+  .nav-link{
+    line-height: normal;
+    font-size: 12px;
+    padding: 10px;
+    margin: 10px;
+  }
+  .navbar .cmn-button{
+    font-weight: 600;
+    color: #ffffff;
+    padding: 10px 15px;
+  }
+  .navbar{
+     width: 100%;
+     align-items: center;
+
+  }
+  .navbar .offcanvas{
+    width: 50%;
+  }
+  .navbar .navbar-brand{
+     width: 25%;
+     margin: 0px 50px 0px 0px;
+     justify-content: start;
+  }
+  .navbar .bouton-dn{
+    width: 25%;
+  }
+}
   .navbar-toggler:focus, .btn-close:focus{
     box-shadow: none;
     outline: none;
@@ -31,28 +64,21 @@
     position: relative;
   }
   .navbar-nav .nav-link.active{
-    color: #EC7732;
+    color: #f73e00;
   }
   .navbar-nav .nav-link.show{
-    color: #EC7732;
+    color: #f73e00;
   }
   .nav-link:hover{
-    color: #EC7732;
+    color: #f73e00;
   }
   .nav-link.active{
-    color: #EC7732;
-  }
-  /*.navbar Button{
-    border-radius: 5px;
-    border: 1px solid #EC7732;
-    color: #EC7732;
-    padding: 10px;
-    background-color: #fff;
+    color: #f73e00;
   }
   .navbar .cmn-button--secondary:hover{
-    background: linear-gradient(to right,#f8a97b,#EC7732)!important;
+    background: linear-gradient(90deg, #f48d00 0%, #f73e00 100%);
     color: white!important;
-  }  */
+  } 
   
   @media screen and ( min-width: 991px) {
     .nav-link::before{
@@ -63,7 +89,7 @@
         transform: translateX(-50%);
         width: 100%;
         height: 2px;
-        background-color: #EC7732;
+        background-color: #f73e00;
         visibility: hidden;
         transition: 0.3s ease-in-out;
     }

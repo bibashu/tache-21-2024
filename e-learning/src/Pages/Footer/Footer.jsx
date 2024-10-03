@@ -6,10 +6,10 @@ import learning from './footer-img/learning.png';
 const Footer = () => {
     return ( 
         <footer className="footer py-5">
-            <div className="container-fluid  border-bottom">
+            <div className="container-fluid py-5 border-bottom">
                 <div className="container">
                     <div class="row align-items-center g-5 mb-3">
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="footer-item text-start">
                                 <img src={learning} className="img-fluid mb-1 logo" alt="logo" />
                                 <p class="mb-3 text-start">Elearning est l'une des principales plateformes de développement des compétences en e-learning au monde. Nous nous engageons à éradiquer le chômage dans le monde et à créer des ressources humaines mondiales grâce au développement des compétences.</p>
@@ -21,7 +21,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-5">
+                        <div class="col-lg-3 col-md-6 col-sm-6 mb-5">
                             <div class="d-flex flex-column text-start footer-item mb-5">
                                 <h2 class="mb-4">Office</h2>
                                 <a class="btn-link text-decoration-none mb-2" href="">+221778952500</a>
@@ -33,7 +33,7 @@ const Footer = () => {
                                 <a class="btn-link text-decoration-none" href="">SAT – SUN: CLOSED</a>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-5">
+                        <div class="col-lg-3 col-md-6 col-sm-6 mb-5">
                             <div class="d-flex flex-column text-start footer-item mb-5">
                                 <h2 class="mb-4">Quick Links</h2>
                                 <a class="btn-link text-decoration-none mb-2" href="">Home</a>
@@ -44,35 +44,35 @@ const Footer = () => {
                                 <a class="btn-link text-decoration-none mb-4" href="">Contact</a>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 mb-5">
+                        <div class="col-lg-3 col-md-6 col-sm-6 mb-5">
                             <div class="footer-item mb-5">
-                                <h2 class="mb-4">Recent Courses</h2>
+                                <h2 class="text-start mb-4">Recent Courses</h2>
                                     <div className="d-flex mb-3 align-items-center">
-                                    <div className="section-img">
-                                        <img src={recentone} className="img-fluid" alt="recent-1" />
-                                    </div>
-                                    <div className="section-title text-start ms-3">
-                                        <a>Design Graphique</a>
-                                        <p><span className="me-2">$22</span> $30</p>
-                                    </div>
+                                        <div className="section-img">
+                                            <img src={recentone} className="img-fluid" alt="recent-1" />
+                                        </div>
+                                        <div className="section-title text-start ms-3">
+                                            <a>Design Graphique</a>
+                                            <p><span className="me-2">$22</span> $30</p>
+                                        </div>
                                     </div>
                                     <div className="d-flex mb-3 align-items-center">
-                                    <div className="section-img">
-                                        <img src={recenttwo} className="img-fluid" alt="recent-1" />
-                                    </div>
-                                    <div className="section-title text-start ms-3">
-                                        <a>Developpement Web </a>
-                                        <p><span className="me-2">$30</span>$35</p>
-                                    </div>
+                                        <div className="section-img">
+                                            <img src={recenttwo} className="img-fluid" alt="recent-1" />
+                                        </div>
+                                        <div className="section-title text-start ms-3">
+                                            <a>Developpement Web </a>
+                                            <p><span className="me-2">$30</span>$35</p>
+                                        </div>
                                     </div>
                                     <div className="d-flex align-items-center mb-3">
-                                    <div className="section-img">
-                                        <img src={recentthree} className="img-fluid" alt="recent-1" />
-                                    </div>
-                                    <div className="section-title text-start ms-3">
-                                        <a>UI/UX Design</a>
-                                        <p><span className="me-3">$$25</span>$32</p>
-                                    </div>
+                                        <div className="section-img">
+                                            <img src={recentthree} className="img-fluid" alt="recent-1" />
+                                        </div>
+                                        <div className="section-title text-start ms-3">
+                                            <a>UI/UX Design</a>
+                                            <p><span className="me-3">$$25</span>$32</p>
+                                        </div>
                                     </div>
                             </div>
                         </div>
@@ -80,13 +80,13 @@ const Footer = () => {
                     
                 </div>
             </div>
-            <div className="container-fluid py-3">
+            <div className="container-fluid-footer py-3">
                 <div className="container">
                     <div class="row justify-content-between copyright">
-                        <div class="col-lg-6 col-sm-12">
+                        <div class="col-lg-6 col-md-12 col-sm-12">
                             <p  className="text-lead">Copyright<i class="bi bi-c-circle me-2 ms-2"></i><a href="#index.html" className="text-decoration-none">2024 E-learning</a>, All right reserved.</p>
                         </div>
-                        <div class="col-lg-6 col-sm-12">
+                        <div class="col-lg-6 col-md-12 col-sm-12">
                             <p className="text-lead">Designed By <a href="#"class="text-white text-decoration-none ms-2 me-2">HTML Codex</a> Distributed By <a href="" className="text-decoration-none ms-2">ThemeWagon</a></p>
                         </div>
                     </div>

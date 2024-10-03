@@ -21,16 +21,16 @@ const Navbar = () => {
                   <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                       <li class="nav-item">
-                        <Link class="nav-link mx-lg-3 active" aria-current="page" to="/">Accueil</Link>
+                        <Link class="nav-link mx-lg-2 active" aria-current="page" to="/">Accueil</Link>
                       </li>
-                      <div class="nav-item dropdown mx-lg-3">
+                      <div class="nav-item dropdown mx-lg-2">
                             <Link to="accueil" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Cous</Link>
                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                 <Link class="nav-item nav-link" to="/cours" >Cours</Link>
                                 <Link class="nav-item nav-link" to="/cours-details">Cours details</Link>
                             </div>
-                       </div>
-                       <div class="nav-item dropdown mx-lg-3">
+                      </div>
+                      <div class="nav-item dropdown mx-lg-2">
                             <Link href="accueil" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Instructeurs</Link>
                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                 <Link class="nav-item nav-link" to="/instructeurs">Instructeurs</Link>
@@ -38,20 +38,20 @@ const Navbar = () => {
                           </div>
                       </div>
                       <li class="nav-item">
-                        <Link class="nav-link mx-lg-3" to="/apropos" >A propos</Link>
+                        <Link class="nav-link mx-lg-2" to="/apropos" >A propos</Link>
                       </li>
                       <li class="nav-item">
-                        <Link class="nav-link mx-lg-3" to="/faq">FAQ</Link>
+                        <Link class="nav-link mx-lg-2" to="/faq">FAQ</Link>
                       </li>
                       <li class="nav-item">
-                        <Link class="nav-link mx-lg-3" to="/contact">Contact</Link>
+                        <Link class="nav-link mx-lg-2" to="/contact">Contact</Link>
                       </li>
                       
                     </ul>
                     <div class="m-3 me-3">
-                      <button class="btn login-button cmn-button cmn-button--secondary rounded me-4"
-                       type="button" onClick={() => Navigate("/login")}>
-                        Connexion
+                        <button class="btn login-button cmn-button cmn-button--secondary rounded me-4"
+                        type="button" onClick={() => Navigate("/login")}>
+                          Connexion
                         </button>
                     </div>
                   </div>
