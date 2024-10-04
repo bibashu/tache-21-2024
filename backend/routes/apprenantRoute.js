@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const requireAuth = require('../middleware/authMiddle');
 const apprenantController = require("../controllers/apprenantController");
-const requireAuth = require('../middleware/authMiddle');
 // definition des routes
 router.get("/", apprenantController.index);
 router.get("/add", apprenantController.add);
