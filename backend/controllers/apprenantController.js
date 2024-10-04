@@ -337,3 +337,50 @@ exports.login = async (req, res) => {
     res.status(500).json({ message: 'Erreur serveur' });
   }
 };
+
+exports.profile = async (req, res) => {
+  try {
+    // On suppose que req.user.id contient l'ID de l'apprenant connecté, par exemple via un middleware d'authentification
+    const apprenant = await Apprenant.findById(req.user.id).populate("cours"); // Récupérer les cours associés à l'apprenant
+
+    if (!apprenant) {
+      return res.status(404).json({ message: "Apprenant non trouvé" });
+    }
+
+    // Renvoyer les informations de l'apprenant
+    res.json(apprenant);
+  } catch (error) {
+    console.error(
+      "Erreur lors de la récupération du profil de l'apprenant:",
+      error
+    );
+    res.status(500).json({ message: "Erreur serveur" });
+  }
+};
+exports.demarrerCours = async (req, res) => {
+  const { userId, coursId } = req.body;
+
+  try {
+    // Trouver l'apprenant par son ID
+    const apprenant = await Apprenant.findById(userId);
+
+    if (!apprenant) {
+      return res.status(404).json({ message: "Apprenant non trouvé" });
+    }
+
+    // Vérifier si le cours a déjà été démarré
+    if (!apprenant.coursDemarres.includes(coursId)) {
+      apprenant.coursDemarres.push(coursId); // Ajouter le cours à la liste des cours démarrés
+    } else {
+      return res.status(400).json({ message: "Le cours a déjà été démarré" });
+    }
+
+    // Sauvegarder l'apprenant mis à jour
+    await apprenant.save();
+
+    res.json({ message: "Cours démarré avec succès", apprenant });
+  } catch (error) {
+    console.error("Erreur lors du démarrage du cours :", error);
+    res.status(500).json({ message: "Erreur lors du démarrage du cours" });
+  }
+};
