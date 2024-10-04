@@ -3,7 +3,7 @@ const Cours = require("../models/Cours_Model");
 const { sendEmail } = require("../Service/emailService");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const { body, validationResult } = require('express-validator');
+const { body, validationResult } = require("express-validator");
 // Clé secrète pour signer les tokens (devrait être stockée dans un fichier de configuration)
 const JWT_SECRET =
   "dclkdncjdnsbcshCDN?QC?QDNCCBHBCJKZNJZENDZEBDZENJZNZ654513156451532154548987851";
@@ -157,14 +157,14 @@ exports.editModule = async (req, res) => {
 
     // Vérifier si le mot de passe a changé
     let passwordChanged = false;
-    let hashedPassword = currentApprenant.password; 
-  
-// Conserver l'ancien mot de passe haché par défaut
-    if (password && password.trim() !== '') {
+    let hashedPassword = currentApprenant.password;
+
+    // Conserver l'ancien mot de passe haché par défaut
+    if (password && password.trim() !== "") {
       // Hacher le nouveau mot de passe
       const salt = await bcrypt.genSalt(10); // Définir salt ici
       hashedPassword = await bcrypt.hash(password, salt);
-      
+
       // Vérifier si le mot de passe haché est différent de l'ancien mot de passe haché
       if (currentApprenant.password !== hashedPassword) {
         passwordChanged = true;
@@ -173,7 +173,7 @@ exports.editModule = async (req, res) => {
 
     // Convertir les IDs de cours en chaînes de caractères pour comparaison
     const newCoursIds = Array.isArray(coursIds) ? coursIds : [coursIds];
-    const currentCoursIds = currentApprenant.cours.map(id => id.toString());
+    const currentCoursIds = currentApprenant.cours.map((id) => id.toString());
 
     // Mettre à jour l'apprenant
     const updatedModule = await Apprenant.findByIdAndUpdate(
@@ -194,23 +194,35 @@ exports.editModule = async (req, res) => {
 
     // Mettre à jour les cours pour inclure ou exclure l'apprenant
     await Cours.updateMany(
-      { _id: { $in: currentCoursIds.filter(id => !newCoursIds.includes(id)) } },
+      {
+        _id: { $in: currentCoursIds.filter((id) => !newCoursIds.includes(id)) },
+      },
       { $pull: { apprenants: id } } // Retirer l'apprenant des cours non sélectionnés
     );
 
     await Cours.updateMany(
-      { _id: { $in: newCoursIds.filter(id => !currentCoursIds.includes(id)) } },
+      {
+        _id: { $in: newCoursIds.filter((id) => !currentCoursIds.includes(id)) },
+      },
       { $push: { apprenants: id } } // Ajouter l'apprenant aux cours sélectionnés
     );
 
     // Envoyer un email si l'email ou le mot de passe ont changé
     if (emailChanged || passwordChanged) {
-      const emailSubject = 'Mise à jour de votre compte';
+      const emailSubject = "Mise à jour de votre compte";
       const emailText = `
         Bonjour ${prenom},
 
-        ${emailChanged ? `Votre adresse email a été mise à jour avec succès. Nouvelle adresse email : ${email}` : ''}
-        ${passwordChanged ? `Votre mot de passe a été mis à jour avec succès.` : ''}
+        ${
+          emailChanged
+            ? `Votre adresse email a été mise à jour avec succès. Nouvelle adresse email : ${email}`
+            : ""
+        }
+        ${
+          passwordChanged
+            ? `Votre mot de passe a été mis à jour avec succès.`
+            : ""
+        }
 
         Veuillez vous connecter avec vos nouvelles informations.
 
@@ -286,13 +298,11 @@ exports.voirModule = async (req, res) => {
 };
 // Middleware pour valider les entrées
 const validateLogin = [
-  body('email').isEmail().withMessage('Email invalide'),
-  body('password').notEmpty().withMessage('Mot de passe requis'),
+  body("email").isEmail().withMessage("Email invalide"),
+  body("password").notEmpty().withMessage("Mot de passe requis"),
 ];
 
 exports.login = async (req, res) => {
-
-
   try {
     // Validation des données
     const errors = validationResult(req);
@@ -305,25 +315,29 @@ exports.login = async (req, res) => {
     // Trouver l'apprenant par email
     const apprenant = await Apprenant.findOne({ email });
     if (!apprenant) {
-      return res.status(401).json({ message: 'Email ou mot de passe incorrect' });
+      return res
+        .status(401)
+        .json({ message: "Email ou mot de passe incorrect" });
     }
 
     // Comparer le mot de passe
     const isMatch = await bcrypt.compare(password, apprenant.password);
     if (!isMatch) {
-      return res.status(401).json({ message: 'Email ou mot de passe incorrect' });
+      return res
+        .status(401)
+        .json({ message: "Email ou mot de passe incorrect" });
     }
 
     // Générer un token JWT
     const token = jwt.sign(
       { id: apprenant._id, email: apprenant.email },
       process.env.JWT_SECRET, // Assurez-vous que JWT_SECRET est défini dans vos variables d'environnement
-      { expiresIn: '1h' } // Durée de validité du token
+      { expiresIn: "1h" } // Durée de validité du token
     );
 
     // Envoyer la réponse
     res.json({
-      message: 'Connexion réussie!',
+      message: "Connexion réussie!",
       token, // Envoyer le token au client
       user: {
         id: apprenant._id,
@@ -333,8 +347,56 @@ exports.login = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error('Erreur lors de la connexion :', error);
-    res.status(500).json({ message: 'Erreur serveur' });
+    console.error("Erreur lors de la connexion :", error);
+    res.status(500).json({ message: "Erreur serveur" });
+  }
+};
+// Contrôleur pour récupérer le profil d'un apprenant
+// Méthode pour récupérer le profil de l'apprenant
+exports.profile = async (req, res) => {
+  try {
+    // On suppose que req.user.id contient l'ID de l'apprenant connecté, par exemple via un middleware d'authentification
+    const apprenant = await Apprenant.findById(req.user.id).populate("cours"); // Récupérer les cours associés à l'apprenant
+
+    if (!apprenant) {
+      return res.status(404).json({ message: "Apprenant non trouvé" });
+    }
+
+    // Renvoyer les informations de l'apprenant
+    res.json(apprenant);
+  } catch (error) {
+    console.error(
+      "Erreur lors de la récupération du profil de l'apprenant:",
+      error
+    );
+    res.status(500).json({ message: "Erreur serveur" });
+  }
+};
+exports.demarrerCours = async (req, res) => {
+  const { userId, coursId } = req.body;
+
+  try {
+    // Trouver l'apprenant par son ID
+    const apprenant = await Apprenant.findById(userId);
+
+    if (!apprenant) {
+      return res.status(404).json({ message: "Apprenant non trouvé" });
+    }
+
+    // Vérifier si le cours a déjà été démarré
+    if (!apprenant.coursDemarres.includes(coursId)) {
+      apprenant.coursDemarres.push(coursId); // Ajouter le cours à la liste des cours démarrés
+    } else {
+      return res.status(400).json({ message: "Le cours a déjà été démarré" });
+    }
+
+    // Sauvegarder l'apprenant mis à jour
+    await apprenant.save();
+
+    res.json({ message: "Cours démarré avec succès", apprenant });
+  } catch (error) {
+    console.error("Erreur lors du démarrage du cours :", error);
+    res.status(500).json({ message: "Erreur lors du démarrage du cours" });
   }
 };
 
