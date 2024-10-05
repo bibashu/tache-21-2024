@@ -7,7 +7,7 @@ import './Pages/Footer/footer.css';
 import Navbar from "./Navbar/Navbar";
 import App from './App';
 import {BrowserRouter, Routes, Route } from "react-router-dom";
-import Form from './Pages/Form';
+import Form from './Pages/Form/Form';
 // import Users from "./Pages/Users";
 // import Home from './Pages/Home';
 import Dashboard from 'Pages/dashboard/Dashboard';
@@ -29,6 +29,9 @@ root.render(
       <Routes>
 
         <Route path='/' element={ <App />}> 
+        </Route>
+
+        <Route path='/Accueil' element={ <Accueil />}> 
         </Route>
 
         <Route path='/login' element={ <Form />}> 

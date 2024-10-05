@@ -1,126 +1,120 @@
-/*  NAVBAR */
-.learning{
-    width: 100px;
-    height:40px
-  }
-  .navbar .cmn-button--secondary{
-    color: #2d1100!important;
-    background: #ffffff!important;
-    border: 1px solid #d3d3d3!important;
-  }
-  .navbar .cmn-button{
-    font-weight: 700;
-    color: #ffffff;
-    padding: 15px 30px;
-    background-color: #f5920c;
-    background-image: linear-gradient(90deg, #f48d00 0%, #f73e00 100%);
-    background-size: 100% 100%;
-    border-radius: 5px;
-  }
-  .navbar-toggler{
-    border: none;
-    font-size: 1.25rem;
-  }
-@media screen and(min-width:768px){
-
+.learning {
+  width: 140px;
+  height: 70px;
+}
+.navbar .cmn-button--secondary {
+  color: #2d1100 !important;
+  background: #ffffff !important;
+  border: 1px solid #d3d3d3 !important;
 }
 
-@media only screen and(max-width: 991px){
-  .nav-link{
+.Login-button:hover {
+  background-color: #fe753f;
+  color: #fff;
+}
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+@media screen and(min-width:768px) {
+}
+
+@media only screen and(max-width: 991px) {
+  .nav-link {
     line-height: normal;
     font-size: 12px;
     padding: 10px;
     margin: 10px;
   }
-  .navbar .cmn-button{
+  .navbar .cmn-button {
     font-weight: 600;
     color: #ffffff;
     padding: 10px 15px;
   }
-  .navbar{
-     width: 100%;
-     align-items: center;
-
+  .navbar {
+    width: 100%;
+    align-items: center;
   }
-  .navbar .offcanvas{
+  .navbar .offcanvas {
     width: 50%;
   }
-  .navbar .navbar-brand{
-     width: 25%;
-     margin: 0px 50px 0px 0px;
-     justify-content: start;
+  .navbar .navbar-brand {
+    width: 25%;
+    margin: 0px 50px 0px 0px;
+    justify-content: start;
   }
-  .navbar .bouton-dn{
+  .navbar .bouton-dn {
     width: 25%;
   }
 }
-  .navbar-toggler:focus, .btn-close:focus{
-    box-shadow: none;
-    outline: none;
+.navbar-toggler:focus,
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+.nav-link {
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+.navbar-nav .nav-link.active {
+  color: #f73e00;
+}
+.navbar-nav .nav-link.show {
+  color: #f73e00;
+}
+.nav-link:hover {
+  color: #f73e00;
+}
+.nav-link.active {
+  color: #f73e00;
+}
+.navbar .cmn-button--secondary:hover {
+  background: linear-gradient(90deg, #f48d00 0%, #f73e00 100%);
+  color: white !important;
+}
+
+@media screen and (min-width: 991px) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: #f73e00;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
   }
-  .nav-link{
-    color: #333;
-    font-weight: 500;
-    position: relative;
+  .dropdown-menu {
+    background-color: #bbb;
   }
-  .navbar-nav .nav-link.active{
-    color: #f73e00;
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
   }
-  .navbar-nav .nav-link.show{
-    color: #f73e00;
+  .dropdown .nav-link:hover::before,
+  .dropdown .nav-link.active::before {
+    display: none;
   }
-  .nav-link:hover{
-    color: #f73e00;
+  .offcanvas-body Button {
+    display: none;
   }
-  .nav-link.active{
-    color: #f73e00;
+}
+@media screen and (max-width: 768px) {
+  .offcanvas-body {
+    background-color: #333;
   }
-  .navbar .cmn-button--secondary:hover{
-    background: linear-gradient(90deg, #f48d00 0%, #f73e00 100%);
-    color: white!important;
-  } 
-  
-  @media screen and ( min-width: 991px) {
-    .nav-link::before{
-        content: "";
-        position: absolute;
-        bottom: 0px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        height: 2px;
-        background-color: #f73e00;
-        visibility: hidden;
-        transition: 0.3s ease-in-out;
-    }
-    .dropdown-menu{
-      background-color: #bbb;
+  .offcanvas-body .nav-link {
+    color: #fff;
   }
-    .nav-link:hover::before, .nav-link.active::before{
-        width: 100%;
-        visibility: visible;
-    }
-    .dropdown .nav-link:hover::before,  .dropdown .nav-link.active::before{
-        display: none;
-    }
-    .offcanvas-body  Button{
-        display: none;
-    }
-    
+  .offcanvas-body Button {
+    display: block;
   }
-  @media screen and (max-width: 768px){
-    .offcanvas-body{
-        background-color: #333;
-    }
-    .offcanvas-body .nav-link{
-      color: #fff;
-    }
-    .offcanvas-body  Button{
-        display: block;
-    }
-    .bouton-dn Button{
-        display: none!important;
-    }
-   
+  .bouton-dn Button {
+    display: none !important;
   }
-  /*      NABAR FIN */
+}
+/*      NABAR FIN */

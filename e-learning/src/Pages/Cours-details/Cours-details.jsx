@@ -27,7 +27,7 @@ const CoursDetails = () => {
                 <div class="row  pt-5 align-items-center">
                     <div class="col-lg-6">
                         <div class="banner-content">
-                            <h2 class="section-title">Cours Detailes</h2>
+                            <h1 class="section-title">Cours Detailes</h1>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -242,7 +242,7 @@ const CoursDetails = () => {
                                     <button type="submit" className="cmn-button">Commentaire</button>
                                 </form>
                             </div>
-                            <div className="row">
+                            <div className="row py-5">
                                 <div className="col-lg-12">
                                     <div className="pagination-wrapper">
                                         <nav aria-label="...">
@@ -278,14 +278,11 @@ const CoursDetails = () => {
                                 </div>
                                 <div className="course-single-content p-3">
                                     <div className="course-single-content-title">
-                                        <h5>Spoken English</h5>
+                                        <h5>Anglais parlé</h5>
                                         <span><i className="fa-solid fa-star"></i>4.5</span>
                                     </div>
-                                    <p className='text-start'>International English</p>
-                                    <div className="course-single-content-cta">
-                                        <h5>$55.00 <span className='text-decoration-line-through'>$60.00</span></h5>
-                                        <a href="/cours-detail" className="cmn-button text-decoration-none">Buy Now</a>
-                                    </div>
+                                    <p className='text-start'>Anglais international</p>
+                                  
                                     <div className="course-single-content-meta">
                                         <a href="#" className='text-decoration-none'><i className="fa-solid fa-eye"></i>9.5k Views</a>
                                         <span><i className="fa-solid fa-clock"></i>9 hr 27 min</span>
@@ -308,26 +305,41 @@ const CoursDetails = () => {
 
         {/* SECTION-NEWSLETTERS*/}
          {/*  --SECTION-NEWSLETTERER--  */}
-         <section class="newsletter section bg-img py-5">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 col-sm-12 col-xxl-8">
-                        <div class="newsletter-content">
-                            <div class="section-header text-center">
-                                <h2 class="section-title">Restez connecté avec Elearning pour rester à jour</h2>
-                                <p>Abonnez-vous à notre newsletter pour recevoir des offres et des mises à jour exceptionnelles !</p>
-                            </div>
-                            <form action="#" method="post" autocomplete="off">
-                                <div class="newsletter-inputs">
-                                    <input type="email" name="newsletter-mail" id="newsletterMail" placeholder="Your Email Address" required="required" />
-                                    <button type="submit" class="cmn-button">Subscribe</button>
-                                </div>
-                            </form>
-                        </div>
+         <section className="newsletter section bg-img py-5">
+          <div className="container">
+            <div className="row justify-content-center CTN">
+              <div className="col-lg-10 col-xxl-8 col-sm-12 col-md 12">
+                <div className="newsletter__content">
+                  <div className="section__header text-center">
+                    <h2 class="section__title">
+                      Restez connecté avec Elearning pour vous tenir informé
+                    </h2>
+                    <p className="py-3">
+                      Abonnez-vous à notre newsletter pour recevoir des offres
+                      exceptionnelles et des mises à jour !
+                    </p>
+                  </div>
+                  <form action="#" method="post" autocomplete="off">
+                    <div className="newsletter-inputs py-5">
+                      <input
+                        type="email"
+                        name="newsletter__mail"
+                        id="newsletterMail"
+                        placeholder="Votre Adresse Email"
+                        required="required"
+                      />
+                      <button type="submit" className="bTN">
+                        S'abonner
+                      </button>
                     </div>
+                  </form>
                 </div>
+              </div>
             </div>
-       </section>
+          </div>
+        </section>
+
+
 
         </Layout>
      );

@@ -1,0 +1,12 @@
+.newsletter-inputs input {
+    height: 60px;
+    width: 450px;
+    border: 0.5px solid rgb(215, 215, 215);
+  }
+  .bTN {
+    height: 60px;
+    width: 120px;
+    background: linear-gradient(90deg, #f48d00 0%, #f73e00 100%);
+    color: white;
+    border: none;
+  }
