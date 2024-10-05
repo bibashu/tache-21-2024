@@ -11,7 +11,7 @@ import "./style.module.css"
 
 const URL_LIVRAISON = "http://localhost:5000/livraison/api_livraison";
 const URL_LIVRER = "http://localhost:5000/livraison/submitLivraison";
-const URL_PROJETS = "http://localhost:5000/project/api_project";
+// const URL_PROJETS = "http://localhost:5000/project/api_project/${studentId}";
 
 const Livraison = () => {
     const [livraisons, setLivraisons] = useState([]);
@@ -23,6 +23,10 @@ const Livraison = () => {
     });
     const [imagePreviews, setImagePreviews] = useState([]); // Nouvel état pour les prévisualisations d'image
     const [showForm, setShowForm] = useState(false);
+
+    
+  const user = JSON.parse(localStorage.getItem('user')); 
+  const studentId = user ? user.id : null;
 
     useEffect(() => {
         const fetchLivraisons = async () => {
@@ -36,7 +40,7 @@ const Livraison = () => {
 
         const fetchProjets = async () => {
             try {
-                const response = await axios.get(URL_PROJETS);
+                const response = await axios.get(`http://localhost:5000/project/api_project/${studentId}`);
                 setProjets(response.data);
             } catch (error) {
                 console.error("Erreur lors de la récupération des projets :", error);
@@ -45,7 +49,7 @@ const Livraison = () => {
 
         fetchLivraisons();
         fetchProjets();
-    }, []);
+    }, [studentId]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -96,7 +100,7 @@ const Livraison = () => {
     };
 
     return (
-        <Layout>
+        <Layout userData={user}>
             <div className="container ">
                 <button className="btn mt-4 w-25" style={{ backgroundColor: '#FC9049', color: "#fff" }} onClick={() => setShowForm(!showForm)}>
                     {showForm ? "Fermer" : "Soumettre une Livraison"}
