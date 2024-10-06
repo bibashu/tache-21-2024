@@ -67,11 +67,11 @@ const Accueil = () => {
                         name="hero_search"
                         id="heroSearch"
                         placeholder="Rechercher votre cours"
+                        required
                       />
                       <button
                         type="submit"
                         className="cmn-button"
-                        onClick={() => Navigate("/login")}
                       >
                         <i className="fa-solid fa-magnifying-glass text-white"></i>
                       </button>
@@ -81,7 +81,7 @@ const Accueil = () => {
                     <a
                       href=""
                       className="cmn-button text-decoration-none"
-                      onClick={() => Navigate("/login")}
+                      onClick={() => Navigate("/cours")}
                     >
                       Parcourir le cours
                     </a>
@@ -895,7 +895,8 @@ const Accueil = () => {
                   monde joue un rôle important dans l'élimination du problème du
                   chômage depuis 2016.
                 </p>
-                <a href="/cours" className="cmn-button text-decoration-none">
+                <a href="" className="cmn-button text-decoration-none"
+                 onClick={() => Navigate("/cours")}>
                   Parcourir le cours
                 </a>
               </div>
@@ -1134,9 +1135,9 @@ const Accueil = () => {
                         <h5 className="text-start">Cybersécurité</h5>
                         <p className="text-start">En ligne, heure : 20h00</p>
                         <a
-                          href="/contact"
+                          href="/login"
                           className="cmn-button cmn-button--secondary text-decoration-none"
-                          onClick={() => Navigate("/users")}
+                          onClick={() => Navigate("/login")}
                         >
                           Rejoignez-nous
                         </a>
@@ -1152,7 +1153,7 @@ const Accueil = () => {
                         <h5 className="text-start">Montage vidéo</h5>
                         <p className="text-start">En ligne, heure : 20h00</p>
                         <a
-                          href="/contact"
+                          href="/login"
                           className="cmn-button cmn-button--secondary text-decoration-none"
                           onClick={() => Navigate("/login")}
                         >
@@ -1206,7 +1207,7 @@ const Accueil = () => {
                   href="/cours"
                   className="cmn-button text-decoration-none"
                   type="button"
-                  onClick={() => Navigate("/Cours")}
+                  onClick={() => Navigate("/cours")}
                 >
                   Parcourir les Cours
                 </a>
