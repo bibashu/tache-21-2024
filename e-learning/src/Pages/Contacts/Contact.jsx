@@ -126,7 +126,7 @@ const Contact = () => {
                 <div className="row">
                   <div className="col-lg-6">
                     <div className="input-wrapper single-input">
-                      <input type="text" id="Name" placeholder="Votre Nom" />
+                      <input type="text" id="Name" placeholder="Votre Nom" required/>
                       <small>Name must be at least 3 characters</small>
                     </div>
                   </div>
@@ -144,7 +144,7 @@ const Contact = () => {
                 <div className="row">
                   <div className="col-lg-6">
                     <div className="input-wrapper single-input">
-                      <input type="text" id="email" placeholder="Votre Email" />
+                      <input type="text" id="email" placeholder="Votre Email" required/>
                       <small>Email is not valid</small>
                     </div>
                   </div>
@@ -172,6 +172,7 @@ const Contact = () => {
                         cols="10"
                         rows="5"
                         placeholder="Votre Message"
+                        required
                       ></textarea>
                       <small>Message must be at least 10 characters</small>
                     </div>
