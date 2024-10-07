@@ -9,37 +9,37 @@ const jwtSecret = process.env.JWT_SECRET;
 
 // une fonction du login
 
+
 exports.loginCoach = async (req, res) => {
-    const { email, password } = req.body;
-    if (!email || !password) {
-        return res.status(400).json({ error: 'Tous les champs sont obligatoires' });
-    }
     try {
-        const coach = await RegisterCoach.findOne({ email });
-        if (!coach) {
-            return res.status(400).json({ error: 'Email ou mot de passe incorrect' });
-        }
-
-        const isMatch = await bcrypt.compare(password, coach.password);
-        if (!isMatch) {
-            return res.status(400).json({ error: 'Email ou mot de passe incorrect' });
-        }
-
-        const token = jwt.sign({ id: coach._id }, jwtSecret, { expiresIn: '1h' });
-
-
-        // Renvoie le token pour stockage dans localStorage
-        return res.status(200).json({
-            token,
-            username: coach.username,
-            email: coach.email
-        });
+      const { email, password } = req.body;
+      const coach = await RegisterCoach.findOne({ email });
+  
+      if (!coach) {
+        return res.status(400).json({ error: 'Utilisateur non trouvé.' });
+      }
+  
+      const isMatch = await bcrypt.compare(password, coach.password);
+      if (!isMatch) {
+        return res.status(400).json({ error: 'Mot de passe incorrect.' });
+      }
+  
+      const token = jwt.sign({ id: coach._id }, process.env.JWT_SECRET, { expiresIn: '2h' });
+  
+      // Répondre avec le token et les informations utilisateur
+      return res.status(200).json({
+        token,
+        user: {
+          username: coach.username,
+          email: coach.email
+        },
+        message: 'Connexion réussie.'
+      });
     } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Erreur du serveur, veuillez réessayer plus tard.' });
+      console.error(err);
+      res.status(500).json({ error: 'Erreur du serveur, veuillez réessayer plus tard.' });
     }
-};
-
+  };
 
 // une fonction du register
 exports.registerCoach = async (req, res) => {
@@ -74,6 +74,7 @@ exports.registerCoach = async (req, res) => {
         console.error(err);
         res.status(500).render('authentification/register', { error: 'Erreur du serveur, veuillez réessayer plus tard.' });
     }
+
 };
 
 // Configurer Nodemailer pour Gmail
@@ -171,22 +172,5 @@ exports.postResetPassword = async (req, res) => {
     }
 };
 
-// Vérifier le token
-exports.verifyToken = (req, res, next) => {
-    const token = req.headers['authorization']?.split(' ')[1];
-    console.log('Token reçu:', token); // Debugging
 
-    if (!token) {
-        return res.status(401).json({ error: 'Token manquant, veuillez vous connecter.' });
-    }
-
-    jwt.verify(token, jwtSecret, (err, decoded) => {
-        if (err) {
-            return res.status(401).json({ error: 'Token invalide.' });
-        }
-
-        req.user = decoded; // Stocker les informations de l'utilisateur dans req.user
-        next();
-    });
-};
 

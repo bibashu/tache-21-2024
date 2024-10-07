@@ -1,0 +1,24 @@
+.cardSection{
+    margin-left: 350px;
+}
+/* custom-slick.css */
+
+/* Style des flèches */
+:global(.slick-prev:before),
+:global(.slick-next:before ){
+  font-size: 20px;
+  color: black !important;
+  z-index: 1;
+}
+
+
+/* Style des points */
+:global(.slick-dots){
+  font-size: 16px !important;
+  color: #333 !important;
+  padding: 15px !important;
+}
+
+
+
+

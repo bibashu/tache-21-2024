@@ -74,38 +74,28 @@
         const password = document.getElementById('password').value;
         const errorMessage = document.getElementById('error-message'); // Sélectionner la div d'erreur
 
-        try {
-          const response = await fetch('/authentification/login', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-          });
+        fetch('/authentification/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password })
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.error) {
+              alert(data.error);
+            } else {
+              localStorage.setItem('token', data.token);
+              localStorage.setItem('user', JSON.stringify(data.user));
+              // Rediriger vers la page dashboard ou une autre page protégée
+              window.location.href = '/dash';
+            }
+          })
+          .catch(error => console.error('Erreur lors de la connexion:', error));
 
-          const data = await response.json();
-
-          if (data.token) {
-            // Stocke le token et les informations utilisateur dans le localStorage
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('user', JSON.stringify({
-              username: data.username, // Nom d'utilisateur
-              email: data.email // Email
-            }));
-
-            window.location.href = '/dash';
-          } else {
-            // Afficher l'erreur en haut du formulaire
-            errorMessage.textContent = data.error;
-            errorMessage.classList.remove('d-none');
-          }
-        } catch (error) {
-          // En cas d'erreur serveur, afficher un message d'erreur général
-          errorMessage.textContent = 'Erreur du serveur, veuillez réessayer plus tard.';
-          errorMessage.classList.remove('d-none');
-          console.error('Erreur:', error);
-        }
       });
+
     </script>
 
   </body>

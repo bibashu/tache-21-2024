@@ -112,7 +112,7 @@
                       <i class="fa fa-user-plus"></i>
                     </div>
                     <div class="notif-content">
-                      <span class="block">Livraison sur le projet: "<%- livraison.project_id.titre %> "</span>
+                      <span class="block">Livraison sur le projet: " "</span>
                       <span class="time">5 minutes ago</span>
                     </div>
                   </a>
@@ -197,7 +197,7 @@
       <li class="nav-item topbar-user dropdown hidden-caret">
         <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
           <div class="avatar-sm">
-            <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+            <img id="profile-picture-nav" src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
           </div>
           <span class="profile-username">
             <span class="op-7">Salut,</span>
@@ -209,12 +209,12 @@
             <li>
               <div class="user-box">
                 <div class="avatar-lg">
-                  <img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
+                  <img id="profile-picture-large" src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
                 </div>
                 <div class="u-text">
                   <h4 id="username-big">User</h4> <!-- Placeholder for username -->
                   <p class="text-muted" id="email">email@example.com</p> <!-- Placeholder for email -->
-                  <a href="/authentification/profil" class="btn btn-xs btn-secondary btn-sm">Voir Profil</a>
+                  <a href="/profile" class="btn btn-xs btn-secondary btn-sm">Voir Profil</a>
                 </div>
               </div>
             </li>
@@ -234,10 +234,13 @@
   // Fonction pour récupérer les informations de l'utilisateur depuis le localStorage
   function getUserInfo() {
     const user = JSON.parse(localStorage.getItem('user'));
+    const profileImageUrl = localStorage.getItem('profileImageUrl') || 'assets/img/profile.jpg';
     if (user) {
       document.getElementById('username').textContent = user.username;
       document.getElementById('username-big').textContent = user.username;
       document.getElementById('email').textContent = user.email;
+      document.getElementById('profile-picture-nav').src = profileImageUrl;
+      document.getElementById('profile-picture-large').src = profileImageUrl;
     }
   }
 
@@ -245,6 +248,7 @@
   function logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('user'); // Assure-toi que les informations de l'utilisateur sont également supprimées
+    localStorage.removeItem('profileImageUrl'); // Supprime également l'URL de l'image de profil
     window.location.href = '/authentification/login'; 
     // Redirige vers la page de login
     history.pushState(null, null, '/authentification/login');
