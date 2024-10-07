@@ -1,18 +1,29 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import './Pages/Contacts/contact.css';
+import './Pages/Accueil/accueil.css';
+import './Navbar/navbar.css';
+import './Pages/Footer/footer.css';
+import Navbar from "./Navbar/Navbar";
+import App from './App';
+import {BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from "./Pages/Form/Form";
 import Dashboard from "Pages/dashboard/Dashboard";
 import Livraison from "Pages/dashboard/Livraison";
 import PrivateRoute from "./Components/PrivateRoute";
 import Projet from "Pages/dashboard/Projet";
-import Home from "./Pages/Home/Home";
 
-import Apropos from "./Pages/Apropos/Apropos";
-import Faq from "./Pages/Faq/Faq";
-import Contact from "./Pages/Contact/Contact";
+import Accueil from './Pages/Accueil/Accueil';
+import Faq from "Pages/Faq/Faq";
+import CoursDetails from './Pages/Cours-details/Cours-details';
+import Instructeurs from './Pages/Instructeurs/Instructeurs';
+import InstDetails from './Pages/Instructeurs-details/Inst-details';
+import Contact from "./Pages/Contacts/Contact";
+import Cours from "./Pages/Cours/Cours";
+import Apropos from './Pages/Apropos/Apropos';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,19 +33,33 @@ root.render(
       <Route path='/' element={<App />}>
       </Route>
 
-      <Route path='/login' element={<Form />}>
-      </Route>
+        <Route path='/Accueil' element={ <Accueil />}> 
+        </Route>
 
-      <Route path='/Apropos' element={<Apropos />}>
-      </Route>
-      <Route path='/Contact' element={<Contact />}>
-      </Route>
-      <Route path="/Faq" element={<Faq />}></Route>
+        <Route path='/login' element={ <Form />}> 
+        </Route>
+       
+        <Route path='/faq' element={ <Faq />} > 
+        </Route>
 
+        <Route path='/cours' element={ <Cours/>} > 
+        </Route>
 
-      <Route path='/' element={<Home />}>
-      </Route>
-      {/* Routes protégées */}
+        <Route path='/cours-details' element={ <CoursDetails/>} > 
+        </Route>
+        <Route path='/inst-details' element={ <InstDetails/>} > 
+        </Route>
+
+        <Route path='/instructeurs' element={ <Instructeurs/>} > 
+        </Route>
+
+        <Route path='/contact' element={ <Contact/>} > 
+        </Route>
+
+        <Route path='/apropos' element={ <Apropos/>} > 
+        </Route>
+       
+        {/* Routes protégées */}
       <Route
         path="/dashboard"
         element={
@@ -60,6 +85,8 @@ root.render(
         }
       />
 
+
+     
 
     </Routes>
 

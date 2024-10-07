@@ -1,158 +1,160 @@
-import React from "react";
-import "../Footer/Footer.css";
-import graphique from "./graphique.jpg";
-import web from "./web.jpg";
-import ui from "./ui.jpg";
-import learning from "./learning.png";
-import { useNavigate } from "react-router-dom";
+import recentone from "./footer-img/recentone.png";
+import recenttwo from "./footer-img/recenttwo.png";
+import recentthree from "./footer-img/recentthree.png";
+import learning from "./footer-img/learning.png";
+import  {useNavigate} from "react-router-dom";
 
 const Footer = () => {
-  const Navigate = useNavigate();
+    const Navigate = useNavigate();
   return (
-    <div>
-      <footer className="footer py-5">
+    <footer className="footer py-5">
+      <div className="container-fluid py-5 border-bottom">
         <div className="container">
-          <div className="row align-items-center g-5 mb-5">
-            <div className="col-lg-3 col-md-6 col-sm-12">
-              <div className="footer-item text-start">
+          <div class="row align-items-center g-5 mb-3">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer-item text-start">
                 <img
                   src={learning}
                   className="img-fluid mb-1 logo"
                   alt="logo"
                 />
-                <p className="mb-3 text-start  TXT">
+                <p class="mb-3 text-start">
                   Elearning est l'une des principales plateformes de
                   développement des compétences en e-learning au monde. Nous
                   nous engageons à éradiquer le chômage dans le monde et à créer
                   des ressources humaines mondiales grâce au développement des
                   compétences.
                 </p>
-                <div className="d-flex justify-content-end ICON">
-                  <a className="btn me-2 hover" href="">
-                    <i className="bi bi-twitter"></i>
+                <div class="d-flex justify-content-start">
+                  <a className="me-3" hover href="">
+                    <i class="fa-brands fa-facebook-f"></i>
                   </a>
-                  <a className="btn me-2" href="">
-                    <i className="bi bi-facebook"></i>
+                  <a className="me-3" href="">
+                    <i class="fa-brands fa-instagram"></i>
                   </a>
-                  <a className="btn me-2" href="">
-                    <i className="bi bi-youtube"></i>
+                  <a className="me-3" href="">
+                    <i class="fab fa-twitter"></i>
                   </a>
-                  <a className="btn" href="">
-                    <i className="bi bi-linkedin"></i>
+                  <a href="">
+                    <i class="bi bi-globe"></i>
                   </a>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6 col-sm-12 mb-5">
-              <div className="d-flex flex-column text-start footer-item mb-5">
-                <h2 className="mb-4">Bureau</h2>
-                <a className="btn-link text-decoration-none mb-2" href="">
+            <div class="col-lg-3 col-md-6 col-sm-6 mb-5">
+              <div class="d-flex flex-column text-start footer-item mb-5">
+                <h2 class="mb-4">Bureau</h2>
+                <a class="btn-link text-decoration-none mb-2" href="">
                   +221778952500
                 </a>
-                <a className="btn-link text-decoration-none mb-2" href="">
+                <a class="btn-link text-decoration-none mb-2" href="">
                   +221772555521
                 </a>
-                <a className="btn-link text-decoration-none mb-2" href="">
+                <a class="btn-link text-decoration-none mb-2" href="">
                   info@example.com
                 </a>
-                <a className="btn-link text-decoration-none mb-2" href="">
+                <a class="btn-link text-decoration-none mb-2" href="">
                   nfo@example.com
                 </a>
-                <a className="btn-link text-decoration-none mb-2" href="">
+                <a class="btn-link text-decoration-none mb-2" href="">
                   2231 Redbud Drive
                 </a>
-                <a className="btn-link text-decoration-none mb-2" href="">
+                <a class="btn-link text-decoration-none mb-2" href="">
                   MON – FRI: 9 AM – 7 PM
                 </a>
-                <a className="btn-link text-decoration-none" href="">
+                <a class="btn-link text-decoration-none" href="">
                   SAT – SUN: CLOSED
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6 col-sm-12 mb-5">
-              <div className="d-flex flex-column text-start footer-item mb-5">
-                <h2 className="mb-4">Liens Rapides</h2>
-                <a className="btn-link text-decoration-none mb-2" href="">
-                  Accueil
+            <div class="col-lg-3 col-md-6 col-sm-6 mb-5">
+              <div class="d-flex flex-column text-start footer-item mb-5">
+                <h2 class="mb-4">Liens rapides</h2>
+                <a class="btn-link text-decoration-none mb-2" href=""   onClick={() => Navigate("/Accueil")}>
+                  Home
                 </a>
-                <a className="btn-link text-decoration-none mb-2" href="">
+                <a class="btn-link text-decoration-none mb-2" href=""   onClick={() => Navigate("/apropos")}>
                   A propos
                 </a>
-                <a className="btn-link text-decoration-none mb-2" href="">
+                <a class="btn-link text-decoration-none mb-2" href=""   onClick={() => Navigate("/cours")}>
                   Cours
                 </a>
-                <a className="btn-link text-decoration-none mb-2" href="">
+                <a class="btn-link text-decoration-none mb-2" href=""   onClick={() => Navigate("/instructeurs")}>
                   Instructeur
                 </a>
-                <a className="btn-link text-decoration-none mb-2" href="">
+                <a class="btn-link text-decoration-none mb-2" href=""   onClick={() => Navigate("/faq")}>
                   FAQ
                 </a>
-                <a className="btn-link text-decoration-none mb-4" href="">
+                <a class="btn-link text-decoration-none mb-4" href=""   onClick={() => Navigate("/contact")}>
                   Contact
                 </a>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6 col-sm-12 mb-5">
-              <div className="footer-item mb-5">
-                <h2 className="mb-4"> Cours Récents</h2>
+            <div class="col-lg-3 col-md-6 col-sm-6 mb-5">
+              <div class="footer-item mb-5">
+                <h2 class="text-start mb-4">Cours récents</h2>
                 <div className="d-flex mb-3 align-items-center">
                   <div className="section-img">
-                    <img
-                      src={graphique}
-                      className="img-fluid IMG"
-                      alt="graphique"
-                    />
+                    <img src={recentone} className="img-fluid" alt="recent-1" />
                   </div>
                   <div className="section-title text-start ms-3">
                     <a>Design Graphique</a>
-                    <p>
-                      <span className="me-2">$22</span> $30
-                    </p>
+                
                   </div>
                 </div>
                 <div className="d-flex mb-3 align-items-center">
                   <div className="section-img">
-                    <img src={web} className="img-fluid IMG" alt="web" />
+                    <img src={recenttwo} className="img-fluid" alt="recent-1" />
                   </div>
                   <div className="section-title text-start ms-3">
                     <a>Developpement Web </a>
-                    <p>
-                      <span className="me-2">$30</span>$35
-                    </p>
+                   
                   </div>
                 </div>
                 <div className="d-flex align-items-center mb-3">
                   <div className="section-img">
-                    <img src={ui} className="img-fluid IMG" alt="ui" />
+                    <img
+                      src={recentthree}
+                      className="img-fluid"
+                      alt="recent-1"
+                    />
                   </div>
                   <div className="section-title text-start ms-3">
                     <a>UI/UX Design</a>
-                    <p>
-                      <span className="me-3">$$25</span>$32
-                    </p>
+                  
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="row justify-content-between">
-            <div className="col-lg-10 col-md-12 col-sm-12">
-              <p className="text-black text-end">
-                Copyright<i className="bi bi-c-circle text-black"></i>
-                <a
-                  href=""
-                  className="text-decoration-none"
-                  onClick={() => Navigate("/")}
-                >
-                  2024 Elearning
+        </div>
+      </div>
+      <div className="container-fluid-footer py-3">
+        <div className="container">
+          <div class="row justify-content-between copyright">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <p className="text-lead">
+                Copyright<i class="bi bi-c-circle me-2 ms-2"></i>
+                <a href="#index.html" className="text-decoration-none">
+                  2024 E-learning
                 </a>
                 , All right reserved.
               </p>
             </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <p className="text-lead">
+                Designed By{" "}
+                <a href="#" class="text-white text-decoration-none ms-2 me-2">
+                  elearning.teaching2024@gmail.com
+                </a>{" "}
+               
+              </p>
+            </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 };
+
 export default Footer;

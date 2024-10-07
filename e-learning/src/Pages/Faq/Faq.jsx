@@ -1,103 +1,103 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../Components/Button";
+import Navbar from "../../Navbar/Navbar";
+import { Link } from "react-router-dom";
 import Layout from "../../Components/Layout";
-import "../Faq/Faq.css";
+//import recentone from "../assets/imgs/recentone.png";
+//import recenttwo from "../assets/imgs/recenttwo.png";
+//import recentthree from "../assets/imgs/recentthree.png";
 
 const Faq = () => {
   const Navigate = useNavigate();
 
   return (
     <Layout>
-      <div className="container-fluid Banner">
-        <div className="container-fluid BANNER">
-          <section className=" ">
-            <div className="container ">
-              <div className="row align-items-center ">
-                <div className="col-lg-6 col-md-12 col-sm-12">
-                  <div className="banner__content">
-                    <h2 className="section-title">FAQ</h2>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-md-12 col-sm-12">
-                  <div className="banner__breadcrumb d-flex justify-content-start justify-content-lg-end">
-                    <nav aria-label="breadcrumb">
-                      <ol className="breadcrumb">
-                        <li className="breadcrumb-item">
-                          <a
-                            href=""
-                            className="text-decoration-none"
-                            onClick={() => Navigate("/")}
-                          >
-                            Accueil
-                          </a>
-                        </li>
-                        <li
-                          className="breadcrumb-item active"
-                          aria-current="page"
-                        >
-                          {" "}
-                          FAQ
-                        </li>
-                      </ol>
-                    </nav>
-                  </div>
-                </div>
+      {/* BREADCRUMB*/}
+      <div className="py-5">
+        <div class="container pt-5">
+          <div class="row pt-5 align-items-center">
+            <div class="col-lg-6 col-sm-6">
+              <div class="banner-content">
+                <h1 class="section-title">Faq</h1>
               </div>
             </div>
-          </section>
+            <div class="col-lg-6 col-sm-6">
+              <div class="banner-breadcrumb d-flex justify-content-lg-end justify-content-sm-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <Link to="/" className="text-decoration-none">
+                        Accueil
+                      </Link>
+                    </li>
+                    <li
+                      class="breadcrumb-item active"
+                      aria-current="faq"
+                      onClick={() => Navigate("/Faq")}
+                    >
+                      Faq
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      {/* BREADCRUMB*/}
 
-      <section className="faq section ">
-        <div className="container py-5">
+      <section className="faq section py-5">
+        <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-7 col-md-12 col-sm-12">
-              <div className="section__header">
-                <h4 className="section__title">Question fréquemment posée</h4>
-                <p className="section__sub-title py-4">
-                  À l'ère de « tout est possible », pourquoi appelez-vous ?
-                  vous-même « impossible » ? Développez vos compétences à la
-                  maison dès maintenant - à partir de les meilleurs experts !
+            <div className="col-lg-7 col-sm-12">
+              <div className="section-header justify-content-center">
+                <h2 className="section-title text-center mb-3">
+                  Question fréquemment posée
+                </h2>
+                <p className="section-sub-title text-center mb-3">
+                À l'ère de « tout est possible », pourquoi appelez-vous ?
+                  vous-même « impossible » ? Développez vos compétences à la maison dès maintenant - à partir de
+                  les meilleurs experts !
                 </p>
               </div>
             </div>
           </div>
           <div className="row row-margin">
-            <div className="col-lg-6 col-md-12 col-sm-12">
-              <div className="faq__content col-margin">
+            <div className="col-lg-6 col-sm-12">
+              <div className="faq-content col-margin">
                 <div className="accordion" id="accordionExample">
-                  <div className="accordion-item py-3">
+                  <div className="accordion-item">
                     <h5 className="accordion-header" id="headingOne">
                       <button
-                        className="accordion-button collapsed"
+                        className="accordion-button"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
-                        aria-expanded="false"
+                        aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        Que doit inclure un site Web d'apprentissage en ligne ?
+                       
+                Que doit inclure un site Web d'apprentissage en ligne ?
                       </button>
                     </h5>
                     <div
                       id="collapseOne"
-                      className="accordion-collapse collapse"
+                      className="accordion-collapse collapse show"
                       aria-labelledby="headingOne"
                       data-bs-parent="#accordionExample"
                     >
-                      <div className="accordion-body">
+                      <div class="accordion-body">
                         <p>
                           {" "}
-                          Si vous oubliez vos informations de connexion RQA,
-                          veuillez vous rendre sur la page Site RQA et cliquez
-                          sur 'Mon compte', Mes coordonnées puis changer le mot
-                          de passe.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="accordion-item py-3">
+                  <div class="accordion-item">
                     <h5 className="accordion-header" id="headingTwo">
                       <button
                         className="accordion-button collapsed"
@@ -107,7 +107,7 @@ const Faq = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Comment acheter un cours ?
+                        Comment suivre un cours ?
                       </button>
                     </h5>
                     <div
@@ -116,25 +116,25 @@ const Faq = () => {
                       aria-labelledby="headingTwo"
                       data-bs-parent="#accordionExample"
                     >
-                      <div className="accordion-body">
+                      <div class="accordion-body">
                         <p>
                           {" "}
-                          Si vous oubliez vos informations de connexion RQA,
-                          veuillez vous rendre sur la page Site RQA et cliquez
-                          sur 'Mon compte', Mes coordonnées puis changer le mot
-                          de passe.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
+
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="accordion-item py-3">
+                  <div className="accordion-item">
                     <h5 className="accordion-header" id="headingThree">
                       <button
-                        className="accordion-button"
+                        class="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseThree"
-                        aria-expanded="true"
+                        aria-expanded="false"
                         aria-controls="collapseThree"
                       >
                         Dois-je payer la TVA ?
@@ -142,32 +142,32 @@ const Faq = () => {
                     </h5>
                     <div
                       id="collapseThree"
-                      className="accordion-collapse collapse show"
+                      className="accordion-collapse collapse"
                       aria-labelledby="headingThree"
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          Si vous oubliez vos informations de connexion RQA,
-                          veuillez vous rendre sur la page Site RQA et cliquez
-                          sur 'Mon compte', Mes coordonnées puis changer le mot
-                          de passe.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
+
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="accordion-item py-3">
+                  <div className="accordion-item">
                     <h5 className="accordion-header" id="headingFour">
                       <button
-                        className="accordion-button collapsed"
+                        class="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseFour"
                         aria-expanded="false"
                         aria-controls="collapseFour"
                       >
-                        Comment accéder aux cours que j'ai payés ?
+                      Comment accéder aux cours que j'ai payés ?
                       </button>
                     </h5>
                     <div
@@ -179,10 +179,10 @@ const Faq = () => {
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          Si vous oubliez vos informations de connexion RQA,
-                          veuillez vous rendre sur la page Site RQA et cliquez
-                          sur 'Mon compte', Mes coordonnées puis changer le mot
-                          de passe.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
+
                         </p>
                       </div>
                     </div>
@@ -190,10 +190,10 @@ const Faq = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-md-12 col-sm-12">
-              <div className="faq__content col-margin">
+            <div className="col-lg-6 col-sm-12">
+              <div className="faq-content col-margin">
                 <div className="accordion" id="accordionExampleTwo">
-                  <div className="accordion-item py-3">
+                  <div className="accordion-item">
                     <h5 className="accordion-header" id="headingTwoOne">
                       <button
                         className="accordion-button"
@@ -203,7 +203,8 @@ const Faq = () => {
                         aria-expanded="true"
                         aria-controls="collapseTwoOne"
                       >
-                        Que doit inclure un site Web d'apprentissage en ligne ?
+                       
+                    Que doit inclure un site Web d'apprentissage en ligne ?
                       </button>
                     </h5>
                     <div
@@ -215,15 +216,15 @@ const Faq = () => {
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          Si vous oubliez vos informations de connexion RQA,
-                          veuillez vous rendre sur la page Site RQA et cliquez
-                          sur 'Mon compte', Mes coordonnées puis changer le mot
-                          de passe.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
+
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="accordion-item py-3">
+                  <div className="accordion-item">
                     <h5 className="accordion-header" id="headingTwoTwo">
                       <button
                         className="accordion-button collapsed"
@@ -233,7 +234,7 @@ const Faq = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwoTwo"
                       >
-                        Comment acheter un cours ?
+                      Comment suivre un cours ?
                       </button>
                     </h5>
                     <div
@@ -245,25 +246,25 @@ const Faq = () => {
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          Si vous oubliez vos informations de connexion RQA,
-                          veuillez vous rendre sur la page Site RQA et cliquez
-                          sur 'Mon compte', Mes coordonnées puis changer le mot
-                          de passe.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
+
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="accordion-item py-3">
+                  <div className="accordion-item">
                     <h5 className="accordion-header" id="headingTwoThree">
                       <button
-                        className="accordion-button collapsed"
+                        class="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwoThree"
                         aria-expanded="false"
                         aria-controls="collapseTwoThree"
                       >
-                        Dois-je payer la TVA ?
+                    Comment s'inscrire ?
                       </button>
                     </h5>
                     <div
@@ -275,15 +276,15 @@ const Faq = () => {
                       <div className="accordion-body">
                         <p>
                           {" "}
-                          Si vous oubliez vos informations de connexion RQA,
-                          veuillez vous rendre sur la page Site RQA et cliquez
-                          sur 'Mon compte', Mes coordonnées puis changer le mot
-                          de passe.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
+
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="accordion-item py-3">
+                  <div className="accordion-item">
                     <h5 className="accordion-header" id="headingTwoFour">
                       <button
                         className="accordion-button collapsed"
@@ -293,7 +294,7 @@ const Faq = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwoFour"
                       >
-                        Comment accéder aux cours que j'ai payés ?
+                       Comment accéder aux cours que j'ai payés ?
                       </button>
                     </h5>
                     <div
@@ -302,13 +303,13 @@ const Faq = () => {
                       aria-labelledby="headingTwoFour"
                       data-bs-parent="#accordionExampleTwo"
                     >
-                      <div className="accordion-body">
+                      <div class="accordion-body">
                         <p>
                           {" "}
-                          Si vous oubliez vos informations de connexion RQA,
-                          veuillez vous rendre sur la page Site RQA et cliquez
-                          sur 'Mon compte', Mes coordonnées puis changer le mot
-                          de passe.
+                          Si vous oubliez vos informations de connexion RQA, veuillez vous rendre sur la page
+                          Site RQA et cliquez sur 'Mon compte', Mes coordonnées puis
+                          changer le mot de passe.
+
                         </p>
                       </div>
                     </div>
@@ -320,10 +321,11 @@ const Faq = () => {
         </div>
       </section>
 
-      <section className="Newsletter section bg-img ">
+      {/*  --SECTION-NEWSLETTERER--  */}
+      <section className="newsletter section bg-img py-5">
         <div className="container">
           <div className="row justify-content-center CTN">
-            <div className="col-lg-10 col-xxl-8 col-md-12 col-sm-12">
+            <div className="col-lg-10 col-xxl-8 col-sm-12 col-md 12">
               <div className="newsletter__content">
                 <div className="section__header text-center">
                   <h2 class="section__title">
