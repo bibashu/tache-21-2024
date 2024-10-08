@@ -30,7 +30,7 @@ const Sidebar = () => {
             </a>
           </li>
           <li className="nav-item text-black fs-4 my-1">
-            <a href="#" className="nav-link text-black fs-5" aria-current="page">
+            <a href="/Quiz" className="nav-link text-black fs-5" aria-current="page">
               <GearFill className="" />
               <span className="ms-2">Quiz</span>
             </a>

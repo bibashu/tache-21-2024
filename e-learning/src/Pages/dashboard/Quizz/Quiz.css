@@ -1,0 +1,173 @@
+/* .quiz-question{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 300px;
+    border: 0.3px solid rgb(241, 232, 232);
+}
+.quiz-numero{
+    background-color: #008CBA;
+    border-radius: 75%;
+    width: 130px;
+    height: 120px;
+    text-align: center;
+}
+.quiz-numero span{
+    color: white;
+    position: relative;
+   top: 50px;
+}
+.quiz-txt{
+    position: relative;
+    left: 50px;
+}
+.quiz-submit input{
+    align-items: center;
+    justify-content: center;
+} */
+
+
+.site-global {
+    margin: 1.5rem 1.5rem 0px;
+    margin-left: 50px;
+    background: #f3f3f3;
+    flex: 1 0 auto;
+}
+.site-page{
+    padding: 0px;
+    color: #454545;
+    clear: both;
+    max-width: 990px;
+    margin: auto;
+}
+.content {
+    line-height: 1.6;
+}
+.h2-like:first-child{
+    margin-top: 0px;
+}
+@media screen and (min-width: 545px) {
+     h2 {
+        font-size: 3rem;
+    }
+}
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 3rem 0px 1.5rem;
+    padding: 0px;
+    line-height: 1.2;
+    color: #454545;
+}
+form{
+    display: block;
+    margin-top: 0em;
+    unicode-bidi: isolate;
+}
+.quiz-question {
+    padding: 2rem 0px;
+    clear: both;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.quiz-question{
+    background: #fff;
+}
+.quiz-numero{
+    margin: 1.5rem 4rem 0 3rem;
+    height: 4em;
+    width: 4em;
+    background: #008cba;
+    line-height: 4em;
+    border-radius: 4em;
+    font-family: Merriweather, serif;
+}
+.quiz-numero span{
+    color: #fff;
+    font-size: 28px;
+    font-weight: 500;
+}
+.quiz-numero, .quiz-score-nb {
+    text-align: center;
+    font-size: 2em;
+}
+.quiz-txt{
+    flex: 1;
+    padding-right: 1rem;
+}
+.content p {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.quiz-intitule {
+    font-weight: 700;
+    margin: 0px 0px 1rem;
+}
+body, form, ol, ul {
+    margin: 0px;
+    padding: 0px;
+}
+.quiz-choix ul li {
+    list-style-type: none;
+    background: 0px 0px;
+    list-style-image: none;
+}
+input[type="radio" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 0px 5px;
+    padding: initial;
+    border: initial;
+}
+.quiz-choix label {
+    border: 0px;
+    display: inline;
+}
+.quiz-submit{
+    clear: both;
+    padding-top: 3rem;
+}
+.citation {
+    clear: both;
+    padding: 1.5rem 0;
+    text-align: center;
+    font: 400 1.5em Georgia, Times, "Times New Roman", serif;
+    color: #626262;
+}
+.awesome.orange, .awesome.orange:focus{
+    background-color: #f25e23;
+}
+.awesome.orange:hover{
+    background-color: #f25e23;
+}
+.awesome.large {
+    font-size: 1.2em;
+    padding: 1rem 1.5rem;
+}
+.awesome{
+    position: relative;
+    padding: .95rem 1.5rem;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 1em;
+    text-shadow: 0px -1px 1px rgba(0, 0, 0, .25);
+    color: #fff;
+    border: 0;
+    border-radius: .5rem;
+    white-space: normal;
+    appearance: none;
+}
+.avatar, .awesome{
+    display: inline-block;
+}
+.citation span{
+    font-size: .8em;
+    margin-left: .5rem;
+    color: #6fa939;
+    white-space: nowrap;
+}

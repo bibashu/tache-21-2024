@@ -21,6 +21,8 @@ import InstDetails from './Pages/Instructeurs-details/Inst-details';
 import Contact from "./Pages/Contacts/Contact";
 import Cours from "./Pages/Cours/Cours";
 import Apropos from './Pages/Apropos/Apropos';
+import Quiz from './Pages/dashboard/Quizz/Quiz';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -62,6 +64,9 @@ root.render(
         </Route>
 
         <Route path='/apropos' element={ <Apropos/>} > 
+        </Route>
+
+        <Route path='/Quiz' element={ <Quiz/>} > 
         </Route>
      
 

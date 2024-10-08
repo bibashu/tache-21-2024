@@ -1,0 +1,251 @@
+[33mcommit 74aa2e2119fe6b1f7723ad133d20069244de8e6c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlearning[m[33m, [m[1;31morigin/modules[m[33m)[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Fri Oct 4 21:49:41 2024 +0000
+
+    page dashboard
+
+[33mcommit ea33386f79c71db2b1556c6b8345ffaf27936a34[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Mon Sep 30 15:14:27 2024 +0000
+
+    dash en cours
+
+[33mcommit 7589c9fb95cb052a7ef989705c6bdf88f9c84bd5[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Tue Sep 24 17:52:37 2024 +0000
+
+    navbar sidebar
+
+[33mcommit 606a71dc9fc772b7da6db44e4d0d6f53029dc575[m[33m ([m[1;32mmodules[m[33m)[m
+Merge: f03e9b1 1b3ebff
+Author: bibashu <bibachu8@gmail.com>
+Date:   Thu Sep 19 23:56:17 2024 +0000
+
+    ajout projet reglé
+
+[33mcommit f03e9b1120de7f36d3b5554749e4d6e35a6502cd[m
+Merge: 64a7903 cf7855b
+Author: bibashu <bibachu8@gmail.com>
+Date:   Thu Sep 19 15:24:22 2024 +0000
+
+    dash
+
+[33mcommit 1b3ebff987adf1065bb77510215cd73db80dbe67[m
+Author: damepsd <damepsd12@gmail.com>
+Date:   Thu Sep 19 14:51:16 2024 +0200
+
+    ma premiere sauvegarde
+
+[33mcommit b53b9c55cd337459f4c24c8fc2aee327a42a764f[m
+Author: damepsd <damepsd12@gmail.com>
+Date:   Mon Sep 16 23:04:30 2024 +0200
+
+    first commit
+
+[33mcommit 6eec6056c263a28273d06daefcf92831beb0062d[m
+Author: damepsd <damepsd12@gmail.com>
+Date:   Mon Sep 16 15:33:41 2024 +0200
+
+    my first commit
+
+[33mcommit 64a790304117490475f2dd8b9ea06755cc95a123[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Sat Sep 14 22:49:59 2024 +0000
+
+    navbar et sidebar en pogression
+
+[33mcommit cf7855ba7611aeeb26c90280c1b6430c4accd666[m[33m ([m[1;31morigin/modules-coach[m[33m)[m
+Author: Menza <menzamenza90@gmail.com>
+Date:   Sat Sep 14 18:49:24 2024 +0000
+
+    layout bi
+
+[33mcommit c7c7561bd80e472e59736db2ddde91135244b35e[m
+Merge: 27631ae a8d121b
+Author: bibashu <bibachu8@gmail.com>
+Date:   Sat Sep 14 14:30:48 2024 +0000
+
+    navbar et sidebar en pogression
+
+[33mcommit 27631ae39662fe6ecb95574ad22b75894035fce0[m
+Merge: 4933195 0566d77
+Author: bibashu <bibachu8@gmail.com>
+Date:   Sat Sep 14 01:35:57 2024 +0000
+
+    sidebar en cours de devellopement
+
+[33mcommit a8d121b12b491f157bfb66e612c63108a50fa1c5[m
+Merge: b07bf2c 4933195
+Author: Menza <menzamenza90@gmail.com>
+Date:   Fri Sep 13 03:02:40 2024 +0000
+
+    pull de modules avec des confilts dans packages.lock
+
+[33mcommit b07bf2c374c1e585bfdf2f073a4fc7fb15d2badf[m
+Author: Menza <menzamenza90@gmail.com>
+Date:   Fri Sep 13 02:56:04 2024 +0000
+
+    dependances
+
+[33mcommit d43546ca23d49b0113d0739913281365a1d72fb6[m
+Author: Menza <menzamenza90@gmail.com>
+Date:   Fri Sep 13 02:54:28 2024 +0000
+
+    page profil enfin sone na
+
+[33mcommit 4933195e354104188a38b4ae42d634a223ff504b[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Wed Sep 11 01:08:33 2024 +0000
+
+    login apprenant
+
+[33mcommit 0566d778ef717930e42916530ee305b267e81990[m
+Merge: 42831c1 972987f
+Author: Menza <menzamenza90@gmail.com>
+Date:   Tue Sep 10 16:49:42 2024 +0000
+
+    Merge branch 'modules' of https://github.com/bibashu/tache-21-2024 into modules-coach
+    
+    this is for merge the components from 'modules' to my branch
+
+[33mcommit 972987fe041c1e90e9b34cd86619c2a149826dc1[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Tue Sep 10 15:12:11 2024 +0000
+
+    restyliser page login
+
+[33mcommit 42831c1f8367d9599c041121dafc476512a77ded[m
+Merge: 1294a8c c599cd7
+Author: Menza <menzamenza90@gmail.com>
+Date:   Tue Sep 10 14:41:51 2024 +0000
+
+    pull modules coach
+
+[33mcommit 1294a8c5e0874ed7c6266404f5cf682c4a8173d8[m
+Author: Menza <menzamenza90@gmail.com>
+Date:   Tue Sep 10 03:52:32 2024 +0000
+
+    la page profile debut
+
+[33mcommit c6b08c84baafd84a981c73a4a1879a8f37c01777[m
+Merge: c599cd7 dc9635e
+Author: bibashu <bibachu8@gmail.com>
+Date:   Mon Sep 9 23:57:14 2024 +0000
+
+    Merge branch 'learning' of https://github.com/bibashu/tache-21-2024 into modules
+
+[33mcommit c599cd7968d50aab3c7ef31c5c0a0b5a7ebf8d59[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Mon Sep 9 22:55:29 2024 +0000
+
+    nouveau
+
+[33mcommit dc9635e3a7241549db19d43ffbd127558e575212[m
+Author: aida-diallo <aidad9628@gmail.com>
+Date:   Mon Sep 9 17:43:04 2024 +0200
+
+    ajout
+
+[33mcommit f59fd1bb814a891918ed9870e9bbf5cf5eedc0e3[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: bd41272 4df74a1
+Author: Menza <menzamenza90@gmail.com>
+Date:   Sat Sep 7 03:01:24 2024 +0000
+
+    pull
+
+[33mcommit bd41272c9d0ae578d9bf9e3cc6ffdbfe5f776c5b[m
+Author: Menza <menzamenza90@gmail.com>
+Date:   Sat Sep 7 02:48:52 2024 +0000
+
+    logout et affichage des infos
+
+[33mcommit 4df74a114ca4d5e29fc91ec181fdd7db764e4495[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Sat Sep 7 00:26:35 2024 +0000
+
+    livraisons et notifications
+
+[33mcommit 34ab53d8af17331cf924602adb3eb64be6bb2907[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Fri Sep 6 00:51:18 2024 +0000
+
+    pull branch modules-coach
+
+[33mcommit 21c27626407d9231519adade05411774d957a7f1[m
+Merge: 70eabab 494542c
+Author: Menza <menzamenza90@gmail.com>
+Date:   Fri Sep 6 00:29:04 2024 +0000
+
+    pull branch modules
+
+[33mcommit 70eabab5dde12bef25afbc6844db8232d6ff5fe2[m
+Author: Menza <menzamenza90@gmail.com>
+Date:   Fri Sep 6 00:15:00 2024 +0000
+
+    reinitilaisation du mot de passe
+
+[33mcommit 1990d98480e6a062a02c4fd8680d6824ac1ccaab[m
+Author: Menza <menzamenza90@gmail.com>
+Date:   Thu Sep 5 04:28:24 2024 +0000
+
+    reinitialiser un nouveau mot de passe
+
+[33mcommit fe7e0eafa50594d7679f09e800d2cffa693ed562[m
+Author: Menza <menzamenza90@gmail.com>
+Date:   Wed Sep 4 17:08:55 2024 +0000
+
+    login et register du coach pret
+
+[33mcommit 494542ce732c26d7598552d9f830675b744af4a0[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Wed Sep 4 01:50:45 2024 +0000
+
+    creation du modules projet
+
+[33mcommit cc9fcb8c915248b4b9e2e99de3bdb00fa9876f7d[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Tue Sep 3 22:02:29 2024 +0000
+
+    creation d'alert
+
+[33mcommit d7d4e0cfbd22871098e98d8ddfb3cba929d6a4ce[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Tue Sep 3 19:15:36 2024 +0000
+
+    modules quizzes
+
+[33mcommit 9aa506783386aab6385f819093476995d85989de[m
+Author: Menza <menzamenza90@gmail.com>
+Date:   Tue Sep 3 01:21:25 2024 +0000
+
+    le login du coach
+
+[33mcommit f8a9017608718bab7fe4d69754c8a8254e2a5fde[m
+Author: Menza <menzamenza90@gmail.com>
+Date:   Mon Sep 2 18:10:39 2024 +0000
+
+    ajout de ma branch module-coach
+
+[33mcommit 1e961c8f387e007faf6b120834abd6c9cfb9d263[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Sun Sep 1 21:21:01 2024 +0000
+
+    modules: cours
+
+[33mcommit 067d933f1ccb098a789865d727d5a2e26882c027[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Sat Aug 31 17:03:07 2024 +0000
+
+    modules: domaine, sous domaine terminer
+
+[33mcommit ac589f25e38d079e41506280d8735810594cdbc5[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Sat Aug 31 15:40:09 2024 +0000
+
+    modules: domaine, sous domaine
+
+[33mcommit c3608033fd1c219b0fe88d5257c6784f9c49b8e6[m[33m ([m[1;31morigin/ma-branch[m[33m)[m
+Author: bibashu <bibachu8@gmail.com>
+Date:   Wed Aug 28 15:11:54 2024 +0000
+
+    installation
