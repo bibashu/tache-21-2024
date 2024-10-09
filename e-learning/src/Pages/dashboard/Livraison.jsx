@@ -102,7 +102,7 @@ const Livraison = () => {
     return (
         <Layout userData={user}>
             <div className="container ">
-                <button className="btn mt-4 w-25" style={{ backgroundColor: '#FC9049', color: "#fff" }} onClick={() => setShowForm(!showForm)}>
+                <button className="btn mt-4 w-50 w-lg-25"   style={{ backgroundColor: '#FC9049', color: "#fff" }} onClick={() => setShowForm(!showForm)}>
                     {showForm ? "Fermer" : "Soumettre une Livraison"}
                 </button>
 
@@ -151,7 +151,7 @@ const Livraison = () => {
                                 required
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary w-25">Envoyer</button>
+                        <button type="submit" className="btn btn-primary w-50 w-lg-25">Envoyer</button>
                     </form>
                 )}
 

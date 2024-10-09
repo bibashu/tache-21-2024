@@ -958,7 +958,7 @@ body {
    display: flex;
    align-items: center;
    color: #575962;
-   padding: 6px 25px;
+   padding: 12px 25px;
    width: 100%;
    font-size: 1rem;
    font-weight: 400;
@@ -6180,11 +6180,10 @@ label.error {
 }
 
 .btn {
-   padding: .65rem 1.4rem;
    font-size: 1rem;
    font-weight: 500;
    opacity: 1;
-   border-radius: 3px
+   border-radius: 3px;
 }
 
 .btn:focus,

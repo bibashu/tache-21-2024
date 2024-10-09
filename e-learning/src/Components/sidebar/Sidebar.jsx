@@ -4,7 +4,7 @@ import { GearFill, HouseFill } from "react-bootstrap-icons";
 import s from "./style.module.css";
  // Ensure to apply styles from the CSS module
  import logo from "../../assets/imgs/learning.png"
-
+ 
 const Sidebar = ({ currentPage }) => {
 
   return (
@@ -15,7 +15,7 @@ const Sidebar = ({ currentPage }) => {
             <img
               src={logo}
               alt="navbar brand"
-              className="navbar-brand w-100 mt-0 mt-lg-5"
+              className="navbar-brand w-75 mt-0 mt-lg-5 img-fluid"
               
             />
           </Link>
