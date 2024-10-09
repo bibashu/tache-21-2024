@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../Components/Button";
 import learning from "./navbar-img/learning.png";
 import { Link } from "react-router-dom";
+import bootstrap  from "bootstrap";
 
 const Navbar = () => {
   const Navigate = useNavigate();
