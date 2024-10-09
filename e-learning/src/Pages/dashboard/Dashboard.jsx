@@ -5,8 +5,7 @@ import Cards from "Components/Cards";
 import CardCours from "Components/CardCours";
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import plugins from "../../../public/assets/css/plugins.min.css";
-// import plugins from "../../../public/assets/css/kaiadmin.min.css";
+
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);

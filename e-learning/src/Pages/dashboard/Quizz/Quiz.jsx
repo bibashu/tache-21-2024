@@ -101,40 +101,60 @@
 // export default Quiz;
 
 
+
+
 import React, { useState, useEffect } from 'react';
+import "./QuizData"; // Assurez-vous que le chemin est correct
+import Layout from "../../../Layouts/Layout";
+import { QuizAPI } from '../../../api/api-Quiz';
 
-   function Quiz() {
-       const [questions, setQuestions] = useState([]);
+function Quiz() {
+    const [quiz, setQuiz] = useState(null); // Un objet pour le quiz, pas un tableau
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-       useEffect(() => {
-           fetchQuestions(); 
-       }, []);
+    useEffect(() => {
+        fetchQuiz();
+    }, []);
 
-       const fetchQuestions = async () => {
-           try {
-               const response = await fetch('http://localhost:5000/Quizz/api_quizz');
-               console.log('API Normal')
-               const data = await response.json();
-               setQuestions(data); 
-           } catch (error) {
-               console.error('Error fetching questions:', error);
-           }
-       };
+    const fetchQuiz = async () => {
+        try {
+            const data = await QuizAPI.getQuestions(); // Récupérez les données de l'API
+            setQuiz(data); // Stockez l'objet entier du quiz
+        } catch (error) {
+            setError('Erreur lors de la récupération du quiz.');
+            console.error('Error fetching quiz:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-       return (
-           <div>
-               {questions.length > 0 ? ( // Only render the list if questions are available
-                   <ul>
-                       {questions.map((question, index) => (
-                           <li key={index}>{question.questionText}</li> // Replace with your actual question rendering logic
-                       ))}
-                   </ul>
-               ) : (
-                   <p>Loading questions...</p> // Or display a loading indicator
-               )}
-           </div>
-       );
-   }
+    return (
+        <Layout>
+            <div>
+                {loading ? (
+                    <p>Loading quiz...</p> 
+                ) : error ? (
+                    <p>{error}</p> 
+                ) : quiz ? ( // Vérifiez que le quiz existe
+                    <div>
+                        <h1>{quiz.quizTitle}</h1> {/* Affichez le titre du quiz */}
+                        {Array.isArray(quiz.questions) && quiz.questions.length > 0 ? ( // Assurez-vous que 'questions' est un tableau
+                            <ul>
+                                {quiz.questions.map((question) => (
+                                    <li key={question.id || question.questionText}>{question.questionText}</li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <p>No questions available</p>
+                        )}
+                    </div>
+                ) : (
+                    <p>No quiz data available</p>
+                )}
+            </div>
+        </Layout>
+    );
+}
 
-   export default Quiz;
-   
+export default Quiz;
