@@ -37,7 +37,7 @@ const Form = () => {
         icon: "success",
       });
 
-      window.location.href = "./Users";
+      window.location.href = "./dashboard";
     } catch (error) {
       if (
         error.response &&
