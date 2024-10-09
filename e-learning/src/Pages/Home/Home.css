@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+* {
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    /* color: #333; */
+  }
+.App {
+  text-align: center;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+    /* color: #333; */
+    font-size: 1.25rem;
+}
+/* SECTION-1 */
+.section-1 .bouton-1 {
+  background: linear-gradient(to right, #fca338, #ec7732);
+  color: #fff;
+}
+.section-1 .bouton-1:hover {
+  background-color: #ec7732;
+  color: #fff;
+  border: 1px solid #ec7732;
+}
+.section-1 .bouton-2:hover {
+  color: #ec7732;
+  border: 1px solid #ec7732;
+}
+.form {
+  position: relative;
+}
+.section-1 form #search {
+  background: linear-gradient(to right, #fca338, #ec7732);
+  width: 90px;
+  right: 18px;
+  height: 60px;
+  color: #fff;
+}
+.section-1 .text {
+  font: 30px;
+}
+.bouton-search {
+  display: flex;
+  align-items: center;
+}
+
+.section-1 form input {
+  width: 530px;
+  height: 60px;
+  border: none;
+  padding: 0px 15px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.section-2 .carousel-item .button-buy {
+  background: linear-gradient(to right, #fbad4d, #ec7732);
+  color: #fff;
+  max-width: 150px;
+  float: right;
+  padding-top: 10px;
+}
+.section-2 .carousel-item p,
+.section-2 .carousel-item .bi {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  font-style: normal;
+}
+.section-2 .carousel-item .bi {
+  font-size: 18px;
+}
+.section-2 .shadow-box {
+  box-shadow: 0px 0.5px 6px #000;
+}
+.hg {
+  height: 545px;
+}
+
+.fw {
+  font-size: 60px;
+}
+.para {
+  font-size: 20px;
+}
+.about {
+  width: 1000px;
+  height: 500px;
+}
+.BTN {
+  background-color: #ec7732;
+  color: #fff;
+  border: 1px solid #ec7732;
+  height: 50px;
+}
+.section__title {
+  font-size: 60px;
+}
+
+.seminar-content {
+  border: 0.2px solid rgb(227, 222, 222);
+  border-radius: 25px;
+  width: 250px;
+  height: 300px;
+}
+.seminar__date {
+  background-color: #ec7732;
+  color: #fff;
+  border: 1px solid #ec7732;
+  height: 80px;
+  width: 120px;
+  border-radius: 10px;
+  position: relative;
+  left: 20px;
+}
+.Btn {
+  background-color: white;
+  border: 0.5px solid gray;
+  height: 50px;
+}
+.seminar {
+  width: 740px;
+}
+.section {
+  background-color: #fefaf3;
+  height: 600px;
+}
+.context {
+  background-color: white;
+  border-radius: 30px;
+  height: 220px;
+  position: relative;
+  top: 50px;
+}
+
+.context1 {
+  background-color: white;
+  border-radius: 30px;
+  height: 230px;
+  position: relative;
+  top: 70px;
+}
+.context2 {
+  background-color: white;
+  border-radius: 30px;
+  height: 220px;
+  position: relative;
+  top: 50px;
+  left: 20px;
+}
+.context3 {
+  background-color: white;
+  border-radius: 30px;
+  height: 230px;
+  position: relative;
+  top: 70px;
+  left: 20px;
+}
+.process {
+  background-color: #fff7f4;
+  width: 100px;
+  height: 70px;
+  position: relative;
+  top: 10px;
+  left: 100px;
+  border-radius: 10px;
+  border: 0.5px solid rgb(196, 195, 195);
+}
+.process1 {
+  background-color: #fff7f4;
+  width: 100px;
+  height: 70px;
+  position: relative;
+  top: 10px;
+  left: 100px;
+  border-radius: 10px;
+  border: 0.5px solid rgb(196, 195, 195);
+}
+.process img {
+  width: 40px;
+  position: relative;
+  top: 10px;
+}
+.process1 img {
+  width: 40px;
+  position: relative;
+  top: 15px;
+}
+.counter-section {
+  background-color: #4a1c01;
+  height: 500px;
+}
+.counter-number {
+  font-size: 60px;
+}
+.iCon {
+  position: relative;
+  top: 60px;
+}
+.PG {
+  font-size: 20px;
+}
+
+.bg-img {
+  background-color: white;
+}
+.CTN {
+  position: relative;
+  top: 150px;
+}
+.newsletter-inputs input {
+  height: 60px;
+  width: 450px;
+  border: 0.5px solid rgb(215, 215, 215);
+}
+.bTN {
+  height: 60px;
+  width: 120px;
+  background-color: #ec7732;
+  color: white;
+  border: none;
+}
+
+.feactures {
+  background-color: #faf8ff;
+  height: 250px;
+  width: 340px;
+  border-radius: 25px;
+}
+.feactures1 {
+  background-color: #fff7f4;
+  height: 250px;
+  width: 340px;
+  border-radius: 25px;
+}
+.Feactures1 {
+  background-color: white;
+  height: 200px;
+  width: 295px;
+  border-radius: 25px;
+  border: 0.3px solid gainsboro;
+}
+.SCT {
+  background-color: #fdf2e9;
+  height: 700px;
+}
+
+.SCT1 {
+  position: relative;
+  top: 100px;
+}
+.testimonials {
+  height: 300px;
+  width: 400px;
+  background-color: white;
+  border-radius: 25px;
+}
+.rating i {
+  color: #ffd500;
+}
+.jin {
+  border-radius: 50px;
+  height: 65px;
+  width: 70px;
+}
+.Slider {
+  font-size: 50px;
+  position: relative;
+  left: 20px;
+}
+.Slider1 {
+  position: relative;
+  left: 140px;
+}
+.Slider2 {
+  position: relative;
+  left: 200px;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .about {
+    width: 90%;
+    height: auto;
+  }
+  .section {
+    height: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .btn {
+    width: 100%;
+  }
+  .section-1 form input {
+    width: 100%;
+    height: 50px;
+  }
+  .footer .logo {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fw {
+    font-size: 40px;
+  }
+  .seminar-content {
+    width: 100%;
+    height: auto;
+  }
+  .context {
+    height: auto;
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 536px) {
+  .TXT {
+    font-size: 18px;
+  }
+  .connect {
+    font-size: 16px;
+  }
+}

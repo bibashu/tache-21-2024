@@ -76,8 +76,9 @@ const Cours = () => {
                 <div className="col-lg-3 col-xl-4 col-xxl-6">
                   <div className="course-more text-start text-lg-end col-margin mb-3">
                     <a
-                      href="/cours"
+                      href="/login"
                       className="cmn-button text-decoration-none"
+                      onClick={() => Navigate("/login")}
                     >
                       Voir plus
                     </a>
@@ -199,8 +200,9 @@ const Cours = () => {
                 <div className="col-lg-3 col-xl-4 col-xxl-6">
                   <div className="course-more text-start text-lg-end col-margin">
                     <a
-                      href="/cours"
+                      href="/login"
                       className="cmn-button text-decoration-none"
+                      onClick={() => Navigate("/login")}
                     >
                     Voir plus
                     </a>
@@ -322,8 +324,9 @@ const Cours = () => {
                 <div className="col-lg-3 col-xl-4 col-xxl-6">
                   <div className="course-more text-start text-lg-end col-margin">
                     <a
-                      href="/cours"
+                      href="/login"
                       className="cmn-button text-decoration-none"
+                      onClick={() => Navigate("/login")}
                     >
                    Voir plus
                     </a>
@@ -445,8 +448,9 @@ const Cours = () => {
                 <div className="col-lg-3 col-xl-4 col-xxl-6">
                   <div className="course-more text-start text-lg-end col-margin">
                     <a
-                      href="/cours"
+                      href="/login"
                       className="cmn-button text-decoration-none"
+                      onClick={() => Navigate("/login")}
                     >
                       Voir plus
                     </a>
@@ -568,8 +572,9 @@ const Cours = () => {
                 <div className="col-lg-3 col-xl-4 col-xxl-6">
                   <div className="course-more text-start text-lg-end col-margin">
                     <a
-                      href="/cours"
+                      href="/login"
                       className="cmn-button text-decoration-none"
+                      onClick={() => Navigate("/login")}
                     >
                       Voir plus
                     </a>
@@ -693,8 +698,9 @@ const Cours = () => {
                 <div className="col-lg-3 col-xl-4 col-xxl-6">
                   <div className="course-more text-start text-lg-end col-margin">
                     <a
-                      href="/cours"
+                      href="/login"
                       className="cmn-button text-decoration-none"
+                      onClick={() => Navigate("/login")}
                     >
                       Voir plus
                     </a>

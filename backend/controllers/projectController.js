@@ -1,5 +1,7 @@
 const Project = require("../models/project_Model");
 const Cours = require("../models/Cours_Model");
+const Apprenant = require("../models/apprenant_Model");
+const mongoose = require("mongoose");
 
 exports.index = async (req, res) => {
   try {
@@ -153,9 +155,37 @@ exports.supprimerModule = async (req, res) => {
   }
 };
 // recupération des données domaine avec json
+// exports.apiproject = async (req, res) => {
+//   try {
+//     const project = await Project.find({}).populate("cours").exec();
+//     res.status(200).json(project);
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 exports.apiproject = async (req, res) => {
   try {
-    const project = await Project.find({}).populate("cours").exec();
+    const { studentId } = req.params;
+
+    // Vérifier si l'ID de l'étudiant est valide
+    if (!mongoose.Types.ObjectId.isValid(studentId)) {
+      return res.status(400).json({ message: "ID de l'étudiant non valide" });
+    }
+
+
+    // Récupérer l'étudiant en fonction de l'ID
+    const etudiant = await Apprenant.findById(req.params.studentId).populate("cours").exec();
+
+    if (!etudiant) {
+      return res.status(404).json({ message: "Étudiant non trouvé" });
+    }
+
+    // Obtenir les IDs des cours de l'étudiant
+    const coursIds = etudiant.cours.map(cour => cour._id);
+
+    // Trouver les projets liés aux cours de l'étudiant
+    const project = await Project.find({ cours: { $in: coursIds } }).populate("cours").exec();
+
     res.status(200).json(project);
   } catch (error) {
     res.status(500).json({ message: error.message });

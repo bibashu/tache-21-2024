@@ -71,7 +71,8 @@ const Apropos = () => {
                   monde joue un rôle important dans l'élimination du problème du
                   chômage depuis 2016.
                 </p>
-                <a href="/course" className="cmn-button text-decoration-none">
+                <a href="" className="cmn-button text-decoration-none"
+                 onClick={() => Navigate("/cours")}>
                   Parcourir le cours
                 </a>
               </div>
@@ -104,7 +105,8 @@ const Apropos = () => {
                   technologies de l'information à des personnes de tous horizons
                   dans le pays pendant 6 ans.
                 </p>
-                <a href="course.html" className="cmn-button text-decoration-none">
+                <a href="" className="cmn-button text-decoration-none"
+                 onClick={() => Navigate("/cours")}>
                   Parcourir le cours
                 </a>
               </div>

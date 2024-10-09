@@ -1,0 +1,90 @@
+.Banner {
+  position: relative;
+  background-color: #fefaf3;
+  height: 350px;
+}
+.BANNER {
+  position: relative;
+  top: 190px;
+}
+.contact__content h4 {
+  font-size: 40px;
+}
+.contact__content li {
+  list-style-type: none;
+}
+.Contact-Content {
+  border: 1px solid rgb(206, 201, 201);
+  border-radius: 20px;
+  width: 280px;
+  height: 150px;
+  background-color: #fff7f4;
+}
+.contact-content {
+  border: 1px solid rgb(242, 237, 237);
+  border-radius: 20px;
+  width: 280px;
+  height: 150px;
+  background-color: #f8ffff;
+}
+.content-group {
+  border: 1px solid rgb(226, 220, 220);
+  border-radius: 20px;
+  width: 280px;
+  height: 150px;
+  background-color: #faf8ff;
+}
+.group select {
+  width: 500px;
+  height: 50px;
+}
+.single-input input {
+  width: 500px;
+  height: 50px;
+}
+.single-input textarea {
+  width: 1160px;
+}
+
+.btn-area Button {
+  width: 200px;
+  height: 60px;
+  border: none;
+  background-color: #f65300;
+  color: white;
+}
+.contact__form h1 {
+  font-size: 50px;
+}
+.banner__content h2 {
+  font-size: 50px;
+}
+.newsletter-inputs input {
+  width: 600px;
+}
+.Newsletter{
+    background-color: white;
+    height: 750px;
+}
+
+@media (min-width: 1200px) {
+  
+ 
+  }
+  
+  @media (max-width: 536px) {
+    .Banner{
+        width: 100%;
+       }
+       .Contact-Content{
+        width: 100%;
+       }
+       .contact-content{
+        width: 100%;
+       }
+       .content-group{
+        width: 100%;
+       }
+   
+  }
+  

@@ -27,7 +27,7 @@ const Dashboard = () => {
         );
 
         // Récupérer les données de l'apprenant
-        const userData = response.data;
+        const userData = response.data;        
         setUser(userData);
 
         setCourses(userData.courses); // Assigner les cours récupérés

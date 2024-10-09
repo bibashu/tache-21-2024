@@ -3,6 +3,7 @@ import photoLogin from "./login_images.jpg";
 import { useNavigate } from "react-router-dom";
 import Button from "../../Components/Button";
 
+
 import Input from "../../Components/input/Input.jsx";
 import "../Form/Form.css";
 import logo from "./learning.png";
@@ -37,7 +38,7 @@ const Form = () => {
         icon: "success",
       });
 
-      window.location.href = "./dashboard";
+       window.location.href = "./Dashboard"
     } catch (error) {
       if (
         error.response &&
@@ -98,6 +99,7 @@ const Form = () => {
                   type="text"
                   required
                   onChange={(e) => setEmail(e.target.value)}
+                  autoComplete="true"
                 />
               </div>
               <div className="flex-column">
@@ -119,6 +121,7 @@ const Form = () => {
                   type="password"
                   required
                   onChange={(e) => setPassword(e.target.value)}
+                  autoComplete="true"
                 />
               </div>
               <div className="flex-row">

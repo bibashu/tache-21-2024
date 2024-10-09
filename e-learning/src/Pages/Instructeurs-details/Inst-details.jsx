@@ -34,10 +34,14 @@ const InstDetails = () => {
                     </li>
                     <li
                       class="breadcrumb-item active"
-                      aria-current="/instructeurs"
-                      onClick={() => Navigate("/InstDetails")}
                     >
-                      Instructeurs
+                      <Link
+                        to="/instructeurs"
+                        className="text-decoration-none"
+                        onClick={() => Navigate("/instructeurs")}
+                      >
+                        Instructeurs
+                      </Link>
                     </li>
                     <li
                       class="breadcrumb-item active"
@@ -253,7 +257,8 @@ const InstDetails = () => {
                 <p>
                   <span>Following</span> <span>605</span>
                 </p>
-                <a href="index.html" className="cmn-button btn btn-lg message">
+                <a href="" className="cmn-button btn btn-lg message"
+                onClick={() => Navigate("/inst-details")}>
                   Facebook
                 </a>
               </div>

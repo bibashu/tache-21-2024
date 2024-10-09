@@ -220,8 +220,10 @@ app.post('/upload-profile-picture', upload.single('profilePicture'), async (req,
   }
 });
 
-// Assure-toi que le dossier "public/uploads" est accessible statiquement
 app.use('/uploads', express.static('public/uploads'));
+
+// Retourner le chemin de l'image mise à jour dans uploads pour les livraisons
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Gestion des erreurs liées à multer
 app.use((err, req, res, next) => {

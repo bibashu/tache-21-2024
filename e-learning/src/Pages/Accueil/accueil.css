@@ -597,6 +597,9 @@ p, th, td, li, input, textarea, select, label, blockquote, span {
   margin: 0px;
   font-weight: 600;
 }
+span.sub-item{
+  color: #9f9f9f !important;
+}
 p, th, td, li, input, textarea, select, label, blockquote, span {
   font-size: 18px;
   line-height: 30px;
