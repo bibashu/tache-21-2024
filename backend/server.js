@@ -274,7 +274,7 @@ app.use('/apprenant', apprenantRoute);
 
 // Connexion à MongoDB et démarrage du serveur
 mongoose
-  .connect("mongodb://localhost:27017/E-Learning")
+  .connect("mongodb+srv://menzamenza90:5o4KyFBCKNZmXeGj@e-learning.dn30h.mongodb.net/?retryWrites=true&w=majority&appName=E-learning")
   .then(() => {
     console.log("Connecté à la base de données MongoDB");
     server.listen(5000, () => {
