@@ -6,6 +6,7 @@ import CardCours from "Components/CardCours";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
 const Dashboard = () => {
   const [user, setUser] = useState(null);
   const [courses, setCourses] = useState([]); // Ajouter un état pour les cours

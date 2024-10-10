@@ -1,0 +1,7 @@
+.Btn{
+    width: 200px;
+    height: 50px;
+    color: white;
+    background:  linear-gradient(90deg, #f48d00 0%, #f73e00 100%);
+    border: none;
+}
