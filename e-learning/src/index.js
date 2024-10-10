@@ -22,6 +22,7 @@ import InstDetails from './Pages/Instructeurs-details/Inst-details';
 import Contact from "./Pages/Contacts/Contact";
 import Cours from "./Pages/Cours/Cours";
 import Apropos from './Pages/Apropos/Apropos';
+import CoursDash from 'Pages/dashboard/CoursDash';
 
 
 
@@ -81,6 +82,14 @@ root.render(
         element={
           <PrivateRoute>
             <Projet />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/coursdash"
+        element={
+          <PrivateRoute>
+            <CoursDash />
           </PrivateRoute>
         }
       />
