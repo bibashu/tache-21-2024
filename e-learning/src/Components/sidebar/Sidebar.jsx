@@ -51,7 +51,7 @@ const Sidebar = ({ currentPage }) => {
 
             {[
              
-              { path: '/cours', label: 'Cours', icon: 'fas fa-book' },
+              { path: '/coursdash', label: 'Cours', icon: 'fas fa-book' },
               { path: '/Quiz', label: 'Quizzes', icon: 'fas fa-question-circle' },
               { path: '/projet', label: 'Projects', icon: 'fas fa-folder-open' },
               { path: '/livraison', label: 'Livraisons', icon: 'fas fa-paper-plane' }

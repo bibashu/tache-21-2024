@@ -151,7 +151,7 @@ const Livraison = () => {
                                 required
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary w-50 w-lg-25">Envoyer</button>
+                        <button type="submit" className="btn btn-success  w-50 w-lg-25">Envoyer</button>
                     </form>
                 )}
 
@@ -184,7 +184,7 @@ const Livraison = () => {
                             livraisons.map((livraison) => {
                                 const screenshots = livraison.screenshots || [];
 
-                                const slidesToShow = screenshots.length < 3 ? screenshots.length : 1;
+                                const slidesToShow = screenshots.length < 2 ? screenshots.length : 1;
 
                                 const settings = {
                                     dots: true,

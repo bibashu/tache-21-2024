@@ -11,8 +11,8 @@ const apprenantSchema = new mongoose.Schema(
       required: true,
     },
     coursDemarres: {
-      type: [String], // ou le type correspondant à vos cours (ex: ObjectId)
-      default: [], // définit un tableau vide par défaut
+      type: [String], 
+      default: [], 
     },
     email: {
       type: String,
@@ -32,7 +32,7 @@ const apprenantSchema = new mongoose.Schema(
     cours: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Cours", // Nom du modèle auquel vous faites référence
+        ref: "Cours", 
       },
     ],
   },
