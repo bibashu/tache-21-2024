@@ -124,9 +124,7 @@ const Form = () => {
                   autoComplete="true"
                 />
               </div>
-              <div className="flex-row">
-                <span className="span text-danger">Forgot password?</span>
-              </div>
+             
               <button
                 className="button-submit"
                 type="submit"
