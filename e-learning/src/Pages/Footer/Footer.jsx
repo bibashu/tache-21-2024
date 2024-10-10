@@ -97,7 +97,7 @@ const Footer = () => {
                   <div className="section-img">
                     <img src={recentone} className="img-fluid" alt="recent-1" />
                   </div>
-                  <div className="section-title text-start ms-3">
+                  <div className="section-title1 text-start ms-3">
                     <a>Design Graphique</a>
                 
                   </div>
@@ -106,7 +106,7 @@ const Footer = () => {
                   <div className="section-img">
                     <img src={recenttwo} className="img-fluid" alt="recent-1" />
                   </div>
-                  <div className="section-title text-start ms-3">
+                  <div className="section-title1 text-start ms-3">
                     <a>Developpement Web </a>
                    
                   </div>
@@ -119,7 +119,7 @@ const Footer = () => {
                       alt="recent-1"
                     />
                   </div>
-                  <div className="section-title text-start ms-3">
+                  <div className="section-title1 text-start ms-3">
                     <a>UI/UX Design</a>
                   
                   </div>
