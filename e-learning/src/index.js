@@ -85,7 +85,14 @@ root.render(
           </PrivateRoute>
         }
       />
-
+   <Route
+        path="/Quiz"
+        element={
+          <PrivateRoute>
+            <Quiz />
+          </PrivateRoute>
+        }
+      />
 
      
 

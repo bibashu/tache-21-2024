@@ -1,11 +1,5 @@
 {
   "dependencies": {
-<<<<<<< HEAD
-    "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.3",
-    "mongodb": "^6.9.0",
-    "react-router-dom": "^6.26.2"
-=======
     "@uidotdev/usehooks": "^2.4.1",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
@@ -15,6 +9,5 @@
     "react-script": "^2.0.5",
     "react-scripts": "^5.0.1",
     "sweetalert2": "^11.14.0"
->>>>>>> 1390c9735f6b105f669ecae3e14d6e2054f2de4c
   }
 }
