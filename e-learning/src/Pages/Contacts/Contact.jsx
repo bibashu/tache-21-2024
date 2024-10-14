@@ -25,7 +25,7 @@ const Contact = () => {
                     <li className="breadcrumb-item ">
                       <Link
                         to="/"
-                        className="text-decoration-none"
+                        className="text-decoration-none text-black"
                         onClick={() => Navigate("/")}
                       >
                         Accueil

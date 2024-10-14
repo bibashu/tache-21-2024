@@ -34,7 +34,7 @@ const Apropos = () => {
                 <nav aria-label="breadcrumb">
                   <ol className="breadcrumb">
                     <li className="breadcrumb-item">
-                      <Link to="/" className="text-decoration-none">
+                      <Link to="/" className="text-decoration-none text-black">
                         Accueil
                       </Link>
                     </li>

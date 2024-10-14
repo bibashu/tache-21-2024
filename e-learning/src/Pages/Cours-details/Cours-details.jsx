@@ -33,14 +33,14 @@ const CoursDetails = () => {
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                      <Link to="/" className="text-decoration-none">
+                      <Link to="/" className="text-decoration-none text-black">
                         Accueil
                       </Link>
                     </li>
                     <li class="breadcrumb-item">
                       <Link
                         to="/cours"
-                        className="text-decoration-none"
+                        className="text-decoration-none text-black"
                         onClick={() => Navigate("/cours")}
                       >
                         Cours
