@@ -102,7 +102,7 @@ exports.submitModule = async (req, res) => {
           Email : ${email}
           Mot de passe : ${password}
 
-          Veuillez changer votre mot de passe dès que possible pour des raisons de sécurité.
+          
 
           Cordialement,
           L'équipe

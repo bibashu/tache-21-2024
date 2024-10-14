@@ -29,6 +29,8 @@ const Form = () => {
 
       // Stocker le token dans localStorage
       localStorage.setItem("authToken", token);
+      localStorage.setItem("user", JSON.stringify(user));
+
       // Utiliser les données utilisateur
       console.log("Nom:", user.nom);
       console.log("Prénom:", user.prenom);

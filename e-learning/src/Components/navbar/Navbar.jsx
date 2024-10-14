@@ -134,7 +134,6 @@ const Navbar = ({ userDatas }) => {
                     <div className="u-text">
                       <h4 id="username-big">{prenom + " " + nom}</h4>
                       <p className="text-muted" id="email">{email}</p>
-                      <a href="/profile" className="btn btn-xs btn-secondary btn-sm">Voir Profil</a>
                     </div>
                   </div>
                 </li>

@@ -7,11 +7,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./style.module.css"
+import Swal from "sweetalert2";
 
 
 const URL_LIVRAISON = "http://localhost:5000/livraison/api_livraison";
 const URL_LIVRER = "http://localhost:5000/livraison/submitLivraison";
-// const URL_PROJETS = "http://localhost:5000/project/api_project/${studentId}";
 
 const Livraison = () => {
     const [livraisons, setLivraisons] = useState([]);
@@ -64,7 +64,7 @@ const Livraison = () => {
             }
         }
 
-        console.log("Données à envoyer :", formData);
+        // console.log("Données à envoyer :", formData);
 
         try {
             const response = await axios.post(URL_LIVRER, data, {
@@ -72,7 +72,10 @@ const Livraison = () => {
                     "Content-Type": "multipart/form-data",
                 },
             });
-            alert("Livraison soumise avec succès !");
+            Swal.fire({
+                title: "Livraison envoyée!",
+                icon: "success",
+              });
             setFormData({
                 project_id: "",
                 delivery_link: "",

@@ -8834,7 +8834,8 @@ label.error {
    width: 20px;
    height: 2px;
    border-radius: 3px;
-   background: currentColor
+   background: currentColor;
+   color: #fff;
 }
 
 .gg-menu-right::after,
@@ -8934,7 +8935,8 @@ label.error {
    width: 4px;
    height: 4px;
    background: currentColor;
-   border-radius: 100%
+   border-radius: 100%;
+   color: #fff;
 }
 
 .gg-more-vertical-alt::after,
