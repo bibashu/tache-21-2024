@@ -16,6 +16,32 @@
   border: none;
   font-size: 1.25rem;
 }
+
+.navbar-toggler {
+  border: none;
+
+  font-size: 1.25rem;
+}
+
+/* Visited link */
+.nav-link:visited {
+  color: black;
+}
+
+/* Hover link */
+.nav-link:hover {
+  color: orange;
+}
+* Active link */ .navbar-nav .nav-link.active {
+  color: #f73e00;
+
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #f73e00;
+}
+
 @media screen and(min-width:768px) {
 }
 

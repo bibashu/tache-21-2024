@@ -1,23 +1,24 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import Button from "../Components/Button";
 import learning from "./navbar-img/learning.png";
 import { Link } from "react-router-dom";
-import bootstrap  from "bootstrap";
+import bootstrap from "bootstrap";
+import "./navbar.css";
 
 const Navbar = () => {
   const Navigate = useNavigate();
 
   return (
-    <div className="container-fluid container-fluid-1 fixed-top bg-white  px-0">
+    <div className="container-fluid container-fluid-1 fixed-top bg-white px-0">
       <nav className="navbar navbar-expand-lg shadow bg-white px-5">
         <div className="container-fluid">
-          <a className="navbar-brand me-auto " href="#">
+          <a className="navbar-brand me-auto" href="#">
             <img src={learning} className="learning img-fluid" alt="logo" />
           </a>
           <div
             className="offcanvas offcanvas-end"
-            tabindex="-1"
+            tabIndex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
           >
@@ -35,62 +36,63 @@ const Navbar = () => {
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
                 <li className="nav-item">
-                  <Link
-                    className="nav-link mx-lg-2 active"
-                    aria-current="page"
+                  <NavLink
+                    exact
+                    className="nav-link mx-lg-2"
+                    activeClassName="active"
                     to="/"
                   >
                     Accueil
-                  </Link>
+                  </NavLink>
                 </li>
                 <div className="nav-item dropdown mx-lg-2">
-                  <Link
-                    to="accueil"
+                  <NavLink
                     className="nav-link dropdown-toggle"
+                    to="accueil"
                     data-bs-toggle="dropdown"
                   >
                     Cours
-                  </Link>
+                  </NavLink>
                   <div className="dropdown-menu m-0 bg-secondary rounded-0">
-                    <Link className="nav-item nav-link" to="/cours">
+                    <NavLink className="nav-item nav-link" to="/cours">
                       Cours
-                    </Link>
-                    <Link className="nav-item nav-link" to="/cours-details">
+                    </NavLink>
+                    <NavLink className="nav-item nav-link" to="/cours-details">
                       Cours details
-                    </Link>
+                    </NavLink>
                   </div>
                 </div>
                 <div className="nav-item dropdown mx-lg-2">
-                  <Link
-                    href="accueil"
+                  <NavLink
                     className="nav-link dropdown-toggle"
+                    to="accueil"
                     data-bs-toggle="dropdown"
                   >
                     Instructeurs
-                  </Link>
+                  </NavLink>
                   <div className="dropdown-menu m-0 bg-secondary rounded-0">
-                    <Link className="nav-item nav-link" to="/instructeurs">
+                    <NavLink className="nav-item nav-link" to="/instructeurs">
                       Instructeurs
-                    </Link>
-                    <Link className="nav-item nav-link" to="/inst-details">
+                    </NavLink>
+                    <NavLink className="nav-item nav-link" to="/inst-details">
                       Instructeurs details
-                    </Link>
+                    </NavLink>
                   </div>
                 </div>
                 <li className="nav-item">
-                  <Link className="nav-link mx-lg-2" to="/apropos">
+                  <NavLink className="nav-link mx-lg-2" to="/apropos">
                     A propos
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link mx-lg-2" to="/faq">
+                  <NavLink className="nav-link mx-lg-2" to="/faq">
                     FAQ
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link mx-lg-2" to="/contact">
+                  <NavLink className="nav-link mx-lg-2" to="/contact">
                     Contact
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
               <div className="m-3 me-3">
