@@ -271,14 +271,14 @@ app.put('/api/profile/update', authenticateToken, (req, res) => {
 
 
 app.use('/apprenant', apprenantRoute);
-const PORT = process.env.PORT || 5000; 
+const port = process.env.PORT || 5000; 
 // Connexion à MongoDB et démarrage du serveur
 mongoose
   .connect("mongodb+srv://menzamenza90:5o4KyFBCKNZmXeGj@e-learning.dn30h.mongodb.net/?retryWrites=true&w=majority&appName=E-learning")
   .then(() => {
 
     console.log("Connecté à la base de données MongoDB");
-    app.listen(PORT, () => {
+    app.listen(port, () => {
       console.log("Serveur démarré sur le port 5000");
     });
   })
