@@ -225,6 +225,10 @@ app.use('/uploads', express.static('public/uploads'));
 // Retourner le chemin de l'image mise à jour dans uploads pour les livraisons
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+//les fichiers statics
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 // Gestion des erreurs liées à multer
 app.use((err, req, res, next) => {
   if (err instanceof multer.MulterError) {
