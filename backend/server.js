@@ -37,13 +37,21 @@ const globalDataMiddleware = require('./middleware/middleware_livraisons');
 // Configurer CORS pour permettre toutes les origines ou spécifiquement l'origine de ton frontend
 const allowedOrigins = ['https://tache-21-2024.onrender.com', 'https://tache-21-2024-gamma.vercel.app'];
 
-
-// Utiliser le middleware CORS
 app.use(cors({
-  origin: 'allowedOrigins', // Remplace par l'origine de ton frontend
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  allowedHeaders: 'Authorization,Content-Type',
+  origin: function (origin, callback) {
+    // Permettre l'accès si l'origine est dans allowedOrigins ou si aucune origine n'est fournie (pour les requêtes sans origin, ex: Postman)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+  credentials: true, // Si tu utilises des cookies ou des autorisations
+  allowedHeaders: ['Authorization', 'Content-Type'],
 }));
+
+
 
 // Utiliser le middleware globalDataMiddleware
 app.use(globalDataMiddleware);
