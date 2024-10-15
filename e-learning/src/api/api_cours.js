@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const URL_COURS = "http://localhost:5000/cours/api_cours";
+const URL_COURS = "https://tache-21-2024.onrender.com/cours/api_cours";
 
 export class coursAPI {
   static async fetchAll() {
