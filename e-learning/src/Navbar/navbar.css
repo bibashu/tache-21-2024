@@ -7,15 +7,49 @@
   background: #ffffff !important;
   border: 1px solid #d3d3d3 !important;
 }
-
+.Login-button{
+  height: 60px;
+  width: 150px;
+  border: 2px solid rgb(238, 233, 233);
+  border-radius: 70px;
+  background-color: white;
+}
 .Login-button:hover {
   background-color: #fe753f;
   color: #fff;
 }
+
 .navbar-toggler {
   border: none;
   font-size: 1.25rem;
 }
+
+
+.linkk{
+  position: relative;
+  top: 5px;
+  text-decoration: underline;
+  color: #fe753f;
+}
+/* Visited link */
+.nav-link:visited {
+  color: black;
+}
+
+/* Hover link */
+.nav-link:hover {
+  color: orange;
+}
+* Active link */ .navbar-nav .nav-link.active {
+  color: #f73e00;
+
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #f73e00;
+}
+
 @media screen and(min-width:768px) {
 }
 
@@ -73,6 +107,7 @@
   background: linear-gradient(90deg, #f48d00 0%, #f73e00 100%);
   color: white !important;
 }
+
 
 @media screen and (min-width: 991px) {
   .nav-link::before {
