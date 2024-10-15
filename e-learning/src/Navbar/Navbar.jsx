@@ -38,7 +38,7 @@ const Navbar = () => {
                 <li className="nav-item">
                   <NavLink
                     exact
-                    className="nav-link mx-lg-2"
+                    className="nav-link linkk mx-lg-2 active"
                     activeClassName="active"
                     to="/"
                   >
@@ -47,7 +47,7 @@ const Navbar = () => {
                 </li>
                 <div className="nav-item dropdown mx-lg-2">
                   <NavLink
-                    className="nav-link dropdown-toggle"
+                    className="nav-link  dropdown-toggle"
                     to="accueil"
                     data-bs-toggle="dropdown"
                   >
@@ -108,7 +108,7 @@ const Navbar = () => {
           </div>
           <div className="m-3 me-3 bouton-dn">
             <Button
-              className="btn Login-button border-orange me-2 btn-lg px-4"
+              className=" Login-button border-orange me-2 btn-lg px-4"
               onClick={() => Navigate("/login")}
             >
               Connexion{" "}
