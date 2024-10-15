@@ -35,7 +35,7 @@ io.on('connection', (socket) => {
 const { requireAuth } = require('./middleware/middleware_coach');
 const globalDataMiddleware = require('./middleware/middleware_livraisons');
 // Configurer CORS pour permettre toutes les origines ou spécifiquement l'origine de ton frontend
-const allowedOrigins = ['https://tache-21-2024.onrender.com', 'http://localhost:5000'];
+const allowedOrigins = ['https://tache-21-2024.onrender.com', 'https://localhost:5000'];
 
 
 // Utiliser le middleware CORS

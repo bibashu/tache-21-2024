@@ -190,7 +190,7 @@
               const username = document.getElementById('edit-username').value;
               const email = document.getElementById('edit-email').value;
 
-              fetch('http://localhost:5000/api/profile/update', {
+              fetch('https://tache-21-2024.onrender.com/api/profile/update', {
                 method: 'PUT', // ou 'PATCH' selon ton API
                 headers: {
                   'Authorization': `Bearer ${token}`,

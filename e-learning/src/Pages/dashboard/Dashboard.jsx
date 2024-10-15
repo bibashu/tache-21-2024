@@ -18,7 +18,7 @@ const Dashboard = () => {
     const fetchApprenantData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/apprenant/profile",
+          "https://tache-21-2024.onrender.com/apprenant/profile",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("authToken")}`,

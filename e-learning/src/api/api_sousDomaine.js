@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const URL_SOUSDOMAINE = "http://localhost:5000/sousDomaine/api_sousdomaine";
+const URL_SOUSDOMAINE = "https://tache-21-2024.onrender.com/sousDomaine/api_sousdomaine";
 
 export class sousDomaineAPI {
   static async fetchAll() {

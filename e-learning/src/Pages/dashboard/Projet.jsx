@@ -18,7 +18,7 @@ const Projet = () => {
         return;
       }
       try {
-        const response = await axios.get(`http://localhost:5000/project/api_project/${studentId}`);
+        const response = await axios.get(`https://tache-21-2024.onrender.com/project/api_project/${studentId}`);
 
         setProjets(response.data);
         setLoading(false);

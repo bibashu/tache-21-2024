@@ -100,7 +100,7 @@ exports.forgotPassword = async (req, res) => {
         const resetToken = jwt.sign({ id: coach._id }, jwtSecret, { expiresIn: '15m' });
 
         // URL de réinitialisation
-        const resetURL = `http://localhost:5000/authentification/resetPassword/${resetToken}`;
+        const resetURL = `https://tache-21-2024.onrender.com/authentification/resetPassword/${resetToken}`;
 
         // Configurer l'email
         const mailOptions = {

@@ -17,7 +17,7 @@ const Quiz = () => {
     const fetchQuizzes = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/Quizz/api_quizz"
+          "https://tache-21-2024.onrender.com/Quizz/api_quizz"
         );
 
         if (Array.isArray(response.data) && response.data.length > 0) {

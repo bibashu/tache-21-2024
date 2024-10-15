@@ -10,8 +10,8 @@ import "./style.module.css"
 import Swal from "sweetalert2";
 
 
-const URL_LIVRAISON = "http://localhost:5000/livraison/api_livraison";
-const URL_LIVRER = "http://localhost:5000/livraison/submitLivraison";
+const URL_LIVRAISON = "https://tache-21-2024.onrender.com/livraison/api_livraison";
+const URL_LIVRER = "https://tache-21-2024.onrender.com/livraison/submitLivraison";
 
 const Livraison = () => {
     const [livraisons, setLivraisons] = useState([]);
@@ -40,7 +40,7 @@ const Livraison = () => {
 
         const fetchProjets = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/project/api_project/${studentId}`);
+                const response = await axios.get(`https://tache-21-2024.onrender.com/project/api_project/${studentId}`);
                 setProjets(response.data);
             } catch (error) {
                 console.error("Erreur lors de la récupération des projets :", error);
@@ -230,8 +230,8 @@ const Livraison = () => {
                                                                 return (
                                                                     <div key={index}>
                                                                         <ModalImage
-                                                                            small={`http://localhost:5000/${sanitizedScreenshotPath}`}
-                                                                            large={`http://localhost:5000/${sanitizedScreenshotPath}`}
+                                                                            small={`https://tache-21-2024.onrender.com/${sanitizedScreenshotPath}`}
+                                                                            large={`https://tache-21-2024.onrender.com/${sanitizedScreenshotPath}`}
                                                                             alt={`Capture d'écran ${index + 1}`}
                                                                             className="img-fluid w-100 h-50"
                                                                         />

@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const URL_DOMAINE = "http://localhost:5000/domaine/api_domaine";
+const URL_DOMAINE = "https://tache-21-2024.onrender.com/domaine/api_domaine";
 
 export class domaineAPI {
   static async fetchAll() {

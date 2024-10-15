@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const URL_Quiz = "http://localhost:5000/Quizz/api_quizz";
+const URL_Quiz = "https://tache-21-2024.onrender.com/Quizz/api_quizz";
 
 export class QuizAPI {
   static async fetchAll() {

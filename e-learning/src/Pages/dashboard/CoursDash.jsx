@@ -21,7 +21,7 @@ const CoursDash = () => {
   
     const fetchCours = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/cours/api_cours`);
+        const response = await axios.get(`https://tache-21-2024.onrender.com/cours/api_cours`);
         const filteredCours = response.data.filter(cour => !cour.archive);
         setCours(filteredCours);
         setLoading(false);
