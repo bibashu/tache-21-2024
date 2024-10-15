@@ -40,7 +40,8 @@
 .nav-link:hover {
   color: orange;
 }
-* Active link */ .navbar-nav .nav-link.active {
+/* Active link */ 
+.navbar-nav .nav-link.active {
   color: #f73e00;
 
   font-weight: bold;
