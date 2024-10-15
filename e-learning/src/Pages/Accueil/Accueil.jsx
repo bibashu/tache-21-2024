@@ -914,46 +914,46 @@ const Accueil = () => {
       {/* --APROPOS DE NOUS END -- */}
 
       {/* --SECTION -SERVICES-- */}
-      <div className="lg-carrousel section-display-none">
-        <div className="container-fluid  section-4 py-5">
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-lg-11 col-xl-8">
-                <div className="section-header justify-content-center">
-                  <h2 className="section-title text-center mb-3">
-                    Nous avons des services <br /> spéciaux dont vous serez
-                    satisfait
-                  </h2>
-                  <p className="section-sub-title tex-center mb-3">
-                    Notre liste de cours est organisée en fonction des
+      <section className="section testimonials section-display-none bg-img py-5">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-11 col-sm-12 col-xl-8">
+              <div className="section-header justify-content-center">
+                <h2 className="section-title text-center mb-3">
+                Nous avons des services<br /> spéciaux dont vous serez
+                satisfait
+                </h2>
+                <p className="section-sub-title tex-center mb-3">
+                Notre liste de cours est organisée en fonction des
                     compétences les plus demandées actuellement dans le pays et
                     à l'extérieur du pays.{" "}
-                  </p>
-                </div>
+                </p>
               </div>
             </div>
-            <div className="row">
+          </div>
+          <div className="row py-5">
+            <div className="col-xl-12 col-sm-12 ">
               <div
                 id="carouselExampleControls"
                 className="carousel slide"
                 data-bs-ride="carousel"
               >
                 <div className="carousel-inner">
-                  <div className="carousel-item  p-3 active">
-                    <div className="row align-items-center d-flex">
+                  <div className="carousel-item active">
+                    <div className="row">
                       <div className="col-lg-3 col-sm-3 rounded">
-                        <div className="service-slider-single slick-slide slick-cloned">
-                          <div className="service-slider-thumb">
-                            <img src={virtual} alt="Icon" />
+                        <div className="testimonials-slider-item-content p-3">
+                          <div className="rating">
+                          <img src={virtual} alt="Icon"/>
                           </div>
                           <h5>Virtual Internship</h5>
                           <p>After completing the course, you will get an</p>
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-3 rounded">
-                        <div className="service-slider-single slick-slide slick-cloned">
-                          <div className="service-slider-thumb">
-                            <img src={language} alt="Icon" />
+                        <div className="testimonials-slider-item-content p-3">
+                          <div className="rating">
+                          <img src={language} alt="Icon" />
                           </div>
                           <h5>English language</h5>
                           <p>
@@ -962,79 +962,43 @@ const Accueil = () => {
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-3 rounded">
-                        <div className="service-slider-single">
-                          <div className=" slick-slide slick-cloned">
-                            <div className="service-slider-thumb">
-                              <img src={support} alt="Icon" />
-                            </div>
-                            <h5>24/7 online support</h5>
-                            <p>Our organization Creative IT Institute's</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3">
-                        <div className="service-slider-single slick-slide">
-                          <div className="service-slider-thumb">
-                            <img src={language} alt="Icon" />
-                          </div>
-                          <h5>English language</h5>
-                          <p>
-                            Along with teaching basic English, we emphasize...
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="carousel-item  p-3">
-                    <div className="row align-items-center d-flex">
-                      <div className="col-lg-3 col-sm-3 rounded">
-                        <div className="service-slider-single slick-slide slick-current slick-active slick-center">
-                          <div className="service-slider-thumb">
-                            <img src={virtual} alt="Icon" />
-                          </div>
-                          <h5>Virtual Internship</h5>
-                          <p>After completing the course, you will get an</p>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 col-sm-3 rounded">
-                        <div className="service-slider-single slick-slide">
-                          <div className="service-slider-thumb">
-                            <img src={language} alt="Icon" />
-                          </div>
-                          <h5>English language</h5>
-                          <p>
-                            Along with teaching basic English, we emphasize...
-                          </p>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 col-sm-3 rounded">
-                        <div className="service-slider-single slick-slide">
-                          <div className="service-slider-thumb">
-                            <img src={support} alt="Icon" />
+                        <div className="testimonials-slider-item-content p-3">
+                          <div className="rating">
+                          <img src={support} alt="Icon" />
                           </div>
                           <h5>24/7 online support</h5>
                           <p>Our organization Creative IT Institute's</p>
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-3 rounded">
-                        <div className="service-slider-single slick-slide">
-                          <div className="service-slider-thumb">
-                            <img src={virtual} alt="Icon" />
+                        <div className="testimonials-slider-item-content p-3">
+                          <div className="rating">
+                          <img src={language} alt="Icon" />
                           </div>
-                          <h5>Virtual Internship</h5>
-                          <p>After completing the course, you will get an</p>
+                          <h5>English language</h5>
+                          <p>
+                            Along with teaching basic English, we emphasize...
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="carousel-item  p-3">
-                    <div className="row align-items-center d-flex">
+                  <div className="carousel-item active">
+                    <div className="row">
                       <div className="col-lg-3 col-sm-3 rounded">
-                        <div className="service-slider-single slick-slide">
-                          <div className="service-slider-thumb">
-                            <img src={language} alt="Icon" />
+                        <div className="testimonials-slider-item-content p-3">
+                          <div className="rating">
+                          <img src={virtual} alt="Icon"/>
+                          </div>
+                          <h5>Virtual Internship</h5>
+                          <p>After completing the course, you will get an</p>
+                        </div>
+                      </div>
+                      <div className="col-lg-3 col-sm-3 rounded">
+                        <div className="testimonials-slider-item-content p-3">
+                          <div className="rating">
+                          <img src={language} alt="Icon" />
                           </div>
                           <h5>English language</h5>
                           <p>
@@ -1043,18 +1007,43 @@ const Accueil = () => {
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-3 rounded">
-                        <div className="service-slider-single slick-slide">
-                          <div className="service-slider-thumb">
-                            <img src={support} alt="Icon" />
+                        <div className="testimonials-slider-item-content p-3">
+                          <div className="rating">
+                          <img src={support} alt="Icon" />
                           </div>
                           <h5>24/7 online support</h5>
                           <p>Our organization Creative IT Institute's</p>
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-3 rounded">
-                        <div className="service-slider-single slick-slide">
-                          <div className="service-slider-thumb">
-                            <img src={language} alt="Icon" />
+                        <div className="testimonials-slider-item-content p-3">
+                          <div className="rating">
+                          <img src={language} alt="Icon" />
+                          </div>
+                          <h5>English language</h5>
+                          <p>
+                            Along with teaching basic English, we emphasize...
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="carousel-item active">
+                    <div className="row">
+                      <div className="col-lg-3 col-sm-3 rounded">
+                        <div className="testimonials-slider-item-content p-3">
+                          <div className="rating">
+                          <img src={virtual} alt="Icon"/>
+                          </div>
+                          <h5>Virtual Internship</h5>
+                          <p>After completing the course, you will get an</p>
+                        </div>
+                      </div>
+                      <div className="col-lg-3 col-sm-3 rounded">
+                        <div className="testimonials-slider-item-content p-3">
+                          <div className="rating">
+                          <img src={language} alt="Icon" />
                           </div>
                           <h5>English language</h5>
                           <p>
@@ -1063,48 +1052,60 @@ const Accueil = () => {
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-3 rounded">
-                        <div className="service-slider-single slick-slide">
-                          <div className="service-slider-thumb">
-                            <img src={virtual} alt="Icon" />
+                        <div className="testimonials-slider-item-content p-3">
+                          <div className="rating">
+                          <img src={support} alt="Icon" />
                           </div>
-                          <h5>Virtual Internship</h5>
-                          <p>After completing the course, you will get an</p>
+                          <h5>24/7 online support</h5>
+                          <p>Our organization Creative IT Institute's</p>
+                        </div>
+                      </div>
+                      <div className="col-lg-3 col-sm-3 rounded">
+                        <div className="testimonials-slider-item-content p-3">
+                          <div className="rating">
+                          <img src={language} alt="Icon" />
+                          </div>
+                          <h5>English language</h5>
+                          <p>
+                            Along with teaching basic English, we emphasize...
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
-
-                  <button
-                    className="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev"
-                  >
-                    <span
-                      className="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="visually-hidden">Previous</span>
-                  </button>
-                  <button
-                    className="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next"
-                  >
-                    <span
-                      className="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="visually-hidden">Next</span>
-                  </button>
-                </div>
+                  </div>
+                <button
+                  className="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleControls"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button
+                  className="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleControls"
+                  data-bs-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* --SECTION -SERVICES END-- */}
+      </section>
+
+  
+     {/* --SECTION -SERVICES END-- */}
 
       {/* --SECTION-SEMINAIRE-START -- */}
 
