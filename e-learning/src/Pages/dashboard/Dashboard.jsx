@@ -47,7 +47,7 @@ const Dashboard = () => {
     <Layout userData={user}>
       <div class="container">
         <div class="page-inner">
-          <Cards />
+          {/* <Cards /> */}
           {/* Les cours inscrites */}
           <div className="container mt-3 mb-5 shadow ps-5">
             <h1 >Mes cours</h1>
